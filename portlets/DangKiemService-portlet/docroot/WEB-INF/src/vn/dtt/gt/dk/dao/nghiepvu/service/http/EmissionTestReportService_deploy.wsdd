@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_dkapi_EmissionTestReportService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.EmissionTestReportServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="EmissionTestReportServiceSoap" />
+		<parameter name="wsdlServiceElement" value="EmissionTestReportServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_EmissionTestReportService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+</deployment>

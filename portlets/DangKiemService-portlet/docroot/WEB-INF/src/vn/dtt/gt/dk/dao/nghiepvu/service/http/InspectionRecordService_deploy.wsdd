@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_dkapi_InspectionRecordService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="doImportInspectionRecord" qname="operNS:doImportInspectionRecord" returnQName="doImportInspectionRecordReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="vehicleinspectionrecord" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="doImportInspectionRecord" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.InspectionRecordServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="InspectionRecordServiceSoap" />
+		<parameter name="wsdlServiceElement" value="InspectionRecordServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_InspectionRecordService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+</deployment>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CfgLimitTechnicalSpecFinder.countBySynchDate">
+		<![CDATA[
+			SELECT 
+				 COUNT(*) AS COUNT_VALUE
+			FROM 
+				vr_cfg_limit_technicalspec
+			WHERE
+				synchDate >= ?
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CfgLimitTechnicalSpecFinder.findBySynchDate">
+		<![CDATA[
+			SELECT 
+				 {vr_cfg_limit_technicalspec.*}
+			FROM 
+				vr_cfg_limit_technicalspec
+			WHERE
+				synchDate >= ?
+		]]>
+	</sql>
+</custom-sql>

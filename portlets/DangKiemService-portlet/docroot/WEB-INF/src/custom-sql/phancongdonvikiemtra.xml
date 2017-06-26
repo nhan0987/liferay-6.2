@@ -1,0 +1,416 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhanCongDonViKiemTraFinder.countPhanCongDonViKiemTra">
+		<![CDATA[
+			SELECT 
+				COUNT(*) AS COUNT_VALUE
+			FROM (
+				SELECT 
+					motcua_phieuxulyphu.id AS id,
+					motcua_phieuxulyphu.phieuxulychinhid AS phieuxulychinhid,
+					motcua_phieuxulyphu.ghichu AS ghichu,
+					motcua_phieuxulyphu.trangthaihientaiid AS trangthaihientaiid,
+					motcua_phieuxulyphu.noidunghosoid AS noidunghosoid,
+					motcua_phieuxulyphu.chiemquyenxuly AS chiemquyenxuly,
+					motcua_phieuxulyphu.ngaytaophieu AS ngaytaophieu,
+					motcua_phieuxulyphu.nguoitaophieu AS nguoitaophieu,
+					motcua_phieuxulyphu.trichyeunoidung AS trichyeunoidung,
+					motcua_phieuxulyphu.nhomphieuxuly AS nhomphieuxuly,
+					motcua_phieuxulyphu.phannhomhosoid AS phannhomhosoid,
+					tthc_hosothutuc.masohoso AS masohoso,
+					tthc_hosothutuc.mabiennhan AS mabiennhan,
+					tthc_hosothutuc.tenchuhoso AS tenchuhoso,
+					tthc_hosothutuc.ngayguihoso AS ngayguihoso,
+					tthc_hosothutuc.thutuchanhchinhid AS thutuchanhchinhid,
+					tthc_hosothutuc.tendonvitiepnhan AS tendonvitiepnhan,
+					tthc_hosothutuc.tochucquanly AS tochucquanly,
+					vr_confirmedinspection.inspectionprovincecode AS inspectionprovincecode,
+					vr_confirmedinspection.corporationid AS corporationid ,
+					vr_confirmedinspection.inspectorid AS inspectorid,
+					vr_confirmedinspection.id AS confirmedinspectionId, 
+					vr_confirmedinspection.inspectiondistrictcode AS inspectiondistrictcode,
+					vr_confirmedinspection.ATTACHEDFILE AS ATTACHEDFILE
+				FROM 
+					dkvn_thutuchanhchinh.tthc_hosothutuc 
+				INNER JOIN 
+					dkvn_thutuchanhchinh.motcua_phieuxulyphu ON tthc_hosothutuc.id=motcua_phieuxulyphu.phieuxulychinhid
+				INNER JOIN
+					dkvn_nghiepvu.vr_confirmedinspection ON vr_confirmedinspection.phieuxulyphuid=motcua_phieuxulyphu.id
+				WHERE
+					1=1
+					AND motcua_phieuxulyphu.phannhomhosoid = ?
+					AND tthc_hosothutuc.thutuchanhchinhid = ?
+					AND tthc_hosothutuc.masohoso = ?
+					AND (tthc_hosothutuc.ngayguihoso >= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.mabiennhan = ?
+					AND (tthc_hosothutuc.ngayguihoso <= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.tochucquanly = ?
+					AND YEAR(tthc_hosothutuc.ngayguihoso) = ?
+					AND motcua_phieuxulyphu.nhomphieuxuly IN ([$NHOM_PHIEU_XU_LY$])
+					AND vr_confirmedinspection.inspectionprovincecode = ?
+			) AS PhanCongDonViKiemTra
+		]]>
+	</sql>
+	<sql id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhanCongDonViKiemTraFinder.findPhanCongDonViKiemTra">
+		<![CDATA[
+			SELECT 
+				{PhanCongDonViKiemTra.*}
+			FROM (
+				SELECT 
+					motcua_phieuxulyphu.id AS id,
+					motcua_phieuxulyphu.phieuxulychinhid AS phieuxulychinhid,
+					motcua_phieuxulyphu.ghichu AS ghichu,
+					motcua_phieuxulyphu.trangthaihientaiid AS trangthaihientaiid,
+					motcua_phieuxulyphu.noidunghosoid AS noidunghosoid,
+					motcua_phieuxulyphu.chiemquyenxuly AS chiemquyenxuly,
+					motcua_phieuxulyphu.ngaytaophieu AS ngaytaophieu,
+					motcua_phieuxulyphu.nguoitaophieu AS nguoitaophieu,
+					motcua_phieuxulyphu.trichyeunoidung AS trichyeunoidung,
+					motcua_phieuxulyphu.nhomphieuxuly AS nhomphieuxuly,
+					motcua_phieuxulyphu.phannhomhosoid AS phannhomhosoid,
+					tthc_hosothutuc.masohoso AS masohoso,
+					tthc_hosothutuc.mabiennhan AS mabiennhan,
+					tthc_hosothutuc.tenchuhoso AS tenchuhoso,
+					tthc_hosothutuc.ngayguihoso AS ngayguihoso,
+					tthc_hosothutuc.thutuchanhchinhid AS thutuchanhchinhid,
+					tthc_hosothutuc.tendonvitiepnhan AS tendonvitiepnhan,
+					tthc_hosothutuc.tochucquanly AS tochucquanly,
+					vr_confirmedinspection.inspectionprovincecode AS inspectionprovincecode,
+					vr_confirmedinspection.corporationid AS corporationid ,
+					vr_confirmedinspection.inspectorid AS inspectorid,
+					vr_confirmedinspection.id AS confirmedinspectionId, 
+					vr_confirmedinspection.inspectiondistrictcode AS inspectiondistrictcode,
+					vr_confirmedinspection.ATTACHEDFILE AS ATTACHEDFILE
+				FROM 
+					dkvn_thutuchanhchinh.tthc_hosothutuc 
+				INNER JOIN 
+					dkvn_thutuchanhchinh.motcua_phieuxulyphu ON tthc_hosothutuc.id=motcua_phieuxulyphu.phieuxulychinhid
+				INNER JOIN
+					dkvn_nghiepvu.vr_confirmedinspection ON vr_confirmedinspection.phieuxulyphuid=motcua_phieuxulyphu.id
+				WHERE
+					1=1
+					AND motcua_phieuxulyphu.phannhomhosoid = ?
+					AND tthc_hosothutuc.thutuchanhchinhid = ?
+					AND tthc_hosothutuc.masohoso = ?
+					AND (tthc_hosothutuc.ngayguihoso >= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.mabiennhan = ?
+					AND (tthc_hosothutuc.ngayguihoso <= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.tochucquanly = ?
+					AND YEAR(tthc_hosothutuc.ngayguihoso) = ?
+					AND motcua_phieuxulyphu.nhomphieuxuly IN ([$NHOM_PHIEU_XU_LY$])
+					AND vr_confirmedinspection.inspectionprovincecode = ?
+			) AS PhanCongDonViKiemTra
+			ORDER BY 
+				ngaytaophieu ASC
+		]]>
+	</sql>
+	<sql id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhanCongDonViKiemTraFinder.countPhanCongDonViKiemTraHienTruong">
+		<![CDATA[
+			SELECT 
+				COUNT(*) AS COUNT_VALUE
+			FROM (
+				SELECT 
+					motcua_phieuxulyphu.id AS id,
+					motcua_phieuxulyphu.phieuxulychinhid AS phieuxulychinhid,
+					motcua_phieuxulyphu.ghichu AS ghichu,
+					motcua_phieuxulyphu.trangthaihientaiid AS trangthaihientaiid,
+					motcua_phieuxulyphu.noidunghosoid AS noidunghosoid,
+					motcua_phieuxulyphu.chiemquyenxuly AS chiemquyenxuly,
+					motcua_phieuxulyphu.ngaytaophieu AS ngaytaophieu,
+					motcua_phieuxulyphu.nguoitaophieu AS nguoitaophieu,
+					motcua_phieuxulyphu.trichyeunoidung AS trichyeunoidung,
+					motcua_phieuxulyphu.nhomphieuxuly AS nhomphieuxuly,
+					motcua_phieuxulyphu.phannhomhosoid AS phannhomhosoid,
+					tthc_hosothutuc.masohoso AS masohoso,
+					tthc_hosothutuc.mabiennhan AS mabiennhan,
+					tthc_hosothutuc.tenchuhoso AS tenchuhoso,
+					tthc_hosothutuc.ngayguihoso AS ngayguihoso,
+					tthc_hosothutuc.thutuchanhchinhid AS thutuchanhchinhid,
+					tthc_hosothutuc.tendonvitiepnhan AS tendonvitiepnhan,
+					tthc_hosothutuc.tochucquanly AS tochucquanly,
+					vr_confirmedinspection.inspectionprovincecode AS inspectionprovincecode,
+					vr_confirmedinspection.corporationid AS corporationid ,
+					vr_confirmedinspection.inspectorid AS inspectorid,
+					vr_confirmedinspection.id AS confirmedinspectionId, 
+					vr_confirmedinspection.inspectiondistrictcode AS inspectiondistrictcode,
+					vr_confirmedinspection.ATTACHEDFILE AS ATTACHEDFILE
+				FROM 
+					dkvn_thutuchanhchinh.tthc_hosothutuc 
+				INNER JOIN 
+					dkvn_thutuchanhchinh.motcua_phieuxulyphu ON tthc_hosothutuc.id=motcua_phieuxulyphu.phieuxulychinhid
+				INNER JOIN
+					dkvn_nghiepvu.vr_confirmedinspection ON vr_confirmedinspection.phieuxulyphuid=motcua_phieuxulyphu.id
+				WHERE
+					1=1
+					AND motcua_phieuxulyphu.phannhomhosoid = ?
+					AND tthc_hosothutuc.thutuchanhchinhid = ?
+					AND tthc_hosothutuc.masohoso = ?
+					AND (tthc_hosothutuc.ngayguihoso >= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.mabiennhan = ?
+					AND (tthc_hosothutuc.ngayguihoso <= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.tochucquanly = ?
+					AND YEAR(tthc_hosothutuc.ngayguihoso) = ?
+					AND motcua_phieuxulyphu.nhomphieuxuly IN ([$NHOM_PHIEU_XU_LY$])
+					AND vr_confirmedinspection.inspectionprovincecode = ?
+					AND vr_confirmedinspection.corporationid IN (SELECT corporationid FROM dkvn_nghiepvu.vr_corporation_view WHERE isleader=1 AND inspectorid = ?)
+			) AS PhanCongDonViKiemTra
+		]]>
+	</sql>
+	<sql id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhanCongDonViKiemTraFinder.findPhanCongDonViKiemTraHienTruong">
+		<![CDATA[
+			SELECT 
+				{PhanCongDonViKiemTra.*}
+			FROM (
+				SELECT 
+					motcua_phieuxulyphu.id AS id,
+					motcua_phieuxulyphu.phieuxulychinhid AS phieuxulychinhid,
+					motcua_phieuxulyphu.ghichu AS ghichu,
+					motcua_phieuxulyphu.trangthaihientaiid AS trangthaihientaiid,
+					motcua_phieuxulyphu.noidunghosoid AS noidunghosoid,
+					motcua_phieuxulyphu.chiemquyenxuly AS chiemquyenxuly,
+					motcua_phieuxulyphu.ngaytaophieu AS ngaytaophieu,
+					motcua_phieuxulyphu.nguoitaophieu AS nguoitaophieu,
+					motcua_phieuxulyphu.trichyeunoidung AS trichyeunoidung,
+					motcua_phieuxulyphu.nhomphieuxuly AS nhomphieuxuly,
+					motcua_phieuxulyphu.phannhomhosoid AS phannhomhosoid,
+					tthc_hosothutuc.masohoso AS masohoso,
+					tthc_hosothutuc.mabiennhan AS mabiennhan,
+					tthc_hosothutuc.tenchuhoso AS tenchuhoso,
+					tthc_hosothutuc.ngayguihoso AS ngayguihoso,
+					tthc_hosothutuc.thutuchanhchinhid AS thutuchanhchinhid,
+					tthc_hosothutuc.tendonvitiepnhan AS tendonvitiepnhan,
+					tthc_hosothutuc.tochucquanly AS tochucquanly,
+					vr_confirmedinspection.inspectionprovincecode AS inspectionprovincecode,
+					vr_confirmedinspection.corporationid AS corporationid ,
+					vr_confirmedinspection.inspectorid AS inspectorid,
+					vr_confirmedinspection.id AS confirmedinspectionId, 
+					vr_confirmedinspection.inspectiondistrictcode AS inspectiondistrictcode,
+					vr_confirmedinspection.ATTACHEDFILE AS ATTACHEDFILE
+				FROM 
+					dkvn_thutuchanhchinh.tthc_hosothutuc 
+				INNER JOIN 
+					dkvn_thutuchanhchinh.motcua_phieuxulyphu ON tthc_hosothutuc.id=motcua_phieuxulyphu.phieuxulychinhid
+				INNER JOIN
+					dkvn_nghiepvu.vr_confirmedinspection ON vr_confirmedinspection.phieuxulyphuid=motcua_phieuxulyphu.id
+				WHERE
+					1=1
+					AND motcua_phieuxulyphu.phannhomhosoid = ?
+					AND tthc_hosothutuc.thutuchanhchinhid = ?
+					AND tthc_hosothutuc.masohoso = ?
+					AND (tthc_hosothutuc.ngayguihoso >= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.mabiennhan = ?
+					AND (tthc_hosothutuc.ngayguihoso <= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.tochucquanly = ?
+					AND YEAR(tthc_hosothutuc.ngayguihoso) = ?
+					AND motcua_phieuxulyphu.nhomphieuxuly IN ([$NHOM_PHIEU_XU_LY$])
+					AND vr_confirmedinspection.inspectionprovincecode = ?
+					AND vr_confirmedinspection.corporationid IN (SELECT corporationid FROM dkvn_nghiepvu.vr_corporation_view WHERE isleader=1 AND inspectorid = ?)
+			) AS PhanCongDonViKiemTra
+			ORDER BY 
+				ngaytaophieu ASC
+		]]>
+	</sql>
+	<sql id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhanCongDonViKiemTraFinder.countLichKiemTraHienTruong">
+		<![CDATA[
+			SELECT 
+				COUNT(*) AS COUNT_VALUE
+			FROM (
+				SELECT 
+					motcua_phieuxulyphu.id AS id,
+					motcua_phieuxulyphu.phieuxulychinhid AS phieuxulychinhid,
+					motcua_phieuxulyphu.ghichu AS ghichu,
+					motcua_phieuxulyphu.trangthaihientaiid AS trangthaihientaiid,
+					motcua_phieuxulyphu.noidunghosoid AS noidunghosoid,
+					motcua_phieuxulyphu.chiemquyenxuly AS chiemquyenxuly,
+					motcua_phieuxulyphu.ngaytaophieu AS ngaytaophieu,
+					motcua_phieuxulyphu.nguoitaophieu AS nguoitaophieu,
+					motcua_phieuxulyphu.trichyeunoidung AS trichyeunoidung,
+					motcua_phieuxulyphu.nhomphieuxuly AS nhomphieuxuly,
+					motcua_phieuxulyphu.phannhomhosoid AS phannhomhosoid,
+					tthc_hosothutuc.masohoso AS masohoso,
+					tthc_hosothutuc.mabiennhan AS mabiennhan,
+					tthc_hosothutuc.tenchuhoso AS tenchuhoso,
+					tthc_hosothutuc.ngayguihoso AS ngayguihoso,
+					tthc_hosothutuc.thutuchanhchinhid AS thutuchanhchinhid,
+					tthc_hosothutuc.tendonvitiepnhan AS tendonvitiepnhan,
+					tthc_hosothutuc.tochucquanly AS tochucquanly,
+					vr_confirmedinspection.inspectionprovincecode AS inspectionprovincecode,
+					vr_confirmedinspection.corporationid AS corporationid ,
+					vr_confirmedinspection.inspectorid AS inspectorid,
+					vr_confirmedinspection.id AS confirmedinspectionId, 
+					vr_confirmedinspection.inspectiondistrictcode AS inspectiondistrictcode,
+					vr_confirmedinspection.ATTACHEDFILE AS ATTACHEDFILE
+				FROM 
+					dkvn_thutuchanhchinh.tthc_hosothutuc 
+				INNER JOIN 
+					dkvn_thutuchanhchinh.motcua_phieuxulyphu ON tthc_hosothutuc.id=motcua_phieuxulyphu.phieuxulychinhid
+				INNER JOIN
+					dkvn_nghiepvu.vr_confirmedinspection ON vr_confirmedinspection.phieuxulyphuid=motcua_phieuxulyphu.id
+				WHERE
+					1=1
+					AND motcua_phieuxulyphu.phannhomhosoid = ?
+					AND tthc_hosothutuc.thutuchanhchinhid = ?
+					AND tthc_hosothutuc.masohoso = ?
+					AND (tthc_hosothutuc.ngayguihoso >= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.mabiennhan = ?
+					AND (tthc_hosothutuc.ngayguihoso <= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.tochucquanly = ?
+					AND YEAR(tthc_hosothutuc.ngayguihoso) = ?
+					AND motcua_phieuxulyphu.nhomphieuxuly IN ([$NHOM_PHIEU_XU_LY$])
+					AND vr_confirmedinspection.inspectionprovincecode = ?
+					AND vr_confirmedinspection.corporationid IN (SELECT corporationid FROM dkvn_nghiepvu.vr_corporation_view WHERE isleader=1 AND inspectorid = ?)
+					
+				UNION
+				
+				SELECT 
+					motcua_phieuxulyphu.id AS id,
+					motcua_phieuxulyphu.phieuxulychinhid AS phieuxulychinhid,
+					motcua_phieuxulyphu.ghichu AS ghichu,
+					motcua_phieuxulyphu.trangthaihientaiid AS trangthaihientaiid,
+					motcua_phieuxulyphu.noidunghosoid AS noidunghosoid,
+					motcua_phieuxulyphu.chiemquyenxuly AS chiemquyenxuly,
+					motcua_phieuxulyphu.ngaytaophieu AS ngaytaophieu,
+					motcua_phieuxulyphu.nguoitaophieu AS nguoitaophieu,
+					motcua_phieuxulyphu.trichyeunoidung AS trichyeunoidung,
+					motcua_phieuxulyphu.nhomphieuxuly AS nhomphieuxuly,
+					motcua_phieuxulyphu.phannhomhosoid AS phannhomhosoid,
+					tthc_hosothutuc.masohoso AS masohoso,
+					tthc_hosothutuc.mabiennhan AS mabiennhan,
+					tthc_hosothutuc.tenchuhoso AS tenchuhoso,
+					tthc_hosothutuc.ngayguihoso AS ngayguihoso,
+					tthc_hosothutuc.thutuchanhchinhid AS thutuchanhchinhid,
+					tthc_hosothutuc.tendonvitiepnhan AS tendonvitiepnhan,
+					tthc_hosothutuc.tochucquanly AS tochucquanly,
+					vr_confirmedinspection.inspectionprovincecode AS inspectionprovincecode,
+					vr_confirmedinspection.corporationid AS corporationid ,
+					vr_confirmedinspection.inspectorid AS inspectorid,
+					vr_confirmedinspection.id AS confirmedinspectionId, 
+					vr_confirmedinspection.inspectiondistrictcode AS inspectiondistrictcode,
+					vr_confirmedinspection.ATTACHEDFILE AS ATTACHEDFILE
+				FROM 
+					dkvn_thutuchanhchinh.tthc_hosothutuc 
+				INNER JOIN 
+					dkvn_thutuchanhchinh.motcua_phieuxulyphu ON tthc_hosothutuc.id=motcua_phieuxulyphu.phieuxulychinhid
+				INNER JOIN
+					dkvn_nghiepvu.vr_confirmedinspection ON vr_confirmedinspection.phieuxulyphuid=motcua_phieuxulyphu.id
+				WHERE
+					1=1
+					AND motcua_phieuxulyphu.phannhomhosoid = ?
+					AND tthc_hosothutuc.thutuchanhchinhid = ?
+					AND tthc_hosothutuc.masohoso = ?
+					AND (tthc_hosothutuc.ngayguihoso >= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.mabiennhan = ?
+					AND (tthc_hosothutuc.ngayguihoso <= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.tochucquanly = ?
+					AND YEAR(tthc_hosothutuc.ngayguihoso) = ?
+					AND motcua_phieuxulyphu.nhomphieuxuly IN ([$NHOM_PHIEU_XU_LY$])
+					AND vr_confirmedinspection.inspectionprovincecode = ?
+					AND vr_confirmedinspection.corporationid IN (SELECT corporationid FROM dkvn_nghiepvu.vr_corporation_view WHERE isleader=0 AND inspectorid = ?)
+					AND vr_confirmedinspection.inspectorid = ?
+			) AS PhanCongDonViKiemTra
+		]]>
+	</sql>
+	<sql id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhanCongDonViKiemTraFinder.findLichKiemTraHienTruong">
+		<![CDATA[
+			SELECT 
+				{PhanCongDonViKiemTra.*}
+			FROM (
+				SELECT 
+					motcua_phieuxulyphu.id AS id,
+					motcua_phieuxulyphu.phieuxulychinhid AS phieuxulychinhid,
+					motcua_phieuxulyphu.ghichu AS ghichu,
+					motcua_phieuxulyphu.trangthaihientaiid AS trangthaihientaiid,
+					motcua_phieuxulyphu.noidunghosoid AS noidunghosoid,
+					motcua_phieuxulyphu.chiemquyenxuly AS chiemquyenxuly,
+					motcua_phieuxulyphu.ngaytaophieu AS ngaytaophieu,
+					motcua_phieuxulyphu.nguoitaophieu AS nguoitaophieu,
+					motcua_phieuxulyphu.trichyeunoidung AS trichyeunoidung,
+					motcua_phieuxulyphu.nhomphieuxuly AS nhomphieuxuly,
+					motcua_phieuxulyphu.phannhomhosoid AS phannhomhosoid,
+					tthc_hosothutuc.masohoso AS masohoso,
+					tthc_hosothutuc.mabiennhan AS mabiennhan,
+					tthc_hosothutuc.tenchuhoso AS tenchuhoso,
+					tthc_hosothutuc.ngayguihoso AS ngayguihoso,
+					tthc_hosothutuc.thutuchanhchinhid AS thutuchanhchinhid,
+					tthc_hosothutuc.tendonvitiepnhan AS tendonvitiepnhan,
+					tthc_hosothutuc.tochucquanly AS tochucquanly,
+					vr_confirmedinspection.inspectionprovincecode AS inspectionprovincecode,
+					vr_confirmedinspection.corporationid AS corporationid ,
+					vr_confirmedinspection.inspectorid AS inspectorid,
+					vr_confirmedinspection.id AS confirmedinspectionId, 
+					vr_confirmedinspection.inspectiondistrictcode AS inspectiondistrictcode,
+					vr_confirmedinspection.ATTACHEDFILE AS ATTACHEDFILE
+				FROM 
+					dkvn_thutuchanhchinh.tthc_hosothutuc 
+				INNER JOIN 
+					dkvn_thutuchanhchinh.motcua_phieuxulyphu ON tthc_hosothutuc.id=motcua_phieuxulyphu.phieuxulychinhid
+				INNER JOIN
+					dkvn_nghiepvu.vr_confirmedinspection ON vr_confirmedinspection.phieuxulyphuid=motcua_phieuxulyphu.id
+				WHERE
+					1=1
+					AND motcua_phieuxulyphu.phannhomhosoid = ?
+					AND tthc_hosothutuc.thutuchanhchinhid = ?
+					AND tthc_hosothutuc.masohoso = ?
+					AND (tthc_hosothutuc.ngayguihoso >= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.mabiennhan = ?
+					AND (tthc_hosothutuc.ngayguihoso <= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.tochucquanly = ?
+					AND YEAR(tthc_hosothutuc.ngayguihoso) = ?
+					AND motcua_phieuxulyphu.nhomphieuxuly IN ([$NHOM_PHIEU_XU_LY$])
+					AND vr_confirmedinspection.inspectionprovincecode = ?
+					AND vr_confirmedinspection.corporationid IN (SELECT corporationid FROM dkvn_nghiepvu.vr_corporation_view WHERE isleader=1 AND inspectorid = ?)
+					
+				UNION
+				
+				SELECT 
+					motcua_phieuxulyphu.id AS id,
+					motcua_phieuxulyphu.phieuxulychinhid AS phieuxulychinhid,
+					motcua_phieuxulyphu.ghichu AS ghichu,
+					motcua_phieuxulyphu.trangthaihientaiid AS trangthaihientaiid,
+					motcua_phieuxulyphu.noidunghosoid AS noidunghosoid,
+					motcua_phieuxulyphu.chiemquyenxuly AS chiemquyenxuly,
+					motcua_phieuxulyphu.ngaytaophieu AS ngaytaophieu,
+					motcua_phieuxulyphu.nguoitaophieu AS nguoitaophieu,
+					motcua_phieuxulyphu.trichyeunoidung AS trichyeunoidung,
+					motcua_phieuxulyphu.nhomphieuxuly AS nhomphieuxuly,
+					motcua_phieuxulyphu.phannhomhosoid AS phannhomhosoid,
+					tthc_hosothutuc.masohoso AS masohoso,
+					tthc_hosothutuc.mabiennhan AS mabiennhan,
+					tthc_hosothutuc.tenchuhoso AS tenchuhoso,
+					tthc_hosothutuc.ngayguihoso AS ngayguihoso,
+					tthc_hosothutuc.thutuchanhchinhid AS thutuchanhchinhid,
+					tthc_hosothutuc.tendonvitiepnhan AS tendonvitiepnhan,
+					tthc_hosothutuc.tochucquanly AS tochucquanly,
+					vr_confirmedinspection.inspectionprovincecode AS inspectionprovincecode,
+					vr_confirmedinspection.corporationid AS corporationid ,
+					vr_confirmedinspection.inspectorid AS inspectorid,
+					vr_confirmedinspection.id AS confirmedinspectionId, 
+					vr_confirmedinspection.inspectiondistrictcode AS inspectiondistrictcode,
+					vr_confirmedinspection.ATTACHEDFILE AS ATTACHEDFILE
+				FROM 
+					dkvn_thutuchanhchinh.tthc_hosothutuc 
+				INNER JOIN 
+					dkvn_thutuchanhchinh.motcua_phieuxulyphu ON tthc_hosothutuc.id=motcua_phieuxulyphu.phieuxulychinhid
+				INNER JOIN
+					dkvn_nghiepvu.vr_confirmedinspection ON vr_confirmedinspection.phieuxulyphuid=motcua_phieuxulyphu.id
+				WHERE
+					1=1
+					AND motcua_phieuxulyphu.phannhomhosoid = ?
+					AND tthc_hosothutuc.thutuchanhchinhid = ?
+					AND tthc_hosothutuc.masohoso = ?
+					AND (tthc_hosothutuc.ngayguihoso >= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.mabiennhan = ?
+					AND (tthc_hosothutuc.ngayguihoso <= ? OR tthc_hosothutuc.ngayguihoso IS NULL)
+					AND tthc_hosothutuc.tochucquanly = ?
+					AND YEAR(tthc_hosothutuc.ngayguihoso) = ?
+					AND motcua_phieuxulyphu.nhomphieuxuly IN ([$NHOM_PHIEU_XU_LY$])
+					AND vr_confirmedinspection.inspectionprovincecode = ?
+					AND vr_confirmedinspection.corporationid IN (SELECT corporationid FROM dkvn_nghiepvu.vr_corporation_view WHERE isleader=0 AND inspectorid = ?)
+					AND vr_confirmedinspection.inspectorid = ?
+			) AS PhanCongDonViKiemTra
+			ORDER BY 
+				ngaytaophieu ASC
+		]]>
+	</sql>
+</custom-sql>

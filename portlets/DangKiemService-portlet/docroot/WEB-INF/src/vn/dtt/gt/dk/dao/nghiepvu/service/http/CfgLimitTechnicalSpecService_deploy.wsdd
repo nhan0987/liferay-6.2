@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_dkapi_CfgLimitTechnicalSpecService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:cmp-ns="http://model.nghiepvu.dao.dk.gt.dtt.vn" qname="ns:ArrayOf_tns2_CfgLimitTechnicalSpecSoap" type="java:vn.dtt.gt.dk.dao.nghiepvu.model.CfgLimitTechnicalSpecSoap[]" innerType="cmp-ns:CfgLimitTechnicalSpecSoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.nghiepvu.dao.dk.gt.dtt.vn" qname="ns:CfgLimitTechnicalSpecSoap" type="java:vn.dtt.gt.dk.dao.nghiepvu.model.CfgLimitTechnicalSpecSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="countBySyncDate" qname="operNS:countBySyncDate" returnQName="countBySyncDateReturn" returnType="rtns:int" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="validatefrom" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="countCfgLimitTechnicalSpec" qname="operNS:countCfgLimitTechnicalSpec" returnQName="countCfgLimitTechnicalSpecReturn" returnType="rtns:int" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getBySpecificationCode" qname="operNS:getBySpecificationCode" returnQName="getBySpecificationCodeReturn" returnType="rtns:CfgLimitTechnicalSpecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="specificationcode" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:tns2="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getBySynchDate" qname="operNS:getBySynchDate" returnQName="getBySynchDateReturn" returnType="rtns:ArrayOf_tns2_CfgLimitTechnicalSpecSoap" returnItemType="tns2:CfgLimitTechnicalSpecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="validatefrom" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:tns2="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getBySynchDate" qname="operNS:getBySynchDate" returnQName="getBySynchDateReturn" returnType="rtns:ArrayOf_tns2_CfgLimitTechnicalSpecSoap" returnItemType="tns2:CfgLimitTechnicalSpecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="validatefrom" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:tns2="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getCfgLimitTechnicalSpecs" qname="operNS:getCfgLimitTechnicalSpecs" returnQName="getCfgLimitTechnicalSpecsReturn" returnType="rtns:ArrayOf_tns2_CfgLimitTechnicalSpecSoap" returnItemType="tns2:CfgLimitTechnicalSpecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="countBySyncDate countCfgLimitTechnicalSpec getBySpecificationCode getBySynchDate getCfgLimitTechnicalSpecs" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CfgLimitTechnicalSpecServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.nghiepvu.dao.dk.gt.dtt.vn,urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CfgLimitTechnicalSpecServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CfgLimitTechnicalSpecServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CfgLimitTechnicalSpecService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+</deployment>

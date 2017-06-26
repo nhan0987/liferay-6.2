@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_dkapi_CorporationAttendeeService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CorporationAttendeeServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CorporationAttendeeServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CorporationAttendeeServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CorporationAttendeeService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+</deployment>

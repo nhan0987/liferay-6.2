@@ -1,0 +1,3538 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CertificateCircularModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="certificateRecordId">
+				<column name="CERTIFICATERECORDID" />
+			</basic>
+			<basic name="sequenceNo">
+				<column name="SEQUENCENO" />
+			</basic>
+			<basic name="circularNo">
+				<column name="CIRCULARNO" />
+			</basic>
+			<basic name="circularDate">
+				<column name="CIRCULARDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CertificateRecordModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="certificateType">
+				<column name="CERTIFICATETYPE" />
+			</basic>
+			<basic name="certificateNumber">
+				<column name="CERTIFICATENUMBER" />
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="createdDate">
+				<column name="CREATEDDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="editorName">
+				<column name="EDITORNAME" />
+			</basic>
+			<basic name="inspectionReportId">
+				<column name="INSPECTIONREPORTID" />
+			</basic>
+			<basic name="safetyTestReportId">
+				<column name="SAFETYTESTREPORTID" />
+			</basic>
+			<basic name="emissionTestReportId">
+				<column name="EMISSIONTESTREPORTID" />
+			</basic>
+			<basic name="copReportId">
+				<column name="COPREPORTID" />
+			</basic>
+			<basic name="dossierId">
+				<column name="DOSSIERID" />
+			</basic>
+			<basic name="oldCertificateNumber">
+				<column name="OLDCERTIFICATENUMBER" />
+			</basic>
+			<basic name="reason" />
+			<basic name="remarks" />
+			<basic name="organization" />
+			<basic name="division" />
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="digitalIssued">
+				<column name="DIGITALISSUED" />
+			</basic>
+			<basic name="stampStatus">
+				<column name="STAMPSTATUS" />
+			</basic>
+			<basic name="commentInWrongCase">
+				<column name="COMMENTINWRONGCASE" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CertificateRecordSpecModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="certificateRecordId">
+				<column name="CERTIFICATERECORDID" />
+			</basic>
+			<basic name="specificationCode">
+				<column name="SPECIFICATIONCODE" />
+			</basic>
+			<basic name="specificationName">
+				<column name="SPECIFICATIONNAME" />
+			</basic>
+			<basic name="specificationValue">
+				<column name="SPECIFICATIONVALUE" />
+			</basic>
+			<basic name="version" />
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CfgLimitTechnicalSpecModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicletypecode" />
+			<basic name="vehicletypename" />
+			<basic name="reference_code_3" />
+			<basic name="reference_name" />
+			<basic name="searching_drive_config" />
+			<basic name="altername" />
+			<basic name="sequenceno" />
+			<basic name="specificationcode" />
+			<basic name="specificationname" />
+			<basic name="spec_description" />
+			<basic name="spec_category" />
+			<basic name="datagroupid" />
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CfgTechnicalspecModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleTypeCode">
+				<column name="VEHICLETYPECODE" />
+			</basic>
+			<basic name="vehicleTypeName">
+				<column name="VEHICLETYPENAME" />
+			</basic>
+			<basic name="sequenceno" />
+			<basic name="specificationCode">
+				<column name="SPECIFICATIONCODE" />
+			</basic>
+			<basic name="specificationName">
+				<column name="SPECIFICATIONNAME" />
+			</basic>
+			<basic name="specDescription">
+				<column name="SPEC_DESCRIPTION" />
+			</basic>
+			<basic name="specCategory">
+				<column name="SPEC_CATEGORY" />
+			</basic>
+			<basic name="specificationGroup">
+				<column name="SPECIFICATIONGROUP" />
+			</basic>
+			<basic name="searchingIncluded">
+				<column name="SEARCHING_INCLUDED" />
+			</basic>
+			<basic name="referenceIncluded">
+				<column name="REFERENCE_INCLUDED" />
+			</basic>
+			<basic name="certificateIncluded">
+				<column name="CERTIFICATE_INCLUDED" />
+			</basic>
+			<basic name="datagroupid" />
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ConfirmedInspectionModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="registeredInspectionId">
+				<column name="REGISTEREDINSPECTIONID" />
+			</basic>
+			<basic name="customsDeclarationId">
+				<column name="CUSTOMSDECLARATIONID" />
+			</basic>
+			<basic name="confirmationCode">
+				<column name="CONFIRMATIONCODE" />
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="inspectionDate">
+				<column name="INSPECTIONDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="inspectionSite">
+				<column name="INSPECTIONSITE" />
+			</basic>
+			<basic name="inspectionDistrictCode">
+				<column name="INSPECTIONDISTRICTCODE" />
+			</basic>
+			<basic name="inspectionProvincecode">
+				<column name="INSPECTIONPROVINCECODE" />
+			</basic>
+			<basic name="customsRegion">
+				<column name="CUSTOMSREGION" />
+			</basic>
+			<basic name="markasChangedSite">
+				<column name="MARKASCHANGEDSITE" />
+			</basic>
+			<basic name="contactName">
+				<column name="CONTACTNAME" />
+			</basic>
+			<basic name="contactPhone">
+				<column name="CONTACTPHONE" />
+			</basic>
+			<basic name="contactEmail">
+				<column name="CONTACTEMAIL" />
+			</basic>
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="remarks" />
+			<basic name="corporationId">
+				<column name="CORPORATIONID" />
+			</basic>
+			<basic name="inspectorId">
+				<column name="INSPECTORID" />
+			</basic>
+			<basic name="phieuXuLyPhuId">
+				<column name="PHIEUXULYPHUID" />
+			</basic>
+			<basic name="hoSoThuTucId">
+				<column name="HOSOTHUTUCID" />
+			</basic>
+			<basic name="dateFrom">
+				<column name="DATEFROM" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dateTo">
+				<column name="DATETO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="leader" />
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ControlReportModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="registeredInspectionId">
+				<column name="REGISTEREDINSPECTIONID" />
+			</basic>
+			<basic name="inspectionrecordId">
+				<column name="INSPECTIONRECORDID" />
+			</basic>
+			<basic name="hosothutucId">
+				<column name="HOSOTHUTUCID" />
+			</basic>
+			<basic name="controlRequirementId">
+				<column name="CONTROLREQUIREMENTID" />
+			</basic>
+			<basic name="requirementNumber">
+				<column name="REQUIREMENTNUMBER" />
+			</basic>
+			<basic name="reportNumber">
+				<column name="REPORTNUMBER" />
+			</basic>
+			<basic name="reportDate">
+				<column name="REPORTDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="description" />
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ControlRequestModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="confirmedInspectionId">
+				<column name="CONFIRMEDINSPECTIONID" />
+			</basic>
+			<basic name="requestNumber">
+				<column name="REQUESTNUMBER" />
+			</basic>
+			<basic name="corporationName">
+				<column name="CORPORATIONNAME" />
+			</basic>
+			<basic name="controlContent">
+				<column name="CONTROLCONTENT" />
+			</basic>
+			<basic name="controlDeadLine">
+				<column name="CONTROLDEADLINE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="remarks" />
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ControlRequirementModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="registeredInspectionId">
+				<column name="REGISTEREDINSPECTIONID" />
+			</basic>
+			<basic name="requirementNumber">
+				<column name="REQUIREMENTNUMBER" />
+			</basic>
+			<basic name="requirementDate">
+				<column name="REQUIREMENTDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="corporationId">
+				<column name="CORPORATIONID" />
+			</basic>
+			<basic name="controlContent">
+				<column name="CONTROLCONTENT" />
+			</basic>
+			<basic name="controlDeadline">
+				<column name="CONTROLDEADLINE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="requirementContent">
+				<column name="REQUIREMENTCONTENT" />
+			</basic>
+			<basic name="controlReportDeadline">
+				<column name="CONTROLREPORTDEADLINE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="remarks" />
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="inspectionrecordId">
+				<column name="INSPECTIONRECORDID" />
+			</basic>
+			<basic name="phieuxulyphuId">
+				<column name="PHIEUXULYPHUID" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CopReportModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="registeredInspectionId">
+				<column name="REGISTEREDINSPECTIONID" />
+			</basic>
+			<basic name="reportNumber">
+				<column name="REPORTNUMBER" />
+			</basic>
+			<basic name="corporationId">
+				<column name="CORPORATIONID" />
+			</basic>
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationAttendeeModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="confirmedInspectionId">
+				<column name="CONFIRMEDINSPECTIONID" />
+			</basic>
+			<basic name="sequence" />
+			<basic name="inspectorid">
+				<column name="INSPECTORID" />
+			</basic>
+			<basic name="inspectorName" />
+			<basic name="inspectorRole">
+				<column name="INSPECTORROLE" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationInspectorModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="corporationId">
+				<column name="CORPORATIONID" />
+			</basic>
+			<basic name="inspectorid" />
+			<basic name="inspectorName">
+				<column name="INSPECTORNAME" />
+			</basic>
+			<basic name="inspectorPhone">
+				<column name="INSPECTORPHONE" />
+			</basic>
+			<basic name="inspectorEmail">
+				<column name="INSPECTOREMAIL" />
+			</basic>
+			<basic name="contactcode" />
+			<basic name="regularTthc">
+				<column name="REGULARTTHC" />
+			</basic>
+			<basic name="teamId">
+				<column name="TEAMID" />
+			</basic>
+			<basic name="markupTeamLeader">
+				<column name="MARKUPTEAMLEADER" />
+			</basic>
+			<basic name="markUpBoss">
+				<column name="MARKUPBOSS" />
+			</basic>
+			<basic name="place" />
+			<basic name="title" />
+			<basic name="filechukyId">
+				<column name="FILECHUKYID" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationTeamModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="corporationId">
+				<column name="CORPORATIONID" />
+			</basic>
+			<basic name="teamName">
+				<column name="TEAMNAME" />
+			</basic>
+			<basic name="markUpDelete">
+				<column name="MARKUPDELETE" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationViewModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="corporationId">
+				<column name="CORPORATIONID" />
+			</basic>
+			<basic name="corporationName">
+				<column name="CORPORATIONNAME" />
+			</basic>
+			<basic name="inspectorId">
+				<column name="INSPECTORID" />
+			</basic>
+			<basic name="isLeader">
+				<column name="ISLEADER" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CustomsDeclarationModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="importCustomDeclareNo">
+				<column name="IMPORTCUSTOMDECLARENO" />
+			</basic>
+			<basic name="importCustomDeclareDate">
+				<column name="IMPORTCUSTOMDECLAREDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="customsResult">
+				<column name="CUSTOMSRESULT" />
+			</basic>
+			<basic name="productCheck">
+				<column name="PRODUCTCHECK" />
+			</basic>
+			<basic name="releaseDate">
+				<column name="RELEASEDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="hosothutucId">
+				<column name="HOSOTHUTUCID" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DebitNoteModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="debitNoteNumber">
+				<column name="DEBITNOTENUMBER" />
+			</basic>
+			<basic name="transactionId">
+				<column name="TRANSACTIONID" />
+			</basic>
+			<basic name="corporationId">
+				<column name="CORPORATIONID" />
+			</basic>
+			<basic name="financialAccountant">
+				<column name="FINANCIALACCOUNTANT" />
+			</basic>
+			<basic name="organization" />
+			<basic name="division" />
+			<basic name="reportBy">
+				<column name="REPORTBY" />
+			</basic>
+			<basic name="reportDate">
+				<column name="REPORTDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="fromDate">
+				<column name="FROMDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="toDate">
+				<column name="TODATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="totalPayment">
+				<column name="TOTALPAYMENT" />
+			</basic>
+			<basic name="paymentType">
+				<column name="PAYMENTTYPE" />
+			</basic>
+			<basic name="markAsDeleted">
+				<column name="MARKASDELETED" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DebitNoteDetailsModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleRecordId">
+				<column name="VEHICLERECORDID" />
+			</basic>
+			<basic name="debitNoteId">
+				<column name="DEBITNOTEID" />
+			</basic>
+			<basic name="inspectionRecordId">
+				<column name="INSPECTIONRECORDID" />
+			</basic>
+			<basic name="unitPrice">
+				<column name="UNITPRICE" />
+			</basic>
+			<basic name="currency" />
+			<basic name="basicCurrency">
+				<column name="BASICCURRENCY" />
+			</basic>
+			<basic name="exchangeRate">
+				<column name="EXCHANGERATE" />
+			</basic>
+			<basic name="inspectionFee">
+				<column name="INSPECTIONFEE" />
+			</basic>
+			<basic name="otherCosts">
+				<column name="OTHERCOSTS" />
+			</basic>
+			<basic name="totalCostsAndFee">
+				<column name="TOTALCOSTSANDFEE" />
+			</basic>
+			<basic name="tax" />
+			<basic name="charges" />
+			<basic name="totalRealDebit">
+				<column name="TOTALREALDEBIT" />
+			</basic>
+			<basic name="totalDebit">
+				<column name="TOTALDEBIT" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DraftCertificateModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="certificateType">
+				<column name="CERTIFICATETYPE" />
+			</basic>
+			<basic name="inspectionReportId">
+				<column name="INSPECTIONREPORTID" />
+			</basic>
+			<basic name="safetytestReportId">
+				<column name="SAFETYTESTREPORTID" />
+			</basic>
+			<basic name="emissionTestReportId">
+				<column name="EMISSIONTESTREPORTID" />
+			</basic>
+			<basic name="copReportId">
+				<column name="COPREPORTID" />
+			</basic>
+			<basic name="reason" />
+			<basic name="remarks" />
+			<basic name="createdDate">
+				<column name="CREATEDDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DraftCertificateSpecModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="draftCertificateId">
+				<column name="DRAFTCERTIFICATEID" />
+			</basic>
+			<basic name="specificationCode">
+				<column name="SPECIFICATIONCODE" />
+			</basic>
+			<basic name="specificationName">
+				<column name="SPECIFICATIONNAME" />
+			</basic>
+			<basic name="specificationValue">
+				<column name="SPECIFICATIONVALUE" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.EmissionTestReportModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="emissiontestRequirementId">
+				<column name="EMISSIONTESTREQUIREMENTID" />
+			</basic>
+			<basic name="reportNumber">
+				<column name="REPORTNUMBER" />
+			</basic>
+			<basic name="description" />
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="confirmedResult">
+				<column name="CONFIRMEDRESULT" />
+			</basic>
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.EmissionTestRequestModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="confirmedInspectionId">
+				<column name="CONFIRMEDINSPECTIONID" />
+			</basic>
+			<basic name="requestNumber">
+				<column name="REQUESTNUMBER" />
+			</basic>
+			<basic name="testTimeAndPlace">
+				<column name="TESTTIMEANDPLACE" />
+			</basic>
+			<basic name="testPayment">
+				<column name="TESTPAYMENT" />
+			</basic>
+			<basic name="remarks" />
+			<basic name="corporationName">
+				<column name="CORPORATIONNAME" />
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.EmissionTestRequirementModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="registeredInspectionId">
+				<column name="REGISTEREDINSPECTIONID" />
+			</basic>
+			<basic name="inspectionRecordId">
+				<column name="INSPECTIONRECORDID" />
+			</basic>
+			<basic name="requirementNumber">
+				<column name="REQUIREMENTNUMBER" />
+			</basic>
+			<basic name="contentOfRequest">
+				<column name="CONTENTOFREQUEST" />
+			</basic>
+			<basic name="testingRegisteredPlace">
+				<column name="TESTINGREGISTEREDPLACE" />
+			</basic>
+			<basic name="testingRegistration">
+				<column name="TESTINGREGISTRATION" />
+			</basic>
+			<basic name="testingPaymentCondition">
+				<column name="TESTINGPAYMENTCONDITION" />
+			</basic>
+			<basic name="remarks" />
+			<basic name="corporationId">
+				<column name="CORPORATIONID" />
+			</basic>
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="phieuXuLyPhuId">
+				<column name="PHIEUXULYPHUID" />
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ExchangeRateModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="originalCurrency">
+				<column name="ORIGINALCURRENCY" />
+			</basic>
+			<basic name="basicCurrency">
+				<column name="BASICCURRENCY" />
+			</basic>
+			<basic name="exchangeRate">
+				<column name="EXCHANGERATE" />
+			</basic>
+			<basic name="publishDate">
+				<column name="PUBLISHDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="validFrom">
+				<column name="VALIDFROM" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="validUntil">
+				<column name="VALIDUNTIL" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionCommonStatusModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleClass" />
+			<basic name="sequenceNo" />
+			<basic name="type" />
+			<basic name="groupName" />
+			<basic name="itemName" />
+			<basic name="commonStatus" />
+			<basic name="inspectionRecordId" />
+			<basic name="commonCode">
+				<column name="COMMONCODE" />
+			</basic>
+			<basic name="allowEdit">
+				<column name="ALLOWEDIT" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionRecordModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="inspectionRecordNo">
+				<column name="INSPECTIONRECORDNO" />
+			</basic>
+			<basic name="inspectionRecordDate">
+				<column name="INSPECTIONRECORDDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="corporationId">
+				<column name="CORPORATIONID" />
+			</basic>
+			<basic name="inspectorId">
+				<column name="INSPECTORID" />
+			</basic>
+			<basic name="confirmedInspectionId">
+				<column name="CONFIRMEDINSPECTIONID" />
+			</basic>
+			<basic name="customsDeclarationid">
+				<column name="CUSTOMSDECLARATIONID" />
+			</basic>
+			<basic name="inspectionSite">
+				<column name="INSPECTIONSITE" />
+			</basic>
+			<basic name="inspectionDateFrom">
+				<column name="INSPECTIONDATEFROM" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="inspectionDateTo">
+				<column name="INSPECTIONDATETO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="inspectionMode">
+				<column name="INSPECTIONMODE" />
+			</basic>
+			<basic name="description" />
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="confirmedResult">
+				<column name="CONFIRMEDRESULT" />
+			</basic>
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="phieuXuLyPhuId">
+				<column name="PHIEUXULYPHUID" />
+			</basic>
+			<basic name="markupSafeTest">
+				<column name="MARKUPSAFETEST" />
+			</basic>
+			<basic name="markupEmissionTest">
+				<column name="MARKUPEMISSIONTEST" />
+			</basic>
+			<basic name="markupControl">
+				<column name="MARKUPCONTROL" />
+			</basic>
+			<basic name="registeredInspectionId">
+				<column name="REGISTEREDINSPECTIONID" />
+			</basic>
+			<basic name="remarks" />
+			<basic name="hoSoThuTucId">
+				<column name="HOSOTHUTUCID" />
+			</basic>
+			<basic name="otherCosts">
+				<column name="OTHERCOSTS" />
+			</basic>
+			<basic name="markupPaid">
+				<column name="MARKUPPAID" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionRecordAttachModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="inspectionRecordId">
+				<column name="INSPECTIONRECORDID" />
+			</basic>
+			<basic name="hoSoThuTucId">
+				<column name="HOSOTHUTUCID" />
+			</basic>
+			<basic name="enTryId">
+				<column name="ENTRYID" />
+			</basic>
+			<basic name="enTryName">
+				<column name="ENTRYNAME" />
+			</basic>
+			<basic name="inspectorId">
+				<column name="INSPECTORID" />
+			</basic>
+			<basic name="uploadTime">
+				<column name="UPLOADTIME" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="markUpDelte">
+				<column name="MARKUPDELTE" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionRecordSpecModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="inspectionRecordid">
+				<column name="INSPECTIONRECORDID" />
+			</basic>
+			<basic name="specificationCode">
+				<column name="SPECIFICATIONCODE" />
+			</basic>
+			<basic name="specificationName">
+				<column name="SPECIFICATIONNAME" />
+			</basic>
+			<basic name="specificationValue">
+				<column name="SPECIFICATIONVALUE" />
+			</basic>
+			<basic name="evaluationResult">
+				<column name="EVALUATIONRESULT" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.NewExchangeRateModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="originalCurrency">
+				<column name="ORIGINALCURRENCY" />
+			</basic>
+			<basic name="basicCurrency">
+				<column name="BASICCURRENCY" />
+			</basic>
+			<basic name="exchangeRate">
+				<column name="EXCHANGERATE" />
+			</basic>
+			<basic name="publishDate">
+				<column name="PUBLISHDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="validFrom">
+				<column name="VALIDFROM" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="validUntil">
+				<column name="VALIDUNTIL" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.PaymentStatusModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleRecordId">
+				<column name="VEHICLERECORDID" />
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="unitPrice">
+				<column name="UNITPRICE" />
+			</basic>
+			<basic name="currency" />
+			<basic name="basicCurrency">
+				<column name="BASICCURRENCY" />
+			</basic>
+			<basic name="exchangeRate">
+				<column name="EXCHANGERATE" />
+			</basic>
+			<basic name="inspectionFee">
+				<column name="INSPECTIONFEE" />
+			</basic>
+			<basic name="otherCosts">
+				<column name="OTHERCOSTS" />
+			</basic>
+			<basic name="totalCostsAndFee">
+				<column name="TOTALCOSTSANDFEE" />
+			</basic>
+			<basic name="tax" />
+			<basic name="charges" />
+			<basic name="totalRealDebit">
+				<column name="TOTALREALDEBIT" />
+			</basic>
+			<basic name="totalDebit">
+				<column name="TOTALDEBIT" />
+			</basic>
+			<basic name="totalCredit">
+				<column name="TOTALCREDIT" />
+			</basic>
+			<basic name="currentStatus">
+				<column name="CURRENTSTATUS" />
+			</basic>
+			<basic name="debitNoteNumber">
+				<column name="DEBITNOTENUMBER" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ProductionCountryModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleGroupId">
+				<column name="VEHICLEGROUPID" />
+			</basic>
+			<basic name="countryCode">
+				<column name="COUNTRYCODE" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.RegisteredInspectionModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="registeredNumber">
+				<column name="REGISTEREDNUMBER" />
+			</basic>
+			<basic name="dossierId">
+				<column name="DOSSIERID" />
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="importerCode">
+				<column name="IMPORTERCODE" />
+			</basic>
+			<basic name="importerName">
+				<column name="IMPORTERNAME" />
+			</basic>
+			<basic name="importerAddress">
+				<column name="IMPORTERADDRESS" />
+			</basic>
+			<basic name="representative" />
+			<basic name="phone" />
+			<basic name="fax" />
+			<basic name="email" />
+			<basic name="inspectionDate">
+				<column name="INSPECTIONDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="inspectionSite">
+				<column name="INSPECTIONSITE" />
+			</basic>
+			<basic name="inspectionDistrictCode">
+				<column name="INSPECTIONDISTRICTCODE" />
+			</basic>
+			<basic name="inspectionProvinceCode">
+				<column name="INSPECTIONPROVINCECODE" />
+			</basic>
+			<basic name="contactName">
+				<column name="CONTACTNAME" />
+			</basic>
+			<basic name="contactPhone">
+				<column name="CONTACTPHONE" />
+			</basic>
+			<basic name="contactEmail">
+				<column name="CONTACTEMAIL" />
+			</basic>
+			<basic name="importerSignName">
+				<column name="IMPORTERSIGNNAME" />
+			</basic>
+			<basic name="importerSignTitle">
+				<column name="IMPORTERSIGNTITLE" />
+			</basic>
+			<basic name="importerSignPlace">
+				<column name="IMPORTERSIGNPLACE" />
+			</basic>
+			<basic name="importerSignDate">
+				<column name="IMPORTERSIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="inspectorOrganization">
+				<column name="INSPECTORORGANIZATION" />
+			</basic>
+			<basic name="inspectorDivision">
+				<column name="INSPECTORDIVISION" />
+			</basic>
+			<basic name="inspectorSigNname">
+				<column name="INSPECTORSIGNNAME" />
+			</basic>
+			<basic name="inspectorSignTitle">
+				<column name="INSPECTORSIGNTITLE" />
+			</basic>
+			<basic name="inspectorSignPlace">
+				<column name="INSPECTORSIGNPLACE" />
+			</basic>
+			<basic name="inspectorSignDate">
+				<column name="INSPECTORSIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SafetestRequirementModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="registeredInspectionId">
+				<column name="REGISTEREDINSPECTIONID" />
+			</basic>
+			<basic name="inspectionRecordId">
+				<column name="INSPECTIONRECORDID" />
+			</basic>
+			<basic name="requirementNumber">
+				<column name="REQUIREMENTNUMBER" />
+			</basic>
+			<basic name="contentOfRequest">
+				<column name="CONTENTOFREQUEST" />
+			</basic>
+			<basic name="testingRegisteredPlace">
+				<column name="TESTINGREGISTEREDPLACE" />
+			</basic>
+			<basic name="testingRegistration">
+				<column name="TESTINGREGISTRATION" />
+			</basic>
+			<basic name="testingPaymentCondition">
+				<column name="TESTINGPAYMENTCONDITION" />
+			</basic>
+			<basic name="remarks" />
+			<basic name="corporationId">
+				<column name="CORPORATIONID" />
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="phieuXuLyPhuId">
+				<column name="PHIEUXULYPHUID" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SafetyTestReportModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="safetestRequirementId">
+				<column name="SAFETESTREQUIREMENTID" />
+			</basic>
+			<basic name="reportNumber">
+				<column name="REPORTNUMBER" />
+			</basic>
+			<basic name="description" />
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="confirmedResult">
+				<column name="CONFIRMEDRESULT" />
+			</basic>
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SafetyTestRequestModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="confirmedInspectionId">
+				<column name="CONFIRMEDINSPECTIONID" />
+			</basic>
+			<basic name="requestNumber">
+				<column name="REQUESTNUMBER" />
+			</basic>
+			<basic name="testContent">
+				<column name="TESTCONTENT" />
+			</basic>
+			<basic name="testTimeAndPlace">
+				<column name="TESTTIMEANDPLACE" />
+			</basic>
+			<basic name="testPayment">
+				<column name="TESTPAYMENT" />
+			</basic>
+			<basic name="remarks" />
+			<basic name="corporationName">
+				<column name="CORPORATIONNAME" />
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="signName">
+				<column name="SIGNNAME" />
+			</basic>
+			<basic name="signTitle">
+				<column name="SIGNTITLE" />
+			</basic>
+			<basic name="signPlace">
+				<column name="SIGNPLACE" />
+			</basic>
+			<basic name="signDate">
+				<column name="SIGNDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SatetyTestReportSpecModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="saftyTestReportId">
+				<column name="SAFTYTESTREPORTID" />
+			</basic>
+			<basic name="specificationCode">
+				<column name="SPECIFICATIONCODE" />
+			</basic>
+			<basic name="specificationName">
+				<column name="SPECIFICATIONNAME" />
+			</basic>
+			<basic name="specificationValue">
+				<column name="SPECIFICATIONVALUE" />
+			</basic>
+			<basic name="evaluationResult">
+				<column name="EVALUATIONRESULT" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleGroupModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleClass">
+				<column name="VEHICLECLASS" />
+			</basic>
+			<basic name="registeredInspectionId">
+				<column name="REGISTEREDINSPECTIONID" />
+			</basic>
+			<basic name="technicalSpecCode">
+				<column name="TECHNICALSPECCODE" />
+			</basic>
+			<basic name="referenceCertificateNo">
+				<column name="REFERENCECERTIFICATENO" />
+			</basic>
+			<basic name="safetytestreportNo">
+				<column name="SAFETYTESTREPORTNO" />
+			</basic>
+			<basic name="emissiontestreportNo">
+				<column name="EMISSIONTESTREPORTNO" />
+			</basic>
+			<basic name="copreportNo">
+				<column name="COPREPORTNO" />
+			</basic>
+			<basic name="vehicleType">
+				<column name="VEHICLETYPE" />
+			</basic>
+			<basic name="engineType">
+				<column name="ENGINETYPE" />
+			</basic>
+			<basic name="tradeMark">
+				<column name="TRADEMARK" />
+			</basic>
+			<basic name="markAsVehicle">
+				<column name="MARKASVEHICLE" />
+			</basic>
+			<basic name="commercialName">
+				<column name="COMMERCIALNAME" />
+			</basic>
+			<basic name="modelCode">
+				<column name="MODELCODE" />
+			</basic>
+			<basic name="productionPlant">
+				<column name="PRODUCTIONPLANT" />
+			</basic>
+			<basic name="addressOfProductionPlant">
+				<column name="ADDRESSOFPRODUCTIONPLANT" />
+			</basic>
+			<basic name="emissionStandard">
+				<column name="EMISSIONSTANDARD" />
+			</basic>
+			<basic name="safetyTestReportId">
+				<column name="SAFETYTESTREPORTID" />
+			</basic>
+			<basic name="emissionTestReportId">
+				<column name="EMISSIONTESTREPORTID" />
+			</basic>
+			<basic name="copReportId">
+				<column name="COPREPORTID" />
+			</basic>
+			<basic name="specificationVersion">
+				<column name="SPECIFICATIONVERSION" />
+			</basic>
+			<basic name="hoSoThuTucId">
+				<column name="HOSOTHUTUCID" />
+			</basic>
+			<basic name="remarks" />
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleGroupInitialModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleClass">
+				<column name="VEHICLECLASS" />
+			</basic>
+			<basic name="registeredInspectionId">
+				<column name="REGISTEREDINSPECTIONID" />
+			</basic>
+			<basic name="technicalSpecCode">
+				<column name="TECHNICALSPECCODE" />
+			</basic>
+			<basic name="referenceCertificateNo">
+				<column name="REFERENCECERTIFICATENO" />
+			</basic>
+			<basic name="safetytestreportNo">
+				<column name="SAFETYTESTREPORTNO" />
+			</basic>
+			<basic name="emissiontestreportNo">
+				<column name="EMISSIONTESTREPORTNO" />
+			</basic>
+			<basic name="copreportNo">
+				<column name="COPREPORTNO" />
+			</basic>
+			<basic name="vehicleType">
+				<column name="VEHICLETYPE" />
+			</basic>
+			<basic name="engineType">
+				<column name="ENGINETYPE" />
+			</basic>
+			<basic name="tradeMark">
+				<column name="TRADEMARK" />
+			</basic>
+			<basic name="markAsVehicle">
+				<column name="MARKASVEHICLE" />
+			</basic>
+			<basic name="commercialName">
+				<column name="COMMERCIALNAME" />
+			</basic>
+			<basic name="modelCode">
+				<column name="MODELCODE" />
+			</basic>
+			<basic name="productionPlant">
+				<column name="PRODUCTIONPLANT" />
+			</basic>
+			<basic name="addressOfProductionPlant">
+				<column name="ADDRESSOFPRODUCTIONPLANT" />
+			</basic>
+			<basic name="emissionStandard">
+				<column name="EMISSIONSTANDARD" />
+			</basic>
+			<basic name="safetyTestReportId">
+				<column name="SAFETYTESTREPORTID" />
+			</basic>
+			<basic name="emissionTestReportId">
+				<column name="EMISSIONTESTREPORTID" />
+			</basic>
+			<basic name="copReportId">
+				<column name="COPREPORTID" />
+			</basic>
+			<basic name="specificationVersion">
+				<column name="SPECIFICATIONVERSION" />
+			</basic>
+			<basic name="remarks" />
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleGroupSpecModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleGroupId">
+				<column name="VEHICLEGROUPID" />
+			</basic>
+			<basic name="specificationCode">
+				<column name="SPECIFICATIONCODE" />
+			</basic>
+			<basic name="specificationName">
+				<column name="SPECIFICATIONNAME" />
+			</basic>
+			<basic name="specificationValue">
+				<column name="SPECIFICATIONVALUE" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleRecordModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleGroupId">
+				<column name="VEHICLEGROUPID" />
+			</basic>
+			<basic name="debitNoteId">
+				<column name="DEBITNOTEID" />
+			</basic>
+			<basic name="sequenceNo">
+				<column name="SEQUENCENO" />
+			</basic>
+			<basic name="codeNumber">
+				<column name="CODENUMBER" />
+			</basic>
+			<basic name="chassisNumber">
+				<column name="CHASSISNUMBER" />
+			</basic>
+			<basic name="engineNumber">
+				<column name="ENGINENUMBER" />
+			</basic>
+			<basic name="productionYear">
+				<column name="PRODUCTIONYEAR" />
+			</basic>
+			<basic name="vehicleEngineStatus">
+				<column name="VEHICLEENGINESTATUS" />
+			</basic>
+			<basic name="vehicleColor">
+				<column name="VEHICLECOLOR" />
+			</basic>
+			<basic name="unitPrice">
+				<column name="UNITPRICE" />
+			</basic>
+			<basic name="currency" />
+			<basic name="remarks" />
+			<basic name="confirmedInspectionId">
+				<column name="CONFIRMEDINSPECTIONID" />
+			</basic>
+			<basic name="inspectionRecordId">
+				<column name="INSPECTIONRECORDID" />
+			</basic>
+			<basic name="draftCertificateId">
+				<column name="DRAFTCERTIFICATEID" />
+			</basic>
+			<basic name="certificateRecordId">
+				<column name="CERTIFICATERECORDID" />
+			</basic>
+			<basic name="markUpStatus">
+				<column name="MARKUPSTATUS" />
+			</basic>
+			<basic name="safeTestRequirementId">
+				<column name="SAFETESTREQUIREMENTID" />
+			</basic>
+			<basic name="emissionTestRequirementId">
+				<column name="EMISSIONTESTREQUIREMENTID" />
+			</basic>
+			<basic name="controlRequirementId">
+				<column name="CONTROLREQUIREMENTID" />
+			</basic>
+			<basic name="markAsSample">
+				<column name="MARKASSAMPLE" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehiclerecordInitialModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleGroupId">
+				<column name="VEHICLEGROUPID" />
+			</basic>
+			<basic name="sequenceNo">
+				<column name="SEQUENCENO" />
+			</basic>
+			<basic name="codeNumber">
+				<column name="CODENUMBER" />
+			</basic>
+			<basic name="chassisNumber">
+				<column name="CHASSISNUMBER" />
+			</basic>
+			<basic name="engineNumber">
+				<column name="ENGINENUMBER" />
+			</basic>
+			<basic name="productionYear">
+				<column name="PRODUCTIONYEAR" />
+			</basic>
+			<basic name="vehicleEngineStatus">
+				<column name="VEHICLEENGINESTATUS" />
+			</basic>
+			<basic name="vehicleColor">
+				<column name="VEHICLECOLOR" />
+			</basic>
+			<basic name="unitPrice">
+				<column name="UNITPRICE" />
+			</basic>
+			<basic name="currency" />
+			<basic name="remarks" />
+			<basic name="confirmedInspectionId">
+				<column name="CONFIRMEDINSPECTIONID" />
+			</basic>
+			<basic name="inspectionRecordId">
+				<column name="INSPECTIONRECORDID" />
+			</basic>
+			<basic name="draftCertificateId">
+				<column name="DRAFTCERTIFICATEID" />
+			</basic>
+			<basic name="certificateRecordId">
+				<column name="CERTIFICATERECORDID" />
+			</basic>
+			<basic name="markUpStatus">
+				<column name="MARKUPSTATUS" />
+			</basic>
+			<basic name="safeTestRequirementId">
+				<column name="SAFETESTREQUIREMENTID" />
+			</basic>
+			<basic name="emissionTestRequirementId">
+				<column name="EMISSIONTESTREQUIREMENTID" />
+			</basic>
+			<basic name="controlRequirementId">
+				<column name="CONTROLREQUIREMENTID" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleSpecificationModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleGroupId">
+				<column name="VEHICLEGROUPID" />
+			</basic>
+			<basic name="specificationVersion">
+				<column name="SPECIFICATIONVERSION" />
+			</basic>
+			<basic name="specificationSourceCode">
+				<column name="SPECIFICATIONSOURCECODE" />
+			</basic>
+			<basic name="specificationCode">
+				<column name="SPECIFICATIONCODE" />
+			</basic>
+			<basic name="specificationName">
+				<column name="SPECIFICATIONNAME" />
+			</basic>
+			<basic name="specificationValue">
+				<column name="SPECIFICATIONVALUE" />
+			</basic>
+			<basic name="safetyTestReportId">
+				<column name="SAFETYTESTREPORTID" />
+			</basic>
+			<basic name="inspectionRecordId">
+				<column name="INSPECTIONRECORDID" />
+			</basic>
+			<basic name="specificResult">
+				<column name="SPECIFICRESULT" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleStatisticsModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="registeredInspectionId">
+				<column name="REGISTEREDINSPECTIONID" />
+			</basic>
+			<basic name="totalRegisteredVehicle">
+				<column name="TOTALREGISTEREDVEHICLE" />
+			</basic>
+			<basic name="totalRequestedVehicle">
+				<column name="TOTALREQUESTEDVEHICLE" />
+			</basic>
+			<basic name="totalNotYetRequestedVehicle">
+				<column name="TOTALNOTYETREQUESTEDVEHICLE" />
+			</basic>
+			<basic name="totalCancelledVehicle">
+				<column name="TOTALCANCELLEDVEHICLE" />
+			</basic>
+			<basic name="totalInspectedVehicle">
+				<column name="TOTALINSPECTEDVEHICLE" />
+			</basic>
+			<basic name="totalResolvedVehicle">
+				<column name="TOTALRESOLVEDVEHICLE" />
+			</basic>
+			<basic name="totalReexportedVehicle">
+				<column name="TOTALREEXPORTEDVEHICLE" />
+			</basic>
+			<basic name="totalWrongStatusVehicle">
+				<column name="TOTALWRONGSTATUSVEHICLE" />
+			</basic>
+			<basic name="totalSafeTestSample">
+				<column name="TOTALSAFETESTSAMPLE" />
+			</basic>
+			<basic name="totalEmissionTestSample">
+				<column name="TOTALEMISSIONTESTSAMPLE" />
+			</basic>
+			<basic name="totalControlRequiredVehicle">
+				<column name="TOTALCONTROLREQUIREDVEHICLE" />
+			</basic>
+			<basic name="totalCertificate">
+				<column name="TOTALCERTIFICATE" />
+			</basic>
+			<basic name="totalViolatedVehicle">
+				<column name="TOTALVIOLATEDVEHICLE" />
+			</basic>
+			<basic name="totalTechnicalSpec">
+				<column name="TOTALTECHNICALSPEC" />
+			</basic>
+			<basic name="processingState">
+				<column name="PROCESSINGSTATE" />
+			</basic>
+			<basic name="processingTiming">
+				<column name="PROCESSINGTIMING" />
+			</basic>
+			<basic name="daysUptoDeadline">
+				<column name="DAYSUPTODEADLINE" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ViewTrungSoKhungDongCoModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="vehicleGroupId">
+				<column name="VEHICLEGROUPID" />
+			</basic>
+			<basic name="debitNoteId">
+				<column name="DEBITNOTEID" />
+			</basic>
+			<basic name="sequenceNo">
+				<column name="SEQUENCENO" />
+			</basic>
+			<basic name="codeNumber">
+				<column name="CODENUMBER" />
+			</basic>
+			<basic name="chassisNumber">
+				<column name="CHASSISNUMBER" />
+			</basic>
+			<basic name="engineNumber">
+				<column name="ENGINENUMBER" />
+			</basic>
+			<basic name="productionYear">
+				<column name="PRODUCTIONYEAR" />
+			</basic>
+			<basic name="vehicleEngineStatus">
+				<column name="VEHICLEENGINESTATUS" />
+			</basic>
+			<basic name="vehicleColor">
+				<column name="VEHICLECOLOR" />
+			</basic>
+			<basic name="unitPrice">
+				<column name="UNITPRICE" />
+			</basic>
+			<basic name="currency" />
+			<basic name="remarks" />
+			<basic name="confirmedInspectionId">
+				<column name="CONFIRMEDINSPECTIONID" />
+			</basic>
+			<basic name="inspectionRecordId">
+				<column name="INSPECTIONRECORDID" />
+			</basic>
+			<basic name="draftCertificateId">
+				<column name="DRAFTCERTIFICATEID" />
+			</basic>
+			<basic name="certificateRecordId">
+				<column name="CERTIFICATERECORDID" />
+			</basic>
+			<basic name="markUpStatus">
+				<column name="MARKUPSTATUS" />
+			</basic>
+			<basic name="safeTestRequirementId">
+				<column name="SAFETESTREQUIREMENTID" />
+			</basic>
+			<basic name="emissionTestRequirementId">
+				<column name="EMISSIONTESTREQUIREMENTID" />
+			</basic>
+			<basic name="controlRequirementId">
+				<column name="CONTROLREQUIREMENTID" />
+			</basic>
+			<basic name="markAsSample">
+				<column name="MARKASSAMPLE" />
+			</basic>
+			<basic name="registeredNumber">
+				<column name="REGISTEREDNUMBER" />
+			</basic>
+			<basic name="contactName">
+				<column name="CONTACTNAME" />
+			</basic>
+			<basic name="contactPhone">
+				<column name="CONTACTPHONE" />
+			</basic>
+			<basic name="inspectionDate">
+				<column name="INSPECTIONDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="importerName">
+				<column name="IMPORTERNAME" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.DaKiemTraModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="phieuXuLyChinhId">
+				<column name="PHIEUXULYCHINHID" />
+			</basic>
+			<basic name="trichYeuNoiDung">
+				<column name="TRICHYEUNOIDUNG" />
+			</basic>
+			<basic name="ghiChu">
+				<column name="GHICHU" />
+			</basic>
+			<basic name="trangThaiHienTaiId">
+				<column name="TRANGTHAIHIENTAIID" />
+			</basic>
+			<basic name="noiDungHoSoId">
+				<column name="NOIDUNGHOSOID" />
+			</basic>
+			<basic name="chiemQuyenXuLy">
+				<column name="CHIEMQUYENXULY" />
+			</basic>
+			<basic name="ngayTaoPhieu">
+				<column name="NGAYTAOPHIEU" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nguoiTaoPhieu">
+				<column name="NGUOITAOPHIEU" />
+			</basic>
+			<basic name="nhomPhieuXuLy">
+				<column name="NHOMPHIEUXULY" />
+			</basic>
+			<basic name="phanNhomHoSoId">
+				<column name="PHANNHOMHOSOID" />
+			</basic>
+			<basic name="maSoHoSo">
+				<column name="MASOHOSO" />
+			</basic>
+			<basic name="maBienNhan">
+				<column name="MABIENNHAN" />
+			</basic>
+			<basic name="thuTucHanhChinhId">
+				<column name="THUTUCHANHCHINHID" />
+			</basic>
+			<basic name="tenChuHoSo">
+				<column name="TENCHUHOSO" />
+			</basic>
+			<basic name="ngayGuiHoSo">
+				<column name="NGAYGUIHOSO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="tenDonViTiepNhan">
+				<column name="TENDONVITIEPNHAN" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.LichKiemTraHienTruongModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="phieuXuLyChinhId">
+				<column name="PHIEUXULYCHINHID" />
+			</basic>
+			<basic name="trichYeuNoiDung">
+				<column name="TRICHYEUNOIDUNG" />
+			</basic>
+			<basic name="ghiChu">
+				<column name="GHICHU" />
+			</basic>
+			<basic name="trangThaiHienTaiId">
+				<column name="TRANGTHAIHIENTAIID" />
+			</basic>
+			<basic name="noiDungHoSoId">
+				<column name="NOIDUNGHOSOID" />
+			</basic>
+			<basic name="chiemQuyenXuLy">
+				<column name="CHIEMQUYENXULY" />
+			</basic>
+			<basic name="ngayTaoPhieu">
+				<column name="NGAYTAOPHIEU" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nguoiTaoPhieu">
+				<column name="NGUOITAOPHIEU" />
+			</basic>
+			<basic name="nhomPhieuXuLy">
+				<column name="NHOMPHIEUXULY" />
+			</basic>
+			<basic name="phanNhomHoSoId">
+				<column name="PHANNHOMHOSOID" />
+			</basic>
+			<basic name="confirmedinspectionId" />
+			<basic name="maSoHoSo">
+				<column name="MASOHOSO" />
+			</basic>
+			<basic name="maBienNhan">
+				<column name="MABIENNHAN" />
+			</basic>
+			<basic name="thuTucHanhChinhId">
+				<column name="THUTUCHANHCHINHID" />
+			</basic>
+			<basic name="tenChuHoSo">
+				<column name="TENCHUHOSO" />
+			</basic>
+			<basic name="ngayGuiHoSo">
+				<column name="NGAYGUIHOSO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="tenDonViTiepNhan">
+				<column name="TENDONVITIEPNHAN" />
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="inspectionDistrictCode">
+				<column name="INSPECTIONDISTRICTCODE" />
+			</basic>
+			<basic name="inspectionProvincecode">
+				<column name="INSPECTIONPROVINCECODE" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaChuyenDichTrangThaiModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="trangThaiNguonId">
+				<column name="TRANGTHAINGUONID" />
+			</basic>
+			<basic name="trangThaiDichId">
+				<column name="TRANGTHAIDICHID" />
+			</basic>
+			<basic name="dieuKienChuyenDich">
+				<column name="DIEUKIENCHUYENDICH" />
+			</basic>
+			<basic name="hanhDongXuLy">
+				<column name="HANHDONGXULY" />
+			</basic>
+			<basic name="soNgayXuLy">
+				<column name="SONGAYXULY" />
+			</basic>
+			<basic name="phanNhomHoSoId">
+				<column name="PHANNHOMHOSOID" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaDienBienHoSoModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="phieuXuLyChinhId">
+				<column name="PHIEUXULYCHINHID" />
+			</basic>
+			<basic name="phieuXuLyPhuId">
+				<column name="PHIEUXULYPHUID" />
+			</basic>
+			<basic name="soNgayQuaHan">
+				<column name="SONGAYQUAHAN" />
+			</basic>
+			<basic name="trangThaiTruocId">
+				<column name="TRANGTHAITRUOCID" />
+			</basic>
+			<basic name="trangThaiSauId">
+				<column name="TRANGTHAISAUID" />
+			</basic>
+			<basic name="ngayXuLy">
+				<column name="NGAYXULY" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nguoiXuLy">
+				<column name="NGUOIXULY" />
+			</basic>
+			<basic name="hanhDongXuLy">
+				<column name="HANHDONGXULY" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaKetQuaDienBienModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="dienBienHoSoId">
+				<column name="DIENBIENHOSOID" />
+			</basic>
+			<basic name="noiDungHoSoId">
+				<column name="NOIDUNGHOSOID" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaNotificationModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="dossierid">
+				<column name="DOSSIERID" />
+			</basic>
+			<basic name="organization" />
+			<basic name="division" />
+			<basic name="officerName">
+				<column name="OFFICERNAME" />
+			</basic>
+			<basic name="messageID">
+				<column name="MESSAGEID" />
+			</basic>
+			<basic name="messageType">
+				<column name="MESSAGETYPE" />
+			</basic>
+			<basic name="phieuxulyphuId">
+				<column name="PHIEUXULYPHUID" />
+			</basic>
+			<basic name="response" />
+			<basic name="responseTime">
+				<column name="RESPONSETIME" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="requestContent">
+				<column name="REQUESTCONTENT" />
+			</basic>
+			<basic name="requestTime">
+				<column name="REQUESTTIME" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="requestSender">
+				<column name="REQUESTSENDER" />
+			</basic>
+			<basic name="isReply">
+				<column name="ISREPLY" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaPhanCongXuLyModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="phieuXuLyChinhId">
+				<column name="PHIEUXULYCHINHID" />
+			</basic>
+			<basic name="phieuXuLyPhuId">
+				<column name="PHIEUXULYPHUID" />
+			</basic>
+			<basic name="trangThaiHoSoId">
+				<column name="TRANGTHAIHOSOID" />
+			</basic>
+			<basic name="nguoiXuLy">
+				<column name="NGUOIXULY" />
+			</basic>
+			<basic name="nhomXuLy">
+				<column name="NHOMXULY" />
+			</basic>
+			<basic name="ngayPhanCong">
+				<column name="NGAYPHANCONG" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nguoiPhanCong">
+				<column name="NGUOIPHANCONG" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaPhieuXuLyChinhModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="hoSoThuTucId">
+				<column name="HOSOTHUTUCID" />
+			</basic>
+			<basic name="quyTrinhThuTucId">
+				<column name="QUYTRINHTHUTUCID" />
+			</basic>
+			<basic name="tenNguoiNop">
+				<column name="TENNGUOINOP" />
+			</basic>
+			<basic name="cmndNguoiNop">
+				<column name="CMNDNGUOINOP" />
+			</basic>
+			<basic name="diaChiNguoiNop">
+				<column name="DIACHINGUOINOP" />
+			</basic>
+			<basic name="soDtddNguoiNop">
+				<column name="SODTDDNGUOINOP" />
+			</basic>
+			<basic name="emailNguoiNop">
+				<column name="EMAILNGUOINOP" />
+			</basic>
+			<basic name="ghiChu">
+				<column name="GHICHU" />
+			</basic>
+			<basic name="trangThaiHienTaiId">
+				<column name="TRANGTHAIHIENTAIID" />
+			</basic>
+			<basic name="hetHoSoCon">
+				<column name="HETHOSOCON" />
+			</basic>
+			<basic name="chiemQuyenXuLy">
+				<column name="CHIEMQUYENXULY" />
+			</basic>
+			<basic name="ngayTaoPhieu">
+				<column name="NGAYTAOPHIEU" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nguoiTaoPhieu">
+				<column name="NGUOITAOPHIEU" />
+			</basic>
+			<basic name="soDtcdNguoiNop">
+				<column name="SODTCDNGUOINOP" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaPhieuXuLyPhuModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="phieuXuLyChinhId">
+				<column name="PHIEUXULYCHINHID" />
+			</basic>
+			<basic name="trichYeuNoiDung">
+				<column name="TRICHYEUNOIDUNG" />
+			</basic>
+			<basic name="ghiChu">
+				<column name="GHICHU" />
+			</basic>
+			<basic name="trangThaiHienTaiId">
+				<column name="TRANGTHAIHIENTAIID" />
+			</basic>
+			<basic name="noiDungHoSoId">
+				<column name="NOIDUNGHOSOID" />
+			</basic>
+			<basic name="chiemQuyenXuLy">
+				<column name="CHIEMQUYENXULY" />
+			</basic>
+			<basic name="ngayTaoPhieu">
+				<column name="NGAYTAOPHIEU" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nguoiTaoPhieu">
+				<column name="NGUOITAOPHIEU" />
+			</basic>
+			<basic name="nhomPhieuXuLy">
+				<column name="NHOMPHIEUXULY" />
+			</basic>
+			<basic name="phanNhomHoSoId">
+				<column name="PHANNHOMHOSOID" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaQuyTrinhThuTucModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="thuTucHanhChinhId">
+				<column name="THUTUCHANHCHINHID" />
+			</basic>
+			<basic name="maQuyTrinh">
+				<column name="MAQUYTRINH" />
+			</basic>
+			<basic name="toChucXuLy">
+				<column name="TOCHUCXULY" />
+			</basic>
+			<basic name="soNgayXuLy">
+				<column name="SONGAYXULY" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaTrangThaiHoSoModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="quyTrinhThuTucId" />
+			<basic name="tenTrangThai">
+				<column name="TENTRANGTHAI" />
+			</basic>
+			<basic name="kieuTrangThai">
+				<column name="KIEUTRANGTHAI" />
+			</basic>
+			<basic name="moTaTrangThai">
+				<column name="MOTATRANGTHAI" />
+			</basic>
+			<basic name="vaiTroXuLy1">
+				<column name="VAITROXULY1" />
+			</basic>
+			<basic name="vaiTroXuLy2">
+				<column name="VAITROXULY2" />
+			</basic>
+			<basic name="vaiTroXuLy3">
+				<column name="VAITROXULY3" />
+			</basic>
+			<basic name="formXuLy">
+				<column name="FORMXULY" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.PhanCongDonViKiemTraModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="phieuXuLyChinhId">
+				<column name="PHIEUXULYCHINHID" />
+			</basic>
+			<basic name="trichYeuNoiDung">
+				<column name="TRICHYEUNOIDUNG" />
+			</basic>
+			<basic name="ghiChu">
+				<column name="GHICHU" />
+			</basic>
+			<basic name="trangThaiHienTaiId">
+				<column name="TRANGTHAIHIENTAIID" />
+			</basic>
+			<basic name="noiDungHoSoId">
+				<column name="NOIDUNGHOSOID" />
+			</basic>
+			<basic name="chiemQuyenXuLy">
+				<column name="CHIEMQUYENXULY" />
+			</basic>
+			<basic name="ngayTaoPhieu">
+				<column name="NGAYTAOPHIEU" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nguoiTaoPhieu">
+				<column name="NGUOITAOPHIEU" />
+			</basic>
+			<basic name="nhomPhieuXuLy">
+				<column name="NHOMPHIEUXULY" />
+			</basic>
+			<basic name="phanNhomHoSoId">
+				<column name="PHANNHOMHOSOID" />
+			</basic>
+			<basic name="confirmedinspectionId" />
+			<basic name="maSoHoSo">
+				<column name="MASOHOSO" />
+			</basic>
+			<basic name="maBienNhan">
+				<column name="MABIENNHAN" />
+			</basic>
+			<basic name="thuTucHanhChinhId">
+				<column name="THUTUCHANHCHINHID" />
+			</basic>
+			<basic name="tenChuHoSo">
+				<column name="TENCHUHOSO" />
+			</basic>
+			<basic name="ngayGuiHoSo">
+				<column name="NGAYGUIHOSO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="tenDonViTiepNhan">
+				<column name="TENDONVITIEPNHAN" />
+			</basic>
+			<basic name="attachedFile">
+				<column name="ATTACHEDFILE" />
+			</basic>
+			<basic name="inspectionDistrictCode">
+				<column name="INSPECTIONDISTRICTCODE" />
+			</basic>
+			<basic name="inspectionProvincecode">
+				<column name="INSPECTIONPROVINCECODE" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.PhieuXuLyChinhHoSoThuTucModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="hoSoThuTucId">
+				<column name="HOSOTHUTUCID" />
+			</basic>
+			<basic name="quyTrinhThuTucId">
+				<column name="QUYTRINHTHUTUCID" />
+			</basic>
+			<basic name="tenNguoiNop">
+				<column name="TENNGUOINOP" />
+			</basic>
+			<basic name="cmndNguoiNop">
+				<column name="CMNDNGUOINOP" />
+			</basic>
+			<basic name="diaChiNguoiNop">
+				<column name="DIACHINGUOINOP" />
+			</basic>
+			<basic name="soDtddNguoiNop">
+				<column name="SODTDDNGUOINOP" />
+			</basic>
+			<basic name="emailNguoiNop">
+				<column name="EMAILNGUOINOP" />
+			</basic>
+			<basic name="ghiChu">
+				<column name="GHICHU" />
+			</basic>
+			<basic name="trangThaiHienTaiId">
+				<column name="TRANGTHAIHIENTAIID" />
+			</basic>
+			<basic name="hetHoSoCon">
+				<column name="HETHOSOCON" />
+			</basic>
+			<basic name="chiemQuyenXuLy">
+				<column name="CHIEMQUYENXULY" />
+			</basic>
+			<basic name="ngayTaoPhieu">
+				<column name="NGAYTAOPHIEU" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nguoiTaoPhieu">
+				<column name="NGUOITAOPHIEU" />
+			</basic>
+			<basic name="soDtcdNguoiNop">
+				<column name="SODTCDNGUOINOP" />
+			</basic>
+			<basic name="maSoHoSo">
+				<column name="MASOHOSO" />
+			</basic>
+			<basic name="maBienNhan">
+				<column name="MABIENNHAN" />
+			</basic>
+			<basic name="thuTucHanhChinhId">
+				<column name="THUTUCHANHCHINHID" />
+			</basic>
+			<basic name="tenChuHoSo">
+				<column name="TENCHUHOSO" />
+			</basic>
+			<basic name="ngayGuiHoSo">
+				<column name="NGAYGUIHOSO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="tenDonViTiepNhan">
+				<column name="TENDONVITIEPNHAN" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.PhieuXuLyPhuHoSoThuTucModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="phieuXuLyChinhId">
+				<column name="PHIEUXULYCHINHID" />
+			</basic>
+			<basic name="trichYeuNoiDung">
+				<column name="TRICHYEUNOIDUNG" />
+			</basic>
+			<basic name="ghiChu">
+				<column name="GHICHU" />
+			</basic>
+			<basic name="trangThaiHienTaiId">
+				<column name="TRANGTHAIHIENTAIID" />
+			</basic>
+			<basic name="noiDungHoSoId">
+				<column name="NOIDUNGHOSOID" />
+			</basic>
+			<basic name="chiemQuyenXuLy">
+				<column name="CHIEMQUYENXULY" />
+			</basic>
+			<basic name="ngayTaoPhieu">
+				<column name="NGAYTAOPHIEU" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nguoiTaoPhieu">
+				<column name="NGUOITAOPHIEU" />
+			</basic>
+			<basic name="nhomPhieuXuLy">
+				<column name="NHOMPHIEUXULY" />
+			</basic>
+			<basic name="phanNhomHoSoId">
+				<column name="PHANNHOMHOSOID" />
+			</basic>
+			<basic name="maSoHoSo">
+				<column name="MASOHOSO" />
+			</basic>
+			<basic name="maBienNhan">
+				<column name="MABIENNHAN" />
+			</basic>
+			<basic name="thuTucHanhChinhId">
+				<column name="THUTUCHANHCHINHID" />
+			</basic>
+			<basic name="tenChuHoSo">
+				<column name="TENCHUHOSO" />
+			</basic>
+			<basic name="ngayGuiHoSo">
+				<column name="NGAYGUIHOSO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="tenDonViTiepNhan">
+				<column name="TENDONVITIEPNHAN" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.motcua.model.impl.ThamSoHeThongModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="valueData">
+				<column name="VALUEDATA" />
+			</basic>
+			<basic name="keyData">
+				<column name="KEYDATA" />
+			</basic>
+			<basic name="description" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.common.model.impl.DmDataGroupModelImpl">
+		<attributes>
+			<id name="Id">
+				<column name="ID" />
+			</id>
+			<basic name="Code">
+				<column name="CODE" />
+			</basic>
+			<basic name="Name">
+				<column name="NAME" />
+			</basic>
+			<basic name="Description">
+				<column name="DESCRIPTION" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.common.model.impl.DmDataItemModelImpl">
+		<attributes>
+			<id name="Id">
+				<column name="ID" />
+			</id>
+			<basic name="DataGroupId">
+				<column name="DATAGROUPID" />
+			</basic>
+			<basic name="Code0">
+				<column name="CODE_0" />
+			</basic>
+			<basic name="Code1">
+				<column name="CODE_1" />
+			</basic>
+			<basic name="Code2">
+				<column name="CODE_2" />
+			</basic>
+			<basic name="Code3">
+				<column name="CODE_3" />
+			</basic>
+			<basic name="Level">
+				<column name="LEVEL" />
+			</basic>
+			<basic name="Name">
+				<column name="NAME" />
+			</basic>
+			<basic name="AlterName">
+				<column name="ALTERNAME" />
+			</basic>
+			<basic name="Description">
+				<column name="DESCRIPTION" />
+			</basic>
+			<basic name="ValidatedFrom">
+				<column name="VALIDATEDFROM" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ValidatedTo">
+				<column name="VALIDATEDTO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Status">
+				<column name="STATUS" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.common.model.impl.TthcBieuMauHoSoModelImpl">
+		<attributes>
+			<id name="Id">
+				<column name="ID" />
+			</id>
+			<basic name="MaBieuMau">
+				<column name="MABIEUMAU" />
+			</basic>
+			<basic name="TenBieuMau">
+				<column name="TENBIEUMAU" />
+			</basic>
+			<basic name="TenTiengAnh">
+				<column name="TENTIENGANH" />
+			</basic>
+			<basic name="TaiLieuMau">
+				<column name="TAILIEUMAU" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.common.model.impl.TthcHoSoThuTucModelImpl">
+		<attributes>
+			<id name="Id">
+				<column name="ID" />
+			</id>
+			<basic name="MaSoHoSo">
+				<column name="MASOHOSO" />
+			</basic>
+			<basic name="MaBienNhan">
+				<column name="MABIENNHAN" />
+			</basic>
+			<basic name="ThuTucHanhChinhId">
+				<column name="THUTUCHANHCHINHID" />
+			</basic>
+			<basic name="LoaiChuHoSo">
+				<column name="LOAICHUHOSO" />
+			</basic>
+			<basic name="MaSoChuHoSo">
+				<column name="MASOCHUHOSO" />
+			</basic>
+			<basic name="TenChuHoSo">
+				<column name="TENCHUHOSO" />
+			</basic>
+			<basic name="DiaChiChuHoSo">
+				<column name="DIACHICHUHOSO" />
+			</basic>
+			<basic name="TrichYeuNoiDung">
+				<column name="TRICHYEUNOIDUNG" />
+			</basic>
+			<basic name="NgayGuiHoSo">
+				<column name="NGAYGUIHOSO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="NgayTiepNhan">
+				<column name="NGAYTIEPNHAN" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="NgayBoSung">
+				<column name="NGAYBOSUNG" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="NgayHenTra">
+				<column name="NGAYHENTRA" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="NgayTraKetQua">
+				<column name="NGAYTRAKETQUA" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="NgayDongHoSo">
+				<column name="NGAYDONGHOSO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="TrangThaiHoSo">
+				<column name="TRANGTHAIHOSO" />
+			</basic>
+			<basic name="PhanNhomHoSoId">
+				<column name="PHANNHOMHOSOID" />
+			</basic>
+			<basic name="MaDonViTiepNhan">
+				<column name="MADONVITIEPNHAN" />
+			</basic>
+			<basic name="TenDonViTiepNhan">
+				<column name="TENDONVITIEPNHAN" />
+			</basic>
+			<basic name="ToChucQuanLy">
+				<column name="TOCHUCQUANLY" />
+			</basic>
+			<basic name="NgayTao">
+				<column name="NGAYTAO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="NguoiTao">
+				<column name="NGUOITAO" />
+			</basic>
+			<basic name="ghiChu">
+				<column name="GHICHU" />
+			</basic>
+			<basic name="lanGuiCuoi">
+				<column name="LANGUICUOI" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.common.model.impl.TthcKeHoachChuyenDichModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="phieuXuLyChinhId">
+				<column name="PHIEUXULYCHINHID" />
+			</basic>
+			<basic name="phieuXuLyPhuId">
+				<column name="PHIEUXULYPHUID" />
+			</basic>
+			<basic name="messageId">
+				<column name="MESSAGEID" />
+			</basic>
+			<basic name="messageStatus">
+				<column name="MESSAGESTATUS" />
+			</basic>
+			<basic name="trangThaiNguonId">
+				<column name="TRANGTHAINGUONID" />
+			</basic>
+			<basic name="dieuKienChuyenDich">
+				<column name="DIEUKIENCHUYENDICH" />
+			</basic>
+			<basic name="trangThaiDichId">
+				<column name="TRANGTHAIDICHID" />
+			</basic>
+			<basic name="phanNhomHoSoId">
+				<column name="PHANNHOMHOSOID" />
+			</basic>
+			<basic name="nhomPhieuXuLy">
+				<column name="NHOMPHIEUXULY" />
+			</basic>
+			<basic name="hoanTat">
+				<column name="HOANTAT" />
+			</basic>
+			<basic name="ghiChu">
+				<column name="GHICHU" />
+			</basic>
+			<basic name="debitnoteNumber">
+				<column name="DEBITNOTENUMBER" />
+			</basic>
+			<basic name="messageFunction">
+				<column name="MESSAGEFUNCTION" />
+			</basic>
+			<basic name="messageType">
+				<column name="MESSAGETYPE" />
+			</basic>
+			<basic name="thoiDiemCapNhat">
+				<column name="THOIDIEMCAPNHAT" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.common.model.impl.TthcNoidungHoSoModelImpl">
+		<attributes>
+			<id name="Id">
+				<column name="ID" />
+			</id>
+			<basic name="MaTuSinh">
+				<column name="MATUSINH" />
+			</basic>
+			<basic name="HoSoThuTucId">
+				<column name="HOSOTHUTUCID" />
+			</basic>
+			<basic name="TenTaiLieu">
+				<column name="TENTAILIEU" />
+			</basic>
+			<basic name="TaiLieuDinhKem">
+				<column name="TAILIEUDINHKEM" />
+			</basic>
+			<basic name="NoiDungXml">
+				<column name="NOIDUNGXML" />
+			</basic>
+			<basic name="noiDungFile">
+				<column name="NOIDUNGFILE" />
+			</basic>
+			<basic name="BieuMauHoSoId">
+				<column name="BIEUMAUHOSOID" />
+			</basic>
+			<basic name="NgayGuiNhan">
+				<column name="NGAYGUINHAN" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="LoaiTaiLieu">
+				<column name="LOAITAILIEU" />
+			</basic>
+			<basic name="NgayTao">
+				<column name="NGAYTAO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="NguoiTao">
+				<column name="NGUOITAO" />
+			</basic>
+			<basic name="daCapNhat">
+				<column name="DACAPNHAT" />
+			</basic>
+			<basic name="lanGuiCuoi">
+				<column name="LANGUICUOI" />
+			</basic>
+			<basic name="vehicleRecordId">
+				<column name="VEHICLERECORDID" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.common.model.impl.TthcNoidungHoSoReadModelImpl">
+		<attributes>
+			<id name="Id">
+				<column name="ID" />
+			</id>
+			<basic name="MaTuSinh">
+				<column name="MATUSINH" />
+			</basic>
+			<basic name="HoSoThuTucId">
+				<column name="HOSOTHUTUCID" />
+			</basic>
+			<basic name="TenTaiLieu">
+				<column name="TENTAILIEU" />
+			</basic>
+			<basic name="TaiLieuDinhKem">
+				<column name="TAILIEUDINHKEM" />
+			</basic>
+			<basic name="noiDungFile">
+				<column name="NOIDUNGFILE" />
+			</basic>
+			<basic name="BieuMauHoSoId">
+				<column name="BIEUMAUHOSOID" />
+			</basic>
+			<basic name="NgayGuiNhan">
+				<column name="NGAYGUINHAN" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="LoaiTaiLieu">
+				<column name="LOAITAILIEU" />
+			</basic>
+			<basic name="NgayTao">
+				<column name="NGAYTAO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="NguoiTao">
+				<column name="NGUOITAO" />
+			</basic>
+			<basic name="daCapNhat">
+				<column name="DACAPNHAT" />
+			</basic>
+			<basic name="lanGuiCuoi">
+				<column name="LANGUICUOI" />
+			</basic>
+			<basic name="vehicleRecordId">
+				<column name="VEHICLERECORDID" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.common.model.impl.TthcPhanNhomHoSoModelImpl">
+		<attributes>
+			<id name="Id">
+				<column name="ID" />
+			</id>
+			<basic name="MaPhanNhom">
+				<column name="MAPHANNHOM" />
+			</basic>
+			<basic name="TenPhanNhom">
+				<column name="TENPHANNHOM" />
+			</basic>
+			<basic name="TenTiengAnh">
+				<column name="TENTIENGANH" />
+			</basic>
+			<basic name="loaiPhieuXuLy">
+				<column name="LOAIPHIEUXULY" />
+			</basic>
+			<basic name="SoThuTu">
+				<column name="SOTHUTU" />
+			</basic>
+			<basic name="synchdate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.common.model.impl.TthcPhanNhomHoSoVaiTroModelImpl">
+		<attributes>
+			<id name="Id">
+				<column name="ID" />
+			</id>
+			<basic name="PhanNhomHoSoId">
+				<column name="PHANNHOMHOSOID" />
+			</basic>
+			<basic name="VaiTroXuLy">
+				<column name="VAITROXULY" />
+			</basic>
+			<basic name="nhomPhieuXuLy">
+				<column name="NHOMPHIEUXULY" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.common.model.impl.TthcThanhPhanHoSoModelImpl">
+		<attributes>
+			<id name="Id">
+				<column name="ID" />
+			</id>
+			<basic name="ThuTucHanhChinhId">
+				<column name="THUTUCHANHCHINHID" />
+			</basic>
+			<basic name="BieuMauHoSoId">
+				<column name="BIEUMAUHOSOID" />
+			</basic>
+			<basic name="ThuTuHienThi">
+				<column name="THUTUHIENTHI" />
+			</basic>
+			<basic name="LoaiThanhPhan">
+				<column name="LOAITHANHPHAN" />
+			</basic>
+			<basic name="MauTrucTuyen">
+				<column name="MAUTRUCTUYEN" />
+			</basic>
+			<basic name="SoTaiLieuDinhKem">
+				<column name="SOTAILIEUDINHKEM" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.common.model.impl.TthcThuTucHanhChinhModelImpl">
+		<attributes>
+			<id name="Id">
+				<column name="ID" />
+			</id>
+			<basic name="maThuTuc">
+				<column name="MATHUTUC" />
+			</basic>
+			<basic name="tenThuTuc">
+				<column name="TENTHUTUC" />
+			</basic>
+			<basic name="trinhTuThucHien">
+				<column name="TRINHTUTHUCHIEN" />
+			</basic>
+			<basic name="cachThucThucHien">
+				<column name="CACHTHUCTHUCHIEN" />
+			</basic>
+			<basic name="thanhPhanHoSo">
+				<column name="THANHPHANHOSO" />
+			</basic>
+			<basic name="dieuKienThucHien">
+				<column name="DIEUKIENTHUCHIEN" />
+			</basic>
+			<basic name="thoiHanGiaiQuyet">
+				<column name="THOIHANGIAIQUYET" />
+			</basic>
+			<basic name="doiTuongThucHien">
+				<column name="DOITUONGTHUCHIEN" />
+			</basic>
+			<basic name="ketQuaXuLy">
+				<column name="KETQUAXULY" />
+			</basic>
+			<basic name="canCuPhapLy">
+				<column name="CANCUPHAPLY" />
+			</basic>
+			<basic name="lePhi">
+				<column name="LEPHI" />
+			</basic>
+			<basic name="coQuanQlttId">
+				<column name="COQUANQLTTID" />
+			</basic>
+			<basic name="linhVucThuTucId">
+				<column name="LINHVUCTHUTUCID" />
+			</basic>
+			<basic name="ngayCoHieuLuc">
+				<column name="NGAYCOHIEULUC" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ngayHetHieuLuc">
+				<column name="NGAYHETHIEULUC" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="huongDanThucHien">
+				<column name="HUONGDANTHUCHIEN" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.api.model.impl.ApiModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="userAgent" />
+			<basic name="ip" />
+			<basic name="code">
+				<column name="CODE_" />
+			</basic>
+			<basic name="registeredNumber" />
+			<basic name="request" />
+			<basic name="response" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.aswmsg.model.impl.AswmsgMessageLogModelImpl">
+		<attributes>
+			<id name="Id">
+				<column name="ID" />
+			</id>
+			<basic name="Version">
+				<column name="VERSION" />
+			</basic>
+			<basic name="MessageId">
+				<column name="MESSAGEID" />
+			</basic>
+			<basic name="SenderName">
+				<column name="SENDERNAME" />
+			</basic>
+			<basic name="SenderIdentity">
+				<column name="SENDERIDENTITY" />
+			</basic>
+			<basic name="SenderCountryCode">
+				<column name="SENDERCOUNTRYCODE" />
+			</basic>
+			<basic name="SenderMinistryCode">
+				<column name="SENDERMINISTRYCODE" />
+			</basic>
+			<basic name="SenderOrganizationCode">
+				<column name="SENDERORGANIZATIONCODE" />
+			</basic>
+			<basic name="SenderUnitCode">
+				<column name="SENDERUNITCODE" />
+			</basic>
+			<basic name="ReceiverName">
+				<column name="RECEIVERNAME" />
+			</basic>
+			<basic name="ReceiverIdentity">
+				<column name="RECEIVERIDENTITY" />
+			</basic>
+			<basic name="ReceiverCountryCode">
+				<column name="RECEIVERCOUNTRYCODE" />
+			</basic>
+			<basic name="ReceiverMinistryCode">
+				<column name="RECEIVERMINISTRYCODE" />
+			</basic>
+			<basic name="ReceiverOrganizationCode">
+				<column name="RECEIVERORGANIZATIONCODE" />
+			</basic>
+			<basic name="ReceiverUnitCode">
+				<column name="RECEIVERUNITCODE" />
+			</basic>
+			<basic name="DocumentType">
+				<column name="DOCUMENTTYPE" />
+			</basic>
+			<basic name="Type">
+				<column name="TYPE" />
+			</basic>
+			<basic name="Function">
+				<column name="FUNCTION" />
+			</basic>
+			<basic name="Reference">
+				<column name="REFERENCE" />
+			</basic>
+			<basic name="PreReference">
+				<column name="PREREFERENCE" />
+			</basic>
+			<basic name="DocumentYear">
+				<column name="DOCUMENTYEAR" />
+			</basic>
+			<basic name="SendDate">
+				<column name="SENDDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Signature">
+				<column name="SIGNATURE" />
+			</basic>
+			<basic name="SystemSignature">
+				<column name="SYSTEMSIGNATURE" />
+			</basic>
+			<basic name="AllContent">
+				<column name="ALLCONTENT" />
+			</basic>
+			<basic name="CreatedTime">
+				<column name="CREATEDTIME" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Webservice">
+				<column name="WEBSERVICE" />
+			</basic>
+			<basic name="Validated">
+				<column name="VALIDATED" />
+			</basic>
+			<basic name="Description">
+				<column name="DESCRIPTION" />
+			</basic>
+			<basic name="ValidationCode">
+				<column name="VALIDATIONCODE" />
+			</basic>
+			<basic name="soLanGui">
+				<column name="SOLANGUI" />
+			</basic>
+			<basic name="fileLogId">
+				<column name="FILELOGID" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.aswmsg.model.impl.AswmsgMessageQueueModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="version" />
+			<basic name="messageId" />
+			<basic name="senderName">
+				<column name="SENDERNAME" />
+			</basic>
+			<basic name="senderIdentity">
+				<column name="SENDERIDENTITY" />
+			</basic>
+			<basic name="senderCountryCode">
+				<column name="SENDERCOUNTRYCODE" />
+			</basic>
+			<basic name="senderMinistryCode">
+				<column name="SENDERMINISTRYCODE" />
+			</basic>
+			<basic name="senderOrganizationCode">
+				<column name="SENDERORGANIZATIONCODE" />
+			</basic>
+			<basic name="senderUnitCode">
+				<column name="SENDERUNITCODE" />
+			</basic>
+			<basic name="receiverName">
+				<column name="RECEIVERNAME" />
+			</basic>
+			<basic name="receiverIdentity">
+				<column name="RECEIVERIDENTITY" />
+			</basic>
+			<basic name="receiverCountryCode">
+				<column name="RECEIVERCOUNTRYCODE" />
+			</basic>
+			<basic name="receiverMinistryCode">
+				<column name="RECEIVERMINISTRYCODE" />
+			</basic>
+			<basic name="receiverOrganizationCode">
+				<column name="RECEIVERORGANIZATIONCODE" />
+			</basic>
+			<basic name="receiverUnitCode">
+				<column name="RECEIVERUNITCODE" />
+			</basic>
+			<basic name="documentType">
+				<column name="DOCUMENTTYPE" />
+			</basic>
+			<basic name="type" />
+			<basic name="function" />
+			<basic name="reference" />
+			<basic name="preReference">
+				<column name="PREREFERENCE" />
+			</basic>
+			<basic name="documentYear">
+				<column name="DOCUMENTYEAR" />
+			</basic>
+			<basic name="sendDate">
+				<column name="SENDDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="signature" />
+			<basic name="systemSignature">
+				<column name="SYSTEMSIGNATURE" />
+			</basic>
+			<basic name="allContent">
+				<column name="ALLCONTENT" />
+			</basic>
+			<basic name="createdTime">
+				<column name="CREATEDTIME" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="webservice" />
+			<basic name="validated" />
+			<basic name="priority" />
+			<basic name="description" />
+			<basic name="validationCode">
+				<column name="VALIDATIONCODE" />
+			</basic>
+			<basic name="soLanGui">
+				<column name="SOLANGUI" />
+			</basic>
+			<basic name="hoSoThuTucId" />
+			<basic name="phieuXuLyPhuId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="vn.dtt.gt.dk.dao.report.model.impl.DocumentStatisticsModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="documentTypeCode" />
+			<basic name="remainingNumber" />
+			<basic name="receivedNumber" />
+			<basic name="ontimeNumber" />
+			<basic name="overtimeNumber" />
+			<basic name="processingNumber" />
+			<basic name="delayingNumber" />
+			<basic name="month" />
+			<basic name="year" />
+			<basic name="status" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CertificateCircularImpl" name="CertificateCircular">
+		<table name="vr_certificatecircular" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CertificateRecordImpl" name="CertificateRecord">
+		<table name="vr_certificaterecord" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CertificateRecordSpecImpl" name="CertificateRecordSpec">
+		<table name="vr_certificaterecordspec" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CfgLimitTechnicalSpecImpl" name="CfgLimitTechnicalSpec">
+		<table name="vr_cfg_limit_technicalspec" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CfgTechnicalspecImpl" name="CfgTechnicalspec">
+		<table name="vr_cfg_technicalspec" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ConfirmedInspectionImpl" name="ConfirmedInspection">
+		<table name="vr_confirmedinspection" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ControlReportImpl" name="ControlReport">
+		<table name="vr_controlreport" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ControlRequestImpl" name="ControlRequest">
+		<table name="vr_controlrequest" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ControlRequirementImpl" name="ControlRequirement">
+		<table name="vr_controlrequirement" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CopReportImpl" name="CopReport">
+		<table name="vr_copreport" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationAttendeeImpl" name="CorporationAttendee">
+		<table name="vr_corporation_attendee" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationInspectorImpl" name="CorporationInspector">
+		<table name="vr_corporation_inspector" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationTeamImpl" name="CorporationTeam">
+		<table name="vr_corporation_team" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationViewImpl" name="CorporationView">
+		<table name="vr_corporation_view" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CustomsDeclarationImpl" name="CustomsDeclaration">
+		<table name="vr_customsdeclaration" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DebitNoteImpl" name="DebitNote">
+		<table name="vr_debitnote" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DebitNoteDetailsImpl" name="DebitNoteDetails">
+		<table name="vr_debitnotedetails" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DraftCertificateImpl" name="DraftCertificate">
+		<table name="vr_draftcertificate" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DraftCertificateSpecImpl" name="DraftCertificateSpec">
+		<table name="vr_draftcertificatespec" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.EmissionTestReportImpl" name="EmissionTestReport">
+		<table name="vr_emissiontestreport" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.EmissionTestRequestImpl" name="EmissionTestRequest">
+		<table name="vr_emissiontestrequest" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.EmissionTestRequirementImpl" name="EmissionTestRequirement">
+		<table name="vr_emissiontestrequirement" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ExchangeRateImpl" name="ExchangeRate">
+		<table name="vr_exchangerate" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionCommonStatusImpl" name="InspectionCommonStatus">
+		<table name="vr_inspectionCommonStatus" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionRecordImpl" name="InspectionRecord">
+		<table name="vr_inspectionrecord" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionRecordAttachImpl" name="InspectionRecordAttach">
+		<table name="vr_inspectionrecord_attach" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionRecordSpecImpl" name="InspectionRecordSpec">
+		<table name="vr_inspectionrecordspec" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.NewExchangeRateImpl" name="NewExchangeRate">
+		<table name="vr_new_exchangerate" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.PaymentStatusImpl" name="PaymentStatus">
+		<table name="vr_paymentstatus" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ProductionCountryImpl" name="ProductionCountry">
+		<table name="vr_productioncountry" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.RegisteredInspectionImpl" name="RegisteredInspection">
+		<table name="vr_registeredinspection" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SafetestRequirementImpl" name="SafetestRequirement">
+		<table name="vr_safetestrequirement" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SafetyTestReportImpl" name="SafetyTestReport">
+		<table name="vr_safetytestreport" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SafetyTestRequestImpl" name="SafetyTestRequest">
+		<table name="vr_safetytestrequest" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SatetyTestReportSpecImpl" name="SatetyTestReportSpec">
+		<table name="vr_satetytestreportspec" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleGroupImpl" name="VehicleGroup">
+		<table name="vr_vehiclegroup" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleGroupInitialImpl" name="VehicleGroupInitial">
+		<table name="vr_vehiclegroup_initial" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleGroupSpecImpl" name="VehicleGroupSpec">
+		<table name="vr_vehiclegroupspec" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleRecordImpl" name="VehicleRecord">
+		<table name="vr_vehiclerecord" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehiclerecordInitialImpl" name="VehiclerecordInitial">
+		<table name="vr_vehiclerecord_initial" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleSpecificationImpl" name="VehicleSpecification">
+		<table name="vr_vehiclespecification" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleStatisticsImpl" name="VehicleStatistics">
+		<table name="vr_vehiclestatistics" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ViewTrungSoKhungDongCoImpl" name="ViewTrungSoKhungDongCo">
+		<table name="view_trungsokhungdongco" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.DaKiemTraImpl" name="DaKiemTra">
+		<table name="view_dakiemtra" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.LichKiemTraHienTruongImpl" name="LichKiemTraHienTruong">
+		<table name="view_lichkiemtrahientruong" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaChuyenDichTrangThaiImpl" name="MotCuaChuyenDichTrangThai">
+		<table name="motcua_chuyendichtrangthai" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaDienBienHoSoImpl" name="MotCuaDienBienHoSo">
+		<table name="motcua_dienbienhoso" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaKetQuaDienBienImpl" name="MotCuaKetQuaDienBien">
+		<table name="motcua_ketquadienbien" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaNotificationImpl" name="MotCuaNotification">
+		<table name="motcua_notification" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaPhanCongXuLyImpl" name="MotCuaPhanCongXuLy">
+		<table name="motcua_phancongxuly" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaPhieuXuLyChinhImpl" name="MotCuaPhieuXuLyChinh">
+		<table name="motcua_phieuxulychinh" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaPhieuXuLyPhuImpl" name="MotCuaPhieuXuLyPhu">
+		<table name="motcua_phieuxulyphu" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaQuyTrinhThuTucImpl" name="MotCuaQuyTrinhThuTuc">
+		<table name="motcua_quytrinhthutuc" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.MotCuaTrangThaiHoSoImpl" name="MotCuaTrangThaiHoSo">
+		<table name="motcua_trangthaihoso" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.PhanCongDonViKiemTraImpl" name="PhanCongDonViKiemTra">
+		<table name="view_phancongdonvikiemtra" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.PhieuXuLyChinhHoSoThuTucImpl" name="PhieuXuLyChinhHoSoThuTuc">
+		<table name="view_phieuxulychinh_hosothutuc" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.PhieuXuLyPhuHoSoThuTucImpl" name="PhieuXuLyPhuHoSoThuTuc">
+		<table name="view_phieuxulyphu_hosothutuc" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.motcua.model.impl.ThamSoHeThongImpl" name="ThamSoHeThong">
+		<table name="cmon_thamsohethong" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.common.model.impl.DmDataGroupImpl" name="DmDataGroup">
+		<table name="dm_datagroup" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.common.model.impl.DmDataItemImpl" name="DmDataItem">
+		<table name="dm_dataitem" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.common.model.impl.TthcBieuMauHoSoImpl" name="TthcBieuMauHoSo">
+		<table name="tthc_bieumauhoso" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.common.model.impl.TthcHoSoThuTucImpl" name="TthcHoSoThuTuc">
+		<table name="tthc_hosothutuc" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.common.model.impl.TthcKeHoachChuyenDichImpl" name="TthcKeHoachChuyenDich">
+		<table name="tthc_kehoachchuyendich" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.common.model.impl.TthcNoidungHoSoImpl" name="TthcNoidungHoSo">
+		<table name="tthc_noidunghoso" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.common.model.impl.TthcNoidungHoSoReadImpl" name="TthcNoidungHoSoRead">
+		<table name="tthc_noidunghoso" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.common.model.impl.TthcPhanNhomHoSoImpl" name="TthcPhanNhomHoSo">
+		<table name="tthc_phannhomhoso" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.common.model.impl.TthcPhanNhomHoSoVaiTroImpl" name="TthcPhanNhomHoSoVaiTro">
+		<table name="tthc_phannhomhoso_vaitro" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.common.model.impl.TthcThanhPhanHoSoImpl" name="TthcThanhPhanHoSo">
+		<table name="tthc_thanhphanhoso" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.common.model.impl.TthcThuTucHanhChinhImpl" name="TthcThuTucHanhChinh">
+		<table name="tthc_thutuchanhchinh" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.api.model.impl.ApiImpl" name="Api">
+		<table name="api_log" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.aswmsg.model.impl.AswmsgMessageLogImpl" name="AswmsgMessageLog">
+		<table name="aswmsg_messagelog" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.aswmsg.model.impl.AswmsgMessageQueueImpl" name="AswmsgMessageQueue">
+		<table name="aswmsg_messagequeue" />
+		<attributes />
+	</entity>
+	<entity class="vn.dtt.gt.dk.dao.report.model.impl.DocumentStatisticsImpl" name="DocumentStatistics">
+		<table name="rp_documentstatistics" />
+		<attributes />
+	</entity>
+</entity-mappings>

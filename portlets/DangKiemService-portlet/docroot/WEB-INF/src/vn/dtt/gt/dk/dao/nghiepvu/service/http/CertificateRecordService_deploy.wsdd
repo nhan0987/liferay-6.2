@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_dkapi_CertificateRecordService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCertificateRecord" qname="operNS:getCertificateRecord" returnQName="getCertificateRecordReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="certificatenumber" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="vehicleclass" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="getCertificateRecord" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CertificateRecordServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CertificateRecordServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CertificateRecordServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CertificateRecordService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+</deployment>

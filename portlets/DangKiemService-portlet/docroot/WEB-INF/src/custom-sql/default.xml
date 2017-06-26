@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql file="custom-sql/dakiemtra.xml" />
+	<sql file="custom-sql/phancongdonvikiemtra.xml" />
+	<sql file="custom-sql/dataitem.xml" />
+	<sql file="custom-sql/certificaterecord.xml" />
+	<sql file="custom-sql/vr_cfg_technicalspecs.xml" />
+	<sql file="custom-sql/vr_cfg_limit_technicalspec.xml" />
+	<sql file="custom-sql/tthc_noidunghoso.xml" />
+	<sql file="custom-sql/vr_inspectionrecord_attach.xml" />
+</custom-sql>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="vn.dtt.gt.dk.dao.api">
+	<author>huymq</author>
+	<namespace>dkapi</namespace>
+	
+	<entity name="Api" table="api_log" local-service="true" remote-service="true" cache-enabled="false" data-source="tthcDataSource">
+		<!-- PK fields -->
+		<column name="id" type="long" primary="true"/>
+		<column name="createDate" type="Date"/>
+		<column name="modifiedDate" type="Date"/>
+		<column name="userAgent" type="String"/>
+		<column name="ip" type="String"/>
+		<column name="code" type="String"/>
+		<column name="registeredNumber" type="String"/>
+		<column name="request" type="String"/>
+		<column name="response" type="String"/>
+		
+		<!-- Order -->
+		<order by="asc"><order-column name="createDate" /></order>
+		
+		<finder return-type="Collection" name="IP">
+			<finder-column name="ip" />
+		</finder>
+		
+		<finder return-type="Collection" name="Code">
+			<finder-column name="code" />
+		</finder>
+		
+		<finder return-type="Collection" name="RegisteredNumber">
+			<finder-column name="registeredNumber" />
+		</finder>
+		
+		<finder return-type="Collection" name="C_R">
+			<finder-column name="code" />
+			<finder-column name="registeredNumber" />
+		</finder>
+		
+		<finder return-type="Collection" name="I_C">
+			<finder-column name="ip" />
+			<finder-column name="code" />
+		</finder>
+		
+		<reference package-path="vn.dtt.gt.dk.dao.common" entity="TthcHoSoThuTuc" />
+		<reference package-path="vn.dtt.gt.dk.dao.common" entity="TthcNoidungHoSo" />
+		<reference package-path="vn.dtt.gt.dk.dao.common" entity="TthcPhanNhomHoSoVaiTro" />
+		<reference package-path="vn.dtt.gt.dk.dao.motcua" entity="MotCuaPhieuXuLyPhu" />
+		<reference package-path="vn.dtt.gt.dk.dao.motcua" entity="MotCuaChuyenDichTrangThai" />
+		<reference package-path="vn.dtt.gt.dk.dao.motcua" entity="MotCuaDienBienHoSo" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="RegisteredInspection" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="ConfirmedInspection" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="VehicleStatistics" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="CustomsDeclaration" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="CertificateRecord" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="CertificateRecordSpec" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="ControlRequirement" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="CorporationAttendee" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="CorporationInspector" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="CorporationView" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="EmissionTestRequirement" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="InspectionCommonStatus" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="InspectionRecord" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="InspectionRecordAttach" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="InspectionRecordSpec" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="NewExchangeRate" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="ProductionCountry" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="VehicleGroup" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="VehicleGroupInitial" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="VehicleRecord" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="VehiclerecordInitial" />
+		<reference package-path="vn.dtt.gt.dk.dao.nghiepvu" entity="VehicleSpecification" />
+		<reference package-path="com.liferay.portal" entity="User" />
+	</entity>
+</service-builder>

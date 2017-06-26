@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="vn.dtt.gt.dk.dao.nghiepvu">
+	<author>win_64</author>
+	<namespace>dk</namespace>
+
+
+	<entity name="VehicleStatistics" table="vr_vehiclestatistics" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="totalRegisteredVehicle" db-name="totalregisteredvehicle" type="long" />
+		<column name="totalRequestedVehicle" db-name="totalrequestedvehicle" type="long" />
+		<column name="totalNotYetRequestedVehicle" db-name="totalnotyetrequestedvehicle" type="long" />
+		<column name="totalCancelledVehicle" db-name="totalcancelledvehicle" type="long" />
+		<column name="totalInspectedVehicle" db-name="totalinspectedvehicle" type="long" />
+		<column name="totalResolvedVehicle" db-name="totalresolvedvehicle" type="long" />
+		<column name="totalReexportedVehicle" db-name="totalreexportedvehicle" type="long" />
+		<column name="totalWrongStatusVehicle" db-name="totalwrongstatusvehicle" type="long" />
+		<column name="totalSafeTestSample" db-name="totalsafetestsample" type="long" />
+		<column name="totalEmissionTestSample" db-name="totalemissiontestsample" type="long" />
+		<column name="totalControlRequiredVehicle" db-name="totalcontrolrequiredvehicle" type="long" />
+		<column name="totalCertificate" db-name="totalcertificate" type="long" />
+		<column name="totalViolatedVehicle" db-name="totalviolatedvehicle" type="long" />
+		<column name="totalTechnicalSpec" db-name="totaltechnicalspec" type="long" />
+		<column name="processingState" db-name="processingstate" type="long" />
+		<column name="processingTiming" db-name="processingtiming" type="long" />
+		<column name="daysUptoDeadline" db-name="daysuptodeadline" type="long" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="VehicleStatistics" name="RegisteredInspectionId">
+			<finder-column name="registeredInspectionId" />
+		</finder>
+	</entity>
+
+	<entity name="VehicleGroup" table="vr_vehiclegroup" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleClass" db-name="vehicleclass" type="String" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="technicalSpecCode" db-name="technicalspeccode" type="String" />
+		<column name="referenceCertificateNo" db-name="referencecertificateno" type="String" />
+		<column name="safetytestreportNo" db-name="safetytestreportno" type="String" />
+		<column name="emissiontestreportNo" db-name="emissiontestreportno" type="String" />
+		<column name="copreportNo" db-name="copreportno" type="String" />
+		<column name="vehicleType" db-name="vehicletype" type="String" />
+		<column name="engineType" db-name="enginetype" type="String" />
+		<column name="tradeMark" db-name="trademark" type="String" />
+		<column name="markAsVehicle" db-name="markasvehicle" type="int" />
+		<column name="commercialName" db-name="commercialname" type="String" />
+		<column name="modelCode" db-name="modelcode" type="String" />
+		<column name="productionPlant" db-name="productionplant" type="String" />
+		<column name="addressOfProductionPlant" db-name="addressofproductionplant" type="String" />
+		<column name="emissionStandard" db-name="emissionstandard" type="String" />
+		<column name="safetyTestReportId" db-name="safetytestreportid" type="long" />
+		<column name="emissionTestReportId" db-name="emissiontestreportid" type="long" />
+		<column name="copReportId" db-name="copreportid" type="long" />
+		<column name="specificationVersion" db-name="specificationversion" type="long" />
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="attachedFile" db-name="ATTACHEDFILE" type="long" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="RegisteredInspectionId">
+			<finder-column name="registeredInspectionId" />
+		</finder>
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		<finder return-type="Collection" name="TechnicalSpecCode">
+			<finder-column name="technicalSpecCode" />
+		</finder>
+
+		<finder return-type="VehicleGroup" name="TechnicalSpecCodeAndRegisteredInspectionId">
+			<finder-column name="technicalSpecCode" />
+			<finder-column name="registeredInspectionId" />
+		</finder>
+
+	</entity>
+
+	<entity name="VehicleGroupInitial" table="vr_vehiclegroup_initial" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleClass" db-name="vehicleclass" type="String" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="technicalSpecCode" db-name="technicalspeccode" type="String" />
+		<column name="referenceCertificateNo" db-name="referencecertificateno" type="String" />
+		<column name="safetytestreportNo" db-name="safetytestreportno" type="String" />
+		<column name="emissiontestreportNo" db-name="emissiontestreportno" type="String" />
+		<column name="copreportNo" db-name="copreportno" type="String" />
+		<column name="vehicleType" db-name="vehicletype" type="String" />
+		<column name="engineType" db-name="enginetype" type="String" />
+		<column name="tradeMark" db-name="trademark" type="String" />
+		<column name="markAsVehicle" db-name="markasvehicle" type="int" />
+		<column name="commercialName" db-name="commercialname" type="String" />
+		<column name="modelCode" db-name="modelcode" type="String" />
+		<column name="productionPlant" db-name="productionplant" type="String" />
+		<column name="addressOfProductionPlant" db-name="addressofproductionplant" type="String" />
+		<column name="emissionStandard" db-name="emissionstandard" type="String" />
+		<column name="safetyTestReportId" db-name="safetytestreportid" type="long" />
+		<column name="emissionTestReportId" db-name="emissiontestreportid" type="long" />
+		<column name="copReportId" db-name="copreportid" type="long" />
+		<column name="specificationVersion" db-name="specificationversion" type="long" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="attachedFile" db-name="ATTACHEDFILE" type="long" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+
+	<entity name="VehicleRecord" table="vr_vehiclerecord" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<column name="debitNoteId" db-name="debitnoteid" type="long" />
+		<column name="sequenceNo" db-name="sequenceno" type="long" />
+		<column name="codeNumber" db-name="codenumber" type="long" />
+		<column name="chassisNumber" db-name="chassisnumber" type="String" />
+		<column name="engineNumber" db-name="enginenumber" type="String" />
+		<column name="productionYear" db-name="productionyear" type="long" />
+		<column name="vehicleEngineStatus" db-name="vehicleenginestatus" type="String" />
+		<column name="vehicleColor" db-name="vehiclecolor" type="String" />
+		<column name="unitPrice" db-name="unitprice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="draftCertificateId" db-name="draftcertificateid" type="long" />
+		<column name="certificateRecordId" db-name="certificaterecordid" type="long" />
+		<column name="markUpStatus" db-name="markupstatus" type="long" />
+		<column name="safeTestRequirementId" db-name="safetestrequirementid" type="long" />
+		<column name="emissionTestRequirementId" db-name="emissiontestrequirementid" type="long" />
+		<column name="controlRequirementId" db-name="controlrequirementid" type="long" />
+		<column name="markAsSample" db-name="MarkAsSample" type="int" />
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+
+		<finder return-type="VehicleRecord" name="CodeNumber">
+			<finder-column name="codeNumber" />
+		</finder>
+		<finder return-type="Collection" name="DebitNoteId">
+			<finder-column name="debitNoteId" />
+		</finder>
+		<finder return-type="Collection" name="SafeTestRequirementId">
+			<finder-column name="safeTestRequirementId" />
+		</finder>
+		<finder return-type="Collection" name="EmissionTestRequirementId">
+			<finder-column name="emissionTestRequirementId" />
+		</finder>
+		<finder return-type="Collection" name="ControlRequirementId">
+			<finder-column name="controlRequirementId" />
+		</finder>
+		<finder return-type="Collection" name="ConfirmedInspectionId">
+			<finder-column name="confirmedInspectionId" />
+		</finder>
+		<finder return-type="Collection" name="InspectionRecordId">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+		<finder return-type="Collection" name="DraftCertificateId">
+			<finder-column name="draftCertificateId" />
+		</finder>
+	</entity>
+
+
+	<entity name="VehiclerecordInitial" table="vr_vehiclerecord_initial" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<!-- 
+		<column name="debitNoteId" db-name="debitnoteid" type="long" />
+		 -->
+		<column name="sequenceNo" db-name="sequenceno" type="long" />
+		<column name="codeNumber" db-name="codenumber" type="long" />
+		<column name="chassisNumber" db-name="chassisnumber" type="String" />
+		<column name="engineNumber" db-name="enginenumber" type="String" />
+		<column name="productionYear" db-name="productionyear" type="long" />
+		<column name="vehicleEngineStatus" db-name="vehicleenginestatus" type="String" />
+		<column name="vehicleColor" db-name="vehiclecolor" type="String" />
+		<column name="unitPrice" db-name="unitprice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="draftCertificateId" db-name="draftcertificateid" type="long" />
+		<column name="certificateRecordId" db-name="certificaterecordid" type="long" />
+		<column name="markUpStatus" db-name="markupstatus" type="long" />
+		<column name="safeTestRequirementId" db-name="safetestrequirementid" type="long" />
+		<column name="emissionTestRequirementId" db-name="emissiontestrequirementid" type="long" />
+		<column name="controlRequirementId" db-name="controlrequirementid" type="long" />
+		<!-- 
+		<column name="markAsSample" db-name="MarkAsSample" type="int" />
+		 -->
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+		
+		<finder name="VehicleGroupId" return-type="Collection">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+
+		<finder return-type="VehiclerecordInitial" name="CodeNumber">
+			<finder-column name="codeNumber" />
+		</finder>
+	</entity>
+
+	<entity name="RegisteredInspection" table="vr_registeredinspection" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredNumber" db-name="registerednumber" type="String" />
+		<column name="dossierId" db-name="dossierid" type="long" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<!-- Importer -->
+		<column name="importerCode" db-name="importercode" type="String" />
+		<column name="importerName" db-name="importername" type="String" />
+		<column name="importerAddress" db-name="importeraddress" type="String" />
+		<column name="representative" db-name="representative" type="String" />
+		<column name="phone" db-name="phone" type="String" />
+		<column name="fax" db-name="fax" type="String" />
+		<column name="email" db-name="email" type="String" />
+
+		<!-- Inspection -->
+		<column name="inspectionDate" db-name="inspectiondate" type="Date" />
+		<column name="inspectionSite" db-name="inspectionsite" type="String" />
+		<column name="inspectionDistrictCode" db-name="inspectiondistrictcode" type="String" />
+		<column name="inspectionProvinceCode" db-name="inspectionprovincecode" type="String" />
+
+		<!-- Contacter -->
+		<column name="contactName" db-name="contactname" type="String" />
+		<column name="contactPhone" db-name="contactphone" type="String" />
+		<column name="contactEmail" db-name="contactemail" type="String" />
+
+		<!-- ImporterSign -->
+		<column name="importerSignName" db-name="importersignname" type="String" />
+		<column name="importerSignTitle" db-name="importersigntitle" type="String" />
+		<column name="importerSignPlace" db-name="importersignplace" type="String" />
+		<column name="importerSignDate" db-name="importersigndate" type="Date" />
+
+
+		<column name="inspectorOrganization" db-name="inspectororganization" type="String" />
+		<column name="inspectorDivision" db-name="inspectordivision" type="String" />
+		<column name="inspectorSigNname" db-name="inspectorsignname" type="String" />
+		<column name="inspectorSignTitle" db-name="inspectorsigntitle" type="String" />
+		<column name="inspectorSignPlace" db-name="inspectorsignplace" type="String" />
+		<column name="inspectorSignDate" db-name="inspectorsigndate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="DossierId">
+			<finder-column name="dossierId" />
+		</finder>
+		<finder return-type="RegisteredInspection" name="RegisteredNumber">
+			<finder-column name="registeredNumber" />
+		</finder>
+	</entity>
+
+	<entity name="ProductionCountry" table="vr_productioncountry" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<column name="countryCode" db-name="countrycode" type="String" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+		<finder return-type="Collection" name="VehicleGroupIdCountryCode">
+			<finder-column name="vehicleGroupId" />
+			<finder-column name="countryCode" />
+		</finder>
+
+
+	</entity>
+
+	<entity name="VehicleGroupSpec" table="vr_vehiclegroupspec" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+
+	<entity name="InspectionRecordSpec" table="vr_inspectionrecordspec" local-service="true" remote-service="true" cache-enabled="false"
+		data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="inspectionRecordid" db-name="inspectionrecordid" type="long" />
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+		<column name="evaluationResult" db-name="evaluationresult" type="long" />		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="InspectionRecordId">
+			<finder-column name="inspectionRecordid" />
+		</finder>
+	</entity>
+
+	<entity name="SatetyTestReportSpec" table="vr_satetytestreportspec" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="saftyTestReportId" db-name="saftytestreportid" type="long" />
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+		<column name="evaluationResult" db-name="evaluationresult" type="long" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="SaftyTestReportId">
+			<finder-column name="saftyTestReportId" />
+		</finder>
+	</entity>
+
+	<entity name="DraftCertificateSpec" table="vr_draftcertificatespec" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="draftCertificateId" db-name="draftcertificateid" type="long" />
+
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="DraftCertificateId">
+			<finder-column name="draftCertificateId" />
+		</finder>
+	</entity>
+
+	<entity name="DraftCertificate" table="vr_draftcertificate" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="certificateType" db-name="certificatetype" type="long" />
+		<column name="inspectionReportId" db-name="inspectionreportid" type="long" />
+		<column name="safetytestReportId" db-name="safetytestreportid" type="long" />
+		<column name="emissionTestReportId" db-name="emissiontestreportid" type="long" />
+		<column name="copReportId" db-name="copreportid" type="long" />
+		<column name="reason" db-name="reason" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="createdDate" db-name="createddate" type="Date" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="DraftCertificate" name="InspectionReportId">
+			<finder-column name="inspectionReportId" />
+		</finder>
+	</entity>
+
+	<entity name="CertificateRecordSpec" table="vr_certificaterecordspec" local-service="true" remote-service="true" data-source="vrDataSource"
+		cache-enabled="false" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="certificateRecordId" db-name="certificaterecordid" type="long" />
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+		<column name="version" db-name="version" type="long" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+	</entity>
+
+
+	<entity name="VehicleSpecification" table="vr_vehiclespecification" cache-enabled="false" local-service="true" remote-service="true"
+		data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<column name="specificationVersion" db-name="specificationversion" type="long" />
+		<column name="specificationSourceCode" db-name="specificationsourcecode" type="String" />
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+		<column name="safetyTestReportId" db-name="safetytestreportid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="specificResult" db-name="specificresult" type="long" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="SpecificationCode">
+			<finder-column name="specificationCode" />
+		</finder>
+		<finder return-type="Collection" name="InspectionRecordId">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+		<finder return-type="VehicleSpecification" name="VehicleGroupIdSpecificationCode">
+			<finder-column name="vehicleGroupId" />
+			<finder-column name="specificationCode" />
+		</finder>
+	</entity>
+
+
+	<entity name="CfgTechnicalspec" table="vr_cfg_technicalspec" cache-enabled="false" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+
+		<column name="vehicleTypeCode" db-name="vehicletypecode" type="String" />
+		<column name="vehicleTypeName" db-name="vehicletypename" type="String" />
+		<column name="sequenceno" db-name="sequenceno" type="long" />
+
+
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specDescription" db-name="spec_description" type="String" />
+		<column name="specCategory" db-name="spec_category" type="String" />
+
+		<column name="specificationGroup" db-name="specificationgroup" type="long" />
+		<column name="searchingIncluded" db-name="searching_included" type="long" />
+		<column name="referenceIncluded" db-name="reference_included" type="long" />
+		<column name="certificateIncluded" db-name="certificate_included" type="long" />
+		<column name="datagroupid" db-name="datagroupid" type="long" />
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="VehicleTypeCode">
+			<finder-column name="vehicleTypeCode" />
+		</finder>
+		<finder return-type="CfgTechnicalspec" name="SpecificationCode">
+			<finder-column name="specificationCode" />
+		</finder>
+
+	</entity>
+
+
+	<entity name="ConfirmedInspection" table="vr_confirmedinspection" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="customsDeclarationId" db-name="customsdeclarationid" type="long" />
+		<column name="confirmationCode" db-name="confirmationcode" type="long" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="inspectionDate" db-name="inspectiondate" type="Date" />
+		<column name="inspectionSite" db-name="inspectionsite" type="String" />
+		<column name="inspectionDistrictCode" db-name="inspectiondistrictcode" type="String" />
+		<column name="inspectionProvincecode" db-name="inspectionprovincecode" type="String" />
+		<column name="customsRegion" db-name="customsregion" type="long" />
+		<column name="markasChangedSite" db-name="markaschangedsite" type="long" />
+		<column name="contactName" db-name="contactname" type="String" />
+		<column name="contactPhone" db-name="contactphone" type="String" />
+		<column name="contactEmail" db-name="contactemail" type="String" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="remarks" db-name="remarks" type="String" />
+
+		<column name="corporationId" db-name="corporationid" type="String" />
+
+		<column name="inspectorId" db-name="inspectorid" type="long" />
+
+		<column name="phieuXuLyPhuId" db-name="phieuxulyphuid" type="long" />
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long" />
+
+		<column name="dateFrom" db-name="datefrom" type="Date" />
+		<column name="dateTo" db-name="dateto" type="Date" />
+		<column name="leader" db-name="leader" type="int" />
+
+		<!-- <column name="corporationId" db-name="corporationid" type="String" /> <column name="inspectorId" db-name="inspectorid" type="long" /> -->
+
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="CustomsDeclarationId">
+			<finder-column name="customsDeclarationId" />
+		</finder>
+
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		<finder return-type="ConfirmedInspection" name="PhieuXuLyPhuId">
+			<finder-column name="phieuXuLyPhuId" />
+		</finder>
+
+		<finder return-type="ConfirmedInspection" name="CorporationId">
+			<finder-column name="corporationId" />
+		</finder>
+
+
+		<finder return-type="ConfirmedInspection" name="InspectorId">
+			<finder-column name="inspectorId" />
+		</finder>
+
+
+		<finder return-type="Collection" name="RegisteredInspectionId">
+			<finder-column name="registeredInspectionId" />
+		</finder>
+
+	</entity>
+
+	<entity name="CertificateCircular" table="vr_certificatecircular" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="certificateRecordId" db-name="certificaterecordid" type="long" />
+		<column name="sequenceNo" db-name="sequenceno" type="long" />
+		<column name="circularNo" db-name="circularno" type="String" />
+		<column name="circularDate" db-name="circulardate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+	</entity>
+
+	<entity name="CertificateRecord" table="vr_certificaterecord" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="certificateType" db-name="certificatetype" type="long" />
+		<column name="certificateNumber" db-name="certificatenumber" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="createdDate" db-name="createddate" type="Date" />
+		<column name="editorName" db-name="editorname" type="String" />
+		<column name="inspectionReportId" db-name="inspectionreportid" type="long" />
+		<column name="safetyTestReportId" db-name="safetytestreportid" type="long" />
+		<column name="emissionTestReportId" db-name="emissiontestreportid" type="long" />
+		<column name="copReportId" db-name="copreportid" type="long" />
+		<column name="dossierId" db-name="dossierid" type="long" />
+
+
+		<column name="reason" db-name="reason" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="organization" db-name="organization" type="String" />
+		<column name="division" db-name="division" type="String" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="digitalIssued" db-name="digitalissued" type="long" />
+		<column name="stampStatus" db-name="stampstatus" type="long" />
+		<column name="commentInWrongCase" db-name="commentinwrongcase" type="long" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="AttachedFile">
+			<finder-column name="attachedFile" />
+		</finder>
+		<finder return-type="Collection" name="SafetyTestReportId">
+			<finder-column name="safetyTestReportId" />
+		</finder>
+		<finder return-type="Collection" name="EmissionTestReportId">
+			<finder-column name="emissionTestReportId" />
+		</finder>
+		<finder return-type="Collection" name="CopReportId">
+			<finder-column name="copReportId" />
+		</finder>
+		<finder return-type="Collection" name="DossierId">
+			<finder-column name="dossierId" />
+		</finder>
+		<finder return-type="CertificateRecord" name="CertificateNumber">
+			<finder-column name="certificateNumber" />
+		</finder>
+		<finder return-type="Collection" name="DossierIdAndInspectionReportId">
+			<finder-column name="dossierId" />
+			<finder-column name="inspectionReportId" />
+		</finder>
+	</entity>
+
+	<entity name="ControlReport" table="vr_controlreport" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="inspectionrecordId" db-name="inspectionrecordid" type="long" />
+		<column name="hosothutucId" db-name="hosothutucid" type="long" />
+		<column name="controlRequirementId" db-name="controlrequirementid" type="long" />
+		<column name="requirementNumber" db-name="requirementnumber" type="String" />
+		<column name="reportNumber" db-name="reportnumber" type="String" />
+		<column name="reportDate" db-name="reportdate" type="Date" />		
+		<column name="description" db-name="description" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="ControlReport" name="InspectionrecordId">
+			<finder-column name="inspectionrecordId" />
+		</finder>
+	</entity>
+
+	<entity name="SafetyTestRequest" table="vr_safetytestrequest" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="requestNumber" db-name="requestnumber" type="String" />
+		<column name="testContent" db-name="testcontent" type="String" />
+		<column name="testTimeAndPlace" db-name="testtimeandplace" type="String" />
+		<column name="testPayment" db-name="testpayment" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="corporationName" db-name="corporationname" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+
+	<entity name="EmissionTestRequest" table="vr_emissiontestrequest" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="requestNumber" db-name="requestnumber" type="String" />
+		<column name="testTimeAndPlace" db-name="testtimeandplace" type="String" />
+		<column name="testPayment" db-name="testpayment" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="corporationName" db-name="corporationname" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+
+	<entity name="ControlRequest" table="vr_controlrequest" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="requestNumber" db-name="requestnumber" type="String" />
+		<column name="corporationName" db-name="corporationname" type="String" />
+		<column name="controlContent" db-name="controlcontent" type="String" />
+		<column name="controlDeadLine" db-name="controldeadline" type="Date" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+
+	<entity name="ControlRequirement" table="vr_controlrequirement" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="requirementNumber" db-name="requirementnumber" type="String" />
+		<column name="requirementDate" db-name="requirementdate" type="Date" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="controlContent" db-name="controlcontent" type="String" />
+		<column name="controlDeadline" db-name="controldeadline" type="Date" />
+		<column name="attachedFile" db-name="attachedfile" type="int" />
+		<column name="requirementContent" db-name="requirementcontent" type="String" />
+		<column name="controlReportDeadline" db-name="controlreportdeadline" type="Date" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="inspectionrecordId" db-name="inspectionrecordid" type="long" />
+		<column name="phieuxulyphuId" db-name="phieuxulyphuid" type="long" />
+
+
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="RegisteredInspectionId">
+			<finder-column name="registeredInspectionId" />
+		</finder>
+
+		<finder return-type="ControlRequirement" name="InspectionrecordId">
+			<finder-column name="inspectionrecordId" />
+		</finder>
+
+		<finder return-type="Collection" name="PhieuxulyphuId">
+			<finder-column name="phieuxulyphuId" />
+		</finder>
+
+	</entity>
+
+	<entity name="CopReport" table="vr_copreport" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="reportNumber" db-name="reportnumber" type="String" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+	</entity>
+
+	<entity name="CustomsDeclaration" table="vr_customsdeclaration" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="importCustomDeclareNo" db-name="importcustomdeclareno" type="String" />
+		<column name="importCustomDeclareDate" db-name="importcustomdeclaredate" type="Date" />
+		<column name="customsResult" db-name="customsresult" type="String" />
+		<column name="productCheck" db-name="productcheck" type="String" />
+		<column name="releaseDate" db-name="releasedate" type="Date" />
+		<column name="hosothutucId" db-name="hosothutucid" type="long" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="CustomsDeclaration" name="HoSoThuTucId">
+			<finder-column name="hosothutucId" />
+		</finder>
+		
+	</entity>
+
+	<entity name="DebitNote" table="vr_debitnote" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="debitNoteNumber" db-name="debitnotenumber" type="String" />
+		<column name="transactionId" db-name="transactionid" type="String" />
+		<column name="organization" db-name="organization" type="String" />
+		<column name="division" db-name="division" type="String" />
+		<column name="reportBy" db-name="reportby" type="String" />
+		<column name="reportDate" db-name="reportdate" type="Date" />
+		<column name="fromDate" db-name="fromdate" type="Date" />
+		<column name="toDate" db-name="todate" type="Date" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="totalPayment" db-name="totalpayment" type="long" />
+		<column name="paymentType" db-name="paymenttype" type="long" />
+		<column name="markAsDeleted" db-name="markasdeleted" type="int" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="DebitNote" name="TransactionId">
+			<finder-column name="transactionId" />
+		</finder>
+		<finder return-type="DebitNote" name="DebitNoteNumber">
+			<finder-column name="debitNoteNumber" />
+		</finder>
+		<finder return-type="Collection" name="MarkAsDeleted">
+			<finder-column name="markAsDeleted" />
+		</finder>
+	</entity>
+
+	<entity name="DebitNoteDetails" table="vr_debitnotedetails" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleRecordId" db-name="vehiclerecordid" type="long" />
+		<column name="debitNoteId" db-name="debitnoteid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="unitPrice" db-name="unitprice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="basicCurrency" db-name="basiccurrency" type="String" />
+		<column name="exchangeRate" db-name="exchangerate" type="double" />
+		<column name="inspectionFee" db-name="inspectionfee" type="double" />
+		<column name="otherCosts" db-name="othercosts" type="double" />
+		<column name="totalCostsAndFee" db-name="totalcostsandfee" type="double" />
+		<column name="tax" db-name="tax" type="double" />
+		<column name="charges" db-name="charges" type="double" />
+		<column name="totalRealDebit" db-name="totalrealdebit" type="double" />
+		<column name="totalDebit" db-name="totaldebit" type="double" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="DebitNoteDetails" name="VehicleRecordId">
+			<finder-column name="vehicleRecordId" />
+		</finder>
+
+		<finder return-type="Collection" name="DebitNoteId">
+			<finder-column name="debitNoteId" />
+		</finder>
+	</entity>
+
+	<entity name="EmissionTestReport" table="vr_emissiontestreport" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="emissiontestRequirementId" db-name="emissiontestrequirementid" type="long" />
+		<column name="reportNumber" db-name="reportnumber" type="String" />
+		<column name="description" db-name="description" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="confirmedResult" db-name="confirmedresult" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="EmissionTestReport" name="EmissiontestRequirementId">
+			<finder-column name="emissiontestRequirementId" />
+		</finder>
+
+	</entity>
+
+	<entity name="EmissionTestRequirement" table="vr_emissiontestrequirement" local-service="true" remote-service="true" cache-enabled="false"
+		data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="requirementNumber" db-name="requirementnumber" type="String" />
+		<column name="contentOfRequest" db-name="contentofrequest" type="String" />
+		<column name="testingRegisteredPlace" db-name="testingregisteredplace" type="String" />
+		<column name="testingRegistration" db-name="testingregistration" type="String" />
+		<column name="testingPaymentCondition" db-name="testingpaymentcondition" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="phieuXuLyPhuId" db-name="phieuxulyphuid" type="long" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="EmissionTestRequirement" name="InspectionRecordId">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+		<finder return-type="Collection" name="PhieuXuLyPhuId">
+			<finder-column name="phieuXuLyPhuId" />
+		</finder>
+
+	</entity>
+
+	<entity name="ExchangeRate" table="vr_exchangerate" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="originalCurrency" db-name="originalcurrency" type="String" />
+		<column name="basicCurrency" db-name="basiccurrency" type="String" />
+		<column name="exchangeRate" db-name="exchangerate" type="double" />
+		<column name="publishDate" db-name="publishdate" type="Date" />
+		<column name="validFrom" db-name="validfrom" type="Date" />
+		<column name="validUntil" db-name="validuntil" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="OriginalCurrencyBasicCurrency">
+			<finder-column name="originalCurrency" />
+			<finder-column name="basicCurrency" />
+		</finder>
+	</entity>
+
+	<entity name="InspectionRecord" table="vr_inspectionrecord" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="inspectionRecordNo" db-name="inspectionrecordno" type="String" />
+		<column name="inspectionRecordDate" db-name="inspectionrecorddate" type="Date" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="inspectorId" db-name="inspectorid" type="long" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="inspectionSite" db-name="inspectionsite" type="String" />
+		<column name="inspectionDateFrom" db-name="inspectiondatefrom" type="Date" />
+		<column name="inspectionDateTo" db-name="inspectiondateto" type="Date" />
+		<column name="inspectionMode" db-name="inspectionmode" type="long" />
+		<column name="description" db-name="description" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="confirmedResult" db-name="confirmedresult" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="phieuXuLyPhuId" db-name="phieuxulyphuid" type="long" />
+		<column name="markupSafeTest" db-name="markupsafetest" type="long" />
+		<column name="markupEmissionTest" db-name="markupemissiontest" type="long" />
+		<column name="markupControl" db-name="markupcontrol" type="long" />
+		<column name="registeredInspectionId" type="long" db-name="registeredinspectionid" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long" />
+		<column name="otherCosts" db-name="othercosts" type="double" />
+		<column name="markupPaid" db-name="markuppaid" type="long" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="RegisteredInspectionId">
+			<finder-column name="registeredInspectionId" />
+		</finder>
+		<finder return-type="InspectionRecord" name="PhieuXuLyPhuId">
+			<finder-column name="phieuXuLyPhuId" />
+		</finder>
+		<finder return-type="Collection" name="Confirmedinspectionid">
+			<finder-column name="confirmedInspectionId" />
+		</finder>
+		<finder return-type="InspectionRecord" name="InspectionRecordNo">
+			<finder-column name="inspectionRecordNo" />
+		</finder>
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+	</entity>
+
+	<entity name="InspectionRecordAttach" table="vr_inspectionrecord_attach" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long"/>
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long"/>
+		<column name="enTryId" db-name="entryid" type="long"/>
+		<column name="enTryName" db-name="entryname" type="String"/>
+		<column name="inspectorId" db-name="inspectorid" type="long"/>
+		<column name="uploadTime" db-name="uploadtime" type="Date"/>
+		<column name="markUpDelte" db-name="markupdelte" type="int"/>
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="InspectionRecordAttach">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+	</entity>
+		
+	<entity name="PaymentStatus" table="vr_paymentstatus" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleRecordId" db-name="vehiclerecordid" type="long" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="unitPrice" db-name="unitprice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="basicCurrency" db-name="basiccurrency" type="String" />
+		<column name="exchangeRate" db-name="exchangerate" type="double" />
+		<column name="inspectionFee" db-name="inspectionfee" type="double" />
+		<column name="otherCosts" db-name="othercosts" type="double" />
+		<column name="totalCostsAndFee" db-name="totalcostsandfee" type="double" />
+		<column name="tax" db-name="tax" type="double" />
+		<column name="charges" db-name="charges" type="double" />
+		<column name="totalRealDebit" db-name="totalrealdebit" type="double" />
+		<column name="totalDebit" db-name="totaldebit" type="double" />
+		<column name="totalCredit" db-name="totalcredit" type="double" />
+		<column name="currentStatus" db-name="currentstatus" type="long" />
+		<column name="debitNoteNumber" db-name="debitnotenumber" type="String" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="PaymentStatus" name="VehicleRecordId">
+			<finder-column name="vehicleRecordId" />
+		</finder>
+
+		<finder return-type="Collection" name="DebitNoteNumber">
+			<finder-column name="debitNoteNumber" />
+		</finder>
+
+	</entity>
+
+	<entity name="SafetestRequirement" table="vr_safetestrequirement" local-service="true" remote-service="true" cache-enabled="false"
+		data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="requirementNumber" db-name="requirementnumber" type="String" />
+		<column name="contentOfRequest" db-name="contentofrequest" type="String" />
+		<column name="testingRegisteredPlace" db-name="testingregisteredplace" type="String" />
+		<column name="testingRegistration" db-name="testingregistration" type="String" />
+		<column name="testingPaymentCondition" db-name="testingpaymentcondition" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="phieuXuLyPhuId" db-name="phieuxulyphuid" type="long" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="SafetestRequirement" name="InspectionRecordId">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+
+		<finder return-type="Collection" name="PhieuXuLyPhuId">
+			<finder-column name="phieuXuLyPhuId" />
+		</finder>
+
+	</entity>
+
+	<entity name="SafetyTestReport" table="vr_safetytestreport" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="safetestRequirementId" db-name="safetestrequirementid" type="long" />
+		<column name="reportNumber" db-name="reportnumber" type="String" />
+		<column name="description" db-name="description" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="confirmedResult" db-name="confirmedresult" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="SafetyTestReport" name="SafetestRequirementId">
+			<finder-column name="safetestRequirementId" />
+		</finder>
+
+	</entity>
+
+	<entity name="CorporationTeam" table="vr_corporation_team" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="teamName" db-name="TEAMNAME" type="String" />
+		<column name="markUpDelete" db-name="markupdelete" type="int" />
+
+
+		<order by="asc">
+			<order-column name="markUpDelete" />
+		</order>
+
+		<finder return-type="Collection" name="CorporationIdAndTrangThai">
+			<finder-column name="corporationId" />
+			<finder-column name="markUpDelete" />
+		</finder>
+		<finder return-type="Collection" name="CorporationId">
+			<finder-column name="corporationId" />
+		</finder>
+
+	</entity>
+
+
+	<entity name="CorporationView" table="vr_corporation_view" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="corporationName" db-name="corporationname" type="String" />
+		<column name="inspectorId" db-name="inspectorid" type="long" />
+		<column name="isLeader" db-name="isleader" type="int" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="InspectorId">
+			<finder-column name="inspectorId" />
+		</finder>
+		<finder return-type="Collection" name="CorporationId">
+			<finder-column name="corporationId" />
+		</finder>
+		<finder return-type="Collection" name="InspectorIdCorporationId">
+			<finder-column name="corporationId" />
+			<finder-column name="inspectorId" />
+		</finder>
+		<finder return-type="Collection" name="IsLeader">
+			<finder-column name="isLeader" />
+		</finder>
+		<finder return-type="CorporationView" name="InspectorIdCorporationIdIsLeader">
+			<finder-column name="inspectorId" />
+			<finder-column name="corporationId" />
+			<finder-column name="isLeader" />
+		</finder>
+		<finder return-type="CorporationView" name="CorporationIdAndIsLeader">
+			<finder-column name="corporationId" />
+			<finder-column name="isLeader" />
+		</finder>
+
+	</entity>
+
+
+
+	<entity name="CorporationInspector" table="vr_corporation_inspector" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="inspectorid" db-name="inspectorid" type="long" />
+		<column name="inspectorName" db-name="inspectorname" type="String" />
+		<column name="inspectorPhone" db-name="inspectorphone" type="String" />
+		<column name="inspectorEmail" db-name="inspectoremail" type="String" />
+		<column name="contactcode" db-name="contactcode" type="String" />
+		<column name="teamId" db-name="teamid" type="long" />
+		<column name="markupTeamLeader" db-name="markupteamleader" type="int" />
+		<column name="markUpBoss" db-name="markupboss" type="int" />
+		<column name="place" db-name="place" type="String" />
+		<column name="title" db-name="title" type="String" />
+		<column name="filechukyId" db-name="filechukyid" type="long" />
+
+
+		<order by="desc">
+			<order-column name="inspectorName" />
+		</order>
+
+		<finder return-type="CorporationInspector" name="InspectorId">
+			<finder-column name="inspectorid" />
+		</finder>
+		<finder return-type="Collection" name="TeamId">
+			<finder-column name="teamId" />
+		</finder>
+		<finder return-type="Collection" name="CorporationId">
+			<finder-column name="corporationId" />
+		</finder>
+	</entity>
+
+	<entity name="CorporationAttendee" table="vr_corporation_attendee" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="confirmedInspectionId" db-name="ConfirmedInspectionId" type="long" />
+		<column name="sequence" db-name="sequence" type="long" />
+		<column name="inspectorid" db-name="inspectorId" type="long" />
+		<column name="inspectorName" db-name="inspectorName" type="String" />
+		<column name="inspectorRole" db-name="inspectorrole" type="long" />
+
+
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+		<finder name="ConfirmedInspectionId" return-type="Collection">
+			<finder-column name="confirmedInspectionId" />
+		</finder>
+		<finder name="ConfirmedInspectionIdAndInspectorRole" return-type="Collection">
+			<finder-column name="confirmedInspectionId" />
+			<finder-column name="inspectorRole" />
+		</finder>
+	</entity>
+
+
+	<entity name="InspectionCommonStatus" table="vr_inspectionCommonStatus" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+
+		<column name="vehicleClass" db-name="vehicleClass" type="String" />
+		<column name="sequenceNo" db-name="sequenceNo" type="long" />
+		<column name="type" db-name="type" type="long" />
+		<column name="groupName" db-name="groupName" type="String" />
+		<column name="itemName" db-name="itemName" type="String" />
+		<column name="commonStatus" db-name="commonStatus" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionRecordId" type="long" />
+		<column name="commonCode" db-name="CommonCode" type="String" />
+		<column name="allowEdit" db-name="AllowEdit" type="int" />
+
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+
+		<finder name="InspectionRecordId" return-type="Collection">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+
+		<finder name="VehicleClassAndTypeAndInspectionRecordId" return-type="Collection">
+			<finder-column name="vehicleClass" />
+			<finder-column name="type" />
+			<finder-column name="inspectionRecordId" />
+		</finder>
+		<finder name="VehicleClassAndInspectionRecordId" return-type="Collection">
+			<finder-column name="vehicleClass" />
+			<finder-column name="inspectionRecordId" />
+		</finder>
+	</entity>
+
+		<entity name="ViewTrungSoKhungDongCo" table="view_trungsokhungdongco" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<column name="debitNoteId" db-name="debitnoteid" type="long" />
+		<column name="sequenceNo" db-name="sequenceno" type="long" />
+		<column name="codeNumber" db-name="codenumber" type="long" />
+		<column name="chassisNumber" db-name="chassisnumber" type="String" />
+		<column name="engineNumber" db-name="enginenumber" type="String" />
+		<column name="productionYear" db-name="productionyear" type="long" />
+		<column name="vehicleEngineStatus" db-name="vehicleenginestatus" type="String" />
+		<column name="vehicleColor" db-name="vehiclecolor" type="String" />
+		<column name="unitPrice" db-name="unitprice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="draftCertificateId" db-name="draftcertificateid" type="long" />
+		<column name="certificateRecordId" db-name="certificaterecordid" type="long" />
+		<column name="markUpStatus" db-name="markupstatus" type="long" />
+		<column name="safeTestRequirementId" db-name="safetestrequirementid" type="long" />
+		<column name="emissionTestRequirementId" db-name="emissiontestrequirementid" type="long" />
+		<column name="controlRequirementId" db-name="controlrequirementid" type="long" />
+		<column name="markAsSample" db-name="MarkAsSample" type="int" />
+		<column name="registeredNumber" db-name="registerednumber" type="String" />
+		<column name="contactName" db-name="contactname" type="String" />
+		<column name="contactPhone" db-name="contactphone" type="String" />
+		<column name="inspectionDate" db-name="inspectiondate" type="Date" />
+		<column name="importerName" db-name="importername" type="String" />
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+	
+	<entity name="ViewDangKiemTimKiem" table="view_dangkiemtimkiem" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<column name="debitNoteId" db-name="debitnoteid" type="long" />
+		<column name="sequenceNo" db-name="sequenceno" type="long" />
+		<column name="codeNumber" db-name="codenumber" type="long" />
+		<column name="chassisNumber" db-name="chassisnumber" type="String" />
+		<column name="engineNumber" db-name="enginenumber" type="String" />
+		<column name="productionYear" db-name="productionyear" type="long" />
+		<column name="vehicleEngineStatus" db-name="vehicleenginestatus" type="String" />
+		<column name="vehicleColor" db-name="vehiclecolor" type="String" />
+		<column name="unitPrice" db-name="unitprice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="draftCertificateId" db-name="draftcertificateid" type="long" />
+		<column name="certificateRecordId" db-name="certificaterecordid" type="long" />
+		<column name="markUpStatus" db-name="markupstatus" type="long" />
+		<column name="safeTestRequirementId" db-name="safetestrequirementid" type="long" />
+		<column name="emissionTestRequirementId" db-name="emissiontestrequirementid" type="long" />
+		<column name="controlRequirementId" db-name="controlrequirementid" type="long" />
+		<column name="markAsSample" db-name="MarkAsSample" type="int" />
+		<column name="inspectionrecordno" db-name="inspectionrecordno" type="String" />
+		<column name="inspectionRecordDate" db-name="inspectionrecorddate" type="Date" />
+		<column name="attachedFileBbkt" db-name="attachedfilebbkt" type="long" />
+		<column name="certificateNumber" db-name="certificatenumber" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="registeredNumber" db-name="registerednumber" type="String" />
+		<column name="inspectorSignDate" db-name="inspectorsigndate" type="Date" />
+		<column name="vehicleClass" db-name="vehicleclass" type="String" />
+				
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+	</entity>
+	
+</service-builder>

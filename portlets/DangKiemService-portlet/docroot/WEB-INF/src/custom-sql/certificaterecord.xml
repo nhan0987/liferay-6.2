@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateRecordFinder.findCertificateXMY">
+		<![CDATA[
+			SELECT 
+				DISTINCT 
+				veh.certificatenumber AS "sochungchi", 
+				veh.vehicletype AS "maloaiphuongtien",
+				veh.vehicletypedescription AS "tenloaiphuongtien",
+				veh.countrycode AS "manuocsanxuat",
+				veh.countryname AS "tennuocsanxuat",
+				veh.trademarkdescription as "manhanhieu",
+				veh.commercialname AS "tenthuongmai", 
+				veh.productionyear AS "namsanxuat",
+				case when xcgioi.XMY0031 IS NULL or xcgioi.XMY0031 = ''
+				then (
+						case when xcgioi.XMY0038 IS NULL or xcgioi.XMY0038 = ''
+						then '---'
+						else xcgioi.XMY0038 end
+				)
+				else xcgioi.XMY0031 end  AS "thetichlamviec",
+				xcgioi.XMY0018 AS "sochongoi",
+				veh.enginenumber AS "sokhung",
+				veh.chassisnumber AS "somay",
+				veh.currentstatus AS "tinhtrangphuongtien",
+				veh.filechungchiid as "filechungchiid",
+				item2.code_0 as "manhomphuongtien",
+				item2.name as "tennhomphuongtien"
+			FROM 
+				dkvn_nghiepvu.thongsochungchi_xemay xcgioi, 
+				dkvn_nghiepvu.vr_vehicle_certificate veh,
+				dkvn_thutuchanhchinh.dm_dataitem item,
+				dkvn_thutuchanhchinh.dm_dataitem item2
+			WHERE
+				veh.certificaterecordid = xcgioi.certificaterecordid
+				AND item.code_0=veh.vehicletype
+				AND item2.code_0=item.altername
+				AND veh.certificatenumber = ?
+			ORDER BY 
+				veh.vehicletype, veh.trademark
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateRecordFinder.findCertificateXCG">
+		<![CDATA[
+			SELECT 
+				DISTINCT 
+				veh.certificatenumber AS "sochungchi", 
+				veh.vehicletype AS "maloaiphuongtien",
+				veh.vehicletypedescription AS "tenloaiphuongtien",
+				veh.countrycode AS "manuocsanxuat",
+				veh.countryname AS "tennuocsanxuat",
+				veh.trademarkdescription as "manhanhieu",
+				veh.commercialname AS "tenthuongmai", 
+				veh.modelcode AS "makieuloai",
+				veh.productionyear AS "namsanxuat",
+				case when xcgioi.XCG0076 IS NULL or xcgioi.XCG0076 = ''
+				then  (
+					case when xcgioi.XCG0084 IS NULL or xcgioi.XCG0084 = ''
+					then '---'
+					else xcgioi.XCG0084
+					end)
+				else xcgioi.XCG0076
+				end  AS "thetichlamviec",
+				xcgioi.XCG0009 AS "macongthucbanhxe", 
+				xcgioi.XCG0101    AS "loaihopso", 
+				xcgioi.XCG0047    AS "sochongoi", 
+				xcgioi.XCG1134    AS "trongtai",
+				veh.enginenumber AS "sokhung",
+				veh.chassisnumber AS "somay",
+				veh.currentstatus AS "tinhtrangphuongtien",
+				veh.filechungchiid as "filechungchiid",
+				item2.code_0 as "manhomphuongtien",
+				item2.name as "tennhomphuongtien"
+			FROM 
+				dkvn_nghiepvu.thongsochungchi_xecogioi xcgioi, 
+				dkvn_nghiepvu.vr_vehicle_certificate veh,
+				dkvn_thutuchanhchinh.dm_dataitem item,
+				dkvn_thutuchanhchinh.dm_dataitem item2
+			WHERE 
+				veh.certificaterecordid = xcgioi.certificaterecordid
+				AND item.code_0=veh.vehicletype
+				AND item2.code_0=item.altername
+				AND veh.certificatenumber = ?
+			ORDER BY veh.vehicletype, veh.trademark
+		]]>
+	</sql>
+</custom-sql>

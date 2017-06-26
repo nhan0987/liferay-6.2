@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://facade.dk.gt.dtt.vn" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://facade.dk.gt.dtt.vn" xmlns:intf="http://facade.dk.gt.dtt.vn" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://facade.dk.gt.dtt.vn" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="sendAndGetMessage">
+    <complexType>
+     <sequence>
+      <element name="requestMessage" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendAndGetMessageResponse">
+    <complexType>
+     <sequence>
+      <element name="sendAndGetMessageReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="CheckAvailable">
+    <complexType/>
+   </element>
+   <element name="CheckAvailableResponse">
+    <complexType>
+     <sequence>
+      <element name="CheckAvailableReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="CheckAvailableRequest">
+
+      <wsdl:part element="impl:CheckAvailable" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendAndGetMessageResponse">
+
+      <wsdl:part element="impl:sendAndGetMessageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="CheckAvailableResponse">
+
+      <wsdl:part element="impl:CheckAvailableResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendAndGetMessageRequest">
+
+      <wsdl:part element="impl:sendAndGetMessage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MessageAndResponseImpl">
+
+      <wsdl:operation name="sendAndGetMessage">
+
+         <wsdl:input message="impl:sendAndGetMessageRequest" name="sendAndGetMessageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendAndGetMessageResponse" name="sendAndGetMessageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="CheckAvailable">
+
+         <wsdl:input message="impl:CheckAvailableRequest" name="CheckAvailableRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:CheckAvailableResponse" name="CheckAvailableResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MessageAndResponseImplSoapBinding" type="impl:MessageAndResponseImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="sendAndGetMessage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendAndGetMessageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendAndGetMessageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="CheckAvailable">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="CheckAvailableRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="CheckAvailableResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MessageAndResponseImplService">
+
+      <wsdl:port binding="impl:MessageAndResponseImplSoapBinding" name="MessageAndResponseImpl">
+
+         <wsdlsoap:address location="http://localhost%3A8080/services/MessageAndResponseImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

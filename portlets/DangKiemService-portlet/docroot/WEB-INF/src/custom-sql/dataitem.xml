@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemFinder.findByGroupCode">
+		<![CDATA[
+			SELECT 
+				 {dm_dataitem.*}
+			FROM 
+				dm_dataitem
+			LEFT JOIN 
+				dm_datagroup ON dm_datagroup.code=dm_dataitem.dataGroupId
+			WHERE
+				lower(dm_datagroup.code) = ?
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemFinder.findByGC_C0_S">
+		<![CDATA[
+			SELECT 
+				 {dm_dataitem.*}
+			FROM 
+				dm_dataitem
+			LEFT JOIN 
+				dm_datagroup ON dm_datagroup.code=dm_dataitem.dataGroupId
+			WHERE
+				lower(dm_datagroup.code) = ?
+				AND dm_dataitem.code_0 = ?
+			ORDER BY 
+				dm_dataitem.id DESC
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemFinder.countBySynchDate">
+		<![CDATA[
+			SELECT 
+				 COUNT(*) AS COUNT_VALUE
+			FROM 
+				dm_dataitem
+			WHERE
+				synchDate >= ?
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemFinder.findBySynchDate">
+		<![CDATA[
+			SELECT 
+				 {dm_dataitem.*}
+			FROM 
+				dm_dataitem
+			WHERE
+				synchDate >= ?
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemFinder.findByValidateFrom">
+		<![CDATA[
+			SELECT 
+				 {dm_dataitem.*}
+			FROM 
+				dm_dataitem
+			WHERE
+				validatedFrom >= ?
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemFinder.findByGN_C0_C1_C2_C3_L_AN">
+		<![CDATA[
+			SELECT 
+				 {dm_dataitem.*}
+			FROM 
+				dm_dataitem
+			LEFT JOIN 
+				dm_datagroup ON dm_datagroup.code=dm_dataitem.dataGroupId
+			WHERE
+				dm_dataitem.status = 1
+				AND lower(dm_datagroup.name) = ?
+				AND dm_dataitem.code_0 = ?
+				AND dm_dataitem.code_1 = ?
+				AND dm_dataitem.code_2 = ?
+				AND dm_dataitem.code_3 = ?
+				AND dm_dataitem.level = ?
+				AND dm_dataitem.alterName = ?
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemFinder.findByGC_C0_C1_C2_C3_L_AN">
+		<![CDATA[
+			SELECT 
+				 {dm_dataitem.*}
+			FROM 
+				dm_dataitem
+			LEFT JOIN 
+				dm_datagroup ON dm_datagroup.code=dm_dataitem.dataGroupId
+			WHERE
+				dm_dataitem.status = 1
+				AND lower(dm_datagroup.code) = ?
+				AND dm_dataitem.code_0 = ?
+				AND dm_dataitem.code_1 = ?
+				AND dm_dataitem.code_2 = ?
+				AND dm_dataitem.code_3 = ?
+				AND dm_dataitem.level = ?
+				AND dm_dataitem.alterName = ?
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemFinder.count_HO_SO_NGHIEP_VU_BySynchDate">
+		<![CDATA[
+			SELECT 
+				 COUNT(*) AS COUNT_VALUE
+			FROM 
+				[$SCHEMA$].[$TABLE_NAME$]
+			WHERE
+				1 = 1
+				AND [$COLUMN$] >= ?
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemFinder.find_HO_SO_NGHIEP_VU_BySynchDate">
+		<![CDATA[
+			SELECT 
+				 {[$TABLE_NAME$].*}
+			FROM 
+				[$SCHEMA$].[$TABLE_NAME$]
+			WHERE
+				1 = 1
+				AND [$COLUMN$] >= ?
+		]]>
+	</sql>
+</custom-sql>

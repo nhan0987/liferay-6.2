@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionRecordAttachFinder.findByHoSoThuTucIds">
+		<![CDATA[
+			SELECT 
+				{vr_inspectionrecord_attach.*}
+			FROM 
+				vr_inspectionrecord_attach
+			WHERE
+				hoSoThuTucId IN ([$HO_SO_THU_TUC_IDS$])
+			)
+		]]>
+	</sql>
+</custom-sql>

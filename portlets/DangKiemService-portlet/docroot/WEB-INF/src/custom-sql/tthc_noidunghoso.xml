@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql id="vn.dtt.gt.dk.dao.common.service.persistence.TthcNoidungHoSoFinder.findByHoSoThuTucIds">
+		<![CDATA[
+			SELECT 
+				{tthc_noidunghoso.*}
+			FROM 
+				tthc_noidunghoso
+			WHERE
+				hoSoThuTucId IN ([$HO_SO_THU_TUC_IDS$])
+		]]>
+	</sql>
+</custom-sql>

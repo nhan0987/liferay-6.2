@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<globalConfiguration>
+		<parameter name="adminPassword" value="admin" />
+		<parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl" />
+		<parameter name="sendXsiTypes" value="true" />
+		<parameter name="sendMultiRefs" value="true" />
+		<parameter name="sendXMLDeclaration" value="true" />
+		<parameter name="axis.sendMinimizedElements" value="true" />
+		<requestFlow>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="session" />
+			</handler>
+			<handler type="java:org.apache.axis.handlers.JWSHandler">
+				<parameter name="scope" value="request" />
+				<parameter name="extension" value=".jwr" />
+			</handler>
+		</requestFlow>
+	</globalConfiguration>
+	<handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder" />
+	<handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper" />
+	<handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler" />
+	<transport name="http">
+		<requestFlow>
+			<handler type="URLMapper" />
+			<handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler" />
+		</requestFlow>
+	</transport>
+	<transport name="local">
+		<responseFlow>
+			<handler type="LocalResponder" />
+		</responseFlow>
+	</transport>
+	<service name="Plugin_dkapi_CertificateRecordService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCertificateRecord" qname="operNS:getCertificateRecord" returnQName="getCertificateRecordReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="certificatenumber" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="vehicleclass" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="getCertificateRecord" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CertificateRecordServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CertificateRecordServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CertificateRecordServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CertificateRecordService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_CertificateRecordSpecService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CertificateRecordSpecServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CertificateRecordSpecServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CertificateRecordSpecServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CertificateRecordSpecService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_CfgLimitTechnicalSpecService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:cmp-ns="http://model.nghiepvu.dao.dk.gt.dtt.vn" qname="ns:ArrayOf_tns2_CfgLimitTechnicalSpecSoap" type="java:vn.dtt.gt.dk.dao.nghiepvu.model.CfgLimitTechnicalSpecSoap[]" innerType="cmp-ns:CfgLimitTechnicalSpecSoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.nghiepvu.dao.dk.gt.dtt.vn" qname="ns:CfgLimitTechnicalSpecSoap" type="java:vn.dtt.gt.dk.dao.nghiepvu.model.CfgLimitTechnicalSpecSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="countBySyncDate" qname="operNS:countBySyncDate" returnQName="countBySyncDateReturn" returnType="rtns:int" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="validatefrom" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="countCfgLimitTechnicalSpec" qname="operNS:countCfgLimitTechnicalSpec" returnQName="countCfgLimitTechnicalSpecReturn" returnType="rtns:int" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getBySpecificationCode" qname="operNS:getBySpecificationCode" returnQName="getBySpecificationCodeReturn" returnType="rtns:CfgLimitTechnicalSpecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="specificationcode" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:tns2="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getBySynchDate" qname="operNS:getBySynchDate" returnQName="getBySynchDateReturn" returnType="rtns:ArrayOf_tns2_CfgLimitTechnicalSpecSoap" returnItemType="tns2:CfgLimitTechnicalSpecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="validatefrom" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:tns2="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getBySynchDate" qname="operNS:getBySynchDate" returnQName="getBySynchDateReturn" returnType="rtns:ArrayOf_tns2_CfgLimitTechnicalSpecSoap" returnItemType="tns2:CfgLimitTechnicalSpecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="validatefrom" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:tns2="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getCfgLimitTechnicalSpecs" qname="operNS:getCfgLimitTechnicalSpecs" returnQName="getCfgLimitTechnicalSpecsReturn" returnType="rtns:ArrayOf_tns2_CfgLimitTechnicalSpecSoap" returnItemType="tns2:CfgLimitTechnicalSpecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="countBySyncDate countCfgLimitTechnicalSpec getBySpecificationCode getBySynchDate getCfgLimitTechnicalSpecs" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CfgLimitTechnicalSpecServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.nghiepvu.dao.dk.gt.dtt.vn,urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CfgLimitTechnicalSpecServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CfgLimitTechnicalSpecServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CfgLimitTechnicalSpecService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_CfgTechnicalspecService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:cmp-ns="http://model.nghiepvu.dao.dk.gt.dtt.vn" qname="ns:ArrayOf_tns2_CfgTechnicalspecSoap" type="java:vn.dtt.gt.dk.dao.nghiepvu.model.CfgTechnicalspecSoap[]" innerType="cmp-ns:CfgTechnicalspecSoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.nghiepvu.dao.dk.gt.dtt.vn" qname="ns:CfgTechnicalspecSoap" type="java:vn.dtt.gt.dk.dao.nghiepvu.model.CfgTechnicalspecSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="countBySyncDate" qname="operNS:countBySyncDate" returnQName="countBySyncDateReturn" returnType="rtns:int" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="validatefrom" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="countCfgTechnicalSpec" qname="operNS:countCfgTechnicalSpec" returnQName="countCfgTechnicalSpecReturn" returnType="rtns:int" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getBySpecificationCode" qname="operNS:getBySpecificationCode" returnQName="getBySpecificationCodeReturn" returnType="rtns:CfgTechnicalspecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="specificationcode" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:tns2="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getBySynchDate" qname="operNS:getBySynchDate" returnQName="getBySynchDateReturn" returnType="rtns:ArrayOf_tns2_CfgTechnicalspecSoap" returnItemType="tns2:CfgTechnicalspecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="validatefrom" type="tns:string"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:tns2="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getBySynchDate" qname="operNS:getBySynchDate" returnQName="getBySynchDateReturn" returnType="rtns:ArrayOf_tns2_CfgTechnicalspecSoap" returnItemType="tns2:CfgTechnicalspecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="validatefrom" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:tns2="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getCfgTechnicalSpecs" qname="operNS:getCfgTechnicalSpecs" returnQName="getCfgTechnicalSpecsReturn" returnType="rtns:ArrayOf_tns2_CfgTechnicalspecSoap" returnItemType="tns2:CfgTechnicalspecSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="countBySyncDate countCfgTechnicalSpec getBySpecificationCode getBySynchDate getCfgTechnicalSpecs" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CfgTechnicalspecServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.nghiepvu.dao.dk.gt.dtt.vn,urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CfgTechnicalspecServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CfgTechnicalspecServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CfgTechnicalspecService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_ConfirmedInspectionService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.ConfirmedInspectionServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ConfirmedInspectionServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ConfirmedInspectionServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_ConfirmedInspectionService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_ControlReportService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.ControlReportServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ControlReportServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ControlReportServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_ControlReportService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_ControlRequestService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.ControlRequestServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ControlRequestServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ControlRequestServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_ControlRequestService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_ControlRequirementService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.ControlRequirementServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ControlRequirementServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ControlRequirementServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_ControlRequirementService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_CopReportService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CopReportServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CopReportServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CopReportServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CopReportService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_CorporationAttendeeService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CorporationAttendeeServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CorporationAttendeeServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CorporationAttendeeServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CorporationAttendeeService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_CorporationInspectorService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CorporationInspectorServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CorporationInspectorServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CorporationInspectorServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CorporationInspectorService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_CorporationViewService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CorporationViewServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CorporationViewServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CorporationViewServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CorporationViewService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_CustomsDeclarationService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.CustomsDeclarationServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="CustomsDeclarationServiceSoap" />
+		<parameter name="wsdlServiceElement" value="CustomsDeclarationServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_CustomsDeclarationService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_EmissionTestReportService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.EmissionTestReportServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="EmissionTestReportServiceSoap" />
+		<parameter name="wsdlServiceElement" value="EmissionTestReportServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_EmissionTestReportService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_EmissionTestRequestService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.EmissionTestRequestServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="EmissionTestRequestServiceSoap" />
+		<parameter name="wsdlServiceElement" value="EmissionTestRequestServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_EmissionTestRequestService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_EmissionTestRequirementService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.EmissionTestRequirementServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="EmissionTestRequirementServiceSoap" />
+		<parameter name="wsdlServiceElement" value="EmissionTestRequirementServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_EmissionTestRequirementService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_InspectionCommonStatusService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.InspectionCommonStatusServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="InspectionCommonStatusServiceSoap" />
+		<parameter name="wsdlServiceElement" value="InspectionCommonStatusServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_InspectionCommonStatusService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_InspectionRecordAttachService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:cmp-ns="http://model.nghiepvu.dao.dk.gt.dtt.vn" qname="ns:ArrayOf_tns2_InspectionRecordAttachSoap" type="java:vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecordAttachSoap[]" innerType="cmp-ns:InspectionRecordAttachSoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<arrayMapping xmlns:ns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_long" type="java:long[]" innerType="cmp-ns:long" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.nghiepvu.dao.dk.gt.dtt.vn" qname="ns:InspectionRecordAttachSoap" type="java:vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecordAttachSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:tns2="http://model.nghiepvu.dao.dk.gt.dtt.vn" name="getByHoSoThuTucIds" qname="operNS:getByHoSoThuTucIds" returnQName="getByHoSoThuTucIdsReturn" returnType="rtns:ArrayOf_tns2_InspectionRecordAttachSoap" returnItemType="tns2:InspectionRecordAttachSoap" soapAction="">
+			<parameter xmlns:tns="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" qname="hosothutucids" type="tns:ArrayOf_xsd_long"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="getByHoSoThuTucIds" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.InspectionRecordAttachServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.nghiepvu.dao.dk.gt.dtt.vn,urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="InspectionRecordAttachServiceSoap" />
+		<parameter name="wsdlServiceElement" value="InspectionRecordAttachServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_InspectionRecordAttachService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_InspectionRecordService" provider="java:RPC" style="rpc" use="encoded">
+		<operation xmlns:operNS="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="doImportInspectionRecord" qname="operNS:doImportInspectionRecord" returnQName="doImportInspectionRecordReturn" returnType="rtns:string" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="vehicleinspectionrecord" type="tns:string"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="doImportInspectionRecord" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.InspectionRecordServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="InspectionRecordServiceSoap" />
+		<parameter name="wsdlServiceElement" value="InspectionRecordServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_InspectionRecordService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_InspectionRecordSpecService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.InspectionRecordSpecServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="InspectionRecordSpecServiceSoap" />
+		<parameter name="wsdlServiceElement" value="InspectionRecordSpecServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_InspectionRecordSpecService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_NewExchangeRateService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.NewExchangeRateServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="NewExchangeRateServiceSoap" />
+		<parameter name="wsdlServiceElement" value="NewExchangeRateServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_NewExchangeRateService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_ProductionCountryService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.ProductionCountryServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="ProductionCountryServiceSoap" />
+		<parameter name="wsdlServiceElement" value="ProductionCountryServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_ProductionCountryService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_RegisteredInspectionService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.RegisteredInspectionServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="RegisteredInspectionServiceSoap" />
+		<parameter name="wsdlServiceElement" value="RegisteredInspectionServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_RegisteredInspectionService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_SafetestRequirementService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.SafetestRequirementServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="SafetestRequirementServiceSoap" />
+		<parameter name="wsdlServiceElement" value="SafetestRequirementServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_SafetestRequirementService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_SafetyTestReportService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.SafetyTestReportServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="SafetyTestReportServiceSoap" />
+		<parameter name="wsdlServiceElement" value="SafetyTestReportServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_SafetyTestReportService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_SafetyTestRequestService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.SafetyTestRequestServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="SafetyTestRequestServiceSoap" />
+		<parameter name="wsdlServiceElement" value="SafetyTestRequestServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_SafetyTestRequestService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_VehicleGroupInitialService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.VehicleGroupInitialServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="VehicleGroupInitialServiceSoap" />
+		<parameter name="wsdlServiceElement" value="VehicleGroupInitialServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_VehicleGroupInitialService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_VehicleGroupService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.VehicleGroupServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="VehicleGroupServiceSoap" />
+		<parameter name="wsdlServiceElement" value="VehicleGroupServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_VehicleGroupService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_VehicleRecordService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.VehicleRecordServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="VehicleRecordServiceSoap" />
+		<parameter name="wsdlServiceElement" value="VehicleRecordServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_VehicleRecordService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_VehicleSpecificationService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.VehicleSpecificationServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="VehicleSpecificationServiceSoap" />
+		<parameter name="wsdlServiceElement" value="VehicleSpecificationServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_VehicleSpecificationService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_VehicleStatisticsService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.VehicleStatisticsServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="VehicleStatisticsServiceSoap" />
+		<parameter name="wsdlServiceElement" value="VehicleStatisticsServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_VehicleStatisticsService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+	<service name="Plugin_dkapi_VehiclerecordInitialService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="vn.dtt.gt.dk.dao.nghiepvu.service.http.VehiclerecordInitialServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="VehiclerecordInitialServiceSoap" />
+		<parameter name="wsdlServiceElement" value="VehiclerecordInitialServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_dkapi_VehiclerecordInitialService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.nghiepvu.dao.dk.gt.dtt.vn" />
+	</service>
+</deployment>

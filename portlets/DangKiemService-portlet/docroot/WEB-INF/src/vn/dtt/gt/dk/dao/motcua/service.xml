@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="vn.dtt.gt.dk.dao.motcua">
+	<author>huymq</author>
+	<namespace>dkapi</namespace>
+
+	<entity name="MotCuaChuyenDichTrangThai" table="motcua_chuyendichtrangthai" local-service="true" remote-service="false"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="trangThaiNguonId" db-name="trangthainguonid" type="long"/>
+		<column name="trangThaiDichId" db-name="trangthaidichid" type="long"/>
+		<column name="dieuKienChuyenDich" db-name="dieukienchuyendich" type="String"/>
+		<column name="hanhDongXuLy" db-name="hanhdongxuly" type="String"/>
+        <column name="soNgayXuLy" type="int" db-name="songayxuly"></column>
+        <column name="phanNhomHoSoId" type="long" db-name="phannhomhosoid"></column>
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="DieuKienChuyenDich">
+			<finder-column name="dieuKienChuyenDich" />
+		</finder>
+		<finder return-type="Collection" name="DieuKienChuyenDichAndTrangThaiNguonId">
+			<finder-column name="dieuKienChuyenDich" />
+			<finder-column name="trangThaiNguonId" />
+		</finder>
+		<finder return-type="Collection" name="TrangThaiDichId">
+			<finder-column name="trangThaiDichId" />
+		</finder>
+		<finder return-type="Collection" name="TrangThaiNguonId">
+			<finder-column name="trangThaiNguonId" />
+		</finder>
+		
+	</entity>
+
+	<entity name="MotCuaDienBienHoSo" table="motcua_dienbienhoso" local-service="true" remote-service="true"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="phieuXuLyChinhId" db-name="phieuxulychinhid" type="long"/>
+		<column name="phieuXuLyPhuId" db-name="phieuxulyphuid" type="long"/>
+		<column name="soNgayQuaHan" db-name="songayquahan" type="int"/>
+		<column name="trangThaiTruocId" db-name="trangthaitruocid" type="long"/>
+		<column name="trangThaiSauId" db-name="trangthaisauid" type="long"/>
+		<column name="ngayXuLy" db-name="ngayxuly" type="Date"/>
+		<column name="nguoiXuLy" db-name="nguoixuly" type="long"/>
+		<column name="hanhDongXuLy" db-name="hanhdongxuly" type="String"/>
+		<column name="synchdate" db-name="synchdate" type="Date"/>
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="TrangThaiTruocId">
+			<finder-column name="trangThaiTruocId" />
+		</finder>
+		<finder return-type="Collection" name="TrangThaiSauId">
+			<finder-column name="trangThaiSauId" />
+		</finder>
+		<finder return-type="Collection" name="PhieuXuLyChinhId">
+			<finder-column name="phieuXuLyChinhId" />
+		</finder>
+		<finder return-type="Collection" name="PhieuXuLyChinhIdTrangThaiTruocId">
+			<finder-column name="phieuXuLyChinhId" />
+			<finder-column name="trangThaiTruocId" />
+		</finder>
+		<finder return-type="Collection" name="PhieuXuLyChinhIdTrangThaiSauId">
+			<finder-column name="phieuXuLyChinhId" />
+			<finder-column name="trangThaiSauId" />
+		</finder>
+		<finder return-type="Collection" name="PhieuXuLyChinhIdPhieuXuLyPhuIdTrangThaiSauId">
+			<finder-column name="phieuXuLyChinhId" />
+			<finder-column name="trangThaiSauId" />
+			<finder-column name="phieuXuLyPhuId" />
+		</finder>
+		<finder return-type="MotCuaDienBienHoSo" name="PhieuXuLyChinhIdPhieuXuLyPhuIdTrangThaiSauIdNguoiXuLy">
+			<finder-column name="phieuXuLyChinhId" />
+			<finder-column name="trangThaiSauId" />
+			<finder-column name="phieuXuLyPhuId" />
+			<finder-column name="nguoiXuLy" />
+		</finder>
+		<finder return-type="Collection" name="PhieuXuLyPhuId">
+			<finder-column name="phieuXuLyPhuId" />
+		</finder>
+	</entity>
+	
+	<entity name="MotCuaKetQuaDienBien" table="motcua_ketquadienbien" local-service="true" remote-service="false"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="dienBienHoSoId" db-name="dienbienhosoid" type="long"/>
+		<column name="noiDungHoSoId" db-name="noidunghosoid" type="long"/>
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="DienBienHoSoId">
+			<finder-column name="dienBienHoSoId" />
+		</finder>
+		<finder return-type="Collection" name="NoiDungHoSoId">
+			<finder-column name="noiDungHoSoId" />
+		</finder>
+	</entity>
+	
+	<entity name="MotCuaPhanCongXuLy" table="motcua_phancongxuly" local-service="true" remote-service="false"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="phieuXuLyChinhId" db-name="phieuxulychinhid" type="long"/>
+		<column name="phieuXuLyPhuId" db-name="phieuxulyphuid" type="long"/>
+		<column name="trangThaiHoSoId" db-name="trangthaihosoid" type="long"/>
+		<column name="nguoiXuLy" db-name="nguoixuly" type="long"/>
+		<column name="nhomXuLy" db-name="nhomxuly" type="long"/>
+		<column name="ngayPhanCong" db-name="ngayphancong" type="Date"/>
+		<column name="nguoiPhanCong" db-name="nguoiphancong" type="long"/>
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="PhieuXuLyChinhId">
+			<finder-column name="phieuXuLyChinhId" />
+		</finder>
+	</entity>
+	
+	<entity name="MotCuaPhieuXuLyChinh" table="motcua_phieuxulychinh" local-service="true" remote-service="false"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long"/>
+		<column name="quyTrinhThuTucId" db-name="quytrinhthutucid" type="long"/>
+		<column name="tenNguoiNop" db-name="tennguoinop" type="String"/>
+		<column name="cmndNguoiNop" db-name="cmndnguoinop" type="String"/>
+		<column name="diaChiNguoiNop" db-name="diachinguoinop" type="String"/>
+		<column name="soDtddNguoiNop" db-name="sodtddnguoinop" type="String"/>
+		<column name="emailNguoiNop" db-name="emailnguoinop" type="String"/>
+		<column name="ghiChu" db-name="ghichu" type="String"/>
+		<column name="trangThaiHienTaiId" db-name="trangthaihientaiid" type="long"/>
+		<column name="hetHoSoCon" db-name="hethosocon" type="long"/>
+		<column name="chiemQuyenXuLy" db-name="chiemquyenxuly" type="long"/>
+		<column name="ngayTaoPhieu" db-name="ngaytaophieu" type="Date"/>
+		<column name="nguoiTaoPhieu" db-name="nguoitaophieu" type="long"/>
+		<column name="soDtcdNguoiNop" db-name="sodtcdnguoinop" type="String"/>
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="MotCuaPhieuXuLyChinh" name="HoSoThuTucIdAndQuyTrinhThuTucId">
+			<finder-column name="hoSoThuTucId" />
+			<finder-column name="quyTrinhThuTucId" />
+		</finder>
+		<finder return-type="MotCuaPhieuXuLyChinh" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		
+	</entity>
+	
+	
+	<entity name="PhieuXuLyChinhHoSoThuTuc" table="view_phieuxulychinh_hosothutuc" local-service="true" remote-service="false"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long"/>
+		<column name="quyTrinhThuTucId" db-name="quytrinhthutucid" type="long"/>
+		<column name="tenNguoiNop" db-name="tennguoinop" type="String"/>
+		<column name="cmndNguoiNop" db-name="cmndnguoinop" type="String"/>
+		<column name="diaChiNguoiNop" db-name="diachinguoinop" type="String"/>
+		<column name="soDtddNguoiNop" db-name="sodtddnguoinop" type="String"/>
+		<column name="emailNguoiNop" db-name="emailnguoinop" type="String"/>
+		<column name="ghiChu" db-name="ghichu" type="String"/>
+		<column name="trangThaiHienTaiId" db-name="trangthaihientaiid" type="long"/>
+		<column name="hetHoSoCon" db-name="hethosocon" type="long"/>
+		<column name="chiemQuyenXuLy" db-name="chiemquyenxuly" type="long"/>
+		<column name="ngayTaoPhieu" db-name="ngaytaophieu" type="Date"/>
+		<column name="nguoiTaoPhieu" db-name="nguoitaophieu" type="long"/>
+		<column name="soDtcdNguoiNop" db-name="sodtcdnguoinop" type="String"/>
+		
+		<column name="maSoHoSo" db-name="masohoso" type="String"/>
+		<column name="maBienNhan" db-name="mabiennhan" type="String"/>
+		<column name="thuTucHanhChinhId" db-name="thutuchanhchinhid" type="long"/>
+		<column name="tenChuHoSo" db-name="tenchuhoso" type="String"/>	
+		<column name="ngayGuiHoSo" db-name="ngayguihoso" type="Date"/>
+		<column name="tenDonViTiepNhan" db-name="tendonvitiepnhan" type="String"/>	
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+	</entity>
+	
+	<entity name="MotCuaPhieuXuLyPhu" table="motcua_phieuxulyphu" local-service="true" remote-service="false"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="phieuXuLyChinhId" db-name="phieuxulychinhid" type="long"/>
+		<column name="trichYeuNoiDung" db-name="trichyeunoidung" type="String"/>
+		<column name="ghiChu" db-name="ghichu" type="String"/>
+		<column name="trangThaiHienTaiId" db-name="trangthaihientaiid" type="long"/>
+		<column name="noiDungHoSoId" db-name="noidunghosoid" type="long"/>
+		<column name="chiemQuyenXuLy" db-name="chiemquyenxuly" type="long"/>
+		<column name="ngayTaoPhieu" db-name="ngaytaophieu" type="Date"/>
+		<column name="nguoiTaoPhieu" db-name="nguoitaophieu" type="long"/>
+		<column name="nhomPhieuXuLy" db-name="nhomphieuxuly" type="String"/>
+		<column name="phanNhomHoSoId" db-name="phannhomhosoid" type="long"/>
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="MotCuaPhieuXuLyPhu" name="PhieuXuLyChinhIdAndNoiDungHoSoId">
+			<finder-column name="phieuXuLyChinhId" />
+			<finder-column name="noiDungHoSoId" />
+		</finder>
+		<finder return-type="Collection" name="PhieuXuLyChinhId">
+			<finder-column name="phieuXuLyChinhId" />
+		</finder>
+		<finder return-type="Collection" name="PhieuXuLyChinhIdAndNhomPhieuXuLy">
+			<finder-column name="phieuXuLyChinhId" />
+			<finder-column name="nhomPhieuXuLy" />
+		</finder>
+		<finder return-type="Collection" name="PhieuXuLyChinhAndTrangThaiHienTai">
+			<finder-column name="phieuXuLyChinhId" />
+			<finder-column name="trangThaiHienTaiId" />
+		</finder>
+		
+		<finder return-type="Collection" name="PhanNhomHoSoId">
+			<finder-column name="phanNhomHoSoId" />
+		</finder>
+	</entity>
+	
+	<entity name="PhieuXuLyPhuHoSoThuTuc" table="view_phieuxulyphu_hosothutuc" local-service="true" remote-service="false"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="phieuXuLyChinhId" db-name="phieuxulychinhid" type="long"/>
+		<column name="trichYeuNoiDung" db-name="trichyeunoidung" type="String"/>
+		<column name="ghiChu" db-name="ghichu" type="String"/>
+		<column name="trangThaiHienTaiId" db-name="trangthaihientaiid" type="long"/>
+		<column name="noiDungHoSoId" db-name="noidunghosoid" type="long"/>
+		<column name="chiemQuyenXuLy" db-name="chiemquyenxuly" type="long"/>
+		<column name="ngayTaoPhieu" db-name="ngaytaophieu" type="Date"/>
+		<column name="nguoiTaoPhieu" db-name="nguoitaophieu" type="long"/>
+		<column name="nhomPhieuXuLy" db-name="nhomphieuxuly" type="String"/>
+		<column name="phanNhomHoSoId" db-name="phannhomhosoid" type="long"/>
+		
+		<column name="maSoHoSo" db-name="masohoso" type="String"/>
+		<column name="maBienNhan" db-name="mabiennhan" type="String"/>
+		<column name="thuTucHanhChinhId" db-name="thutuchanhchinhid" type="long"/>
+		<column name="tenChuHoSo" db-name="tenchuhoso" type="String"/>	
+		<column name="ngayGuiHoSo" db-name="ngayguihoso" type="Date"/>
+		<column name="tenDonViTiepNhan" db-name="tendonvitiepnhan" type="String"/>
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+	</entity>
+	
+	<entity name="DaKiemTra" table="view_dakiemtra" local-service="true" remote-service="true"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="phieuXuLyChinhId" db-name="phieuxulychinhid" type="long"/>
+		<column name="trichYeuNoiDung" db-name="trichyeunoidung" type="String"/>
+		<column name="ghiChu" db-name="ghichu" type="String"/>
+		<column name="trangThaiHienTaiId" db-name="trangthaihientaiid" type="long"/>
+		<column name="noiDungHoSoId" db-name="noidunghosoid" type="long"/>
+		<column name="chiemQuyenXuLy" db-name="chiemquyenxuly" type="long"/>
+		<column name="ngayTaoPhieu" db-name="ngaytaophieu" type="Date"/>
+		<column name="nguoiTaoPhieu" db-name="nguoitaophieu" type="long"/>
+		<column name="nhomPhieuXuLy" db-name="nhomphieuxuly" type="String"/>
+		<column name="phanNhomHoSoId" db-name="phannhomhosoid" type="long"/>
+		
+		<column name="maSoHoSo" db-name="masohoso" type="String"/>
+		<column name="maBienNhan" db-name="mabiennhan" type="String"/>
+		<column name="thuTucHanhChinhId" db-name="thutuchanhchinhid" type="long"/>
+		<column name="tenChuHoSo" db-name="tenchuhoso" type="String"/>	
+		<column name="ngayGuiHoSo" db-name="ngayguihoso" type="Date"/>
+		<column name="tenDonViTiepNhan" db-name="tendonvitiepnhan" type="String"/>
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+	</entity>
+	
+	<entity name="PhanCongDonViKiemTra" table="view_phancongdonvikiemtra" local-service="true" remote-service="true"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="phieuXuLyChinhId" db-name="phieuxulychinhid" type="long"/>
+		<column name="trichYeuNoiDung" db-name="trichyeunoidung" type="String"/>
+		<column name="ghiChu" db-name="ghichu" type="String"/>
+		<column name="trangThaiHienTaiId" db-name="trangthaihientaiid" type="long"/>
+		<column name="noiDungHoSoId" db-name="noidunghosoid" type="long"/>
+		<column name="chiemQuyenXuLy" db-name="chiemquyenxuly" type="long"/>
+		<column name="ngayTaoPhieu" db-name="ngaytaophieu" type="Date"/>
+		<column name="nguoiTaoPhieu" db-name="nguoitaophieu" type="long"/>
+		<column name="nhomPhieuXuLy" db-name="nhomphieuxuly" type="String"/>
+		<column name="phanNhomHoSoId" db-name="phannhomhosoid" type="long"/>
+		<column name="confirmedinspectionId" db-name="confirmedinspectionId" type="long"/>
+		<column name="maSoHoSo" db-name="masohoso" type="String"/>
+		<column name="maBienNhan" db-name="mabiennhan" type="String"/>
+		<column name="thuTucHanhChinhId" db-name="thutuchanhchinhid" type="long"/>
+		<column name="tenChuHoSo" db-name="tenchuhoso" type="String"/>	
+		<column name="ngayGuiHoSo" db-name="ngayguihoso" type="Date"/>
+		<column name="tenDonViTiepNhan" db-name="tendonvitiepnhan" type="String"/>
+
+		<column name="attachedFile" db-name="attachedfile" type="long" />		
+		<column name="inspectionDistrictCode" db-name="inspectiondistrictcode" type="String" />
+		<column name="inspectionProvincecode" db-name="inspectionprovincecode" type="String" />
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+		<!-- Reference -->
+		<reference entity="TthcPhanNhomHoSoVaiTro" package-path="vn.dtt.gt.dk.dao.common" />
+	</entity>
+
+	<entity name="LichKiemTraHienTruong" table="view_lichkiemtrahientruong" local-service="true" remote-service="true"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="phieuXuLyChinhId" db-name="phieuxulychinhid" type="long"/>
+		<column name="trichYeuNoiDung" db-name="trichyeunoidung" type="String"/>
+		<column name="ghiChu" db-name="ghichu" type="String"/>
+		<column name="trangThaiHienTaiId" db-name="trangthaihientaiid" type="long"/>
+		<column name="noiDungHoSoId" db-name="noidunghosoid" type="long"/>
+		<column name="chiemQuyenXuLy" db-name="chiemquyenxuly" type="long"/>
+		<column name="ngayTaoPhieu" db-name="ngaytaophieu" type="Date"/>
+		<column name="nguoiTaoPhieu" db-name="nguoitaophieu" type="long"/>
+		<column name="nhomPhieuXuLy" db-name="nhomphieuxuly" type="String"/>
+		<column name="phanNhomHoSoId" db-name="phannhomhosoid" type="long"/>
+		<column name="confirmedinspectionId" db-name="confirmedinspectionId" type="long"/>
+		<column name="maSoHoSo" db-name="masohoso" type="String"/>
+		<column name="maBienNhan" db-name="mabiennhan" type="String"/>
+		<column name="thuTucHanhChinhId" db-name="thutuchanhchinhid" type="long"/>
+		<column name="tenChuHoSo" db-name="tenchuhoso" type="String"/>	
+		<column name="ngayGuiHoSo" db-name="ngayguihoso" type="Date"/>
+		<column name="tenDonViTiepNhan" db-name="tendonvitiepnhan" type="String"/>
+
+		<column name="attachedFile" db-name="attachedfile" type="long" />		
+		<column name="inspectionDistrictCode" db-name="inspectiondistrictcode" type="String" />
+		<column name="inspectionProvincecode" db-name="inspectionprovincecode" type="String" />
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+	</entity>
+	
+	<entity name="MotCuaQuyTrinhThuTuc" table="motcua_quytrinhthutuc" local-service="true" remote-service="false"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="thuTucHanhChinhId" db-name="thutuchanhchinhid" type="long"/>
+		<column name="maQuyTrinh" db-name="maquytrinh" type="String"/>
+		<column name="toChucXuLy" db-name="tochucxuly" type="long"/>
+		<column name="soNgayXuLy" db-name="songayxuly" type="long"/>
+		
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="Collection" name="ThuTucHanhChinhIdAndToChucXuLy">
+			<finder-column name="thuTucHanhChinhId" />
+			<finder-column name="toChucXuLy" />
+		</finder>
+	</entity>
+	
+	<entity name="MotCuaTrangThaiHoSo" table="motcua_trangthaihoso" local-service="true" remote-service="false"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="quyTrinhThuTucId" db-name="quyTrinhThuTucId" type="long"/>
+		<column name="tenTrangThai" db-name="tentrangthai" type="String"/>
+		<column name="kieuTrangThai" db-name="kieutrangthai" type="long"/>
+		<column name="moTaTrangThai" db-name="motatrangthai" type="String"/>
+		<column name="vaiTroXuLy1" db-name="vaitroxuly1" type="long"/>
+		<column name="vaiTroXuLy2" db-name="vaitroxuly2" type="long"/>
+		<column name="vaiTroXuLy3" db-name="vaitroxuly3" type="long"/>
+		<column name="formXuLy" db-name="formxuly" type="String"/>
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="Collection" name="QuyTrinhThuTucId">
+			<finder-column name="quyTrinhThuTucId" />
+		</finder>
+		<finder return-type="Collection" name="QuyTrinhThuTucIdAndVaiTroXuLy1">
+			<finder-column name="quyTrinhThuTucId" />
+			<finder-column name="vaiTroXuLy1" />
+		</finder>
+		<finder return-type="Collection" name="QuyTrinhThuTucIdAndVaiTroXuLy2">
+			<finder-column name="quyTrinhThuTucId" />
+			<finder-column name="vaiTroXuLy2" />
+		</finder>
+		<finder return-type="Collection" name="QuyTrinhThuTucIdAndVaiTroXuLy3">
+			<finder-column name="quyTrinhThuTucId" />
+			<finder-column name="vaiTroXuLy3" />
+		</finder>
+	</entity>
+	
+	<entity name="ThamSoHeThong" table="cmon_thamsohethong" local-service="true" remote-service="true"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="valueData" db-name="valuedata" type="String"/>
+		<column name="keyData" db-name="keydata" type="String"/>
+		<column name="description" db-name="description" type="String"/>
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="ThamSoHeThong" name="KeyData">
+			<finder-column name="keyData" />
+		</finder>		
+	</entity>
+	<entity name="MotCuaNotification" table="motcua_notification" local-service="true" remote-service="false"  data-source="tthcDataSource"  cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long"  primary="true"/>
+		<column name="dossierid" db-name="dossierId" type="long"/>
+		<column name="organization" db-name="organization" type="String"/>
+		<column name="division" db-name="division" type="String"/>
+		<column name="officerName" db-name="officername" type="String"/>
+		<column name="messageID" db-name="messageid" type="String"/>
+		<column name="messageType" db-name="messagetype" type="long"/>
+		<column name="phieuxulyphuId" db-name="phieuxulyphuid" type="long"/>
+		<column name="response" db-name="response" type="String"/>
+		<column name="responseTime" db-name="responsetime" type="Date"/>
+		<column name="requestContent" db-name="requestcontent" type="String"/>
+		<column name="requestTime" db-name="requesttime" type="Date"/>
+		<column name="requestSender" db-name="requestsender" type="String"/>		
+		<column name="isReply" db-name="isreply" type="long"/>		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+				
+	</entity>
+</service-builder>

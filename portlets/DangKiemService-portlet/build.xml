@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="DangKiemService-portlet" basedir="." default="deploy">
+	<import file="../build-common-portlet.xml" />
+	
+	<target name="build-nghiepvu-wsdd" depends="compile">
+		<path id="wsdd.classpath">
+			<path refid="lib.classpath" />
+			<path refid="portal.classpath" />
+			<fileset dir="docroot/WEB-INF/lib" includes="*.jar" />
+			<pathelement location="docroot/WEB-INF/classes" />
+		</path>
+	
+		<if>
+			<os family="windows" />
+			<then>
+				<classpath-to-jar
+					classpathref="wsdd.classpath"
+					jarfile="build-wsdd-classpath.jar"
+				/>
+			</then>
+		</if>
+	
+		<java
+			classname="com.liferay.portal.tools.WSDDBuilder"
+			classpathref="wsdd.classpath"
+			fork="true"
+			maxmemory="256m"
+			newenvironment="true"
+			outputproperty="build-wsdd.output"
+		>
+			<jvmarg value="-Dexternal-properties=com/liferay/portal/tools/dependencies/portal-tools.properties" />
+			<jvmarg value="-Dorg.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger" />
+			<arg value="wsdd.input.file=docroot/WEB-INF/src/vn/dtt/gt/dk/dao/nghiepvu/service.xml" />
+			<arg value="wsdd.server.config.file=docroot/WEB-INF/server-config.wsdd" />
+			<arg value="wsdd.service.namespace=Plugin" />
+			<arg value="wsdd.output.path=docroot/WEB-INF/src/" />
+		</java>
+	
+		<if>
+			<os family="windows" />
+			<then>
+				<delete file="build-wsdd-classpath.jar" />
+			</then>
+		</if>
+	
+		<echo>${build-wsdd.output}</echo>
+	
+		<if>
+			<contains string="${build-wsdd.output}" substring="IOException" />
+			<then>
+				<fail>WSDD Builder generated exceptions.</fail>
+			</then>
+		</if>
+	</target>
+</project>

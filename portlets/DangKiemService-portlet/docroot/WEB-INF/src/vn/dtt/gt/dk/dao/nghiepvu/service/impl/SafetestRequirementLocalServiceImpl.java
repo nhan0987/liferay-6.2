@@ -1,0 +1,70 @@
+/**
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+
+package vn.dtt.gt.dk.dao.nghiepvu.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecord;
+import vn.dtt.gt.dk.dao.nghiepvu.model.SafetestRequirement;
+import vn.dtt.gt.dk.dao.nghiepvu.service.base.SafetestRequirementLocalServiceBaseImpl;
+
+/**
+ * The implementation of the safetest requirement local service.
+ *
+ * <p>
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link vn.dtt.gt.dk.dao.nghiepvu.service.SafetestRequirementLocalService} interface.
+ *
+ * <p>
+ * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
+ * </p>
+ *
+ * @author win_64
+ * @see vn.dtt.gt.dk.dao.nghiepvu.service.base.SafetestRequirementLocalServiceBaseImpl
+ * @see vn.dtt.gt.dk.dao.nghiepvu.service.SafetestRequirementLocalServiceUtil
+ */
+public class SafetestRequirementLocalServiceImpl
+	extends SafetestRequirementLocalServiceBaseImpl {
+	/*
+	 * NOTE FOR DEVELOPERS:
+	 *
+	 * Never reference this interface directly. Always use {@link vn.dtt.gt.dk.dao.nghiepvu.service.SafetestRequirementLocalServiceUtil} to access the safetest requirement local service.
+	 */
+	
+	public SafetestRequirement findByInspectionRecordId(long inspectionRecordId){
+		SafetestRequirement result = null;
+		try{
+			
+			result = safetestRequirementPersistence.fetchByInspectionRecordId(inspectionRecordId);
+		}catch (SystemException e) {
+			_log.error(e);
+		}
+		return result;
+	}
+	public List<SafetestRequirement> findByPhieuXuLyPhuId(long phieuXuLyPhuId){
+		try {
+			return safetestRequirementPersistence.findByPhieuXuLyPhuId(phieuXuLyPhuId);
+		} catch (SystemException e) {
+			_log.error(e);
+		}
+		return new ArrayList<SafetestRequirement>();
+	}
+	
+	private static Log _log = LogFactoryUtil.getLog(SafetestRequirementLocalServiceImpl.class);
+}
