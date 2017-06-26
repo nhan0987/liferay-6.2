@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Giay_Dkkt_Xm_Dc_Xm" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="40" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="39f5521f-a06e-4828-87ef-b150738d9423">
+	<property name="ireport.zoom" value="1.4641000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="50"/>
+	<subDataset name="dataset1" uuid="f145a611-d919-4919-9482-bc6c99089c25">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="SHA1FileContent" class="java.lang.String">
+			<fieldDescription><![CDATA[SHA1FileContent]]></fieldDescription>
+		</field>
+		<field name="attachedDocName" class="java.lang.String">
+			<fieldDescription><![CDATA[attachedDocName]]></fieldDescription>
+		</field>
+		<field name="attachedNote" class="java.lang.String">
+			<fieldDescription><![CDATA[attachedNote]]></fieldDescription>
+		</field>
+		<field name="attachedSequenceNo" class="java.lang.Integer">
+			<fieldDescription><![CDATA[attachedSequenceNo]]></fieldDescription>
+		</field>
+		<field name="attachedTypeCode" class="java.lang.String">
+			<fieldDescription><![CDATA[attachedTypeCode]]></fieldDescription>
+		</field>
+		<field name="attachedTypeName" class="java.lang.String">
+			<fieldDescription><![CDATA[attachedTypeName]]></fieldDescription>
+		</field>
+		<field name="class" class="java.lang.Class">
+			<fieldDescription><![CDATA[class]]></fieldDescription>
+		</field>
+		<field name="fullFileName" class="java.lang.String">
+			<fieldDescription><![CDATA[fullFileName]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\DNG6_7\\liferay-plugins-sdk-6.1.0-ce-b4-20111118\\portlets\\TichHopGiaoThong-portlet\\docroot\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="attachedFile" class="java.util.List">
+		<fieldDescription><![CDATA[attachedFile]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="contacter" class="vn.dtt.gt.dk.nsw.model.RequestForQualityInspection.Contacter">
+		<fieldDescription><![CDATA[contacter]]></fieldDescription>
+	</field>
+	<field name="importer" class="vn.dtt.gt.dk.nsw.model.RequestForQualityInspection.Importer">
+		<fieldDescription><![CDATA[importer]]></fieldDescription>
+	</field>
+	<field name="importerSign" class="vn.dtt.gt.dk.nsw.model.RequestForQualityInspection.ImporterSign">
+		<fieldDescription><![CDATA[importerSign]]></fieldDescription>
+	</field>
+	<field name="inspection" class="vn.dtt.gt.dk.nsw.model.RequestForQualityInspection.Inspection">
+		<fieldDescription><![CDATA[inspection]]></fieldDescription>
+	</field>
+	<field name="inspectorSign" class="vn.dtt.gt.dk.nsw.model.RequestForQualityInspection.InspectorSign">
+		<fieldDescription><![CDATA[inspectorSign]]></fieldDescription>
+	</field>
+	<field name="totalNumberVehicle" class="java.lang.Long">
+		<fieldDescription><![CDATA[totalNumberVehicle]]></fieldDescription>
+	</field>
+	<field name="totalTechnicalSpec" class="java.lang.Long">
+		<fieldDescription><![CDATA[totalTechnicalSpec]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="578" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="58" width="535" height="32" uuid="821f7076-b2f3-4678-a8cf-9c67878377d9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Independence - Freedom - Happiness
+***********]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="535" height="18" uuid="1113830e-654d-4232-8eb0-97dc23c01c69"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="18" width="535" height="18" uuid="03d073d1-715f-486f-9b96-603dcd4b95bd"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Độc lập - Tự do - Hạnh phúc ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="41" width="535" height="15" uuid="284e1a75-289c-4860-833d-d60fdd16e2ac"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SOCIALIST REPUBLIC OF VIETNAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="535" height="47" uuid="168b01fd-6fff-4492-b6c8-4b38d8952879"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[BẢN ĐĂNG KÝ KIỂM TRA CHẤT LƯỢNG AN TOÀN KỸ THUẬT
+VÀ BẢO VỆ MÔI TRƯỜNG XE MÔ TÔ, XE GẮN MÁY/ ĐỘNG CƠ XE MÔ TÔ, XE GẮN MÁY NHẬP KHẨU
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="137" width="535" height="32" uuid="09d40fc8-f386-4927-ba7d-a6629e145aa9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13" isBold="false" isItalic="true" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[(Application form for technical safety quality and environmental protection inspection for imported motorcycle, moped/ engine of motorcycle, moped)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="169" width="535" height="32" uuid="dbb64a08-9d82-4f54-b069-ba09081071a9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="13" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[<i>Kính gửi (To):</i> <b>Cục Đăng kiểm Việt Nam</b>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="201" width="535" height="20" uuid="d1ca1489-eba0-449f-bbe6-c00474f04874"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <b>Người nhập khẩu </b><i>(Importer):</i> "+ (($F{importer} == null) ? "" : $F{importer}.getImporterName())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="221" width="535" height="20" uuid="d66b3aee-113e-4651-905f-3c7d63ec96af"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <b>Địa chỉ </b><i>(Address):</i> " + (($F{importer} == null) ? "" : $F{importer}.getImporterAddress())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="241" width="264" height="20" uuid="487673ee-36e6-4ce4-a38d-9054779d6883"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <b>Mã số thuế </b><i>(Tax code):</i> " + (($F{importer} == null) ? "" : $F{importer}.getImporterCode())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="264" y="241" width="271" height="20" uuid="5464c964-092e-4e4c-b711-f170999b0ae1"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <b>Thư điện tử </b><i>(Email):</i> " + (($F{importer} == null) ? "" : $F{importer}.getEmail())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="264" y="261" width="271" height="20" uuid="f8f389ca-cd5e-4fcc-80e2-2560cc2e4093"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <b>Số điện thoại </b><i>(Telephone No):</i> "+ (($F{importer} == null) ? "" : $F{importer}.getPhone())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="261" width="264" height="20" uuid="f2cab4ec-6b0e-4f7a-b705-e56986657b4d"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <b>Người đại diện </b><i>(Representative):</i> " + (($F{importer} == null) ? "" : $F{importer}.getRepresentative())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="281" width="535" height="44" uuid="4f45e600-9743-41ce-b8a8-6993ce263a73"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Đăng ký kiểm tra Nhà nước về chất lượng an toàn kỹ thuật và bảo vệ môi trường xe mô tô, xe gắn máy/ động cơ xe mô tô, xe gắn máy nhập khẩu với các nội dung sau <i>(Request for technical safety quality and environmental protection inspection for imported motorcycle, moped/ engine of motorcycle, moped with the following contents):</i>]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="328" width="535" height="20" uuid="c0fdd29f-5bbb-46a2-842e-a3910ac07805"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <b>Hồ sơ kèm theo </b><i>(Attached document):</i>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="348" width="535" height="20" uuid="4c5f6670-e758-4ce2-bd93-97d071ad841e"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<text><![CDATA[+ Hóa đơn thương mại/giấy tờ tương đương <i>(Commerce invoice / equivalent document):</i>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="389" width="535" height="37" uuid="6920b5f8-d620-412b-bcea-24b33119753c"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA["+ Số lượng Bản thông tin xe mô tô, xe gắn máy/ động cơ xe mô tô, xe gắn máy <i>(Quantity of Information sheets):</i>" + (($F{totalTechnicalSpec} == null) ? "" : $F{totalTechnicalSpec})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="427" width="535" height="21" uuid="a6dc2f9e-3e2c-4bc8-8c9d-f3bacddc038d"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA["+ Số lượng xe /động cơ <i>(Quantity of vehicles/engines):</i>" + (($F{totalNumberVehicle} == null) ? "" : $F{totalNumberVehicle})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="492" width="535" height="20" uuid="cfc0b317-268c-4124-ac00-aea5b76828ba"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[<b>Thời gian và Địa điểm kiểm tra dự kiến </b><i>(Date and Anticipated inspection site):</i>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="533" width="535" height="20" uuid="c5d5ca1d-0964-4a35-8e1f-2f8931564b00"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <b>Người liên hệ </b><i>(Contact person):</i>" + (($F{contacter} == null) ? "" : $F{contacter}.getContactName())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="275" y="553" width="260" height="20" uuid="7b8f1bfc-0182-4cd3-b932-edb0a366f83f"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <b>Thư điện tử</b><i>(Email):</i>" + (($F{contacter} == null) ? "" : $F{contacter}.getContactEmail())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="553" width="275" height="20" uuid="21183e63-bbbe-4bdb-867c-443ea2d959ab"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <b>Số điện thoại </b><i>(Telephone No):</i>" + (($F{contacter} == null) ? "" : $F{contacter}.getContactPhone())]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="368" width="535" height="20" uuid="ac10704d-4597-4021-a1a6-26a0ab7aae74"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset1" uuid="e5dfc03c-0333-4899-b419-5ed3b08726c1">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{attachedFile})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="20" width="535">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement positionType="Float" x="0" y="0" width="535" height="20" isRemoveLineWhenBlank="true" uuid="0965767d-07a1-41d5-a1a9-d84d57d056b9"/>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="11"/>
+								<paragraph leftIndent="25"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{attachedTypeCode}.equals("1")) ? ($F{attachedDocName} + (($F{attachedNote} == null) ? "" : (" (" + $F{attachedNote} + ")"))) : "")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="470" width="535" height="20" uuid="a82368f5-8ba2-48f2-9a1b-8d05403109bf"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset1" uuid="c80f256b-63d9-468b-9c46-c13ad130139a">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{attachedFile})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="20" width="535">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement positionType="Float" x="0" y="0" width="535" height="20" isRemoveLineWhenBlank="true" uuid="40837486-c56e-4079-9359-486e334babad"/>
+							<textElement verticalAlignment="Middle" markup="html">
+								<font fontName="Times New Roman" size="11"/>
+								<paragraph leftIndent="25"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{attachedTypeCode}.equals("2")) ? ($F{attachedDocName} + (($F{attachedNote} == null) ? "" : (" (" + $F{attachedNote} + ")"))) : "")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="512" width="535" height="20" uuid="8f03fa25-a6e0-40dd-b9eb-44ab7c255a42"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dự kiến kiểm tra ngày " + (vn.dtt.gt.dk.utils.format.FormatData.parseDateToTringDDMMYYY(vn.dtt.gt.dk.utils.format.FormatData.parseStringToDate($F{inspection}.getInpectionDate()))) + " tại " + $F{inspection}.getInspectionSite() + ", " + $F{inspection}.getDistrictName() + ", " + $F{inspection}.getProvinceName()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="449" width="535" height="20" uuid="0154700e-2277-442e-997e-d59180354379"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+					<paragraph leftIndent="15"/>
+				</textElement>
+				<text><![CDATA[+ Các giấy tờ khác <i>(Other related documents)</i>:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="231">
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="254" y="6" width="281" height="15" uuid="d96f4042-8f72-4d0b-b7be-b4e176f38dc4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="11" isItalic="true" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{importerSign} == null) ? "(Date)     ,Ngày      tháng      năm     " : vn.dtt.gt.dk.report.ReportFunction.getSignPlaceAndSignDate($F{importerSign}.getSignPlace(), $F{importerSign}.getSignDate())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="254" y="21" width="281" height="15" uuid="12c0a800-eb0f-41b7-b159-eb25ef5f4402"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Người nhập khẩu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="254" y="36" width="281" height="15" uuid="18c4f264-4eba-4742-9e29-fe81c1503188"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<i>(Importer)</i>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="254" y="142" width="281" height="15" uuid="0ca273f9-105b-4897-b323-e0495eb19fcb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{importerSign}.getSignName()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="216" width="254" height="15" uuid="46129e85-5030-4299-87af-cb7eaeb12e23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="11" isItalic="false" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inspectorSign}.getSignName()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="96" width="254" height="15" uuid="4963d6d7-06ae-4966-8533-d1a51039b979"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<i>(Inspection Body)</i>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="81" width="254" height="15" uuid="e857033a-3463-4f18-b75b-fbf356b52df0"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Đại diện Cơ quan kiểm tra]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="111" width="254" height="15" uuid="70e42a53-7233-4bf0-a23b-3364914a776f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="11" isItalic="false" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inspectorSign}.getSignTitle()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="36" width="254" height="15" uuid="e6964f3b-42d4-4e99-bdd9-1231c7a56e1f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="false" isItalic="false" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" Số đăng ký kiểm tra: " + (($F{inspectorSign} == null) ? "" : $F{inspectorSign}.getRegisteredNumber())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="51" width="254" height="15" uuid="9ac62852-02d6-4065-a1af-2bf088f5ca6c"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<i>(Registered No for inspection)</i>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="21" width="254" height="15" uuid="4c1939aa-1bc1-4eb6-a8e8-71fe171fabb8"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Xác nhập của Cơ quan kiểm tra]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="66" width="254" height="15" uuid="a3995859-a4e6-4ae2-8495-b05a82a22628"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="11" isItalic="true" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{inspectorSign} == null) ? "(Date)     ,Ngày      tháng      năm     " : vn.dtt.gt.dk.report.ReportFunction.getSignPlaceAndSignDate($F{inspectorSign}.getSignPlace(), $F{inspectorSign}.getSignDate())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="254" y="51" width="281" height="15" uuid="d6b97cd0-8bba-410a-a61b-a84a19e9b21b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" pdfFontName="Times-Roman" pdfEncoding="Cp1258"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{importerSign}.getSignTitle()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="111" width="176" height="105" uuid="2cbb8d65-fb21-43be-983a-5d70a7b388cd"/>
+				<textElement>
+					<font fontName="Times New Roman" size="1"/>
+				</textElement>
+				<textFieldExpression><![CDATA["#"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Banthongtin_XCG_XM" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="73da9b28-49c2-434b-909c-efb13cbe991a">
+	<property name="ireport.zoom" value="1.3636363636363635"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="3074"/>
+	<subDataset name="dataset1" uuid="af8ad102-4f1a-42ac-9d90-ea93c617ffb4">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="chassisNumber" class="java.lang.String">
+			<fieldDescription><![CDATA[chassisNumber]]></fieldDescription>
+		</field>
+		<field name="class" class="java.lang.Class">
+			<fieldDescription><![CDATA[class]]></fieldDescription>
+		</field>
+		<field name="codeNumber" class="java.lang.Long">
+			<fieldDescription><![CDATA[codeNumber]]></fieldDescription>
+		</field>
+		<field name="currency" class="java.lang.String">
+			<fieldDescription><![CDATA[currency]]></fieldDescription>
+		</field>
+		<field name="engineNumber" class="java.lang.String">
+			<fieldDescription><![CDATA[engineNumber]]></fieldDescription>
+		</field>
+		<field name="productionYear" class="java.lang.String">
+			<fieldDescription><![CDATA[productionYear]]></fieldDescription>
+		</field>
+		<field name="sequenceNo" class="java.lang.Long">
+			<fieldDescription><![CDATA[sequenceNo]]></fieldDescription>
+		</field>
+		<field name="vehicleColor" class="java.lang.String">
+			<fieldDescription><![CDATA[vehicleColor]]></fieldDescription>
+		</field>
+		<field name="vehicleEngineStatus" class="java.lang.Integer">
+			<fieldDescription><![CDATA[vehicleEngineStatus]]></fieldDescription>
+		</field>
+		<field name="vehicleUnitPrice" class="java.lang.String">
+			<fieldDescription><![CDATA[vehicleUnitPrice]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\DTT\\report\\banthongtinnk\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="attachedFile" class="java.util.List">
+		<fieldDescription><![CDATA[attachedFile]]></fieldDescription>
+	</field>
+	<field name="certificateRefNo" class="java.lang.String">
+		<fieldDescription><![CDATA[certificateRefNo]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="generalInfo" class="vn.dtt.gt.dk.nsw.model.TechnicalSpecification.GeneralInfo">
+		<fieldDescription><![CDATA[generalInfo]]></fieldDescription>
+	</field>
+	<field name="importedVehicle" class="java.util.List">
+		<fieldDescription><![CDATA[importedVehicle]]></fieldDescription>
+	</field>
+	<field name="remarks" class="java.lang.String">
+		<fieldDescription><![CDATA[remarks]]></fieldDescription>
+	</field>
+	<field name="specificationList" class="vn.dtt.gt.dk.nsw.model.TechnicalSpecification.SpecificationList">
+		<fieldDescription><![CDATA[specificationList]]></fieldDescription>
+	</field>
+	<field name="technicalSpecCode" class="java.lang.String">
+		<fieldDescription><![CDATA[technicalSpecCode]]></fieldDescription>
+	</field>
+	<title>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="19" uuid="1c29f8b6-a908-4082-aa21-75e864d25c8c"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BẢN THÔNG TIN XE MÔ TÔ, XE GẮN MÁY NHẬP KHẨU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="19" width="555" height="15" uuid="5466edc8-540b-4de6-8919-c066005274db"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(Information sheet of imported motorcycle, moped)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="382">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="20" width="555" height="20" uuid="ff5eb0ca-d584-49a4-8c33-3dc1cf420785"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1. Người nhập khẩu <i>(Importer):</i><b> " + (($F{generalInfo} == null) ? "" : $F{generalInfo}.getImporter().getImporterName()) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="40" width="555" height="20" uuid="f705dae8-2a8d-40fd-96ad-47befbeb8d7a"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2. Địa chỉ  <i>(Address):</i><b> " + (($F{generalInfo} == null) ? "" : $F{generalInfo}.getImporter().getImporterAddress()) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="60" width="555" height="20" uuid="a39e3c53-a318-4bab-aa92-a0d5aab45172"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3. Người đại diện <i>(Representative):</i><b> " + (($F{generalInfo} == null) ? "" : $F{generalInfo}.getImporter().getRepresentative()) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="80" width="555" height="20" uuid="e5af3a69-baa6-4770-b3f5-be30fcf9d18e"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4. Số điện thoại <i>(Telephone N<font face='DejaVu Sans'>&#186;</font>):</i><b> " + (($F{generalInfo} == null) ? "" : $F{generalInfo}.getImporter().getPhone()) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="100" width="555" height="20" uuid="e187d2c9-c977-4cec-8001-ea53c5c554eb"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5. Thư  điện tử  <i>(Email):</i><b> " + (($F{generalInfo} == null) ? "" : $F{generalInfo}.getImporter().getEmail()) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="120" width="555" height="20" uuid="3ce477f3-a45f-4ed8-8d94-438c3b6918af"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["6. Số tham chiếu  <i>(Reference certificate N<font face='DejaVu Sans'>&#186;</font>):</i><b> " + (($F{certificateRefNo} == null) ? "" : $F{certificateRefNo}) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="140" width="555" height="20" uuid="8547a727-10a3-4a6e-aabc-7019462e0a12"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["7. Số báo cáo thử nghiệm an toàn <i>(Safety test report N<font face='DejaVu Sans'>&#186;</font>):</i> "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="160" width="555" height="20" uuid="b221ada0-18d6-4a02-aade-6746ca8bdf10"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["8. Số báo cáo thử nghiệm khí thải <i>(Emission test report N<font face='DejaVu Sans'>&#186;</font>):</i> "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="180" width="555" height="20" uuid="a3ba107a-ca9a-4613-abb2-486ab8feaa71"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9. Số báo cáo COP <i>(COP report N<font face='DejaVu Sans'>&#186;</font>):</i> "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="200" width="555" height="20" uuid="c61f8259-184b-43b3-9a29-f93a3552ced9"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10. Loại phương tiện <i>(Vehicle's type):</i><b> " + (($F{generalInfo} == null) ? "" : (vn.dtt.gt.dk.report.ReportUtils.getDataItemByDataGroupIdAndItemCode(vn.dtt.gt.dk.report.ReportConstant.VEHICLE_TYPE, $F{generalInfo}.getVehicleType()))) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="220" width="555" height="20" uuid="a7523161-3e3e-4c36-91d8-7243764f923b"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["11. Nhãn hiệu <i>(Trade Mark):</i><b> " +(($F{generalInfo}==null)?"":(($F{generalInfo}.getTradeMark()==null)?"": (vn.dtt.gt.dk.report.ReportUtils.getDataItemByDataGroupIdAndItemCode(vn.dtt.gt.dk.report.ReportConstant.TRADE_MARK ,$F{generalInfo}.getTradeMark())))) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="240" width="555" height="20" uuid="90cf3ea8-52ac-44d2-9d43-7b325454cf5d"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["12. Tên thương mại <i>(Commercial name):</i><b> " + (($F{generalInfo} == null) ? "" : (($F{generalInfo}.getModelType()==null)?"": $F{generalInfo}.getModelType())) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="260" width="555" height="20" uuid="cfe3f24a-b7d7-4582-8b9e-3cac7d9f5565"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["13. Mã kiểu loại <i>(Model code):</i><b> " + (($F{generalInfo} == null) ? "" : (($F{generalInfo}.getModelCode()==null)?"": $F{generalInfo}.getModelCode())) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement positionType="Float" x="0" y="280" width="555" height="20" uuid="6c02d2f9-1926-4155-95f4-df81bae6d54f"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["14. Nước sản xuất <i>(Production country):</i><b> " + (($F{generalInfo} != null && $F{generalInfo}.getProductionCountry() != null) ? vn.dtt.gt.dk.utils.CollectionUtils.productCountryToString($F{generalInfo}.getProductionCountry()) : "") + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="300" width="555" height="20" uuid="91346a77-89c8-4682-990e-9072a516d643"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["15. Nhà máy sản xuất <i>(Production Plant):</i><b> " + (($F{generalInfo} == null) ? "" : (($F{generalInfo}.getManufacturer()==null)?"": $F{generalInfo}.getManufacturer())) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="320" width="555" height="20" uuid="ac6d2767-4f43-43d6-9bef-9b3ced4479d9"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["16. Địa chỉ nhà máy sản xuất  <i>(Address of Production Plant):</i><b> " + (($F{generalInfo} == null) ? "" : (($F{generalInfo}.getAddressProductionPlant()==null)?"": $F{generalInfo}.getAddressProductionPlant())) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement positionType="Float" x="0" y="340" width="222" height="20" uuid="4655e9de-f179-4faa-b579-42bbc7f376d6"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["17. Tiêu chuẩn khí thải <i>(Emission standard):</i> "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="360" width="555" height="20" uuid="7c963c8e-1f2e-4c20-9406-e6f7e7735b84"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["18. Số đăng ký kiểm tra <i>(Registered N<font face='DejaVu Sans'>&#186;</font> for inspection):</i> "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="20" uuid="db43b95d-320b-4fe6-9265-e85fe265b517"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>I.   THÔNG TIN CHUNG</b><i> (General information)</i>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="222" y="340" width="333" height="20" uuid="e4ca2adb-5615-4c5a-a293-c90403c803ce"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{generalInfo} != null && $F{generalInfo}.getEmissionStandard().trim().length() > 0) ? $F{generalInfo}.getEmissionStandard() : "")]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="301">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="61" width="555" height="20" uuid="5a09367b-2cca-4704-8f46-2d5377e69c83"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1.1.1. Phân bố lên trục 1 <i>(Distributed on 1st axle):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0011")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="281" width="555" height="20" uuid="3495a8f9-757f-42cb-b73b-b568359aa8ce"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3.3. Kích thước lòng thùng xe: Dài x Rộng x Cao <i>(Inside dimensions of cargo deck: L x W x H):</i><b> " + ((vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0023").trim().length()>0) ? vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0023") : "") + (($F{specificationList} == null) ? "" : ((vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0024").trim().length()>0) ? "x" + vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0024") : "")) + (($F{specificationList} == null) ? "" : ((vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0025").trim().length()>0) ? "/" + vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0025") : "")) + (($F{specificationList} == null) ? "" : ((vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0026").trim().length()>0) ? "x" + vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0026") : "")) + (($F{specificationList} == null) ? "" : ((vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0027").trim().length()>0) ? "/" + vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0027") : "")) + (($F{specificationList} == null) ? "" : ((vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0028").trim().length()>0) ? "x" + vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0028") : "")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="101" width="555" height="20" uuid="32da6893-8d51-40f7-8798-b6efe78fe345"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1.1.3. Phân bố lên trục 3<i> (Distributed on 3rd axle):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0013")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="201" width="555" height="20" uuid="3cb367d2-8786-4dd9-bfe8-e595386bd5f1"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>2. Số người cho phép chở, kể cả người lái <i> (Seating capacity including driver): </i> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0018")) + "</b> người"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="20" width="555" height="20" uuid="c460df06-440a-452f-94bb-04fa990646ee"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b> 1. Khối lượng <i>(mass)</i>(kg)</b> ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="f65bcc65-2429-4691-a70d-6efed7e8a542"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b> II. THÔNG SỐ KỸ THUẬT CƠ BẢN <i>(Major technical specification)</b></i>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="261" width="555" height="20" uuid="d8a09523-e048-4f0f-9cd4-4ccfbfccd28c"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3.2. Khoảng cách trục <i>(Wheel  space)</i><b>: " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0022")) + (($F{specificationList} != null && vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1022").trim().length() >0) ? " + " + vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1022") : "") + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="121" width="555" height="20" uuid="009498c3-4ac0-433c-b551-e7cba57f5cf7"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1.2. Khối lượng toàn bộ <i>(Gross mass):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0014")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="81" width="555" height="20" uuid="8ed0ca9c-e43e-4b95-ad08-6c58ed0d5445"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1.1.2. Phân bố lên trục 2  <i> (Distributed on 2nd axle):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0012")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="141" width="555" height="20" uuid="2944acef-b3ca-49ef-9387-469a61e59534"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1.2.1. Phân bố lên trục 1 <i> (Distributed on 1st axle):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0015")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="181" width="555" height="20" uuid="ecb051d8-f4ca-47b3-95b8-6a7633fa0db1"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1.2.3. Phân bố lên trục 3 <i> (Distributed on 3rd axle):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0017")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="41" width="555" height="20" uuid="0a2afb8f-cc35-463b-9d54-6400f5743604"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1.1. Khối lượng bản thân <i> (Kerb mass):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0010")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="161" width="555" height="20" uuid="4bc27587-9678-407c-938d-12eb045f93ae"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1.2.2. Phân bố lên trục 2 <i> (Distributed on 2nd axle):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0016")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="221" width="555" height="20" uuid="9430cc47-13d2-4802-9b42-2decead87fe6"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>3.   Kích thước <i>(Dimensions)</i>(mm)</b>:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="241" width="555" height="20" uuid="33230ed6-2756-4c7e-babb-041abe1e575c"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3.1. Kích thước bao: dài x rộng x cao <i> (Overall dimensions L x W x H):</i><b> " + (($F{specificationList} == null) ? "" : ((vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0019").trim().length()>0) ? vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0019") : "0") + "x" + (($F{specificationList} == null) ? "" : ((vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0019").trim().length()>0) ? vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0020") : "0")) + "x" + (($F{specificationList} == null) ? "" : ((vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0019").trim().length()>0) ? vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0021") : "0"))) + "</b>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="443">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="61" width="555" height="20" uuid="d5d6d9c6-0ff5-4d94-b619-fb50b9d096a6"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.1.2. Thể tích làm việc <i> (Displacement):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0031")) + " (cm3)</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="82" width="555" height="20" uuid="7294e603-0124-4074-b44d-e8a0f6ad0131"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.1.3. Công suất lớn nhất/ tốc độ quay <i>(Max output/rpm)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0032")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1032")) + " (kW/r/min)</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="182" width="555" height="20" uuid="cf4ed6a2-9ca9-4555-afaf-02ababb7ae02"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.2.1. Ký hiệu, loại động cơ đốt trong <i> (Engine model, engine type):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0036")) + "," + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0037", vn.dtt.gt.dk.report.ReportConstant.ENGINE_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="21" width="555" height="20" uuid="a9e969e4-0186-4a5c-8912-392bed938fda"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>4.1.     Động cơ đốt trong</b><i> (Internal combustion engine)</i> ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="242" width="555" height="20" uuid="380c31a8-fb51-4271-b066-bb83ac374d8c"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.2.4. Mô men lớn nhất/ tốc độ quay <i>(Max Torque/rpm)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0040")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1040")) + " (N.m/r/min)</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="262" width="555" height="20" uuid="8a3ba31c-7908-42be-8afa-beccb3a0c15b"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.2.5. Loại nhiên liệu <i>(Fuel)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0041", vn.dtt.gt.dk.report.ReportConstant.FUEL_KIND)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="102" width="555" height="20" uuid="67a8322e-5930-4c3d-a817-2e5bea1eab02"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.1.4. Mô men lớn nhất/ tốc độ quay <i>(Max Torque/rpm)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0033")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1033")) + " (N.m/r/min)</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="222" width="555" height="20" uuid="3f1a8fdb-d08f-4446-9495-35ff848a9d0c"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.2.3. Công suất lớn nhất/ tốc độ quay <i>(Max output/rpm)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0039")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1039")) + " (kW/r/min)</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="162" width="555" height="20" uuid="0cd189d2-8f0f-4fbb-b2f8-4740bfe1fea6"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>4.2.     Động cơ hybrid <i>(Engine and motor for Hybrid vehicle)</i> </b>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="41" width="555" height="20" uuid="7aed1310-0f78-4853-950d-0a0479bbac35"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.1.1. Ký hiệu, loại động cơ <i> (Engine model, engine type):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0029")) + "," + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0030", vn.dtt.gt.dk.report.ReportConstant.ENGINE_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="322" width="555" height="20" uuid="2493d3e2-ec29-4bd4-8cd6-c50576bc3430"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.2.8. Công suất lớn nhất của động cơ điện <i>(Max. Electric motor rated power)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0044")) + " (kW)</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="20" uuid="08de0d34-bd72-49a0-8e97-dfafdb7abe77"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b> 4.   Động cơ <i>(Engine)</i></b>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="202" width="555" height="20" uuid="9db856a2-eef3-4730-b488-b62b4cc4a5f5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.2.2. Thể tích làm việc <i>(Displacement)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0038")) + "(cm3)</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="282" width="555" height="20" uuid="4177da97-9f98-49df-a9b8-6e48776b2ca5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.2.6. Thể tích thùng nhiên liệu <i>(Volume of fuel tank)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0042")) + " " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1042")) + " (lít)</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="302" width="555" height="20" uuid="ad5d50b0-a57a-44ba-88b5-81e40cc66c4a"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.2.7. Công suất lớn nhất của toàn hệ thống <i>(Max. combined system output)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0043")) + " (kW)</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="142" width="555" height="20" uuid="73b4ab76-2255-4621-a52b-48a9fbb31c88"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.1.6. Thể tích thùng nhiên liệu <i>(Volume of fuel tank)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0035")) + " " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1035")) + " (lít)</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="122" width="555" height="20" uuid="fc31b100-4c8d-44a7-b9cf-1d18295e2a1c"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.1.5. Loại nhiên liệu <i>(Fuel)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0034", vn.dtt.gt.dk.report.ReportConstant.FUEL_KIND)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="422" width="555" height="20" uuid="08606b43-61c9-4d70-b444-60c5eb13301b"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.3.4. Loại ắc quy/Điện áp-Dung lượng <i>(Type of Battery/Voltage-capacity)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0049", vn.dtt.gt.dk.report.ReportConstant.BATTERY_TYPE)) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0050")) + " (V)- " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1050")) + " (Ah)</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="362" width="555" height="20" uuid="d6470fe5-726f-4f3e-b302-539e2cb2d76e"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.3.1. Ký hiệu, loại động cơ <i> (Motor model, motor type):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0045")) + ","  + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0046", vn.dtt.gt.dk.report.ReportConstant.ENGINE_ELECTRIC)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="382" width="555" height="20" uuid="ddb6b786-4c03-4463-a6ab-e1e1cd8960a1"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.3.2. Điện áp hoạt động <i>(Operating voltage)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0047")) + " (V)</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="402" width="555" height="20" uuid="94c3daf9-51fd-4689-85ae-19527711ad09"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.3.3. Công suất lớn nhất <i>(Max. rated power)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0048")) + " (kW)</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="342" width="555" height="20" uuid="cb4e75d4-fbd4-4e5a-896a-a62ad60141dc"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>4.3.   Động cơ điện <i>(Electric motor)</i></b>]]></text>
+			</staticText>
+		</band>
+		<band height="481" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="301" width="555" height="20" uuid="da9ac134-30ce-4ada-b2cf-606d67bb4321"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>7.   Hệ thống lái <i>(Steering system)</i></b>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="381" width="555" height="20" uuid="907af06d-5e77-4271-8507-90a79d6e791e"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["8.2. Loại cơ cấu phanh chính trục 1 <i>(service brake of 1st axle)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0100", vn.dtt.gt.dk.report.ReportConstant.TYPE_AXLE_BRAKE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="441" width="555" height="20" uuid="2aa1ada6-0702-410c-b560-b78f5a831344"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["8.5. Loại phanh đỗ/vị trí tác động <i>(Parking brake/possition)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0103", vn.dtt.gt.dk.report.ReportConstant.TYPE_PARKING_BRAKE)) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0104", vn.dtt.gt.dk.report.ReportConstant.BRAKE_POSSITION)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="321" width="555" height="20" uuid="e6279e73-405b-450c-83cb-e19b2776dd65"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Góc quay lái sang trái/ phải <i>(Left/right steering angle)</i>: <b>" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0198")) + " / " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1098")) + " (độ)</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="341" width="555" height="20" uuid="419e6336-ca12-4df2-99dc-716ca041f9b6"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>8.   Hệ thống phanh <i>(Brake system)</i></b>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement positionType="Float" x="0" y="461" width="555" height="20" uuid="5d5c8753-8be3-4ecd-918f-bb45084fcc63"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["8.6. Loại phanh phụ trợ <i>(Auxiliary brake)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0105", vn.dtt.gt.dk.report.ReportConstant.TYPE_AUXILIARY_BRAKE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="401" width="555" height="20" uuid="1b74e38e-cbc9-44df-a816-d66f49588f00"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["8.3. Loại cơ cấu phanh chính trục 2 <i>(service brake of 2nd axle)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0101", vn.dtt.gt.dk.report.ReportConstant.TYPE_AXLE_BRAKE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="421" width="555" height="20" uuid="3d50c052-11f0-47ad-b140-80d17f050eaf"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["8.4. Loại cơ cấu phanh chính trục 3 <i>(service brake of 3rd axle)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0102", vn.dtt.gt.dk.report.ReportConstant.TYPE_AXLE_BRAKE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="361" width="555" height="20" uuid="ef8a59ca-6206-4435-8e34-165edbf74e1a"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["8.1. Loại hệ thống phanh <i> (Type of braking system ):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0099", vn.dtt.gt.dk.report.ReportConstant.TYPE_BRAKING_SYSTEM)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="241" width="555" height="20" uuid="63c1d4ea-2c1f-4dde-bc57-97fe2fa91d3a"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["6.1. Loại treo/loại giảm chấn trục 1 <i> (Type/type of sock absorber of 1st axle ):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0090", vn.dtt.gt.dk.report.ReportConstant.TYPE_SUSPENSION)) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0091", vn.dtt.gt.dk.report.ReportConstant.TYPE_SOCK_ABSORBER)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="181" width="555" height="20" uuid="dfd9a719-48e1-484e-afa1-4c3e7cbb785a"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.7. Số lượng/cỡ/khả năng chịu tải của một lốp trục 2 <i>(Quantity/size/max load of tyre of 2nd axle)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0088")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1088")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1188")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="60" width="555" height="20" uuid="add560e9-754a-4d18-9674-8993120ca74f"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph lineSpacing="Single" leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.3. Tỷ số truyền hộp số <i>(Gear ratios)</i>:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="201" width="555" height="20" uuid="3acacf26-6b7a-4134-a1d4-8133aa713d74"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.8. Số lượng/cỡ/khả năng chịu tải của một lốp trục 3 <i>(Quantity/size/max load of tyre of 3rd axle)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0089")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1089")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1189")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="281" width="555" height="20" uuid="3edb3c53-b94c-43f6-9ebd-5979d00d2211"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["6.3. Loại treo/loại giảm chấn trục 3 <i> (Type/type of sock absorber of 3rd axle ):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0094", vn.dtt.gt.dk.report.ReportConstant.TYPE_SUSPENSION)) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0095", vn.dtt.gt.dk.report.ReportConstant.TYPE_SOCK_ABSORBER)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="120" width="555" height="20" uuid="51a081bc-b9d2-4602-b4a5-6db5120ac977"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.4. Loại/số cấp/điều khiển hộp phân phối <i>(type/model/control of auxiliary gearbox)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0083", vn.dtt.gt.dk.report.ReportConstant.TYPE_GEAR_BOX)) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0084")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0085", vn.dtt.gt.dk.report.ReportConstant.CONTROL_GEAR_BOX)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="20" uuid="298a4a5f-da5f-4bc2-9a12-7292dafcfef5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>5.    Hệ thống truyền lực và chuyển động <i>(Transmission system)</i></b>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="261" width="555" height="20" uuid="45947b27-e2dc-4a46-b2fb-3d16b3bba559"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["6.2. Loại treo/loại giảm chấn trục 2 <i> (Type/type of sock absorber of 2nd axle ):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0092", vn.dtt.gt.dk.report.ReportConstant.TYPE_SUSPENSION)) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0093", vn.dtt.gt.dk.report.ReportConstant.TYPE_SOCK_ABSORBER)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="221" width="555" height="20" uuid="0148f7b8-2364-4cf5-a88b-875ca0293eae"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>6.   Hệ thống treo <i>(Suspension system)</i></b>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="141" width="555" height="20" uuid="694ccb66-2b0e-4049-bd98-3350ee078e44"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.5. Tỷ số truyền truyền lực cuối cùng <i>(Ratio of final transmission)</i>:<b> "+(($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0086")) + (($F{specificationList} != null && vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1086").trim().length() >0) ? " / " + vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1086") : "") + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="161" width="555" height="20" uuid="b976f4e0-edca-4979-a199-e617ca8591cd"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.6. Số lượng/cỡ/khả năng chịu tải của một lốp trục 1 <i>(Quantity/size/max load of tyre of 1st axle)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0087")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1087")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY1187")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="20" width="555" height="20" uuid="3a232169-5e74-4e2c-bd77-c222de4cc1b7"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.1. Loại/dẫn động ly hợp <i> (Type/actuation of clutch):</i><b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0051", vn.dtt.gt.dk.report.ReportConstant.TYPE_CLUTCH)) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0052", vn.dtt.gt.dk.report.ReportConstant.ACTUATION_CLUTCH)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="40" width="555" height="20" uuid="31ec01f8-1014-4c3b-83e3-c994dfa91fcc"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph lineSpacing="Single" leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.2. Loại/số cấp tiến-lùi/điều khiển hộp số <i>(model/type/number of forward-backward speed/control of  gearbox)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0054", vn.dtt.gt.dk.report.ReportConstant.TYPE_GEAR_BOX)) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0055")) + " tiến <i>(forward)</i> - " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0056")) + " lùi <i>(backward)</i>/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0057", vn.dtt.gt.dk.report.ReportConstant.CONTROL_GEAR_BOX))+ "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="80" width="555" height="20" uuid="790cda5c-3e0b-4b7d-b89f-7a887041f7c8"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph lineSpacing="Single" leftIndent="50"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số tiến <i>(Ratios of forward speed)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0058")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0059")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0060")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0061")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0062")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0063")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0064")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0065")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0066")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0067")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="100" width="555" height="20" uuid="2e5f2dde-5ffd-44f3-8cc3-60d5cc523253"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10"/>
+					<paragraph lineSpacing="Single" leftIndent="50"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số lùi <i>(Ratios of backward speed)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0068")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0069"))+ "</b>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="545">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="280" width="555" height="20" uuid="2dfa02d9-3156-470e-9000-35958005bc30"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.14. Số lượng/màu sắc tấm phản quang phía sau <i>(Quantity/color of reflective panels)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0119")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2119", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="409" width="555" height="20" uuid="cda813d6-f447-42fc-90e0-ac97569696d4"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1.Tài liệu kỹ thuật  <i>(Technical documents):</i>... "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="120" width="555" height="20" uuid="53e62188-9ad4-41bc-be06-c5555bc6ae1a"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.6. Số lượng/màu sắc đèn báo rẽ bên <i>(Quantity/color of side turn signal lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0111")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2111", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="489" width="555" height="20" uuid="11a66a08-ed42-4e76-b1fd-9068cac65f43"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.Giấy chứng nhận đăng ký xe <i>(Certificates of Registration)</i> hoặc các giấy tờ tương đương <i>(or equivalent documents)</i>:..."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="320" width="555" height="20" uuid="c69e8653-72dc-4223-9e71-81443cacdbb7"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.16. Số lượng ắc quy <i>(Quantity of battery)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0122")) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="40" width="555" height="20" uuid="ad631042-637b-4e4b-990a-e21f62e16ea5"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.2. Số lượng/màu sắc đèn sương mù phía trước <i>(Quantity/color of front fog lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0107")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2107", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="20" uuid="edb7d101-61ed-4424-a2d0-7ade6a0d5c2d"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>9.   Hệ thống chiếu sáng, tín hiệu và thiết bị điện <i>(Light, light- signaling and electrical equipments)</i></b>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="340" width="555" height="20" uuid="34cff598-de72-40cd-8aaa-fa33651325a7"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="13" isBold="false" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>III.   GHI CHÚ <i>(Remarks):</i></b>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="20" width="555" height="20" uuid="b21b8537-eacf-4eba-938f-2de3dc681edc"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.1. Số lượng/màu sắc đèn chiếu sáng phía trước <i>(Quantity/color of head lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0106")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2106", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="429" width="555" height="20" uuid="8a22a2a6-911f-4051-9cc5-9d0a557fdef3"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2.Tài liệu khí thải  <i>(Emission documents):</i>... "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="80" width="555" height="20" uuid="6171fe80-2030-4f58-be6b-ca6283c5aa62"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.4. Số lượng/màu sắc đèn báo rẽ phía trước <i>(Quantity/color of front turn signal lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0109")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2109", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="220" width="555" height="20" uuid="1e4c7ed6-2f86-4d27-9c0f-7dd318cd7d51"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.11. Số lượng/màu sắc đèn phanh <i>(Quantity/color of stop lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0116")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2116", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="469" width="555" height="20" uuid="51858981-1ad5-488b-bf18-a53162116338"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.Giấy chứng nhận chất lượng của nhà sản xuất  <i>(Manufature’s Certificate of Quality):</i>... "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="100" width="555" height="20" uuid="7e819062-8839-4634-b6be-12dc86634461"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.5. Số lượng/màu sắc đèn báo rẽ phía sau <i>(Quantity/color of rear turn signal lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0110")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2110", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="389" width="555" height="20" uuid="78355309-2437-4246-b5f9-ad8b813558e4"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="13" isBold="false" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>IV.   TÀI LIỆU ĐÍNH KÈM <i>(Attachments):</i></b>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="60" width="555" height="20" uuid="3cd74f25-82d6-44d9-8b8c-7dde9fd92ec4"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.3. Số lượng/màu sắc đèn sương mù phía sau <i>(Quantity/color of rear fog lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0108")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2108", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="180" width="555" height="20" uuid="a8cb5d9b-1a7a-468a-afd6-1ff134fffef7"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.9. Số lượng/màu sắc đèn báo đỗ phía trước <i>(Quantity/color of front parking lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0114")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2114", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="140" width="555" height="20" uuid="75c06290-a472-451e-9656-2c039a290bfa"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.7. Số lượng/màu sắc đèn vị trí phía trước <i>(Quantity/color of front position lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0112")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2112", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="200" width="555" height="20" uuid="b95cd948-e5fb-4150-bbe2-76bd037894d1"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.10. Số lượng/màu sắc đèn báo đỗ phía sau <i>(Quantity/color of rear parking lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0115")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2115", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="510" width="555" height="20" uuid="1c0d36b6-370a-4075-9f85-7d5c6292c845"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["6.Các giấy tờ khác  <i>(other related documents):</i>..."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="160" width="555" height="20" uuid="22f19d00-9dbe-4fc6-8be7-5b81a9845a79"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.8. Số lượng/màu sắc đèn vị trí phía sau <i>(Quantity/color of rear position lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0113")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2113", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="260" width="555" height="20" uuid="f025abbe-8858-4078-adc6-d7d55527bc28"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.13. Số lượng/màu sắc đèn lùi <i>(Quantity/color of reversing lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0118")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2118", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="449" width="555" height="20" uuid="752ad9c4-bcfe-4965-929c-44dfb88655de"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3.Giấy chứng nhận kiểu loại  <i>(Certificates of Type approval):</i>... "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="300" width="555" height="20" uuid="2d037ef2-986c-4be8-8155-5b756fb87ad9"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.15. Loại ắc quy/Điện áp-Dung lượng <i>(Type of Battery/Voltage-capacity)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY0120", vn.dtt.gt.dk.report.ReportConstant.BATTERY_TYPE)) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0121")) + " (V) - " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY2121")) + "(Ah)</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="240" width="555" height="20" uuid="9115ac28-7861-4ecc-8f45-dbc7a705b73c"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.12. Số lượng/màu sắc đèn soi biển số phía sau <i>(Quantity/color of rear licence plate lamps)</i>:<b> " + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByCode($F{specificationList}.getSpecItem(), "XMY0117")) + "/" + (($F{specificationList} == null) ? "" : vn.dtt.gt.dk.report.ReportUtils.getValueOfTechnicalSpecItemByDM($F{specificationList}.getSpecItem(), "XMY2117", vn.dtt.gt.dk.report.ReportConstant.COLOR_TYPE)) + "</b>"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="361" width="555" height="27" uuid="31f2dff5-33f3-43f7-a40c-462908252208"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="10" isStrikeThrough="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remarks}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="149">
+			<staticText>
+				<reportElement x="132" y="30" width="90" height="98" uuid="6476573b-c22b-4c35-b09b-007b38cd4526"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[<b>Số động cơ</b> <br> <i>(Engine N<font face='DejaVu Sans'>&#186;</font>)</i>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="30" width="77" height="98" uuid="8de764ef-7118-4acd-af4d-18ccd5d11cf6"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[<b>Tình trạng phương tiện</b><br><i>(Vehicle’s status)</i>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="426" y="30" width="52" height="98" uuid="46323cfb-8372-4da2-80a3-83a0cccb8c73"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[<b>Loại tiền tệ </b><br><i>(Currency)</i>]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="30" width="24" height="98" uuid="de24366a-af96-4e46-b5dc-7a97951a2f23"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>STT</b><br><i>(N<font face='DejaVu Sans'>&#186;</font>)</i>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="222" y="30" width="55" height="98" uuid="335bd1ac-d518-4a6c-9908-e324488298b7"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[<b>Năm sản xuất</b><br><i>(Production on year)</i>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="24" y="30" width="108" height="98" uuid="2ec1e671-4201-4e0e-85d4-74248c7f33fe"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[<b>Số khung
+(hoặc số VIN)
+</b><br><i> (Chassis or VIN N<font face='DejaVu Sans'>&#186;</font>)</i>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="30" uuid="ea81eca8-2296-4b6b-b3de-ca5581666ed3"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="13" isBold="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[<b>V.   BẢN KÊ CHI TIẾT XE NHẬP KHẨU CÙNG KIỂU LOẠI<i> (List of same type-imported motor vehicle)</i></b>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="30" width="105" height="98" uuid="1a2907a5-494c-4ebf-a9ae-d7169f3000ac"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[<b>Giá NK</b><br><i>(Unit Price)</i>]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="0" y="128" width="555" height="20" uuid="6127321d-7093-454f-930b-d2eb66bc2858"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset1" uuid="4552c120-0550-4c71-914c-5a0721943bc6">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{importedVehicle})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="20" width="555">
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement positionType="Float" x="24" y="0" width="108" height="20" uuid="6357c7ce-7313-4ae6-8147-5af2ced4d0f6"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{chassisNumber}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement positionType="Float" x="132" y="0" width="90" height="20" uuid="fdea1304-788a-4541-bde1-b5cabafad9eb"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{engineNumber}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement positionType="Float" x="222" y="0" width="55" height="20" uuid="63bc4d9d-c914-4a35-a51e-e4d8612f52a9"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[($F{productionYear} == null) ? "" : $F{productionYear}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement positionType="Float" x="321" y="0" width="105" height="20" uuid="d6971994-4944-4be3-a59f-4e6695fcfe7e"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Right" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+								<paragraph rightIndent="5"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{vehicleUnitPrice}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement positionType="Float" x="426" y="0" width="52" height="20" uuid="17feac5b-9a28-483a-a7d5-259ae44a1145"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{currency}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement positionType="Float" x="478" y="0" width="77" height="20" uuid="8c61280c-d3d9-45d6-8e90-99c6ab26bfb9"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[(($F{vehicleEngineStatus} == 0) ? "Chưa qua sử dụng" : (($F{vehicleEngineStatus}==1) ? "Đã qua sử dụng" : (($F{vehicleEngineStatus}==2) ? "Loại khác" : "")))]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement positionType="Float" x="0" y="0" width="24" height="20" uuid="f240e4f7-00e6-4637-8d54-bae0c5256c2a"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+							<reportElement positionType="Float" x="277" y="0" width="44" height="20" uuid="d5e852cb-8cf8-4ef1-bcca-3772188c06c6"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{vehicleColor}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<staticText>
+				<reportElement x="277" y="30" width="44" height="98" uuid="8a92801e-b888-4100-9fa9-e2408a482b81"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[<b>Màu sơn</b><br><i>(Color)</i>]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="284" y="13" width="271" height="20" uuid="4d1aea68-6b4a-4be6-a899-9544e45c84dd"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Người  nhập khẩu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="284" y="33" width="271" height="20" uuid="1e8147d6-89b6-49cc-bacb-3b11a361b100"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(Importer)]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="284" y="53" width="271" height="20" uuid="66c8491b-4fef-4ff2-a2a8-d98c739dfdc3"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{generalInfo}.getImporter().getImporterName()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,25 @@
+@import url(jquery-ui.css);
+@import url(jquery.loadmask.css);
+
+.alert {
+    margin: 20px 0;
+}
+
+.alert, .portlet-msg-alert, .portlet-msg-error, .portlet-msg-help, .portlet-msg-info, .portlet-msg-progress, .portlet-msg-success {
+    background-color: #fffbdc;
+    border: 1px solid #f1d875 !important;
+    border-radius: 2px !important;
+    margin-bottom: 20px;
+    padding: 8px 35px 8px 14px !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.alert, .portlet-msg-alert, .portlet-msg-error, .portlet-msg-help, .portlet-msg-info, .portlet-msg-progress, .portlet-msg-success {
+    word-wrap: break-word;
+}
+
+.alert-danger, .alert-error, .portlet-msg-error {
+    background-color: #fee5e2;
+    border-color: #fcaca5;
+    color: #b50303;
+}

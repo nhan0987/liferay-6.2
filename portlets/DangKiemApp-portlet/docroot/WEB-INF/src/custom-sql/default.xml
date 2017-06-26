@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql file="custom-sql/dakiemtra.xml" />
+	<sql file="custom-sql/chuakiemtra.xml" />
+	<sql file="custom-sql/phancongdonvikiemtra.xml" />
+	<sql file="custom-sql/vehiclecertificate.xml" />
+	<sql file="custom-sql/thongsochungchixechuyendung.xml" />
+	<sql file="custom-sql/thongsochungchixecogioi.xml" />
+	<sql file="custom-sql/thongsochungchixebonbanh.xml" />
+	<sql file="custom-sql/thongsochungchidongco.xml" />
+	<sql file="custom-sql/thongsochungchixedapdien.xml" />
+	<sql file="custom-sql/thongsochungchixemay.xml" />
+</custom-sql>

@@ -1,0 +1,788 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.DaKiemTraLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.DaKiemTraLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.DaKiemTraService" class="vn.dtt.gt.dk.dao.motcua.service.impl.DaKiemTraServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.DaKiemTraPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.DaKiemTraPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.DaKiemTraFinder" class="vn.dtt.gt.dk.dao.motcua.service.persistence.DaKiemTraFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.LichKiemTraHienTruongLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.LichKiemTraHienTruongLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.LichKiemTraHienTruongService" class="vn.dtt.gt.dk.dao.motcua.service.impl.LichKiemTraHienTruongServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.LichKiemTraHienTruongPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.LichKiemTraHienTruongPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.LichKiemTraHienTruongFinder" class="vn.dtt.gt.dk.dao.motcua.service.persistence.LichKiemTraHienTruongFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaChuyenDichTrangThaiLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaChuyenDichTrangThaiLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaChuyenDichTrangThaiService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaChuyenDichTrangThaiServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaChuyenDichTrangThaiPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaChuyenDichTrangThaiPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaChuyenDichTrangThaiFinder" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaChuyenDichTrangThaiFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaDienBienHoSoLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaDienBienHoSoLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaDienBienHoSoService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaDienBienHoSoServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaDienBienHoSoPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaDienBienHoSoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaDienBienHoSoFinder" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaDienBienHoSoFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaDongBoMTgatewayLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaDongBoMTgatewayLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaDongBoMTgatewayService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaDongBoMTgatewayServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaDongBoMTgatewayPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaDongBoMTgatewayPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaDongBoMTgatewayFinder" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaDongBoMTgatewayFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaKetQuaDienBienLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaKetQuaDienBienLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaKetQuaDienBienService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaKetQuaDienBienServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaKetQuaDienBienPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaKetQuaDienBienPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaNotificationLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaNotificationLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaNotificationService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaNotificationServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaNotificationPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaNotificationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaPhanCongXuLyLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaPhanCongXuLyLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaPhanCongXuLyService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaPhanCongXuLyServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhanCongXuLyPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhanCongXuLyPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaPhieuXuLyChinhLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaPhieuXuLyChinhLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaPhieuXuLyChinhService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaPhieuXuLyChinhServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyChinhPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyChinhPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyChinhFinder" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyChinhFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaPhieuXuLyPhuLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaPhieuXuLyPhuLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaPhieuXuLyPhuService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaPhieuXuLyPhuServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyPhuPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyPhuPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyPhuFinder" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyPhuFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaQuyTrinhThuTucLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaQuyTrinhThuTucLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaQuyTrinhThuTucService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaQuyTrinhThuTucServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaQuyTrinhThuTucPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaQuyTrinhThuTucPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaTrangThaiHoSoLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaTrangThaiHoSoLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.MotCuaTrangThaiHoSoService" class="vn.dtt.gt.dk.dao.motcua.service.impl.MotCuaTrangThaiHoSoServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaTrangThaiHoSoPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaTrangThaiHoSoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaTrangThaiHoSoFinder" class="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaTrangThaiHoSoFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.PhanCongDonViKiemTraLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.PhanCongDonViKiemTraLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.PhanCongDonViKiemTraService" class="vn.dtt.gt.dk.dao.motcua.service.impl.PhanCongDonViKiemTraServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhanCongDonViKiemTraPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.PhanCongDonViKiemTraPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhanCongDonViKiemTraFinder" class="vn.dtt.gt.dk.dao.motcua.service.persistence.PhanCongDonViKiemTraFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.PhieuXuLyChinhHoSoThuTucLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.PhieuXuLyChinhHoSoThuTucLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.PhieuXuLyChinhHoSoThuTucService" class="vn.dtt.gt.dk.dao.motcua.service.impl.PhieuXuLyChinhHoSoThuTucServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhieuXuLyChinhHoSoThuTucPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.PhieuXuLyChinhHoSoThuTucPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhieuXuLyChinhHoSoThuTucFinder" class="vn.dtt.gt.dk.dao.motcua.service.persistence.PhieuXuLyChinhHoSoThuTucFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.PhieuXuLyPhuHoSoThuTucLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.PhieuXuLyPhuHoSoThuTucLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.PhieuXuLyPhuHoSoThuTucService" class="vn.dtt.gt.dk.dao.motcua.service.impl.PhieuXuLyPhuHoSoThuTucServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhieuXuLyPhuHoSoThuTucPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.PhieuXuLyPhuHoSoThuTucPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.PhieuXuLyPhuHoSoThuTucFinder" class="vn.dtt.gt.dk.dao.motcua.service.persistence.PhieuXuLyPhuHoSoThuTucFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.ThamSoHeThongLocalService" class="vn.dtt.gt.dk.dao.motcua.service.impl.ThamSoHeThongLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.ThamSoHeThongService" class="vn.dtt.gt.dk.dao.motcua.service.impl.ThamSoHeThongServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.motcua.service.persistence.ThamSoHeThongPersistence" class="vn.dtt.gt.dk.dao.motcua.service.persistence.ThamSoHeThongPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.DmDataGroupLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.DmDataGroupLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataGroupPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.DmDataGroupPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataGroupFinder" class="vn.dtt.gt.dk.dao.common.service.persistence.DmDataGroupFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.DmDataItemLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.DmDataItemLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemFinder" class="vn.dtt.gt.dk.dao.common.service.persistence.DmDataItemFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.DmDataVersionLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.DmDataVersionLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.DmDataVersionPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.DmDataVersionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.DmMetaDataLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.DmMetaDataLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.DmMetaDataPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.DmMetaDataPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TimKiemHoSoLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TimKiemHoSoLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TimKiemHoSoPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TimKiemHoSoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TimKiemHoSoFinder" class="vn.dtt.gt.dk.dao.common.service.persistence.TimKiemHoSoFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TthcBieuMauHoSoLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TthcBieuMauHoSoLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcBieuMauHoSoPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcBieuMauHoSoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcBieuMauHoSoFinder" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcBieuMauHoSoFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TthcCoQuanQlttLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TthcCoQuanQlttLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcCoQuanQlttPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcCoQuanQlttPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TthcDonViThucHienLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TthcDonViThucHienLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcDonViThucHienPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcDonViThucHienPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TthcHoSoThuTucLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TthcHoSoThuTucLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcHoSoThuTucPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcHoSoThuTucPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcHoSoThuTucFinder" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcHoSoThuTucFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TthcKeHoachChuyenDichLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TthcKeHoachChuyenDichLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcKeHoachChuyenDichPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcKeHoachChuyenDichPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcKeHoachChuyenDichFinder" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcKeHoachChuyenDichFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TthcLinhVucThuTucLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TthcLinhVucThuTucLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcLinhVucThuTucPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcLinhVucThuTucPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TthcNoidungHoSoLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TthcNoidungHoSoLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcNoidungHoSoPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcNoidungHoSoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcNoidungHoSoFinder" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcNoidungHoSoFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TthcPhanNhomHoSoLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TthcPhanNhomHoSoLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcPhanNhomHoSoPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcPhanNhomHoSoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcPhanNhomHoSoFinder" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcPhanNhomHoSoFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TthcPhanNhomHoSoVaiTroLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TthcPhanNhomHoSoVaiTroLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcPhanNhomHoSoVaiTroPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcPhanNhomHoSoVaiTroPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcPhanNhomHoSoVaiTroFinder" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcPhanNhomHoSoVaiTroFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TthcThanhPhanHoSoLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TthcThanhPhanHoSoLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcThanhPhanHoSoPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcThanhPhanHoSoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcThanhPhanHoSoFinder" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcThanhPhanHoSoFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.TthcThuTucHanhChinhLocalService" class="vn.dtt.gt.dk.dao.common.service.impl.TthcThuTucHanhChinhLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcThuTucHanhChinhPersistence" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcThuTucHanhChinhPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.common.service.persistence.TthcThuTucHanhChinhFinder" class="vn.dtt.gt.dk.dao.common.service.persistence.TthcThuTucHanhChinhFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.AswmsgMessageLogLocalService" class="vn.dtt.gt.dk.dao.aswmsg.service.impl.AswmsgMessageLogLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgMessageLogPersistence" class="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgMessageLogPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.AswmsgMessageQueueLocalService" class="vn.dtt.gt.dk.dao.aswmsg.service.impl.AswmsgMessageQueueLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgMessageQueuePersistence" class="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgMessageQueuePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgMessageQueueFinder" class="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgMessageQueueFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.AswmsgSyndatahistoryLocalService" class="vn.dtt.gt.dk.dao.aswmsg.service.impl.AswmsgSyndatahistoryLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgSyndatahistoryPersistence" class="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgSyndatahistoryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.AswmsgValidationLogLocalService" class="vn.dtt.gt.dk.dao.aswmsg.service.impl.AswmsgValidationLogLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgValidationLogPersistence" class="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgValidationLogPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgValidationLogFinder" class="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgValidationLogFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.AswmsgWebserviceLocalService" class="vn.dtt.gt.dk.dao.aswmsg.service.impl.AswmsgWebserviceLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgWebservicePersistence" class="vn.dtt.gt.dk.dao.aswmsg.service.persistence.AswmsgWebservicePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.MonitorMessageQueueLocalService" class="vn.dtt.gt.dk.dao.aswmsg.service.impl.MonitorMessageQueueLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.persistence.MonitorMessageQueuePersistence" class="vn.dtt.gt.dk.dao.aswmsg.service.persistence.MonitorMessageQueuePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.aswmsg.service.persistence.MonitorMessageQueueFinder" class="vn.dtt.gt.dk.dao.aswmsg.service.persistence.MonitorMessageQueueFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="tthcDataSource" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ActionLogLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ActionLogLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ActionLogService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ActionLogServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ActionLogPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ActionLogPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ActionLogFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ActionLogFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentofImporterLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentofImporterLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentofImporterService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentofImporterServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofImporterPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofImporterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofImporterFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofImporterFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentofImporterControlLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentofImporterControlLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentofImporterControlService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentofImporterControlServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofImporterControlPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofImporterControlPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofImporterControlFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofImporterControlFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentofInspectionMethodLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentofInspectionMethodLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentofInspectionMethodService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentofInspectionMethodServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofInspectionMethodPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofInspectionMethodPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofInspectionMethodFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofInspectionMethodFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentofInspectorLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentofInspectorLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentofInspectorService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentofInspectorServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofInspectorPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofInspectorPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofInspectorFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofInspectorFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentofProductLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentofProductLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentofProductService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentofProductServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofProductPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofProductPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofProductFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentofProductFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentPeriodLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentPeriodLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentPeriodService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentPeriodServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentPeriodPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentPeriodPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentPeriodFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentPeriodFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentSpecificationLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentSpecificationLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentSpecificationService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentSpecificationServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentSpecificationPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentSpecificationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentSpecificationFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentSpecificationFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentSpecificationConfigLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentSpecificationConfigLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.AssessmentSpecificationConfigService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.AssessmentSpecificationConfigServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentSpecificationConfigPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentSpecificationConfigPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentSpecificationConfigFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.AssessmentSpecificationConfigFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CertificateCircularLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CertificateCircularLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CertificateCircularService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CertificateCircularServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateCircularPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateCircularPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CertificateRecordLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CertificateRecordLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CertificateRecordService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CertificateRecordServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateRecordPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateRecordPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateRecordFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateRecordFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CertificateRecordSpecLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CertificateRecordSpecLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CertificateRecordSpecService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CertificateRecordSpecServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateRecordSpecPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateRecordSpecPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateRecordSpecFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CertificateRecordSpecFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CfgLimitTechnicalSpecLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CfgLimitTechnicalSpecLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CfgLimitTechnicalSpecPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CfgLimitTechnicalSpecPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CfgTechnicalspecLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CfgTechnicalspecLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CfgTechnicalspecService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CfgTechnicalspecServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CfgTechnicalspecPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CfgTechnicalspecPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CfgTechnicalspecFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CfgTechnicalspecFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ConfirmedInspectionLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ConfirmedInspectionLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ConfirmedInspectionService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ConfirmedInspectionServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ConfirmedInspectionPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ConfirmedInspectionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ConfirmedInspectionFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ConfirmedInspectionFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ControlReportLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ControlReportLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ControlReportService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ControlReportServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ControlReportPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ControlReportPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ControlRequestLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ControlRequestLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ControlRequestService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ControlRequestServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ControlRequestPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ControlRequestPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ControlRequirementLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ControlRequirementLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ControlRequirementService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ControlRequirementServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ControlRequirementPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ControlRequirementPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CopReportLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CopReportLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CopReportService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CopReportServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CopReportPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CopReportPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CorporationAttendeeLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CorporationAttendeeLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CorporationAttendeeService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CorporationAttendeeServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationAttendeePersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationAttendeePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CorporationInspectorLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CorporationInspectorLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CorporationInspectorService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CorporationInspectorServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationInspectorPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationInspectorPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationInspectorFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationInspectorFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CorporationTeamLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CorporationTeamLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CorporationTeamService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CorporationTeamServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationTeamPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationTeamPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationTeamFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationTeamFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CorporationViewLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CorporationViewLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CorporationViewService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CorporationViewServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationViewPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationViewPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationViewFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CorporationViewFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CustomsDeclarationLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CustomsDeclarationLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.CustomsDeclarationService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.CustomsDeclarationServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CustomsDeclarationPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.CustomsDeclarationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.DebitNoteLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.DebitNoteLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.DebitNoteService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.DebitNoteServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DebitNotePersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DebitNotePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DebitNoteFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DebitNoteFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.DebitNoteDetailsLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.DebitNoteDetailsLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.DebitNoteDetailsService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.DebitNoteDetailsServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DebitNoteDetailsPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DebitNoteDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.DraftCertificateLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.DraftCertificateLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.DraftCertificateService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.DraftCertificateServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DraftCertificatePersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DraftCertificatePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.DraftCertificateSpecLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.DraftCertificateSpecLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.DraftCertificateSpecService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.DraftCertificateSpecServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DraftCertificateSpecPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DraftCertificateSpecPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DraftCertificateSpecFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.DraftCertificateSpecFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.EmissionTestReportLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.EmissionTestReportLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.EmissionTestReportService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.EmissionTestReportServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.EmissionTestReportPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.EmissionTestReportPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.EmissionTestRequestLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.EmissionTestRequestLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.EmissionTestRequestService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.EmissionTestRequestServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.EmissionTestRequestPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.EmissionTestRequestPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.EmissionTestRequirementLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.EmissionTestRequirementLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.EmissionTestRequirementService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.EmissionTestRequirementServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.EmissionTestRequirementPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.EmissionTestRequirementPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ExchangeRateLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ExchangeRateLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ExchangeRateService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ExchangeRateServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ExchangeRatePersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ExchangeRatePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ExchangeRateFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ExchangeRateFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ImportedXCDLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ImportedXCDLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ImportedXCDService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ImportedXCDServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ImportedXCDPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ImportedXCDPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ImportedXCDFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ImportedXCDFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.InspectionCommonStatusLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.InspectionCommonStatusLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.InspectionCommonStatusService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.InspectionCommonStatusServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionCommonStatusPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionCommonStatusPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionCommonStatusFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionCommonStatusFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.InspectionRecordLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.InspectionRecordLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.InspectionRecordService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.InspectionRecordServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionRecordPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionRecordPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionRecordFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionRecordFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.InspectionRecordAttachLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.InspectionRecordAttachLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.InspectionRecordAttachService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.InspectionRecordAttachServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionRecordAttachPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionRecordAttachPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.InspectionRecordSpecLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.InspectionRecordSpecLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.InspectionRecordSpecService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.InspectionRecordSpecServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionRecordSpecPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionRecordSpecPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionRecordSpecFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.InspectionRecordSpecFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.IssueCategoryLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.IssueCategoryLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.IssueCategoryService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.IssueCategoryServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.IssueCategoryPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.IssueCategoryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.IssueCategoryFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.IssueCategoryFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.IssueTrackingLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.IssueTrackingLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.IssueTrackingService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.IssueTrackingServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.IssueTrackingPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.IssueTrackingPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.IssueTrackingFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.IssueTrackingFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.NewExchangeRateLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.NewExchangeRateLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.NewExchangeRateService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.NewExchangeRateServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.NewExchangeRatePersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.NewExchangeRatePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.PaymentStatusLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.PaymentStatusLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.PaymentStatusService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.PaymentStatusServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.PaymentStatusPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.PaymentStatusPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ProductionCountryLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ProductionCountryLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ProductionCountryService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ProductionCountryServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ProductionCountryPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ProductionCountryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ProductionCountryFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ProductionCountryFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.RegisteredInspectionLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.RegisteredInspectionLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.RegisteredInspectionService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.RegisteredInspectionServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.RegisteredInspectionPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.RegisteredInspectionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.RegisteredInspectionFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.RegisteredInspectionFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.SafetestRequirementLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.SafetestRequirementLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.SafetestRequirementService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.SafetestRequirementServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.SafetestRequirementPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.SafetestRequirementPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.SafetyTestReportLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.SafetyTestReportLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.SafetyTestReportService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.SafetyTestReportServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.SafetyTestReportPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.SafetyTestReportPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.SafetyTestRequestLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.SafetyTestRequestLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.SafetyTestRequestService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.SafetyTestRequestServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.SafetyTestRequestPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.SafetyTestRequestPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.SatetyTestReportSpecLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.SatetyTestReportSpecLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.SatetyTestReportSpecService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.SatetyTestReportSpecServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.SatetyTestReportSpecPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.SatetyTestReportSpecPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIDONGCOLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIDONGCOLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIDONGCOService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIDONGCOServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIDONGCOPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIDONGCOPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIDONGCOFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIDONGCOFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXEBONBANHLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXEBONBANHLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXEBONBANHService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXEBONBANHServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEBONBANHPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEBONBANHPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEBONBANHFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEBONBANHFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXECHUYENDUNGLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXECHUYENDUNGLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXECHUYENDUNGService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXECHUYENDUNGServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXECHUYENDUNGPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXECHUYENDUNGPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXECHUYENDUNGFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXECHUYENDUNGFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXECOGIOILocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXECOGIOILocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXECOGIOIService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXECOGIOIServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXECOGIOIPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXECOGIOIPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXECOGIOIFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXECOGIOIFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXECOGIOIPHAN2LocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXECOGIOIPHAN2LocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXECOGIOIPHAN2Service" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXECOGIOIPHAN2ServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXECOGIOIPHAN2Persistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXECOGIOIPHAN2PersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXEDAPDIENLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXEDAPDIENLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXEDAPDIENService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXEDAPDIENServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEDAPDIENPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEDAPDIENPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEDAPDIENFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEDAPDIENFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXEMAYLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXEMAYLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.THONGSOCHUNGCHIXEMAYService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.THONGSOCHUNGCHIXEMAYServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEMAYPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEMAYPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEMAYFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXEMAYFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleCertificateLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleCertificateLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleCertificateService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleCertificateServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleCertificatePersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleCertificatePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleCertificateFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleCertificateFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleGroupLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleGroupLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleGroupService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleGroupServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleGroupPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleGroupPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleGroupFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleGroupFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleGroupInitialLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleGroupInitialLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleGroupInitialService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleGroupInitialServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleGroupInitialPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleGroupInitialPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleGroupInitialFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleGroupInitialFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleGroupSpecLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleGroupSpecLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleGroupSpecService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleGroupSpecServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleGroupSpecPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleGroupSpecPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleRecordLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleRecordLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleRecordService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleRecordServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleRecordPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleRecordPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleRecordFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleRecordFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehiclerecordInitialLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehiclerecordInitialLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehiclerecordInitialService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehiclerecordInitialServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehiclerecordInitialPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehiclerecordInitialPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehiclerecordInitialFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehiclerecordInitialFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleSpecificationLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleSpecificationLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleSpecificationService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleSpecificationServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleSpecificationPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleSpecificationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleSpecificationFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleSpecificationFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleStatisticsLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleStatisticsLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.VehicleStatisticsService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.VehicleStatisticsServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleStatisticsPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleStatisticsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleStatisticsFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleStatisticsFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ViewTrungSoKhungDongCoLocalService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ViewTrungSoKhungDongCoLocalServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.ViewTrungSoKhungDongCoService" class="vn.dtt.gt.dk.dao.nghiepvu.service.impl.ViewTrungSoKhungDongCoServiceImpl" />
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ViewTrungSoKhungDongCoPersistence" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ViewTrungSoKhungDongCoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+	<bean id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ViewTrungSoKhungDongCoFinder" class="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.ViewTrungSoKhungDongCoFinderImpl" parent="basePersistence">
+		<property name="dataSource" ref="vrDataSource" />
+		<property name="sessionFactory" ref="vrSessionFactory" />
+	</bean>
+</beans>

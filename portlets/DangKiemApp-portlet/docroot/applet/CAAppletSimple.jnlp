@@ -1,0 +1,30 @@
+<jnlp spec="1.0+" codebase="http://dangkiem.mt.gov.vn/DangKiemApp-portlet/applet/">
+  <information>
+    <title>Ky So DeMo</title>
+    <vendor>Ky So DeMo</vendor>    
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <update check="background" policy="always"/>
+  <resources>
+    <j2se version="1.7+" href="http://java.sun.com/products/autodl/j2se"/>    
+    <jar href="bcpkix-jdk15on-1.48.jar" download="eager" main="false"/>
+    <jar href="bcprov-jdk15on-1.48.jar" download="eager" main="false"/>
+    <jar href="bctsp-jdk15-1.43.jar" download="eager" main="false"/>
+    <jar href="commons-codec-1.5.jar" download="eager" main="false"/>
+    <jar href="commons-io-2.4.jar" download="eager" main="false"/>
+    <jar href="commons-lang3-3.1.jar" download="eager" main="false"/>
+    <jar href="commons-logging-1.1.jar" download="eager" main="false"/>
+    <jar href="commons-net-3.2.jar" download="eager" main="false"/>
+    <jar href="dom4j-1.6.1.jar" download="eager" main="false"/>
+    <jar href="itextpdf-5.4.2.jar" download="eager" main="false"/>
+    <jar href="jacob-1.14.3.jar" download="eager" main="false"/>
+    <jar href="jaxen-1.1.jar" download="eager" main="false"/>
+    <jar href="log4j-1.2.13.jar" download="eager" main="false"/>
+    <jar href="CAAppletSimple.jar" download="eager" main="true"/>
+    <jar href="xalan-2.7.1.jar" download="eager" main="false"/>
+    <jar href="xmlsec-1.5.1.jar" download="eager" main="false"/>
+  </resources>
+  <applet-desc name="EcoitApplet" main-class="com.ecoit.asia.EcoitApplet" width="300" height="300"/>
+</jnlp>

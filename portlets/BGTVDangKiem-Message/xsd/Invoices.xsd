@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- XML Schema Generated from XML Document on Tue Sep 16 2014 08:40:58 GMT+0700 (SE Asia Standard Time) -->
+	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+	<xs:element name="Invoices">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Inv" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="key" type="xs:string"></xs:element>
+							<xs:element name="Invoice" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="CusCode" type="xs:string"></xs:element>
+										<xs:element name="CusName" type="xs:string"></xs:element>
+										<xs:element name="CusAddress" type="xs:string"></xs:element>
+										<xs:element name="CusPhone" type="xs:string"></xs:element>
+										<xs:element name="CusTaxCode" type="xs:string"></xs:element>
+										<xs:element name="PaymentMethod" type="xs:string"></xs:element>
+										<xs:element name="PaymentStatus" type="xs:string"></xs:element>
+										<xs:element name="KindOfService" type="xs:string"></xs:element>
+										
+										<xs:element name="Products">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Product" maxOccurs="unbounded">																		
+														<xs:complexType>
+															<xs:sequence>												
+																<xs:element name="ProdName" type="xs:string"></xs:element>
+																<xs:element name="ProdUnit" type="xs:string"></xs:element>
+																<xs:element name="ProdQuantity" type="xs:string"></xs:element>
+																<xs:element name="ProdPrice" type="xs:string"></xs:element>
+																<xs:element name="Amount" type="xs:string"></xs:element>
+															</xs:sequence>
+														</xs:complexType>	
+													</xs:element>													
+												</xs:sequence>
+											</xs:complexType>	
+										</xs:element>
+										<xs:element name="Total" type="xs:string"></xs:element>
+										<xs:element name="DiscountAmount" type="xs:string"></xs:element>
+										<xs:element name="VATRate" type="xs:string"></xs:element>
+										<xs:element name="VATAmount" type="xs:string"></xs:element>
+										<xs:element name="Extra" type="xs:string"></xs:element>
+										<xs:element name="Amount" type="xs:string"></xs:element>
+										<xs:element name="AmountInWords" type="xs:string"></xs:element>										
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>		
+	</xs:element>
+</xs:schema>

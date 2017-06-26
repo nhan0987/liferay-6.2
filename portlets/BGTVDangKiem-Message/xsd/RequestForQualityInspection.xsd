@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- XML Schema Generated from XML Document on Tue Sep 16 2014 08:40:58 
+		GMT+0700 (SE Asia Standard Time) -->
+	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+	<xs:element name="RequestForQualityInspection">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Importer">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ImporterCode" type="xs:string"></xs:element>
+							<xs:element name="ImporterName" type="xs:string"></xs:element>
+							<xs:element name="ImporterAddress" type="xs:string"></xs:element>
+							<xs:element name="Representative" type="xs:string"></xs:element>
+							<xs:element name="Phone" type="xs:string"></xs:element>
+							<xs:element name="Fax" type="xs:string"></xs:element>
+							<xs:element name="Email" type="xs:string"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="AttachedFile" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="AttachedTypeCode" type="xs:string"></xs:element>
+							<xs:element name="AttachedTypeName" type="xs:string"></xs:element>
+							<xs:element name="AttachedDocName" type="xs:string"></xs:element>
+							<xs:element name="AttachedNote" type="xs:string"></xs:element>
+							<xs:element name="AttachedSequenceNo" type="xs:int"></xs:element>
+							<xs:element name="FullFileName" type="xs:string"></xs:element>
+							<xs:element name="Base64FileContent" type="xs:string"></xs:element>
+							<xs:element name="SHA1FileContent" type="xs:string"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="TotalNumberVehicle" type="xs:long"></xs:element>
+				<xs:element name="TotalTechnicalSpec" type="xs:long"></xs:element>
+
+				<xs:element name="Inspection">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="InpectionDate" type="xs:string"></xs:element>
+							<xs:element name="InspectionSite" type="xs:string"></xs:element>
+							<xs:element name="DistrictCode" type="xs:string"></xs:element>
+							<xs:element name="DistrictName" type="xs:string"></xs:element>
+							<xs:element name="ProvinceCode" type="xs:string"></xs:element>
+							<xs:element name="ProvinceName" type="xs:string"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="Contacter">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ContactName" type="xs:string"></xs:element>
+							<xs:element name="ContactPhone" type="xs:string"></xs:element>
+							<xs:element name="ContactEmail" type="xs:string"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="ImporterSign">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SignName" type="xs:string"></xs:element>
+							<xs:element name="SignTitle" type="xs:string"></xs:element>
+							<xs:element name="SignPlace" type="xs:string"></xs:element>
+							<xs:element name="SignDate" type="xs:string"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="InspectorSign">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="RegisteredNumber" type="xs:string"></xs:element>
+							<xs:element name="Organization" type="xs:string"></xs:element>
+							<xs:element name="Division" type="xs:string"></xs:element>
+							<xs:element name="SignName" type="xs:string"></xs:element>
+							<xs:element name="SignTitle" type="xs:string"></xs:element>
+							<xs:element name="SignPlace" type="xs:string"></xs:element>
+							<xs:element name="SignDate" type="xs:string"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

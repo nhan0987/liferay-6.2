@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- XML Schema Generated from XML Document on Tue Sep 16 2014 08:40:58 
+		GMT+0700 (SE Asia Standard Time) -->
+	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+	<xs:element name="PaymentNotification">
+		<xs:complexType>
+			<xs:sequence>
+
+				<xs:element name="TransactionID" type="xs:string"></xs:element>
+				<xs:element name="DebitNoteNumber" type="xs:string"></xs:element>
+				<xs:element name="ReportDate" type="xs:string"></xs:element>
+				
+				<xs:element name="PaymentSummary">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PaymentDate" type="xs:string"></xs:element>
+							<xs:element name="TotalOfPayment" type="xs:long"></xs:element>
+							<xs:element name="TotalOfVehicle" type="xs:long"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+					
+				<xs:element name="ImportedVehicle" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SequenceNo" type="xs:long"></xs:element>
+						<xs:element name="CodeNumber" type="xs:long"></xs:element>
+						<xs:element name="RegisteredNumber" type="xs:string"></xs:element>
+						<xs:element name="InspectionRecordNumber" type="xs:string"></xs:element>
+						<xs:element name="InspectionRecordDate" type="xs:string"></xs:element>
+						<xs:element name="MarkAsVehicle" type="xs:int"></xs:element>
+						<xs:element name="TradeMark" type="xs:string"></xs:element>
+						<xs:element name="ModelType" type="xs:string"></xs:element>
+						<xs:element name="VehicleType" type="xs:string"></xs:element>
+						<xs:element name="EngineType" type="xs:string"></xs:element>
+						<xs:element name="ChassisNumber" type="xs:string"></xs:element>
+						<xs:element name="EngineNumber" type="xs:string"></xs:element>
+						<xs:element name="VehicleEngineStatus" type="xs:int"></xs:element>
+						<xs:element name="MarkasPayment" type="xs:int"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,58 @@
+.textBound {
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  background-color: white !important; }
+
+.textNone {
+  border: none; }
+
+.black {
+  color: black !important; }
+
+.white {
+  color: white !important; }
+
+.h-200 {
+  height: 200px; }
+
+.txtarea {
+  font-family: "Arial", ?Helvetica, ?Arial, ?sans-serif;
+  color: #555 !important;
+  font-size: 12px !important; }
+
+span {
+  white-space: normal !important; }
+
+ul.tabs li.current {
+  background: #95B0E8; }
+
+ul.tabs li {
+  background: #dfdfdf; }
+
+.text-center, .text-left {
+  padding-top: 10px; }
+
+.titleNoiDung {
+  float: left;
+  text-align: center;
+  padding: 1% 1% 1% 0;
+  width: 100%;
+  font-weight: bold;
+  font-size: 15px; }
+
+.width100 {
+  width: 100%; }
+
+.selectLuaChonKetQua {
+  height: 30px; }
+
+.bold {
+  font-weight: bold; }
+
+.thTblThongTinChung {
+  font-size: 13px;
+  background-color: #f4f4f4;
+  font-weight: bold;
+  text-align: center; }
+

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TBP2015BM01" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="686b2933-b8e3-4778-a8b3-8eaf7f3a4724">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="102"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="47a34b7d-6974-4445-87c9-d3c8ac476c3d">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="charges" class="java.lang.Long">
+			<fieldDescription><![CDATA[charges]]></fieldDescription>
+		</field>
+		<field name="chassisNumber" class="java.lang.String">
+			<fieldDescription><![CDATA[chassisNumber]]></fieldDescription>
+		</field>
+		<field name="class" class="java.lang.Class">
+			<fieldDescription><![CDATA[class]]></fieldDescription>
+		</field>
+		<field name="codeNumber" class="java.lang.Long">
+			<fieldDescription><![CDATA[codeNumber]]></fieldDescription>
+		</field>
+		<field name="currencyCode" class="java.lang.String">
+			<fieldDescription><![CDATA[currencyCode]]></fieldDescription>
+		</field>
+		<field name="declarationPrice" class="java.lang.String">
+			<fieldDescription><![CDATA[declarationPrice]]></fieldDescription>
+		</field>
+		<field name="engineNumber" class="java.lang.String">
+			<fieldDescription><![CDATA[engineNumber]]></fieldDescription>
+		</field>
+		<field name="engineType" class="java.lang.String">
+			<fieldDescription><![CDATA[engineType]]></fieldDescription>
+		</field>
+		<field name="markAsVehicle" class="java.lang.Integer">
+			<fieldDescription><![CDATA[markAsVehicle]]></fieldDescription>
+		</field>
+		<field name="modelType" class="java.lang.String">
+			<fieldDescription><![CDATA[modelType]]></fieldDescription>
+		</field>
+		<field name="otherCosts" class="java.lang.String">
+			<fieldDescription><![CDATA[otherCosts]]></fieldDescription>
+		</field>
+		<field name="otherCostsNoTax" class="java.lang.String">
+			<fieldDescription><![CDATA[otherCostsNoTax]]></fieldDescription>
+		</field>
+		<field name="paymentDeadline" class="java.lang.String">
+			<fieldDescription><![CDATA[paymentDeadline]]></fieldDescription>
+		</field>
+		<field name="productionYear" class="java.lang.String">
+			<fieldDescription><![CDATA[productionYear]]></fieldDescription>
+		</field>
+		<field name="registeredNumber" class="java.lang.String">
+			<fieldDescription><![CDATA[registeredNumber]]></fieldDescription>
+		</field>
+		<field name="sequenceNo" class="java.lang.Long">
+			<fieldDescription><![CDATA[sequenceNo]]></fieldDescription>
+		</field>
+		<field name="taxAmount" class="java.lang.String">
+			<fieldDescription><![CDATA[taxAmount]]></fieldDescription>
+		</field>
+		<field name="totalAmount" class="java.lang.String">
+			<fieldDescription><![CDATA[totalAmount]]></fieldDescription>
+		</field>
+		<field name="totalDebit" class="java.lang.String">
+			<fieldDescription><![CDATA[totalDebit]]></fieldDescription>
+		</field>
+		<field name="totalDebitNoTax" class="java.lang.String">
+			<fieldDescription><![CDATA[totalDebitNoTax]]></fieldDescription>
+		</field>
+		<field name="totalFee" class="java.lang.String">
+			<fieldDescription><![CDATA[totalFee]]></fieldDescription>
+		</field>
+		<field name="totalPrice" class="java.lang.Long">
+			<fieldDescription><![CDATA[totalPrice]]></fieldDescription>
+		</field>
+		<field name="tradeMark" class="java.lang.String">
+			<fieldDescription><![CDATA[tradeMark]]></fieldDescription>
+		</field>
+		<field name="unitPrice" class="java.lang.String">
+			<fieldDescription><![CDATA[unitPrice]]></fieldDescription>
+		</field>
+		<field name="vehicleEngineStatus" class="java.lang.Integer">
+			<fieldDescription><![CDATA[vehicleEngineStatus]]></fieldDescription>
+		</field>
+		<field name="vehicleType" class="java.lang.String">
+			<fieldDescription><![CDATA[vehicleType]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset2" uuid="b7a0caba-5aa3-4591-8ca0-0eeb5b3a10f1"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\DEV\\liferay-plugins-sdk-6.2.0\\portlets\\DangKiemApp-portlet\\docroot\\report\\thanhtoan\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="allThongTinChungCommon" class="java.util.List">
+		<fieldDescription><![CDATA[allThongTinChungCommon]]></fieldDescription>
+	</field>
+	<field name="allThongTinDetailCommon" class="java.util.List">
+		<fieldDescription><![CDATA[allThongTinDetailCommon]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="debitNote" class="vn.dtt.gt.dk.dao.nghiepvu.model.DebitNote">
+		<fieldDescription><![CDATA[debitNote]]></fieldDescription>
+	</field>
+	<field name="registeredInspection" class="vn.dtt.gt.dk.dao.nghiepvu.model.RegisteredInspection">
+		<fieldDescription><![CDATA[registeredInspection]]></fieldDescription>
+	</field>
+	<variable name="sumTotalPrice" class="java.lang.Long" calculation="Sum"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="0" width="802" height="43" uuid="13d7b39d-dacf-49e4-a233-d85669c17bd4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[THÔNG BÁO PHÍ, LỆ PHÍ ĐĂNG KIỂM]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="43" width="802" height="20" uuid="1bfb8c3b-a1ad-4a1b-8806-303883433a16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tên Tổ chức/Cá nhân nhập khẩu:" + $F{registeredInspection}.getImporterName()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="83" width="146" height="20" uuid="f6acf3b0-676d-418e-9506-711a2c854ef5"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số phiếu:" + $F{debitNote}.getDebitNoteNumber()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="63" width="802" height="20" uuid="a8c06eda-0d12-4d26-b9c8-693610ea924f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Địa chỉ:" + $F{registeredInspection}.getImporterAddress()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="146" y="83" width="656" height="20" uuid="e041cfa2-a3d8-446d-856c-6e7cd1232c77"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ngày lập:" + vn.dtt.gt.dk.utils.format.FormatData.parseDateToTringDDMMYYY($F{debitNote}.getReportDate())]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="0" width="802" height="36" uuid="0937a235-f9f4-4320-8bf0-d3e79564f4ae"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{allThongTinChungCommon})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "TBP2015BM01_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="36">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="0" width="802" height="36" uuid="86ac1937-3b33-4d9a-b157-812f98b0a990"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{allThongTinDetailCommon})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "TBP2015BM01_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="16" width="802" height="32" uuid="e34c6380-4c32-4fed-9caf-108f7f2e85bd"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[(Áp dụng đối với các thủ tục kiểm tra cấp chứng chỉ chất lượng cho Xe cơ giới,
+Xe máy chuyên dùng, Xe chở người bốn bánh và Xe máy nhập khẩu)
+]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

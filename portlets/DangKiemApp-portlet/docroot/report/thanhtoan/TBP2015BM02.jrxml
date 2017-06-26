@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TBP2015BM02" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="686b2933-b8e3-4778-a8b3-8eaf7f3a4724">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\DEV\\liferay-plugins-sdk-6.2.0\\portlets\\DangKiemApp-portlet\\docroot\\report\\thanhtoan\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="allThongTinLePhiDetail2" class="java.util.List">
+		<fieldDescription><![CDATA[allThongTinLePhiDetail2]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="debitNote" class="vn.dtt.gt.dk.dao.nghiepvu.model.DebitNote">
+		<fieldDescription><![CDATA[debitNote]]></fieldDescription>
+	</field>
+	<field name="registeredInspection" class="vn.dtt.gt.dk.dao.nghiepvu.model.RegisteredInspection">
+		<fieldDescription><![CDATA[registeredInspection]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="43" uuid="13d7b39d-dacf-49e4-a233-d85669c17bd4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfEncoding="Cp1258" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[THÔNG BÁO PHÍ, LỆ PHÍ ĐĂNG KIỂM]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="43" width="802" height="20" uuid="1bfb8c3b-a1ad-4a1b-8806-303883433a16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tên Tổ chức/Cá nhân nhập khẩu:" + $F{registeredInspection}.getImporterName()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="83" width="146" height="20" uuid="f6acf3b0-676d-418e-9506-711a2c854ef5"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số phiếu:" + $F{debitNote}.getDebitNoteNumber()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="63" width="802" height="20" uuid="a8c06eda-0d12-4d26-b9c8-693610ea924f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Địa chỉ:" + $F{registeredInspection}.getImporterAddress()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="83" width="656" height="20" uuid="e041cfa2-a3d8-446d-856c-6e7cd1232c77"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ngày lập:" + vn.dtt.gt.dk.utils.format.FormatData.parseDateToTringDDMMYYY($F{debitNote}.getReportDate())]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="36">
+			<subreport>
+				<reportElement x="0" y="0" width="802" height="36" uuid="2ebf2754-9402-4303-a4a0-1b79e2b596e6"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{allThongTinLePhiDetail2})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "TBP2015BM02_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="20" width="802" height="32" uuid="7e1e68f6-ef88-4d11-a9c6-91509432fcbb"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[(Áp dụng đối với các thủ tục kiểm tra cấp chứng chỉ chất lượng cho
+Động cơ nhập khẩu sử dụng để sản xuất, lắp ráp xe và Xe đạp điện)
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="63" width="802" height="29" uuid="87029cad-3940-4ed3-b4c3-2866a3e9fb0a"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ghi chú:" +   "(9) = (4) x <b>Phí kiểm tra bao gồm thuế (đã bao gồm thuế)</b> + (8) + <b>Chi phí phát sinh (đã bao gồm thuế)</b><br>		(7) = <b>Thuế của Chi phí phát sinh</b> + (4) x <b>Thuế của Phí kiểm tra</b>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

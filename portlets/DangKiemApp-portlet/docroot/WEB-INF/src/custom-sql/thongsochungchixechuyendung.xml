@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	
+	<sql id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.THONGSOCHUNGCHIXECHUYENDUNGFinder.findByCertificateRecordAndHosothutucId">
+		<![CDATA[
+			SELECT {THONGSOCHUNGCHIXECHUYENDUNG.*} FROM (SELECT DISTINCT certificaterecordid AS ID, 0 AS hosothutucid, certificaterecordid, 0 AS vehiclegroupid,
+			CURRENT_TIMESTAMP AS synchdate,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0009') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0009', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0009'))
+			ELSE MAX(IF(specificationCode = 'XCD0009', specificationvalue, NULL)) END
+			AS XCD0009,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0010') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0010', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0010'))
+			ELSE MAX(IF(specificationCode = 'XCD0010', specificationvalue, NULL)) END
+			AS XCD0010,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0011') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0011', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0011'))
+			ELSE MAX(IF(specificationCode = 'XCD0011', specificationvalue, NULL)) END
+			AS XCD0011,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0012') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0012', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0012'))
+			ELSE MAX(IF(specificationCode = 'XCD0012', specificationvalue, NULL)) END
+			AS XCD0012,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0013') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0013', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0013'))
+			ELSE MAX(IF(specificationCode = 'XCD0013', specificationvalue, NULL)) END
+			AS XCD0013,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0014') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0014', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0014'))
+			ELSE MAX(IF(specificationCode = 'XCD0014', specificationvalue, NULL)) END
+			AS XCD0014,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0015') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0015', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0015'))
+			ELSE MAX(IF(specificationCode = 'XCD0015', specificationvalue, NULL)) END
+			AS XCD0015,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0016') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0016', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0016'))
+			ELSE MAX(IF(specificationCode = 'XCD0016', specificationvalue, NULL)) END
+			AS XCD0016,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0017') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0017', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0017'))
+			ELSE MAX(IF(specificationCode = 'XCD0017', specificationvalue, NULL)) END
+			AS XCD0017,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD1017') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD1017', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD1017'))
+			ELSE MAX(IF(specificationCode = 'XCD1017', specificationvalue, NULL)) END
+			AS XCD1017,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0018') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0018', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0018'))
+			ELSE MAX(IF(specificationCode = 'XCD0018', specificationvalue, NULL)) END
+			AS XCD0018,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0019') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0019', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0019'))
+			ELSE MAX(IF(specificationCode = 'XCD0019', specificationvalue, NULL)) END
+			AS XCD0019,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0020') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0020', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0020'))
+			ELSE MAX(IF(specificationCode = 'XCD0020', specificationvalue, NULL)) END
+			AS XCD0020,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0021') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0021', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0021'))
+			ELSE MAX(IF(specificationCode = 'XCD0021', specificationvalue, NULL)) END
+			AS XCD0021,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0022') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0022', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0022'))
+			ELSE MAX(IF(specificationCode = 'XCD0022', specificationvalue, NULL)) END
+			AS XCD0022,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0023') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0023', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0023'))
+			ELSE MAX(IF(specificationCode = 'XCD0023', specificationvalue, NULL)) END
+			AS XCD0023,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD1023') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD1023', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD1023'))
+			ELSE MAX(IF(specificationCode = 'XCD1023', specificationvalue, NULL)) END
+			AS XCD1023,
+			CASE ((Select LENGTH(datagroupid) from dkvn_nghiepvu.vr_cfg_technicalspec where 
+			vr_cfg_technicalspec.specificationcode = 'XCD0024') > 0)
+			WHEN TRUE THEN 
+			(Select `name` from dkvn_thutuchanhchinh.dm_dataitem where code_0 = MAX(IF(specificationCode = 'XCD0024', specificationvalue, NULL))
+			and datagroupid = (Select datagroupid from dkvn_nghiepvu.vr_cfg_technicalspec where vr_cfg_technicalspec.specificationcode = 'XCD0024'))
+			ELSE MAX(IF(specificationCode = 'XCD0024', specificationvalue, NULL)) END
+			AS XCD0024,
+			
+			NULL AS XCDCODE001,
+			NULL AS XCDNAME001,
+			NULL AS XCDVALU001,
+			NULL AS XCDCODE002,
+			NULL AS XCDNAME002,
+			NULL AS XCDVALU002,
+			NULL AS XCDCODE003,
+			NULL AS XCDNAME003,
+			NULL AS XCDVALU003,
+			NULL AS XCDCODE004,
+			NULL AS XCDNAME004,
+			NULL AS XCDVALU004,
+			NULL AS XCDCODE005,
+			NULL AS XCDNAME005,
+			NULL AS XCDVALU005,
+			NULL AS XCDCODE006,
+			NULL AS XCDNAME006,
+			NULL AS XCDVALU006,
+			NULL AS XCDCODE007,
+			NULL AS XCDNAME007,
+			NULL AS XCDVALU007,
+			NULL AS XCDCODE008,
+			NULL AS XCDNAME008,
+			NULL AS XCDVALU008,
+			NULL AS XCDCODE009,
+			NULL AS XCDNAME009,
+			NULL AS XCDVALU009,
+			NULL AS XCDCODE010,
+			NULL AS XCDNAME010,
+			NULL AS XCDVALU010,
+			NULL AS XCDCODE011,
+			NULL AS XCDNAME011,
+			NULL AS XCDVALU011,
+			NULL AS XCDCODE012,
+			NULL AS XCDNAME012,
+			NULL AS XCDVALU012
+				
+			FROM dkvn_nghiepvu.vr_certificaterecordspec  where certificaterecordid in (?)  group by certificaterecordid ) 
+	  		AS THONGSOCHUNGCHIXECHUYENDUNG
+	  
+	
+		]]>
+	</sql>
+
+</custom-sql>

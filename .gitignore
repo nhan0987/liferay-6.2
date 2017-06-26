@@ -24,3 +24,5 @@ portlets/DangKiemService-portlet/\.classpath
 portlets/DangKiemApp-portlet/docroot/WEB-INF/classes/
 
 portlets/DangKiemService-portlet/docroot/WEB-INF/classes/
+
+portlets/DangKiemTimKiem-portlet/docroot/WEB-INF/classes/

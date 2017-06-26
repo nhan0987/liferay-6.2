@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- XML Schema Generated from XML Document on Tue Sep 16 2014 08:40:58 GMT+0700 (SE Asia Standard Time) -->
+	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+	<xs:element name="ScheduleReport">
+		<xs:complexType>
+			<xs:sequence>
+				
+				<xs:element name="RegisteredNumber" type="xs:string"></xs:element>
+				
+				<xs:element name="Inspection">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="InpectionDate" type="xs:string"></xs:element>
+							<xs:element name="InspectionSite" type="xs:string"></xs:element>
+							<xs:element name="DistrictCode" type="xs:string"></xs:element>
+							<xs:element name="DistrictName" type="xs:string"></xs:element>
+							<xs:element name="ProvinceCode" type="xs:string"></xs:element>
+							<xs:element name="ProvinceName" type="xs:string"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				
+				<xs:element name="Contacter">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ContactName" type="xs:string"></xs:element>
+							<xs:element name="ContactPhone" type="xs:string"></xs:element>
+							<xs:element name="ContactEmail" type="xs:string"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				
+				<xs:element name="TotalOfRequested" type="xs:long"></xs:element>
+				
+				<xs:element name="ImportedVehicle" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SequenceNo" type="xs:long"></xs:element>
+							<xs:element name="CodeNumber" type="xs:long"></xs:element>
+							<xs:element name="VehicleType" type="xs:string"></xs:element>
+							<xs:element name="EngineType" type="xs:string"></xs:element>
+							<xs:element name="TradeMark" type="xs:string"></xs:element>
+							<xs:element name="ModelType" type="xs:string"></xs:element>
+							<xs:element name="ChassisNumber" type="xs:string"></xs:element>
+							<xs:element name="EngineNumber" type="xs:string"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+		
+				<xs:element name="Remarks" type="xs:string"></xs:element>
+				
+				<xs:element name="InspectionAttendee" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="AttendeeID" type="xs:string"></xs:element>
+							<xs:element name="AttendeeName" type="xs:string"></xs:element>
+							<xs:element name="AttendeeRole" type="xs:long"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				
+				<xs:element name="InspectorSign" >
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Organization" type="xs:string"></xs:element>
+						<xs:element name="Division" type="xs:string"></xs:element>
+						<xs:element name="SignName" type="xs:string"></xs:element>
+						<xs:element name="SignTitle" type="xs:string"></xs:element>
+						<xs:element name="SignPlace" type="xs:string"></xs:element>
+						<xs:element name="SignDate" type="xs:string"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+	</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

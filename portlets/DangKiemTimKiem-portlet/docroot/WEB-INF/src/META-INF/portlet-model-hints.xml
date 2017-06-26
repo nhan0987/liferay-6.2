@@ -1,0 +1,848 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="vn.dtt.gt.dk.dao.common.model.DmDataGroup">
+		<field name="Id" type="long" />
+		<field name="Code" type="String" />
+		<field name="Name" type="String" />
+		<field name="Description" type="String" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.DmDataItem">
+		<field name="Id" type="long" />
+		<field name="DataGroupId" type="long" />
+		<field name="Code0" type="String" />
+		<field name="Code1" type="String" />
+		<field name="Code2" type="String" />
+		<field name="Code3" type="String" />
+		<field name="Level" type="int" />
+		<field name="Name" type="String" />
+		<field name="AlterName" type="String" />
+		<field name="Description" type="String" />
+		<field name="ValidatedFrom" type="String" />
+		<field name="ValidatedTo" type="String" />
+		<field name="Status" type="int" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.DmDataVersion">
+		<field name="Id" type="long" />
+		<field name="DataGroupId" type="long" />
+		<field name="Version" type="String" />
+		<field name="IssuedTime" type="Date" />
+		<field name="ValidateDFrom" type="Date" />
+		<field name="ValidatedTo" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.DmMetaData">
+		<field name="Id" type="long" />
+		<field name="Entity" type="String" />
+		<field name="FieldCode" type="String" />
+		<field name="FieldName" type="String" />
+		<field name="FieldAlterName" type="String" />
+		<field name="FieldDescription" type="String" />
+		<field name="FieldDataSet" type="String" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TimKiemHoSo">
+		<field name="id" type="long" />
+		<field name="maSoHoSo" type="String" />
+		<field name="maBienNhan" type="String" />
+		<field name="thuTucHanhChinhId" type="long" />
+		<field name="loaiChuHoSo" type="long" />
+		<field name="maSoChuHoSo" type="String" />
+		<field name="tenChuHoSo" type="String" />
+		<field name="diaChiChuHoSo" type="String" />
+		<field name="trichYeuNoiDung" type="String" />
+		<field name="ngayGuiHoSo" type="Date" />
+		<field name="ngayTiepNhan" type="Date" />
+		<field name="ngayBoSung" type="Date" />
+		<field name="ngayHenTra" type="Date" />
+		<field name="ngayTraKetQua" type="Date" />
+		<field name="ngayDongHoSo" type="Date" />
+		<field name="trangThaiHoSo" type="String" />
+		<field name="phanNhomHoSoId" type="long" />
+		<field name="maDonViTiepNhan" type="String" />
+		<field name="tenDonViTiepNhan" type="String" />
+		<field name="toChucQuanLy" type="long" />
+		<field name="ngayTao" type="Date" />
+		<field name="nguoiTao" type="long" />
+		<field name="ghiChu" type="String" />
+		<field name="lanGuiCuoi" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TthcBieuMauHoSo">
+		<field name="Id" type="long" />
+		<field name="MaBieuMau" type="String" />
+		<field name="TenBieuMau" type="String" />
+		<field name="TenTiengAnh" type="String" />
+		<field name="TaiLieuMau" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TthcCoQuanQltt">
+		<field name="Id" type="long" />
+		<field name="TenCoQuanQltt" type="String" />
+		<field name="TenTiengAnh" type="String" />
+		<field name="IdCha" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TthcDonViThucHien">
+		<field name="Id" type="long" />
+		<field name="ThuTucHanhChinhId" type="long" />
+		<field name="MaDvth" type="String" />
+		<field name="TenDvth" type="String" />
+		<field name="TenTiengAnh" type="String" />
+		<field name="ToChuc" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TthcHoSoThuTuc">
+		<field name="Id" type="long" />
+		<field name="MaSoHoSo" type="String" />
+		<field name="MaBienNhan" type="String" />
+		<field name="ThuTucHanhChinhId" type="long" />
+		<field name="LoaiChuHoSo" type="long" />
+		<field name="MaSoChuHoSo" type="String" />
+		<field name="TenChuHoSo" type="String" />
+		<field name="DiaChiChuHoSo" type="String" />
+		<field name="TrichYeuNoiDung" type="String" />
+		<field name="NgayGuiHoSo" type="Date" />
+		<field name="NgayTiepNhan" type="Date" />
+		<field name="NgayBoSung" type="Date" />
+		<field name="NgayHenTra" type="Date" />
+		<field name="NgayTraKetQua" type="Date" />
+		<field name="NgayDongHoSo" type="Date" />
+		<field name="TrangThaiHoSo" type="String" />
+		<field name="PhanNhomHoSoId" type="long" />
+		<field name="MaDonViTiepNhan" type="String" />
+		<field name="TenDonViTiepNhan" type="String" />
+		<field name="ToChucQuanLy" type="long" />
+		<field name="NgayTao" type="Date" />
+		<field name="NguoiTao" type="long" />
+		<field name="ghiChu" type="String" />
+		<field name="lanGuiCuoi" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TthcKeHoachChuyenDich">
+		<field name="id" type="long" />
+		<field name="phieuXuLyChinhId" type="long" />
+		<field name="phieuXuLyPhuId" type="long" />
+		<field name="messageId" type="String" />
+		<field name="messageStatus" type="String" />
+		<field name="trangThaiNguonId" type="long" />
+		<field name="dieuKienChuyenDich" type="String" />
+		<field name="trangThaiDichId" type="long" />
+		<field name="phanNhomHoSoId" type="long" />
+		<field name="nhomPhieuXuLy" type="long" />
+		<field name="hoanTat" type="String" />
+		<field name="ghiChu" type="String" />
+		<field name="thoiDiemCapNhat" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TthcLinhVucThuTuc">
+		<field name="Id" type="long" />
+		<field name="TenLinhVuc" type="String" />
+		<field name="TenTiengAnh" type="String" />
+		<field name="IdCha" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TthcNoidungHoSo">
+		<field name="Id" type="long" />
+		<field name="MaTuSinh" type="String" />
+		<field name="HoSoThuTucId" type="long" />
+		<field name="TenTaiLieu" type="String" />
+		<field name="TaiLieuDinhKem" type="long" />
+		<field name="NoiDungXml" type="String" />
+		<field name="noiDungFile" type="String" />
+		<field name="BieuMauHoSoId" type="long" />
+		<field name="NgayGuiNhan" type="Date" />
+		<field name="LoaiTaiLieu" type="long" />
+		<field name="NgayTao" type="Date" />
+		<field name="NguoiTao" type="long" />
+		<field name="daCapNhat" type="long" />
+		<field name="lanGuiCuoi" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TthcPhanNhomHoSo">
+		<field name="Id" type="long" />
+		<field name="MaPhanNhom" type="String" />
+		<field name="TenPhanNhom" type="String" />
+		<field name="TenTiengAnh" type="String" />
+		<field name="loaiPhieuXuLy" type="int" />
+		<field name="SoThuTu" type="int" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TthcPhanNhomHoSoVaiTro">
+		<field name="Id" type="long" />
+		<field name="PhanNhomHoSoId" type="long" />
+		<field name="VaiTroXuLy" type="long" />
+		<field name="nhomPhieuXuLy" type="String" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TthcThanhPhanHoSo">
+		<field name="Id" type="long" />
+		<field name="ThuTucHanhChinhId" type="long" />
+		<field name="BieuMauHoSoId" type="long" />
+		<field name="ThuTuHienThi" type="long" />
+		<field name="LoaiThanhPhan" type="long" />
+		<field name="MauTrucTuyen" type="String" />
+		<field name="SoTaiLieuDinhKem" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.common.model.TthcThuTucHanhChinh">
+		<field name="Id" type="long" />
+		<field name="maThuTuc" type="String" />
+		<field name="tenThuTuc" type="String" />
+		<field name="trinhTuThucHien" type="String" />
+		<field name="cachThucThucHien" type="String" />
+		<field name="thanhPhanHoSo" type="String" />
+		<field name="dieuKienThucHien" type="String" />
+		<field name="thoiHanGiaiQuyet" type="String" />
+		<field name="doiTuongThucHien" type="String" />
+		<field name="ketQuaXuLy" type="String" />
+		<field name="canCuPhapLy" type="String" />
+		<field name="lePhi" type="String" />
+		<field name="coQuanQlttId" type="long" />
+		<field name="linhVucThuTucId" type="long" />
+		<field name="ngayCoHieuLuc" type="Date" />
+		<field name="ngayHetHieuLuc" type="Date" />
+		<field name="huongDanThucHien" type="String" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular">
+		<field name="id" type="long" />
+		<field name="certificateRecordId" type="long" />
+		<field name="sequenceNo" type="long" />
+		<field name="circularNo" type="String" />
+		<field name="circularDate" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.CertificateRecord">
+		<field name="id" type="long" />
+		<field name="certificateType" type="long" />
+		<field name="certificateNumber" type="String" />
+		<field name="attachedFile" type="long" />
+		<field name="createdDate" type="Date" />
+		<field name="editorName" type="String" />
+		<field name="inspectionReportId" type="long" />
+		<field name="safetyTestReportId" type="long" />
+		<field name="emissionTestReportId" type="long" />
+		<field name="copReportId" type="long" />
+		<field name="dossierId" type="long" />
+		<field name="reason" type="String" />
+		<field name="remarks" type="String" />
+		<field name="organization" type="String" />
+		<field name="division" type="String" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="digitalIssued" type="long" />
+		<field name="stampStatus" type="long" />
+		<field name="commentInWrongCase" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.CertificateRecordSpec">
+		<field name="id" type="long" />
+		<field name="certificateRecordId" type="long" />
+		<field name="specificationCode" type="String" />
+		<field name="specificationName" type="String" />
+		<field name="specificationValue" type="String" />
+		<field name="version" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.CfgTechnicalspec">
+		<field name="id" type="long" />
+		<field name="vehicleTypeCode" type="String" />
+		<field name="vehicleTypeName" type="String" />
+		<field name="sequenceno" type="long" />
+		<field name="specificationCode" type="String" />
+		<field name="specificationName" type="String" />
+		<field name="specDescription" type="String" />
+		<field name="specCategory" type="String" />
+		<field name="specificationGroup" type="long" />
+		<field name="searchingIncluded" type="long" />
+		<field name="referenceIncluded" type="long" />
+		<field name="certificateIncluded" type="long" />
+		<field name="datagroupid" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection">
+		<field name="id" type="long" />
+		<field name="registeredInspectionId" type="long" />
+		<field name="customsDeclarationId" type="long" />
+		<field name="confirmationCode" type="long" />
+		<field name="attachedFile" type="long" />
+		<field name="inspectionDate" type="Date" />
+		<field name="inspectionSite" type="String" />
+		<field name="inspectionDistrictCode" type="String" />
+		<field name="inspectionProvincecode" type="String" />
+		<field name="customsRegion" type="long" />
+		<field name="markasChangedSite" type="long" />
+		<field name="contactName" type="String" />
+		<field name="contactPhone" type="String" />
+		<field name="contactEmail" type="String" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="remarks" type="String" />
+		<field name="corporationId" type="String" />
+		<field name="inspectorId" type="long" />
+		<field name="phieuXuLyPhuId" type="long" />
+		<field name="hoSoThuTucId" type="long" />
+		<field name="dateFrom" type="Date" />
+		<field name="dateTo" type="Date" />
+		<field name="leader" type="int" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.ControlReport">
+		<field name="id" type="long" />
+		<field name="registeredInspectionId" type="long" />
+		<field name="inspectionrecordId" type="long" />
+		<field name="hosothutucId" type="long" />
+		<field name="controlRequirementId" type="long" />
+		<field name="requirementNumber" type="String" />
+		<field name="reportNumber" type="String" />
+		<field name="reportDate" type="Date" />
+		<field name="description" type="String" />
+		<field name="attachedFile" type="long" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequest">
+		<field name="id" type="long" />
+		<field name="confirmedInspectionId" type="long" />
+		<field name="requestNumber" type="String" />
+		<field name="corporationName" type="String" />
+		<field name="controlContent" type="String" />
+		<field name="controlDeadLine" type="Date" />
+		<field name="remarks" type="String" />
+		<field name="attachedFile" type="long" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequirement">
+		<field name="id" type="long" />
+		<field name="registeredInspectionId" type="long" />
+		<field name="requirementNumber" type="String" />
+		<field name="requirementDate" type="Date" />
+		<field name="corporationId" type="String" />
+		<field name="controlContent" type="String" />
+		<field name="controlDeadline" type="Date" />
+		<field name="attachedFile" type="int" />
+		<field name="requirementContent" type="String" />
+		<field name="controlReportDeadline" type="Date" />
+		<field name="remarks" type="String" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="inspectionrecordId" type="long" />
+		<field name="phieuxulyphuId" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.CopReport">
+		<field name="id" type="long" />
+		<field name="registeredInspectionId" type="long" />
+		<field name="reportNumber" type="String" />
+		<field name="corporationId" type="String" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.CorporationAttendee">
+		<field name="id" type="long" />
+		<field name="confirmedInspectionId" type="long" />
+		<field name="sequence" type="long" />
+		<field name="inspectorid" type="long" />
+		<field name="inspectorName" type="String" />
+		<field name="inspectorRole" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.CorporationInspector">
+		<field name="id" type="long" />
+		<field name="corporationId" type="String" />
+		<field name="inspectorid" type="long" />
+		<field name="inspectorName" type="String" />
+		<field name="inspectorPhone" type="String" />
+		<field name="inspectorEmail" type="String" />
+		<field name="contactcode" type="String" />
+		<field name="teamId" type="long" />
+		<field name="markupTeamLeader" type="int" />
+		<field name="markUpBoss" type="int" />
+		<field name="place" type="String" />
+		<field name="title" type="String" />
+		<field name="filechukyId" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.CorporationTeam">
+		<field name="id" type="long" />
+		<field name="corporationId" type="String" />
+		<field name="teamName" type="String" />
+		<field name="markUpDelete" type="int" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.CorporationView">
+		<field name="id" type="long" />
+		<field name="corporationId" type="String" />
+		<field name="corporationName" type="String" />
+		<field name="inspectorId" type="long" />
+		<field name="isLeader" type="int" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.CustomsDeclaration">
+		<field name="id" type="long" />
+		<field name="importCustomDeclareNo" type="String" />
+		<field name="importCustomDeclareDate" type="Date" />
+		<field name="customsResult" type="String" />
+		<field name="productCheck" type="String" />
+		<field name="releaseDate" type="Date" />
+		<field name="hosothutucId" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.DebitNote">
+		<field name="id" type="long" />
+		<field name="debitNoteNumber" type="String" />
+		<field name="transactionId" type="String" />
+		<field name="organization" type="String" />
+		<field name="division" type="String" />
+		<field name="reportBy" type="String" />
+		<field name="reportDate" type="Date" />
+		<field name="fromDate" type="Date" />
+		<field name="toDate" type="Date" />
+		<field name="attachedFile" type="long" />
+		<field name="totalPayment" type="long" />
+		<field name="paymentType" type="long" />
+		<field name="markAsDeleted" type="int" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.DebitNoteDetails">
+		<field name="id" type="long" />
+		<field name="vehicleRecordId" type="long" />
+		<field name="debitNoteId" type="long" />
+		<field name="inspectionRecordId" type="long" />
+		<field name="unitPrice" type="double" />
+		<field name="currency" type="String" />
+		<field name="basicCurrency" type="String" />
+		<field name="exchangeRate" type="double" />
+		<field name="inspectionFee" type="double" />
+		<field name="otherCosts" type="double" />
+		<field name="totalCostsAndFee" type="double" />
+		<field name="tax" type="double" />
+		<field name="charges" type="double" />
+		<field name="totalRealDebit" type="double" />
+		<field name="totalDebit" type="double" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.DraftCertificate">
+		<field name="id" type="long" />
+		<field name="attachedFile" type="long" />
+		<field name="certificateType" type="long" />
+		<field name="inspectionReportId" type="long" />
+		<field name="safetytestReportId" type="long" />
+		<field name="emissionTestReportId" type="long" />
+		<field name="copReportId" type="long" />
+		<field name="reason" type="String" />
+		<field name="remarks" type="String" />
+		<field name="createdDate" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.DraftCertificateSpec">
+		<field name="id" type="long" />
+		<field name="draftCertificateId" type="long" />
+		<field name="specificationCode" type="String" />
+		<field name="specificationName" type="String" />
+		<field name="specificationValue" type="String" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestReport">
+		<field name="id" type="long" />
+		<field name="emissiontestRequirementId" type="long" />
+		<field name="reportNumber" type="String" />
+		<field name="description" type="String" />
+		<field name="attachedFile" type="long" />
+		<field name="confirmedResult" type="long" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestRequest">
+		<field name="id" type="long" />
+		<field name="confirmedInspectionId" type="long" />
+		<field name="requestNumber" type="String" />
+		<field name="testTimeAndPlace" type="String" />
+		<field name="testPayment" type="String" />
+		<field name="remarks" type="String" />
+		<field name="corporationName" type="String" />
+		<field name="attachedFile" type="long" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestRequirement">
+		<field name="id" type="long" />
+		<field name="registeredInspectionId" type="long" />
+		<field name="inspectionRecordId" type="long" />
+		<field name="requirementNumber" type="String" />
+		<field name="contentOfRequest" type="String" />
+		<field name="testingRegisteredPlace" type="String" />
+		<field name="testingRegistration" type="String" />
+		<field name="testingPaymentCondition" type="String" />
+		<field name="remarks" type="String" />
+		<field name="corporationId" type="String" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="phieuXuLyPhuId" type="long" />
+		<field name="attachedFile" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.ExchangeRate">
+		<field name="id" type="long" />
+		<field name="originalCurrency" type="String" />
+		<field name="basicCurrency" type="String" />
+		<field name="exchangeRate" type="double" />
+		<field name="publishDate" type="Date" />
+		<field name="validFrom" type="Date" />
+		<field name="validUntil" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.InspectionCommonStatus">
+		<field name="id" type="long" />
+		<field name="vehicleClass" type="String" />
+		<field name="sequenceNo" type="long" />
+		<field name="type" type="long" />
+		<field name="groupName" type="String" />
+		<field name="itemName" type="String" />
+		<field name="commonStatus" type="long" />
+		<field name="inspectionRecordId" type="long" />
+		<field name="commonCode" type="String" />
+		<field name="allowEdit" type="int" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecord">
+		<field name="id" type="long" />
+		<field name="inspectionRecordNo" type="String" />
+		<field name="inspectionRecordDate" type="Date" />
+		<field name="corporationId" type="String" />
+		<field name="inspectorId" type="long" />
+		<field name="confirmedInspectionId" type="long" />
+		<field name="inspectionSite" type="String" />
+		<field name="inspectionDateFrom" type="Date" />
+		<field name="inspectionDateTo" type="Date" />
+		<field name="inspectionMode" type="long" />
+		<field name="description" type="String" />
+		<field name="attachedFile" type="long" />
+		<field name="confirmedResult" type="long" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="phieuXuLyPhuId" type="long" />
+		<field name="markupSafeTest" type="long" />
+		<field name="markupEmissionTest" type="long" />
+		<field name="markupControl" type="long" />
+		<field name="registeredInspectionId" type="long" />
+		<field name="remarks" type="String" />
+		<field name="hoSoThuTucId" type="long" />
+		<field name="otherCosts" type="double" />
+		<field name="markupPaid" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecordAttach">
+		<field name="id" type="long" />
+		<field name="inspectionRecordId" type="long" />
+		<field name="hoSoThuTucId" type="long" />
+		<field name="enTryId" type="long" />
+		<field name="enTryName" type="String" />
+		<field name="inspectorId" type="long" />
+		<field name="uploadTime" type="Date" />
+		<field name="markUpDelte" type="int" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecordSpec">
+		<field name="id" type="long" />
+		<field name="inspectionRecordid" type="long" />
+		<field name="specificationCode" type="String" />
+		<field name="specificationName" type="String" />
+		<field name="specificationValue" type="String" />
+		<field name="evaluationResult" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.PaymentStatus">
+		<field name="id" type="long" />
+		<field name="vehicleRecordId" type="long" />
+		<field name="attachedFile" type="long" />
+		<field name="unitPrice" type="double" />
+		<field name="currency" type="String" />
+		<field name="basicCurrency" type="String" />
+		<field name="exchangeRate" type="double" />
+		<field name="inspectionFee" type="double" />
+		<field name="otherCosts" type="double" />
+		<field name="totalCostsAndFee" type="double" />
+		<field name="tax" type="double" />
+		<field name="charges" type="double" />
+		<field name="totalRealDebit" type="double" />
+		<field name="totalDebit" type="double" />
+		<field name="totalCredit" type="double" />
+		<field name="currentStatus" type="long" />
+		<field name="debitNoteNumber" type="String" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.ProductionCountry">
+		<field name="id" type="long" />
+		<field name="vehicleGroupId" type="long" />
+		<field name="countryCode" type="String" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.RegisteredInspection">
+		<field name="id" type="long" />
+		<field name="registeredNumber" type="String" />
+		<field name="dossierId" type="long" />
+		<field name="attachedFile" type="long" />
+		<field name="importerCode" type="String" />
+		<field name="importerName" type="String" />
+		<field name="importerAddress" type="String" />
+		<field name="representative" type="String" />
+		<field name="phone" type="String" />
+		<field name="fax" type="String" />
+		<field name="email" type="String" />
+		<field name="inspectionDate" type="Date" />
+		<field name="inspectionSite" type="String" />
+		<field name="inspectionDistrictCode" type="String" />
+		<field name="inspectionProvinceCode" type="String" />
+		<field name="contactName" type="String" />
+		<field name="contactPhone" type="String" />
+		<field name="contactEmail" type="String" />
+		<field name="importerSignName" type="String" />
+		<field name="importerSignTitle" type="String" />
+		<field name="importerSignPlace" type="String" />
+		<field name="importerSignDate" type="Date" />
+		<field name="inspectorOrganization" type="String" />
+		<field name="inspectorDivision" type="String" />
+		<field name="inspectorSigNname" type="String" />
+		<field name="inspectorSignTitle" type="String" />
+		<field name="inspectorSignPlace" type="String" />
+		<field name="inspectorSignDate" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.SafetestRequirement">
+		<field name="id" type="long" />
+		<field name="registeredInspectionId" type="long" />
+		<field name="inspectionRecordId" type="long" />
+		<field name="requirementNumber" type="String" />
+		<field name="contentOfRequest" type="String" />
+		<field name="testingRegisteredPlace" type="String" />
+		<field name="testingRegistration" type="String" />
+		<field name="testingPaymentCondition" type="String" />
+		<field name="remarks" type="String" />
+		<field name="corporationId" type="String" />
+		<field name="attachedFile" type="long" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="phieuXuLyPhuId" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.SafetyTestReport">
+		<field name="id" type="long" />
+		<field name="safetestRequirementId" type="long" />
+		<field name="reportNumber" type="String" />
+		<field name="description" type="String" />
+		<field name="attachedFile" type="long" />
+		<field name="confirmedResult" type="long" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.SafetyTestRequest">
+		<field name="id" type="long" />
+		<field name="confirmedInspectionId" type="long" />
+		<field name="requestNumber" type="String" />
+		<field name="testContent" type="String" />
+		<field name="testTimeAndPlace" type="String" />
+		<field name="testPayment" type="String" />
+		<field name="remarks" type="String" />
+		<field name="corporationName" type="String" />
+		<field name="attachedFile" type="long" />
+		<field name="signName" type="String" />
+		<field name="signTitle" type="String" />
+		<field name="signPlace" type="String" />
+		<field name="signDate" type="Date" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.SatetyTestReportSpec">
+		<field name="id" type="long" />
+		<field name="saftyTestReportId" type="long" />
+		<field name="specificationCode" type="String" />
+		<field name="specificationName" type="String" />
+		<field name="specificationValue" type="String" />
+		<field name="evaluationResult" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleGroup">
+		<field name="id" type="long" />
+		<field name="vehicleClass" type="String" />
+		<field name="registeredInspectionId" type="long" />
+		<field name="technicalSpecCode" type="String" />
+		<field name="referenceCertificateNo" type="String" />
+		<field name="safetytestreportNo" type="String" />
+		<field name="emissiontestreportNo" type="String" />
+		<field name="copreportNo" type="String" />
+		<field name="vehicleType" type="String" />
+		<field name="engineType" type="String" />
+		<field name="tradeMark" type="String" />
+		<field name="markAsVehicle" type="int" />
+		<field name="commercialName" type="String" />
+		<field name="modelCode" type="String" />
+		<field name="productionPlant" type="String" />
+		<field name="addressOfProductionPlant" type="String" />
+		<field name="emissionStandard" type="String" />
+		<field name="safetyTestReportId" type="long" />
+		<field name="emissionTestReportId" type="long" />
+		<field name="copReportId" type="long" />
+		<field name="specificationVersion" type="long" />
+		<field name="hoSoThuTucId" type="long" />
+		<field name="remarks" type="String" />
+		<field name="attachedFile" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleGroupInitial">
+		<field name="id" type="long" />
+		<field name="vehicleClass" type="String" />
+		<field name="registeredInspectionId" type="long" />
+		<field name="technicalSpecCode" type="String" />
+		<field name="referenceCertificateNo" type="String" />
+		<field name="safetytestreportNo" type="String" />
+		<field name="emissiontestreportNo" type="String" />
+		<field name="copreportNo" type="String" />
+		<field name="vehicleType" type="String" />
+		<field name="engineType" type="String" />
+		<field name="tradeMark" type="String" />
+		<field name="markAsVehicle" type="int" />
+		<field name="commercialName" type="String" />
+		<field name="modelCode" type="String" />
+		<field name="productionPlant" type="String" />
+		<field name="addressOfProductionPlant" type="String" />
+		<field name="emissionStandard" type="String" />
+		<field name="safetyTestReportId" type="long" />
+		<field name="emissionTestReportId" type="long" />
+		<field name="copReportId" type="long" />
+		<field name="specificationVersion" type="long" />
+		<field name="remarks" type="String" />
+		<field name="attachedFile" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleGroupSpec">
+		<field name="id" type="long" />
+		<field name="vehicleGroupId" type="long" />
+		<field name="specificationCode" type="String" />
+		<field name="specificationName" type="String" />
+		<field name="specificationValue" type="String" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleRecord">
+		<field name="id" type="long" />
+		<field name="vehicleGroupId" type="long" />
+		<field name="debitNoteId" type="long" />
+		<field name="sequenceNo" type="long" />
+		<field name="codeNumber" type="long" />
+		<field name="chassisNumber" type="String" />
+		<field name="engineNumber" type="String" />
+		<field name="productionYear" type="long" />
+		<field name="vehicleEngineStatus" type="String" />
+		<field name="vehicleColor" type="String" />
+		<field name="unitPrice" type="double" />
+		<field name="currency" type="String" />
+		<field name="remarks" type="String" />
+		<field name="confirmedInspectionId" type="long" />
+		<field name="inspectionRecordId" type="long" />
+		<field name="draftCertificateId" type="long" />
+		<field name="certificateRecordId" type="long" />
+		<field name="markUpStatus" type="long" />
+		<field name="safeTestRequirementId" type="long" />
+		<field name="emissionTestRequirementId" type="long" />
+		<field name="controlRequirementId" type="long" />
+		<field name="markAsSample" type="int" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.VehiclerecordInitial">
+		<field name="id" type="long" />
+		<field name="vehicleGroupId" type="long" />
+		<field name="sequenceNo" type="long" />
+		<field name="codeNumber" type="long" />
+		<field name="chassisNumber" type="String" />
+		<field name="engineNumber" type="String" />
+		<field name="productionYear" type="long" />
+		<field name="vehicleEngineStatus" type="String" />
+		<field name="vehicleColor" type="String" />
+		<field name="unitPrice" type="double" />
+		<field name="currency" type="String" />
+		<field name="remarks" type="String" />
+		<field name="confirmedInspectionId" type="long" />
+		<field name="inspectionRecordId" type="long" />
+		<field name="draftCertificateId" type="long" />
+		<field name="certificateRecordId" type="long" />
+		<field name="markUpStatus" type="long" />
+		<field name="safeTestRequirementId" type="long" />
+		<field name="emissionTestRequirementId" type="long" />
+		<field name="controlRequirementId" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleSpecification">
+		<field name="id" type="long" />
+		<field name="vehicleGroupId" type="long" />
+		<field name="specificationVersion" type="long" />
+		<field name="specificationSourceCode" type="String" />
+		<field name="specificationCode" type="String" />
+		<field name="specificationName" type="String" />
+		<field name="specificationValue" type="String" />
+		<field name="safetyTestReportId" type="long" />
+		<field name="inspectionRecordId" type="long" />
+		<field name="specificResult" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleStatistics">
+		<field name="id" type="long" />
+		<field name="registeredInspectionId" type="long" />
+		<field name="totalRegisteredVehicle" type="long" />
+		<field name="totalRequestedVehicle" type="long" />
+		<field name="totalNotYetRequestedVehicle" type="long" />
+		<field name="totalCancelledVehicle" type="long" />
+		<field name="totalInspectedVehicle" type="long" />
+		<field name="totalResolvedVehicle" type="long" />
+		<field name="totalReexportedVehicle" type="long" />
+		<field name="totalWrongStatusVehicle" type="long" />
+		<field name="totalSafeTestSample" type="long" />
+		<field name="totalEmissionTestSample" type="long" />
+		<field name="totalControlRequiredVehicle" type="long" />
+		<field name="totalCertificate" type="long" />
+		<field name="totalViolatedVehicle" type="long" />
+		<field name="totalTechnicalSpec" type="long" />
+		<field name="processingState" type="long" />
+		<field name="processingTiming" type="long" />
+		<field name="daysUptoDeadline" type="long" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.ViewDangKiemTimKiem">
+		<field name="id" type="long" />
+		<field name="vehicleGroupId" type="long" />
+		<field name="debitNoteId" type="long" />
+		<field name="sequenceNo" type="long" />
+		<field name="codeNumber" type="long" />
+		<field name="chassisNumber" type="String" />
+		<field name="engineNumber" type="String" />
+		<field name="productionYear" type="long" />
+		<field name="vehicleEngineStatus" type="String" />
+		<field name="vehicleColor" type="String" />
+		<field name="unitPrice" type="double" />
+		<field name="currency" type="String" />
+		<field name="remarks" type="String" />
+		<field name="confirmedInspectionId" type="long" />
+		<field name="inspectionRecordId" type="long" />
+		<field name="draftCertificateId" type="long" />
+		<field name="certificateRecordId" type="long" />
+		<field name="markUpStatus" type="long" />
+		<field name="safeTestRequirementId" type="long" />
+		<field name="emissionTestRequirementId" type="long" />
+		<field name="controlRequirementId" type="long" />
+		<field name="markAsSample" type="int" />
+		<field name="inspectionrecordno" type="String" />
+		<field name="inspectionRecordDate" type="Date" />
+		<field name="attachedFileBbkt" type="long" />
+		<field name="certificateNumber" type="String" />
+		<field name="signDate" type="Date" />
+		<field name="attachedFile" type="long" />
+		<field name="registeredNumber" type="String" />
+		<field name="inspectorSignDate" type="Date" />
+		<field name="vehicleClass" type="String" />
+	</model>
+	<model name="vn.dtt.gt.dk.dao.nghiepvu.model.ViewTrungSoKhungDongCo">
+		<field name="id" type="long" />
+		<field name="vehicleGroupId" type="long" />
+		<field name="debitNoteId" type="long" />
+		<field name="sequenceNo" type="long" />
+		<field name="codeNumber" type="long" />
+		<field name="chassisNumber" type="String" />
+		<field name="engineNumber" type="String" />
+		<field name="productionYear" type="long" />
+		<field name="vehicleEngineStatus" type="String" />
+		<field name="vehicleColor" type="String" />
+		<field name="unitPrice" type="double" />
+		<field name="currency" type="String" />
+		<field name="remarks" type="String" />
+		<field name="confirmedInspectionId" type="long" />
+		<field name="inspectionRecordId" type="long" />
+		<field name="draftCertificateId" type="long" />
+		<field name="certificateRecordId" type="long" />
+		<field name="markUpStatus" type="long" />
+		<field name="safeTestRequirementId" type="long" />
+		<field name="emissionTestRequirementId" type="long" />
+		<field name="controlRequirementId" type="long" />
+		<field name="markAsSample" type="int" />
+		<field name="registeredNumber" type="String" />
+		<field name="contactName" type="String" />
+		<field name="contactPhone" type="String" />
+		<field name="inspectionDate" type="Date" />
+		<field name="importerName" type="String" />
+	</model>
+</model-hints>

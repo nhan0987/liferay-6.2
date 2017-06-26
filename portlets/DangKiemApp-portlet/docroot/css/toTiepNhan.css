@@ -1,0 +1,124 @@
+@CHARSET "UTF-8";
+/* ----START---- css cua folder quanlyhs/thulyhs/totiepnhan */
+.textAreaAutosize {
+	width: 100%
+}
+
+/* ----END  ---- css cua folder quanlyhs/thulyhs/totiepnhan */
+
+
+
+
+/* ----START---- css cua folder quanlyhs/thulyhs/dangkiemvien */
+/* ----START---- css chuc nang hien thi tab */
+.container {
+	width: 800px;
+}
+
+ul.tabs {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.tabs li {
+	background: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+ul.tabs li.current {
+	background: #ededed;
+	color: #222;
+}
+
+.tab-content {
+	display: none;
+	background: #ededed;
+}
+
+.tab-content.current {
+	display: inherit;
+}
+
+P {
+ 	text-align: left;
+	display: block;
+}
+
+span {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	color: #333333;
+	line-height: 1.42857143;
+	white-space: nowrap;
+}
+
+textarea {
+	overflow: hidden;
+	word-wrap: break-word;
+	resize: horizontal;
+	height: 50px;
+	width: 99%;
+	border: 1px solid #d4d4d4;
+	font-family: 'Times New Roman', Georgia, serif;
+	font-size: 15px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.iconBlue {
+	width: 26px;
+	height: 26px;
+	/**background-image: url(img/blue.png);*/
+}
+
+.iconGreen {
+	width: 26px;
+	height: 26px;
+	/**background-image: url(img/green.png);*/
+}
+
+.iconRead {
+	width: 26px;
+	height: 26px;
+	/**background-image: url(img/red_rec_normal.png);*/
+}
+	
+.iconWhite {
+	width: 26px;
+	height: 26px;
+	/**background-image: url(img/white_rec_normal.png);*/
+}
+
+.iconYellow {
+	width: 26px;
+	height: 26px;
+	/**background-image: url(img/yellow_rec_normal.png);*/
+}
+
+.underLine {
+	/*background-image: url(img/under_line_image.png);*/
+	background-repeat: repeat-x;
+}
+
+.thinLine {
+	left: 0px;
+	top: 4px;
+	width: 99%;
+	height: 3px;
+	/*background-image: url(img/thin_line.png);*/
+	background-repeat: repeat-x;
+}
+
+.text-left {
+	text-align: left;
+}
+/* ----END  ---- css cua common */

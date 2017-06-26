@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.2.0//EN" "http://www.liferay.com/dtd/liferay-display_6_2_0.dtd">
+
+<display>
+	<category name="DangKiem">
+		<portlet id="DangKiemApp" />
+		<portlet id="quanlyhosoaction"></portlet>
+		<portlet id="menuaction"></portlet>
+		<portlet id="quanlynguoidungaction"></portlet>
+		<portlet id="tracuuaction"></portlet>
+		<portlet id="chungchiaction"></portlet>
+		<portlet id="cauhinhmotcuaaction"></portlet>
+		<portlet id="hosodangkiemaction"></portlet>
+		<portlet id="quanlyruiroaction"></portlet>
+		<portlet id="quanlytygiaaction"></portlet>
+		<portlet id="monitoraction"></portlet>
+	</category>
+</display>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="phieubaolichkiemtra" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="167ab3cb-6437-48a9-9b8b-928eb7e5be9d">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="184" splitType="Stretch">
+			<image>
+				<reportElement x="15" y="10" width="97" height="75" uuid="30b07756-14be-4a03-bb51-4683cffdd419"/>
+				<imageExpression><![CDATA["C:\\Users\\ducmo_000\\Desktop\\a.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="193" y="10" width="347" height="20" uuid="d8e3b4f8-9eb7-447b-8bed-7f857a625865"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PHIẾU THÔNG BÁO LỊCH KIỂM TRA"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="30" width="347" height="20" uuid="2439c29b-7561-4525-a9cd-0ad10d0e5d71"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ĐỘI KIỂM TRA CHẤT LƯỢNG XCG KV"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="307" y="50" width="100" height="1" uuid="0170b96d-0d10-4a72-a087-e8abf3f49d53"/>
+			</line>
+			<textField>
+				<reportElement x="15" y="97" width="243" height="20" uuid="7bc8fa7f-e1bf-4965-be22-8f2718f3eba2"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Người nhập khẩu: "+""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="117" width="243" height="20" uuid="6fec089d-c3c2-42ca-97bc-8651d0765077"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ngày kiểm tra: "+""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="137" width="243" height="20" uuid="1947f831-bf9e-44ed-bf52-8004cb00fd0a"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Danh sách hồ sơ: "]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="114" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="8" width="31" height="36" uuid="2a26b645-19b8-4946-b812-9ffdcf371868"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TT"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="8" width="100" height="36" uuid="62479224-2e1d-4141-92a1-6989dd84a0db"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số hồ sơ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="8" width="62" height="36" uuid="c58a5dc7-7b75-4080-a1a6-b8a5a8bd2ff8"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số lượng xe"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="8" width="100" height="36" uuid="8772cdc2-008b-46c6-ac93-c347a12518e1"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Địa điểm kiểm tra"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="8" width="76" height="36" uuid="9a69e7cf-1fd8-4216-9c68-dce9975a75d8"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nguời liên hệ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="8" width="84" height="36" uuid="cd164d4f-e3df-4d83-ac58-fdf4b0f714b1"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ĐKV kiểm tra "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="8" width="75" height="36" uuid="0cc38bad-e62f-47ee-9045-5fa1cd1592bf"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số điện thoại của ĐKV"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="44" width="31" height="20" uuid="4ff19450-15a9-40b5-9656-9f465961a456"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="44" width="100" height="20" uuid="77b24867-5bd0-450e-80d7-86c202309f9e"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="44" width="62" height="20" uuid="c35f4197-2fc3-4bba-879f-8308a06c61aa"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="44" width="100" height="20" uuid="eeb3851a-3f23-44d4-b004-fe506c538982"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="44" width="76" height="20" uuid="93b1bd47-8a15-483e-8d25-4909ba467cba"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="44" width="84" height="20" uuid="91aed966-a1db-4916-b115-0b84b4d57098"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="44" width="75" height="20" uuid="43daf1fc-816c-44e7-9983-f2717cea67e9"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="72" splitType="Stretch">
+			<textField>
+				<reportElement x="308" y="19" width="235" height="20" uuid="13daecd5-547a-4386-a342-37a59407d11f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Đội trưởng"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

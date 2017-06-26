@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql id="vn.dtt.gt.dk.dao.nghiepvu.service.persistence.VehicleCertificateFinder.findVehicleCertificateByHosothutucId">
+		<![CDATA[
+			SELECT {VehicleCertificate.*} FROM (SELECT DISTINCT
+	  vehiclerecord.id AS id,	1 AS mtgateway,
+  vehiclegroup.hosothutucid AS hosothutucid, 
+  vehiclerecord.sequenceno AS sequenceno,
+	vehiclerecord.id AS vehiclerecordid,
+	vehiclerecord.draftcertificateid AS draftcertificateid,	
+	vehiclerecord.certificaterecordid AS certificaterecordid,
+  vehiclerecord.debitnoteid AS debitnoteid,
+	vehiclerecord.vehiclegroupid AS vehiclegroupid,
+  vehiclegroup.vehicleclass AS vehicleclass,
+  vehiclegroup.technicalspeccode AS technicalspeccode,
+  vehiclegroup.referencecertificateno AS referencecertificateno,
+	vehiclegroup.safetytestreportno AS safetytestreportno,
+	vehiclegroup.emissiontestreportno AS emissiontestreportno,
+	vehiclegroup.copreportno AS copreportno,
+  vehiclegroup.controlreportno AS controlreportno,	
+	vehiclegroup.vehicletype AS vehicletype,
+   GROUP2.name AS vehicletypedescription,
+  vehiclegroup.enginetype AS enginetype,
+   GROUP427.name AS enginetypedescription,
+  vehiclegroup.markasvehicle AS markasvehicle,
+	vehiclegroup.trademark AS trademark,
+   GROUP3.name AS trademarkdescription,
+	vehiclegroup.commercialname AS commercialname,
+	vehiclegroup.modelcode AS modelcode,
+	vehiclegroup.productionplant AS productionplant,
+	vehiclegroup.addressofproductionplant AS addressofproductionplant,
+	vehiclegroup.emissionstandard AS emissionstandard,
+	vehiclerecord.codenumber AS codenumber,
+	vehiclerecord.chassisnumber AS chassisnumber,
+	vehiclerecord.enginenumber AS enginenumber,
+	vehiclerecord.productionyear AS productionyear,
+	group_concat(
+		vr_productioncountry.countrycode SEPARATOR ','
+	) AS countrycode, 
+	group_concat(
+		GROUP4.name SEPARATOR ','
+	) AS countryname,	
+	vehiclerecord.VEHICLECOLOR AS vehiclecolor,	
+   GROUP41.name AS vehicleengineusage,
+	vehiclerecord.vehicleenginestatus AS currentstatus,	
+	vehiclerecord.unitprice AS unitprice,
+	vehiclerecord.currency AS currency,	
+	vehiclerecord.markupstatus AS markupstatus,
+	vehiclerecord.MarkAsSample AS MarkAsSample,	
+
+	CASE WHEN (vehiclerecord.certificaterecordid = 0 OR vehiclerecord.certificaterecordid is NULL) THEN 
+	(CASE WHEN (vehiclerecord.confirmedinspectionid = 0 OR vehiclerecord.confirmedinspectionid is NULL) THEN (										
+					CASE WHEN LENGTH(PHIEUXULYCHINH.trangthaihientaiid) > 0 THEN PHIEUXULYCHINH.trangthaihientaiid
+					ELSE '---' END 
+										)
+		WHEN (vehiclerecord.confirmedinspectionid > 0) THEN 
+		(CASE WHEN (vehiclerecord.inspectionrecordid = 0 OR vehiclerecord.inspectionrecordid is NULL
+				OR (vehiclerecord.inspectionrecordid > 0 AND vr_inspectionrecord.phieuxulyphuid =0)
+								) THEN ( 
+					CASE WHEN LENGTH(LICHKIEMTRA.trangthaihientaiid) > 0 THEN LICHKIEMTRA.trangthaihientaiid
+					ELSE '---' END 
+												)
+		WHEN (vehiclerecord.inspectionrecordid > 0 AND vr_inspectionrecord.phieuxulyphuid > 0) THEN (																				
+					CASE WHEN LENGTH(PHIEUKIEMTRA.trangthaihientaiid) > 0 THEN PHIEUKIEMTRA.trangthaihientaiid
+					ELSE '---' END
+										)
+		ELSE '---' END)
+		ELSE '---' END
+		)
+	WHEN (vehiclerecord.certificaterecordid > 0) THEN 
+		(
+		CASE WHEN (vr_certificaterecord.digitalissued = 0 OR vr_certificaterecord.digitalissued is NULL) THEN 
+		(
+				CASE WHEN (vehiclerecord.debitnoteid = 0 OR vehiclerecord.debitnoteid is NULL) THEN (
+						CASE WHEN LENGTH(PHIEUKIEMTRA.trangthaihientaiid) > 0 THEN PHIEUKIEMTRA.trangthaihientaiid
+									ELSE '---' END
+									)
+            ELSE (
+									CASE WHEN (LENGTH(vr_debitnote.markasdeleted) > 0 AND vr_debitnote.markasdeleted = 0) THEN '19'
+												WHEN (LENGTH(vr_debitnote.markasdeleted) > 0 AND vr_debitnote.markasdeleted = 1) THEN '21'
+												WHEN (LENGTH(vr_debitnote.markasdeleted) > 0 AND vr_debitnote.markasdeleted = 2) THEN '22'
+												ELSE (
+												CASE WHEN LENGTH(PHIEUKIEMTRA.trangthaihientaiid) > 0 THEN PHIEUKIEMTRA.trangthaihientaiid
+												ELSE '---' END
+														)
+												END
+									)
+									
+								END
+		)
+				WHEN (vr_certificaterecord.digitalissued = 1)  THEN '22' ELSE '---' END
+		)
+		ELSE '---' END AS vehicleenginestatus,
+		
+		CASE WHEN (vehiclerecord.certificaterecordid = 0 OR vehiclerecord.certificaterecordid is NULL) THEN 
+	(CASE WHEN (vehiclerecord.confirmedinspectionid = 0 OR vehiclerecord.confirmedinspectionid is NULL) THEN (										
+				CASE WHEN LENGTH(HOSOTHUTUC.phannhomhosoid) > 0 THEN HOSOTHUTUC.phannhomhosoid
+				ELSE '---' END 
+										)
+		WHEN (vehiclerecord.confirmedinspectionid > 0) THEN 
+		(CASE WHEN (vehiclerecord.inspectionrecordid = 0 OR vehiclerecord.inspectionrecordid is NULL
+				OR (vehiclerecord.inspectionrecordid > 0 AND vr_inspectionrecord.phieuxulyphuid =0)
+								) THEN ( 
+							CASE WHEN LENGTH(LICHKIEMTRA.phannhomhosoid) > 0 THEN LICHKIEMTRA.phannhomhosoid
+							ELSE '---' END 
+												)
+		WHEN (vehiclerecord.inspectionrecordid > 0 AND vr_inspectionrecord.phieuxulyphuid > 0) THEN (																					
+					CASE WHEN LENGTH(PHIEUKIEMTRA.phannhomhosoid) > 0 THEN PHIEUKIEMTRA.phannhomhosoid
+					ELSE '---' END
+										)
+		ELSE '---' END)
+		ELSE '---' END
+		)
+	WHEN (vehiclerecord.certificaterecordid > 0) THEN 
+		(
+				CASE WHEN LENGTH(PHIEUKIEMTRA.phannhomhosoid) > 0 THEN PHIEUKIEMTRA.phannhomhosoid
+												ELSE '---' END
+		)
+		ELSE '---' END AS vehicleenginefolder,
+
+	vehiclegroupinitial.id AS vehiclegroupinitialid,
+	vr_registeredinspection.id AS  registeredinspectionid,
+	vr_registeredinspection.registerednumber AS  registerednumber,
+	vr_registeredinspection.importercode AS  importercode,
+	vr_registeredinspection.importername AS  importername,
+	vr_registeredinspection.importeraddress AS  importeraddress,
+	vr_registeredinspection.representative AS  representative,
+	vr_registeredinspection.email AS  email,
+	vr_registeredinspection.phone AS  phone,
+	vr_registeredinspection.fax AS  fax,
+	vr_registeredinspection.inspectiondate AS  inspectiondate,
+	vr_registeredinspection.inspectionsite AS  inspectionsite,
+	vr_registeredinspection.inspectiondistrictcode AS  inspectiondistrictcode,
+	GROUP33Lev2.name AS  inspectiondistrict,
+	vr_registeredinspection.inspectionprovincecode AS  inspectionprovincecode,
+	GROUP33Lev1.name AS  inspectionprovince,
+
+	vehiclerecord.confirmedinspectionid AS confirmedinspectionid,
+	vehiclerecord.inspectionrecordid AS inspectionrecordid,
+	vr_inspectionrecord.inspectionrecordno AS inspectionrecordno,
+	vr_inspectionrecord.inspectiondatefrom AS inspectiondatefrom,
+	vr_inspectionrecord.inspectiondateto AS inspectiondateto,
+	vr_inspectionrecord.inspectionmode AS inspectionmode,
+	GROUP32.name AS inspectionmodedescription,
+	vr_inspectionrecord.confirmedresult AS confirmedresult,
+	GROUP34.name AS confirmedresultdescription,
+	vr_customsdeclaration.importcustomdeclaredate AS importcustomdeclaredate,
+	vr_customsdeclaration.importcustomdeclareno AS importcustomdeclareno,
+	vr_inspectionrecord.corporationid AS corporationcode,
+	GROUP30.name AS corporationname,
+	vr_corporation_inspector.contactcode AS inspectorcontactcode,
+	vr_corporation_inspector.inspectorname AS inspectorname,
+	vr_inspectionrecord.remarks AS remarks,
+	vr_certificaterecord.certificatetype AS certificatetype,
+	vr_certificaterecord.certificatenumber AS certificatenumber,
+	vr_certificaterecord.oldcertificatenumber AS oldcertificatenumber,
+	vr_certificaterecord.signdate AS signdate,
+	vr_certificaterecord.stampstatus AS stampstatus, 
+  CASE WHEN (vr_certificaterecord.stampstatus = 0 OR vr_certificaterecord.stampstatus is NULL) THEN '---'						
+			ELSE (CASE WHEN LENGTH(GROUP43.name) > 0 THEN GROUP43.name
+			ELSE '---' END
+			) END AS certificatestatus,	 
+	vr_certificaterecord.digitalissued AS digitalissued,
+	vr_inspectionrecord.MARKUPSAFETEST,
+	vr_inspectionrecord.MARKUPEMISSIONTEST,
+	vr_inspectionrecord.MARKUPCONTROL,
+	vr_inspectionrecord.ATTACHEDFILE,
+	vr_registeredinspection.inspectororganization AS inspectororganization,
+	vr_registeredinspection.inspectordivision AS inspectordivision,
+	vr_registeredinspection.inspectorsignname AS inspectorsignname,
+	vr_registeredinspection.inspectorsigntitle AS inspectorsigntitle,
+	vr_registeredinspection.inspectorsignplace AS inspectorsignplace,
+	vr_registeredinspection.inspectorsigndate AS inspectorsigndate,
+	HOSOTHUTUC.ngayguihoso AS dossierdate,
+	CASE WHEN (vr_registeredinspection.ATTACHEDFILE = 0 OR vr_registeredinspection.ATTACHEDFILE is NULL) THEN 0						
+			ELSE (CASE WHEN FILEDANGKYKIEMTRA.tailieudinhkem > 0 THEN FILEDANGKYKIEMTRA.tailieudinhkem
+			ELSE 0 END
+			) END AS filedangkykiemtraid,
+	CASE WHEN (vr_inspectionrecord.ATTACHEDFILE = 0 OR vr_inspectionrecord.ATTACHEDFILE is NULL) THEN 0						
+			ELSE (CASE WHEN FILEBIENBANKIEMTRA.tailieudinhkem > 0 THEN FILEBIENBANKIEMTRA.tailieudinhkem
+			ELSE 0 END
+			) END AS filebienbankiemtraid,
+	CASE WHEN (vr_certificaterecord.ATTACHEDFILE = 0 OR vr_certificaterecord.ATTACHEDFILE is NULL) THEN 0						
+			ELSE (CASE WHEN FILECHUNGCHI.tailieudinhkem > 0 THEN FILECHUNGCHI.tailieudinhkem
+			ELSE 0 END
+			) END AS filechungchiid,
+	CASE WHEN (vehiclegroup.safetytestreportid = 0 OR vehiclegroup.safetytestreportid is NULL) THEN 0						
+			ELSE (CASE WHEN FILEBAOCAOTNANTOAN.tailieudinhkem > 0 THEN FILEBAOCAOTNANTOAN.tailieudinhkem
+			ELSE 0 END
+			) END AS filebaocaotnantoanid,
+	CASE WHEN (vehiclegroup.emissiontestreportid = 0 OR vehiclegroup.emissiontestreportid is NULL) THEN 0						
+			ELSE (CASE WHEN FILEBAOCAOTNKHITHAI.tailieudinhkem > 0 THEN FILEBAOCAOTNKHITHAI.tailieudinhkem
+			ELSE 0 END
+			) END AS filebaocaotnkhithaiid,
+	CASE WHEN (vehiclegroup.controlreportid = 0 OR vehiclegroup.controlreportid is NULL) THEN 0						
+			ELSE (CASE WHEN FILEKETLUANGIAMDINH.tailieudinhkem > 0 THEN FILEKETLUANGIAMDINH.tailieudinhkem
+			ELSE 0 END
+			) END AS fileketluangiamdinhid,
+
+	CURRENT_TIMESTAMP AS synchdate
+
+FROM	vr_vehiclerecord vehiclerecord
+			
+			INNER JOIN dkvn_nghiepvu.vr_vehiclegroup vehiclegroup ON vehiclegroup.id = vehiclerecord.vehiclegroupid AND vehiclegroup.hosothutucid = ?
+			INNER JOIN dkvn_nghiepvu.vr_productioncountry vr_productioncountry ON vr_productioncountry.vehiclegroupid = vehiclegroup.id
+			LEFT JOIN dkvn_thutuchanhchinh.dm_dataitem GROUP2 ON GROUP2.datagroupid = 2 and GROUP2.code_0 = vehiclegroup.vehicletype
+			LEFT JOIN dkvn_thutuchanhchinh.dm_dataitem GROUP3 ON GROUP3.datagroupid = 3 and GROUP3.code_0 = vehiclegroup.trademark
+			LEFT JOIN dkvn_thutuchanhchinh.dm_dataitem GROUP427 ON GROUP427.datagroupid in (7, 42) and GROUP427.code_0 = vehiclegroup.enginetype
+			LEFT JOIN dkvn_thutuchanhchinh.dm_dataitem GROUP41 ON GROUP41.datagroupid = 41 and GROUP41.code_0 = vehiclerecord.vehicleenginestatus
+			LEFT JOIN dkvn_thutuchanhchinh.dm_dataitem GROUP4 ON GROUP4.datagroupid = 4 AND GROUP4.code_0 = vr_productioncountry.countrycode
+			INNER JOIN dkvn_nghiepvu.vr_registeredinspection vr_registeredinspection ON vr_registeredinspection.dossierid = vehiclegroup.hosothutucid
+			LEFT JOIN dkvn_nghiepvu.vr_vehiclegroup_initial vehiclegroupinitial ON vehiclegroupinitial.registeredinspectionid = vr_registeredinspection.id and vehiclegroup.technicalspeccode like vehiclegroupinitial.technicalspeccode 
+			LEFT JOIN dkvn_thutuchanhchinh.dm_dataitem GROUP33Lev1 ON GROUP33Lev1.datagroupid = 33 and GROUP33Lev1.level = 1 and GROUP33Lev1.code_0 = vr_registeredinspection.inspectionprovincecode
+			LEFT JOIN dkvn_thutuchanhchinh.dm_dataitem GROUP33Lev2 ON GROUP33Lev2.datagroupid = 33 and GROUP33Lev2.level = 2 and GROUP33Lev2.altername = vr_registeredinspection.inspectionprovincecode 
+								and GROUP33Lev2.code_0 = vr_registeredinspection.inspectiondistrictcode
+			LEFT JOIN dkvn_nghiepvu.vr_inspectionrecord vr_inspectionrecord ON vr_inspectionrecord.id = vehiclerecord.inspectionrecordid 
+			LEFT JOIN dkvn_thutuchanhchinh.dm_dataitem GROUP30 ON GROUP30.datagroupid = 30 and GROUP30.code_0 = vr_inspectionrecord.corporationid
+			LEFT JOIN dkvn_nghiepvu.vr_corporation_inspector vr_corporation_inspector ON vr_corporation_inspector.inspectorid = vr_inspectionrecord.inspectorid 
+			LEFT JOIN dkvn_thutuchanhchinh.dm_dataitem GROUP32 ON GROUP32.datagroupid = 32 and GROUP32.code_0 = vr_inspectionrecord.inspectionmode
+			LEFT JOIN dkvn_thutuchanhchinh.dm_dataitem GROUP34 ON GROUP34.datagroupid = 34 and GROUP34.code_0 = vr_inspectionrecord.confirmedresult
+			LEFT JOIN dkvn_nghiepvu.vr_customsdeclaration vr_customsdeclaration ON vr_customsdeclaration.id = vr_inspectionrecord.customsdeclarationid 
+			LEFT JOIN dkvn_nghiepvu.vr_certificaterecord vr_certificaterecord ON vr_certificaterecord.id = vehiclerecord.certificaterecordid
+			LEFT JOIN dkvn_nghiepvu.vr_confirmedinspection vr_confirmedinspection ON vr_confirmedinspection.id = vehiclerecord.confirmedinspectionid
+		  	LEFT JOIN dkvn_thutuchanhchinh.dm_dataitem GROUP43 ON GROUP43.datagroupid = 43 and GROUP43.code_0 = vr_certificaterecord.stampstatus
+			LEFT JOIN dkvn_thutuchanhchinh.motcua_phieuxulyphu LICHKIEMTRA ON LICHKIEMTRA.phieuxulychinhid = vehiclegroup.hosothutucid AND  LICHKIEMTRA.id = vr_confirmedinspection.phieuxulyphuid
+								AND vehiclerecord.confirmedinspectionid > 0
+			LEFT JOIN dkvn_thutuchanhchinh.motcua_phieuxulyphu PHIEUKIEMTRA ON PHIEUKIEMTRA.phieuxulychinhid = vehiclegroup.hosothutucid AND  PHIEUKIEMTRA.id = vr_inspectionrecord.phieuxulyphuid
+								AND vehiclerecord.inspectionrecordid > 0			
+			LEFT JOIN dkvn_thutuchanhchinh.tthc_phannhomhoso PHANNHOMLICHKIEMTRA ON PHANNHOMLICHKIEMTRA.ID = LICHKIEMTRA.phannhomhosoid
+								AND vehiclerecord.confirmedinspectionid > 0
+			LEFT JOIN dkvn_thutuchanhchinh.tthc_phannhomhoso PHANNHOMPHIEUKIEMTRA ON PHANNHOMPHIEUKIEMTRA.ID = PHIEUKIEMTRA.phannhomhosoid
+								AND vehiclerecord.inspectionrecordid > 0
+			LEFT JOIN dkvn_nghiepvu.vr_debitnote vr_debitnote ON vr_debitnote.id = vehiclerecord.debitnoteid and vehiclerecord.debitnoteid > 0
+			LEFT JOIN dkvn_thutuchanhchinh.motcua_phieuxulychinh PHIEUXULYCHINH ON PHIEUXULYCHINH.hosothutucid = vehiclegroup.hosothutucid			
+			LEFT JOIN dkvn_thutuchanhchinh.tthc_hosothutuc HOSOTHUTUC ON HOSOTHUTUC.id = vehiclegroup.hosothutucid
+			LEFT JOIN dkvn_thutuchanhchinh.tthc_phannhomhoso PHANNHOMHOSOTHUTUC ON PHANNHOMHOSOTHUTUC.ID = HOSOTHUTUC.phannhomhosoid
+			LEFT JOIN dkvn_thutuchanhchinh.tthc_noidunghoso FILEDANGKYKIEMTRA ON FILEDANGKYKIEMTRA.ID = vr_registeredinspection.ATTACHEDFILE
+			LEFT JOIN dkvn_thutuchanhchinh.tthc_noidunghoso FILEBIENBANKIEMTRA ON FILEBIENBANKIEMTRA.ID = vr_inspectionrecord.ATTACHEDFILE
+			LEFT JOIN dkvn_thutuchanhchinh.tthc_noidunghoso FILECHUNGCHI ON FILECHUNGCHI.ID = vr_certificaterecord.ATTACHEDFILE
+			LEFT JOIN dkvn_thutuchanhchinh.tthc_noidunghoso FILEBAOCAOTNANTOAN ON FILEBAOCAOTNANTOAN.ID = vehiclegroup.safetytestreportid
+			LEFT JOIN dkvn_thutuchanhchinh.tthc_noidunghoso FILEBAOCAOTNKHITHAI ON FILEBAOCAOTNKHITHAI.ID = vehiclegroup.emissiontestreportid
+			LEFT JOIN dkvn_thutuchanhchinh.tthc_noidunghoso FILEKETLUANGIAMDINH ON FILEKETLUANGIAMDINH.ID = vehiclegroup.controlreportid
+			 
+	WHERE 1=1
+	GROUP BY
+		vehiclerecord.id, vehiclerecord.vehiclegroupid
+	ORDER BY
+		vehiclegroup.vehicleclass,
+		vehiclerecord.sequenceno ) as VehicleCertificate
+		]]>
+	</sql>
+
+</custom-sql>

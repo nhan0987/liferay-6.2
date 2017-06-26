@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<custom-sql>
+	<sql id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyChinhFinder.findMotCuaPhieuXuLyChinh_ChuaKiemTra">
+		<![CDATA[
+			SELECT hs.id as id
+			FROM dkvn_thutuchanhchinh.tthc_hosothutuc hs
+			WHERE 1=1
+			and length(hs.mabiennhan)> 0
+			and phannhomhosoid <>57
+			and datediff(now(),ngaytiepnhan)>0
+			and hs.id not in (SELECT hosothutucid 
+			FROM dkvn_nghiepvu.vr_inspectionrecord WHERE hosothutucid >0)
+			
+		]]>
+	</sql>
+	<sql id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyChinhFinder.findMotCuaPhieuXuLyChinh_KiemTraChuaHet">
+		<![CDATA[
+			SELECT hs.id as id FROM (SELECT hs.id as id 
+			FROM dkvn_thutuchanhchinh.tthc_hosothutuc hs
+			WHERE 1=1
+			and length(hs.mabiennhan)> 0
+			and phannhomhosoid <>57
+			and datediff(now(),ngaytiepnhan)>0
+			and hs.id in (SELECT hosothutucid FROM dkvn_nghiepvu.vr_inspectionrecord WHERE hosothutucid >0)
+			and hs.id in (SELECT hosothutucid FROM dkvn_nghiepvu.vr_vehiclegroup WHERE id in (
+			SELECT vehiclegroupid FROM dkvn_nghiepvu.vr_vehiclerecord WHERE inspectionrecordid=0))) as hs
+		]]>
+	</sql>
+	<sql id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyChinhFinder.findMotCuaPhieuXuLyChinh_ChuaKiemTraToanBo">
+		<![CDATA[
+			SELECT hs.id as id 
+			FROM (
+			select hs.id as id, hs.mabiennhan, hs.tenchuhoso,trangthaihoso,ngaytiepnhan, datediff(now(),ngaytiepnhan) as songay
+			from dkvn_thutuchanhchinh.tthc_hosothutuc hs
+			where 1=1
+			and length(hs.mabiennhan)> 0
+			and phannhomhosoid <>57
+			and datediff(now(),ngaytiepnhan)>0
+			and hs.id not in (select hosothutucid 
+			from dkvn_nghiepvu.vr_inspectionrecord where hosothutucid >0)
+			UNION
+			select hs.id as id, hs.mabiennhan, hs.tenchuhoso,trangthaihoso,ngaytiepnhan, datediff(now(),ngaytiepnhan) as songay
+			from dkvn_thutuchanhchinh.tthc_hosothutuc hs
+			where 1=1
+			and length(hs.mabiennhan)> 0
+			and phannhomhosoid <>57
+			and datediff(now(),ngaytiepnhan)>0
+			and hs.id in (select hosothutucid 
+			from dkvn_nghiepvu.vr_vehiclegroup where id in (
+			select vehiclegroupid from dkvn_nghiepvu.vr_vehiclerecord where inspectionrecordid=0))
+			order by songay desc
+			) as hs
+		]]>
+	</sql>
+	<sql id="vn.dtt.gt.dk.dao.motcua.service.persistence.MotCuaPhieuXuLyChinhFinder.findMotCuaPhieuXuLyChinh_DaKiemTraToanBo">
+		<![CDATA[
+			SELECT hs1.id as id FROM dkvn_thutuchanhchinh.tthc_hosothutuc hs1
+			where 1=1
+			and length(hs1.mabiennhan)> 0
+			and hs1.phannhomhosoid <>57
+			and datediff(now(),hs1.ngaytiepnhan)>0
+			and hs1.id in (select distinct hosothutucid 
+			from dkvn_nghiepvu.vr_confirmedinspection where hosothutucid >0)
+			and hs1.id not in (SELECT hs.id as id 
+			FROM (
+			select hs.id as id, hs.mabiennhan, hs.tenchuhoso,trangthaihoso,ngaytiepnhan, datediff(now(),ngaytiepnhan) as songay
+			from dkvn_thutuchanhchinh.tthc_hosothutuc hs
+			where 1=1
+			and length(hs.mabiennhan)> 0
+			and phannhomhosoid <>57
+			and datediff(now(),ngaytiepnhan)>0
+			and hs.id not in (select hosothutucid 
+			from dkvn_nghiepvu.vr_inspectionrecord where hosothutucid >0)
+			UNION
+			select hs.id as id, hs.mabiennhan, hs.tenchuhoso,trangthaihoso,ngaytiepnhan, datediff(now(),ngaytiepnhan) as songay
+			from dkvn_thutuchanhchinh.tthc_hosothutuc hs
+			where 1=1
+			and length(hs.mabiennhan)> 0
+			and phannhomhosoid <>57
+			and datediff(now(),ngaytiepnhan)>0
+			and hs.id in (select hosothutucid 
+			from dkvn_nghiepvu.vr_vehiclegroup where id in (
+			select vehiclegroupid from dkvn_nghiepvu.vr_vehiclerecord where inspectionrecordid=0))			
+			) as hs)
+		]]>
+	</sql>
+</custom-sql>

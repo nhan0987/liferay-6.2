@@ -1,0 +1,3505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="vn.dtt.gt.dk.dao.nghiepvu">
+	<author>win_64</author>
+	<namespace>dk</namespace>
+
+	<entity name="VehicleStatistics" table="vr_vehiclestatistics" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="totalRegisteredVehicle" db-name="totalregisteredvehicle" type="long" />
+		<column name="totalRequestedVehicle" db-name="totalrequestedvehicle" type="long" />
+		<column name="totalNotYetRequestedVehicle" db-name="totalnotyetrequestedvehicle" type="long" />
+		<column name="totalCancelledVehicle" db-name="totalcancelledvehicle" type="long" />
+		<column name="totalInspectedVehicle" db-name="totalinspectedvehicle" type="long" />
+		<column name="totalResolvedVehicle" db-name="totalresolvedvehicle" type="long" />
+		<column name="totalReexportedVehicle" db-name="totalreexportedvehicle" type="long" />
+		<column name="totalWrongStatusVehicle" db-name="totalwrongstatusvehicle" type="long" />
+		<column name="totalSafeTestSample" db-name="totalsafetestsample" type="long" />
+		<column name="totalEmissionTestSample" db-name="totalemissiontestsample" type="long" />
+		<column name="totalControlRequiredVehicle" db-name="totalcontrolrequiredvehicle" type="long" />
+		<column name="totalCertificate" db-name="totalcertificate" type="long" />
+		<column name="totalViolatedVehicle" db-name="totalviolatedvehicle" type="long" />
+		<column name="totalTechnicalSpec" db-name="totaltechnicalspec" type="long" />
+		<column name="processingState" db-name="processingstate" type="long" />
+		<column name="processingTiming" db-name="processingtiming" type="long" />
+		<column name="daysUptoDeadline" db-name="daysuptodeadline" type="long" />
+		<column name="SynchDate" db-name="synchdate" type="Date"/>
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="VehicleStatistics" name="RegisteredInspectionId">
+			<finder-column name="registeredInspectionId" />
+		</finder>
+	</entity>
+
+	<entity name="VehicleGroup" table="vr_vehiclegroup" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleClass" db-name="vehicleclass" type="String" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="technicalSpecCode" db-name="technicalspeccode" type="String" />
+		<column name="referenceCertificateNo" db-name="referencecertificateno" type="String" />
+		<column name="safetytestreportNo" db-name="safetytestreportno" type="String" />
+		<column name="emissiontestreportNo" db-name="emissiontestreportno" type="String" />
+		<column name="copreportNo" db-name="copreportno" type="String" />
+		<column name="controlreportNo" db-name="controlreportno" type="String" />
+		<column name="vehicleType" db-name="vehicletype" type="String" />
+		<column name="engineType" db-name="enginetype" type="String" />
+		<column name="tradeMark" db-name="trademark" type="String" />
+		<column name="markAsVehicle" db-name="markasvehicle" type="int" />
+		<column name="commercialName" db-name="commercialname" type="String" />
+		<column name="modelCode" db-name="modelcode" type="String" />
+		<column name="productionPlant" db-name="productionplant" type="String" />
+		<column name="addressOfProductionPlant" db-name="addressofproductionplant" type="String" />
+		<column name="emissionStandard" db-name="emissionstandard" type="String" />
+		<column name="safetyTestReportId" db-name="safetytestreportid" type="long" />
+		<column name="emissionTestReportId" db-name="emissiontestreportid" type="long" />
+		<column name="copReportId" db-name="copreportid" type="long" />
+		<column name="controlreportId" db-name="controlreportid" type="long" />
+		<column name="specificationVersion" db-name="specificationversion" type="long" />
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="attachedFile" db-name="ATTACHEDFILE" type="long" />
+		<column name="SynchDate" db-name="synchdate" type="Date"/>
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="RegisteredInspectionId">
+			<finder-column name="registeredInspectionId" />
+		</finder>
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		<finder return-type="Collection" name="TechnicalSpecCode">
+			<finder-column name="technicalSpecCode" />
+		</finder>
+
+		<finder return-type="VehicleGroup" name="TechnicalSpecCodeAndRegisteredInspectionId">
+			<finder-column name="technicalSpecCode" />
+			<finder-column name="registeredInspectionId" />
+		</finder>
+
+	</entity>
+
+	<entity name="VehicleGroupInitial" table="vr_vehiclegroup_initial" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleClass" db-name="vehicleclass" type="String" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="technicalSpecCode" db-name="technicalspeccode" type="String" />
+		<column name="referenceCertificateNo" db-name="referencecertificateno" type="String" />
+		<column name="safetytestreportNo" db-name="safetytestreportno" type="String" />
+		<column name="emissiontestreportNo" db-name="emissiontestreportno" type="String" />
+		<column name="copreportNo" db-name="copreportno" type="String" />
+		<column name="controlreportNo" db-name="controlreportno" type="String" />
+		<column name="vehicleType" db-name="vehicletype" type="String" />
+		<column name="engineType" db-name="enginetype" type="String" />
+		<column name="tradeMark" db-name="trademark" type="String" />
+		<column name="markAsVehicle" db-name="markasvehicle" type="int" />
+		<column name="commercialName" db-name="commercialname" type="String" />
+		<column name="modelCode" db-name="modelcode" type="String" />
+		<column name="productionPlant" db-name="productionplant" type="String" />
+		<column name="addressOfProductionPlant" db-name="addressofproductionplant" type="String" />
+		<column name="emissionStandard" db-name="emissionstandard" type="String" />
+		<column name="safetyTestReportId" db-name="safetytestreportid" type="long" />
+		<column name="emissionTestReportId" db-name="emissiontestreportid" type="long" />
+		<column name="copReportId" db-name="copreportid" type="long" />
+		<column name="controlreportId" db-name="controlreportid" type="long" />
+		<column name="specificationVersion" db-name="specificationversion" type="long" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="attachedFile" db-name="ATTACHEDFILE" type="long" />
+		<column name="SynchDate" db-name="synchdate" type="Date"/>
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+
+	<entity name="VehicleRecord" table="vr_vehiclerecord" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<column name="debitNoteId" db-name="debitnoteid" type="long" />
+		<column name="sequenceNo" db-name="sequenceno" type="long" />
+		<column name="codeNumber" db-name="codenumber" type="long" />
+		<column name="chassisNumber" db-name="chassisnumber" type="String" />
+		<column name="engineNumber" db-name="enginenumber" type="String" />
+		<column name="productionYear" db-name="productionyear" type="String" />
+		<column name="vehicleEngineStatus" db-name="vehicleenginestatus" type="String" />
+		<column name="vehicleColor" db-name="vehiclecolor" type="String" />
+		<column name="unitPrice" db-name="unitprice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="draftCertificateId" db-name="draftcertificateid" type="long" />
+		<column name="certificateRecordId" db-name="certificaterecordid" type="long" />
+		<column name="markUpStatus" db-name="markupstatus" type="long" />
+		<column name="safeTestRequirementId" db-name="safetestrequirementid" type="long" />
+		<column name="emissionTestRequirementId" db-name="emissiontestrequirementid" type="long" />
+		<column name="controlRequirementId" db-name="controlrequirementid" type="long" />
+		<column name="markAsSample" db-name="MarkAsSample" type="int" />
+		<column name="SynchDate" db-name="synchdate" type="Date"/>
+		
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+
+		<finder return-type="VehicleRecord" name="CodeNumber">
+			<finder-column name="codeNumber" />
+		</finder>
+		<finder return-type="Collection" name="DebitNoteId">
+			<finder-column name="debitNoteId" />
+		</finder>
+		<finder return-type="Collection" name="SafeTestRequirementId">
+			<finder-column name="safeTestRequirementId" />
+		</finder>
+		<finder return-type="Collection" name="EmissionTestRequirementId">
+			<finder-column name="emissionTestRequirementId" />
+		</finder>
+		<finder return-type="Collection" name="ControlRequirementId">
+			<finder-column name="controlRequirementId" />
+		</finder>
+		<finder return-type="Collection" name="ConfirmedInspectionId">
+			<finder-column name="confirmedInspectionId" />
+		</finder>
+		<finder return-type="Collection" name="InspectionRecordId">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+		<finder return-type="Collection" name="DraftCertificateId">
+			<finder-column name="draftCertificateId" />
+		</finder>
+	</entity>
+
+
+	<entity name="VehiclerecordInitial" table="vr_vehiclerecord_initial" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<!-- 
+		<column name="debitNoteId" db-name="debitnoteid" type="long" />
+		 -->
+		<column name="sequenceNo" db-name="sequenceno" type="long" />
+		<column name="codeNumber" db-name="codenumber" type="long" />
+		<column name="chassisNumber" db-name="chassisnumber" type="String" />
+		<column name="engineNumber" db-name="enginenumber" type="String" />
+		<column name="productionYear" db-name="productionyear" type="String" />
+		<column name="vehicleEngineStatus" db-name="vehicleenginestatus" type="String" />
+		<column name="vehicleColor" db-name="vehiclecolor" type="String" />
+		<column name="unitPrice" db-name="unitprice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="draftCertificateId" db-name="draftcertificateid" type="long" />
+		<column name="certificateRecordId" db-name="certificaterecordid" type="long" />
+		<column name="markUpStatus" db-name="markupstatus" type="long" />
+		<column name="safeTestRequirementId" db-name="safetestrequirementid" type="long" />
+		<column name="emissionTestRequirementId" db-name="emissiontestrequirementid" type="long" />
+		<column name="controlRequirementId" db-name="controlrequirementid" type="long" />
+		<column name="SynchDate" db-name="synchdate" type="Date"/>
+		
+		<!-- 
+		<column name="markAsSample" db-name="MarkAsSample" type="int" />
+		 -->
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+		
+		<finder name="VehicleGroupId" return-type="Collection">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+
+		<finder return-type="VehiclerecordInitial" name="CodeNumber">
+			<finder-column name="codeNumber" />
+		</finder>
+	</entity>
+
+	<entity name="RegisteredInspection" table="vr_registeredinspection" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<!-- PK fields -->
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredNumber" db-name="registerednumber" type="String" />
+		<column name="dossierId" db-name="dossierid" type="long" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<!-- Importer -->
+		<column name="importerCode" db-name="importercode" type="String" />
+		<column name="importerName" db-name="importername" type="String" />
+		<column name="importerAddress" db-name="importeraddress" type="String" />
+		<column name="representative" db-name="representative" type="String" />
+		<column name="phone" db-name="phone" type="String" />
+		<column name="fax" db-name="fax" type="String" />
+		<column name="email" db-name="email" type="String" />
+
+		<!-- Inspection -->
+		<column name="inspectionDate" db-name="inspectiondate" type="Date" />
+		<column name="inspectionSite" db-name="inspectionsite" type="String" />
+		<column name="inspectionDistrictCode" db-name="inspectiondistrictcode" type="String" />
+		<column name="inspectionProvinceCode" db-name="inspectionprovincecode" type="String" />
+
+		<!-- Contacter -->
+		<column name="contactName" db-name="contactname" type="String" />
+		<column name="contactPhone" db-name="contactphone" type="String" />
+		<column name="contactEmail" db-name="contactemail" type="String" />
+
+		<!-- ImporterSign -->
+		<column name="importerSignName" db-name="importersignname" type="String" />
+		<column name="importerSignTitle" db-name="importersigntitle" type="String" />
+		<column name="importerSignPlace" db-name="importersignplace" type="String" />
+		<column name="importerSignDate" db-name="importersigndate" type="Date" />
+
+
+		<column name="inspectorOrganization" db-name="inspectororganization" type="String" />
+		<column name="inspectorDivision" db-name="inspectordivision" type="String" />
+		<column name="inspectorSigNname" db-name="inspectorsignname" type="String" />
+		<column name="inspectorSignTitle" db-name="inspectorsigntitle" type="String" />
+		<column name="inspectorSignPlace" db-name="inspectorsignplace" type="String" />
+		<column name="inspectorSignDate" db-name="inspectorsigndate" type="Date" />
+		<column name="SynchDate" db-name="synchdate" type="Date"/>
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="DossierId">
+			<finder-column name="dossierId" />
+		</finder>
+		<finder return-type="RegisteredInspection" name="RegisteredNumber">
+			<finder-column name="registeredNumber" />
+		</finder>
+	</entity>
+
+	<entity name="ProductionCountry" table="vr_productioncountry" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<column name="countryCode" db-name="countrycode" type="String" />
+		<column name="SynchDate" db-name="synchdate" type="Date"/>
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+		<finder return-type="Collection" name="VehicleGroupIdCountryCode">
+			<finder-column name="vehicleGroupId" />
+			<finder-column name="countryCode" />
+		</finder>
+
+
+	</entity>
+
+	<entity name="VehicleGroupSpec" table="vr_vehiclegroupspec" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+
+	<entity name="InspectionRecordSpec" table="vr_inspectionrecordspec" local-service="true" remote-service="true" cache-enabled="false"
+		data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="inspectionRecordid" db-name="inspectionrecordid" type="long" />
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+		<column name="evaluationResult" db-name="evaluationresult" type="long" />	
+		
+			
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="InspectionRecordId">
+			<finder-column name="inspectionRecordid" />
+		</finder>
+		<finder return-type="InspectionRecordSpec" name="InspectionRecordId_SpecificationCode">
+			<finder-column name="inspectionRecordid" />
+			<finder-column name="specificationCode" />
+		</finder>
+	</entity>
+
+	<entity name="SatetyTestReportSpec" table="vr_satetytestreportspec" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="saftyTestReportId" db-name="saftytestreportid" type="long" />
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+		<column name="evaluationResult" db-name="evaluationresult" type="long" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="SaftyTestReportId">
+			<finder-column name="saftyTestReportId" />
+		</finder>
+	</entity>
+
+	<entity name="DraftCertificateSpec" table="vr_draftcertificatespec" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="draftCertificateId" db-name="draftcertificateid" type="long" />
+
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="DraftCertificateId">
+			<finder-column name="draftCertificateId" />
+		</finder>
+	</entity>
+
+	<entity name="DraftCertificate" table="vr_draftcertificate" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="certificateType" db-name="certificatetype" type="long" />
+		<column name="inspectionReportId" db-name="inspectionreportid" type="long" />
+		<column name="safetytestReportId" db-name="safetytestreportid" type="long" />
+		<column name="emissionTestReportId" db-name="emissiontestreportid" type="long" />
+		<column name="copReportId" db-name="copreportid" type="long" />
+		<column name="reason" db-name="reason" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="createdDate" db-name="createddate" type="Date" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="DraftCertificate" name="InspectionReportId">
+			<finder-column name="inspectionReportId" />
+		</finder>
+	</entity>
+
+	<entity name="CertificateRecordSpec" table="vr_certificaterecordspec" local-service="true" remote-service="true" data-source="vrDataSource"
+		cache-enabled="false" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="certificateRecordId" db-name="certificaterecordid" type="long" />
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+		<column name="version" db-name="version" type="long" />
+		
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+		
+		<finder return-type="CertificateRecordSpec" name="CertificateRecordIdAndSpecificationCode">
+			<finder-column name="certificateRecordId" />
+			<finder-column name="specificationCode" />
+		</finder>
+	</entity>
+
+
+	<entity name="VehicleSpecification" table="vr_vehiclespecification" cache-enabled="false" local-service="true" remote-service="true"
+		data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<column name="specificationVersion" db-name="specificationversion" type="long" />
+		<column name="specificationSourceCode" db-name="specificationsourcecode" type="String" />
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specificationValue" db-name="specificationvalue" type="String" />
+		<column name="safetyTestReportId" db-name="safetytestreportid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="specificResult" db-name="specificresult" type="long" />
+		
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="SpecificationCode">
+			<finder-column name="specificationCode" />
+		</finder>
+		<finder return-type="Collection" name="InspectionRecordId">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+		<finder return-type="VehicleSpecification" name="VehicleGroupIdSpecificationCode">
+			<finder-column name="vehicleGroupId" />
+			<finder-column name="specificationCode" />
+		</finder>
+	</entity>
+
+
+	<entity name="CfgTechnicalspec" table="vr_cfg_technicalspec" cache-enabled="false" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+
+		<column name="vehicleTypeCode" db-name="vehicletypecode" type="String" />
+		<column name="vehicleTypeName" db-name="vehicletypename" type="String" />
+		<column name="sequenceno" db-name="sequenceno" type="long" />
+
+
+		<column name="specificationCode" db-name="specificationcode" type="String" />
+
+		<column name="specificationName" db-name="specificationname" type="String" />
+		<column name="specDescription" db-name="spec_description" type="String" />
+		<column name="specCategory" db-name="spec_category" type="String" />
+
+		<column name="specificationGroup" db-name="specificationgroup" type="long" />
+		<column name="searchingIncluded" db-name="searching_included" type="long" />
+		<column name="referenceIncluded" db-name="reference_included" type="long" />
+		<column name="certificateIncluded" db-name="certificate_included" type="long" />
+		<column name="datagroupid" db-name="datagroupid" type="long" />
+		
+		
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="VehicleTypeCode">
+			<finder-column name="vehicleTypeCode" />
+		</finder>
+		<finder return-type="CfgTechnicalspec" name="SpecificationCode">
+			<finder-column name="specificationCode" />
+		</finder>
+
+	</entity>
+
+
+	<entity name="ConfirmedInspection" table="vr_confirmedinspection" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="customsDeclarationId" db-name="customsdeclarationid" type="long" />
+		<column name="confirmationCode" db-name="confirmationcode" type="long" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="inspectionDate" db-name="inspectiondate" type="Date" />
+		<column name="inspectionSite" db-name="inspectionsite" type="String" />
+		<column name="inspectionDistrictCode" db-name="inspectiondistrictcode" type="String" />
+		<column name="inspectionProvincecode" db-name="inspectionprovincecode" type="String" />
+		<column name="customsRegion" db-name="customsregion" type="long" />
+		<column name="markasChangedSite" db-name="markaschangedsite" type="long" />
+		<column name="contactName" db-name="contactname" type="String" />
+		<column name="contactPhone" db-name="contactphone" type="String" />
+		<column name="contactEmail" db-name="contactemail" type="String" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="remarks" db-name="remarks" type="String" />
+
+		<column name="corporationId" db-name="corporationid" type="String" />
+
+		<column name="inspectorId" db-name="inspectorid" type="long" />
+
+		<column name="phieuXuLyPhuId" db-name="phieuxulyphuid" type="long" />
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long" />
+
+		<column name="dateFrom" db-name="datefrom" type="Date" />
+		<column name="dateTo" db-name="dateto" type="Date" />
+		<column name="leader" db-name="leader" type="int" />
+		
+
+		<!-- <column name="corporationId" db-name="corporationid" type="String" /> <column name="inspectorId" db-name="inspectorid" type="long" /> -->
+
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="CustomsDeclarationId">
+			<finder-column name="customsDeclarationId" />
+		</finder>
+
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		<finder return-type="ConfirmedInspection" name="PhieuXuLyPhuId">
+			<finder-column name="phieuXuLyPhuId" />
+		</finder>
+
+		<finder return-type="ConfirmedInspection" name="CorporationId">
+			<finder-column name="corporationId" />
+		</finder>
+
+
+		<finder return-type="ConfirmedInspection" name="InspectorId">
+			<finder-column name="inspectorId" />
+		</finder>
+
+
+		<finder return-type="Collection" name="RegisteredInspectionId">
+			<finder-column name="registeredInspectionId" />
+		</finder>
+
+	</entity>
+
+	<entity name="CertificateCircular" table="vr_certificatecircular" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="certificateRecordId" db-name="certificaterecordid" type="long" />
+		<column name="sequenceNo" db-name="sequenceno" type="long" />
+		<column name="circularNo" db-name="circularno" type="String" />
+		<column name="circularDate" db-name="circulardate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+	</entity>
+
+	<entity name="CertificateRecord" table="vr_certificaterecord" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="certificateType" db-name="certificatetype" type="long" />
+		<column name="certificateNumber" db-name="certificatenumber" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="createdDate" db-name="createddate" type="Date" />
+		<column name="editorName" db-name="editorname" type="String" />
+		<column name="inspectionReportId" db-name="inspectionreportid" type="long" />
+		<column name="safetyTestReportId" db-name="safetytestreportid" type="long" />
+		<column name="emissionTestReportId" db-name="emissiontestreportid" type="long" />
+		<column name="copReportId" db-name="copreportid" type="long" />
+		<column name="dossierId" db-name="dossierid" type="long" />
+		<column name="oldCertificateNumber" db-name="oldcertificatenumber" type="String" />
+		<column name="reason" db-name="reason" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="organization" db-name="organization" type="String" />
+		<column name="division" db-name="division" type="String" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="digitalIssued" db-name="digitalissued" type="long" />
+		<column name="stampStatus" db-name="stampstatus" type="long" />
+		<column name="commentInWrongCase" db-name="commentinwrongcase" type="long" />
+		
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="AttachedFile">
+			<finder-column name="attachedFile" />
+		</finder>
+		<finder return-type="Collection" name="SafetyTestReportId">
+			<finder-column name="safetyTestReportId" />
+		</finder>
+		<finder return-type="Collection" name="EmissionTestReportId">
+			<finder-column name="emissionTestReportId" />
+		</finder>
+		<finder return-type="Collection" name="CopReportId">
+			<finder-column name="copReportId" />
+		</finder>
+		<finder return-type="Collection" name="DossierId">
+			<finder-column name="dossierId" />
+		</finder>
+		<finder return-type="CertificateRecord" name="CertificateNumber">
+			<finder-column name="certificateNumber" />
+		</finder>
+		<finder return-type="Collection" name="DossierIdAndInspectionReportId">
+			<finder-column name="dossierId" />
+			<finder-column name="inspectionReportId" />
+		</finder>
+	</entity>
+
+
+	<entity name="ControlReport" table="vr_controlreport" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="inspectionrecordId" db-name="inspectionrecordid" type="long" />		
+		<column name="hosothutucId" db-name="hosothutucid" type="long" />
+		<column name="controlRequirementId" db-name="controlrequirementid" type="long" />
+		<column name="requirementNumber" db-name="requirementnumber" type="String" />
+		<column name="reportNumber" db-name="reportnumber" type="String" />
+		<column name="reportDate" db-name="reportdate" type="Date" />		
+		<column name="description" db-name="description" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="phieuxulyphuId" db-name="phieuxulyphuid" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		
+
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="ControlReport" name="InspectionrecordId">
+			<finder-column name="inspectionrecordId" />
+		</finder>
+	</entity>
+
+	<entity name="SafetyTestRequest" table="vr_safetytestrequest" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="requestNumber" db-name="requestnumber" type="String" />
+		<column name="testContent" db-name="testcontent" type="String" />
+		<column name="testTimeAndPlace" db-name="testtimeandplace" type="String" />
+		<column name="testPayment" db-name="testpayment" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="corporationName" db-name="corporationname" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+
+	<entity name="EmissionTestRequest" table="vr_emissiontestrequest" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="requestNumber" db-name="requestnumber" type="String" />
+		<column name="testTimeAndPlace" db-name="testtimeandplace" type="String" />
+		<column name="testPayment" db-name="testpayment" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="corporationName" db-name="corporationname" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+
+	<entity name="ControlRequest" table="vr_controlrequest" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="requestNumber" db-name="requestnumber" type="String" />
+		<column name="corporationName" db-name="corporationname" type="String" />
+		<column name="controlContent" db-name="controlcontent" type="String" />
+		<column name="controlDeadLine" db-name="controldeadline" type="Date" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+
+	<entity name="ControlRequirement" table="vr_controlrequirement" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="requirementNumber" db-name="requirementnumber" type="String" />
+		<column name="requirementDate" db-name="requirementdate" type="Date" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="controlContent" db-name="controlcontent" type="String" />
+		<column name="controlDeadline" db-name="controldeadline" type="Date" />
+		<column name="attachedFile" db-name="attachedfile" type="int" />
+		<column name="requirementContent" db-name="requirementcontent" type="String" />
+		<column name="controlReportDeadline" db-name="controlreportdeadline" type="Date" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="inspectionrecordId" db-name="inspectionrecordid" type="long" />
+		<column name="phieuxulyphuId" db-name="phieuxulyphuid" type="long" />
+		
+
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="RegisteredInspectionId">
+			<finder-column name="registeredInspectionId" />
+		</finder>
+
+		<finder return-type="ControlRequirement" name="InspectionrecordId">
+			<finder-column name="inspectionrecordId" />
+		</finder>
+
+		<finder return-type="Collection" name="PhieuxulyphuId">
+			<finder-column name="phieuxulyphuId" />
+		</finder>
+
+	</entity>
+
+	<entity name="CopReport" table="vr_copreport" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="reportNumber" db-name="reportnumber" type="String" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+	</entity>
+
+	<entity name="ActionLog" table="vr_action_log" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="hosothutucid" db-name="hosothutucid" type="long" />
+		<column name="masohoso" db-name="masohoso" type="String" />		
+		<column name="mabiennhan" db-name="mabiennhan" type="String" />
+		<column name="ngayxemhoso" db-name="ngayxemhoso" type="Date" />
+		<column name="noidungmanhinh" db-name="noidungmanhinh" type="String" />
+		<column name="importername" db-name="importername" type="String" />
+		<column name="corporationid" db-name="corporationid" type="String" />
+		<column name="inspectorid" db-name="inspectorid" type="long" />
+		<column name="inspectorname" db-name="inspectorname" type="String" />
+		<column name="inspectorphone" db-name="inspectorphone" type="String" />
+		<column name="inspectoremail" db-name="inspectoremail" type="String" />
+		<column name="title" db-name="title" type="String" />
+		<column name="contactcode" db-name="contactcode" type="String" />
+		
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+				<finder return-type="Collection" name="hosothutucid">
+			<finder-column name="hosothutucid" />
+		</finder>
+		<finder return-type="Collection" name="MaSoHoSo">
+			<finder-column name="masohoso" />
+		</finder>
+		<finder return-type="Collection" name="MaBienNhan">
+			<finder-column name="mabiennhan" />
+		</finder>
+		<finder return-type="Collection" name="ImporterName">
+			<finder-column name="importername" />
+		</finder>
+		<finder return-type="Collection" name="CorporationId">
+			<finder-column name="corporationid" />
+		</finder>
+		<finder return-type="Collection" name="InspectorId">
+			<finder-column name="inspectorid" />
+		</finder>
+		<finder return-type="Collection" name="ContactCode">
+			<finder-column name="contactcode" />
+		</finder>		
+
+	</entity>
+	
+	<entity name="IssueCategory" table="vr_assessmentissuecategory" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="issuetrackingid" db-name="issuetrackingid" type="int" />
+		<column name="defectcategorycode" db-name="defectcategorycode" type="String" />
+		<column name="defectcategoryshortname" db-name="defectcategoryshortname" type="String" />
+		<column name="defectcategoryfullname" db-name="defectcategoryfullname" type="String" />	
+		<column name="defectdetection" db-name="defectdetection" type="int" />
+		<column name="defectdatagroupid" db-name="defectdatagroupid" type="int" />
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>	
+		
+		<finder return-type="Collection" name="IssueTrackingid">
+			<finder-column name="issuetrackingid" />
+		</finder>		
+		<finder return-type="Collection" name="DefectCategoryCode">
+			<finder-column name="defectcategorycode" />
+			<finder-column name="defectdatagroupid" />
+		</finder>
+		<finder return-type="Collection" name="DefectDetectionAndCategoryCode">
+			<finder-column name="defectdetection" />
+			<finder-column name="defectcategorycode" />
+			<finder-column name="defectdatagroupid" />
+		</finder>
+		<finder return-type="Collection" name="DefectCategoryShortname">
+			<finder-column name="defectcategoryshortname" />
+			<finder-column name="defectdatagroupid" />
+		</finder>
+	</entity>
+	
+	<entity name="IssueTracking" table="vr_assessmentissuetracking" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="importercode" db-name="importercode" type="String" />
+		<column name="importername" db-name="importername" type="String" />
+		<column name="registerednumber" db-name="registerednumber" type="String" />
+		<column name="inspectionrecordno" db-name="inspectionrecordno" type="String" />
+		<column name="inspectionRecordDate" db-name="inspectionrecorddate" type="Date" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="inspectorId" db-name="inspectorid" type="long" />
+		<column name="vehicleClass" db-name="vehicleclass" type="String" />
+		<column name="productcode" db-name="productcode" type="String" />
+		<column name="productname" db-name="productname" type="String" />
+		<column name="totalvehicle" db-name="totalvehicle" type="long" />
+		<column name="codeNumber" db-name="codenumber" type="long" />		
+		<column name="chassisNumber" db-name="chassisnumber" type="String" />
+		<column name="engineNumber" db-name="enginenumber" type="String" />
+		<column name="importedorassembled" db-name="importedorassembled" type="String" />
+		<column name="issuetrackingfromcustomer" db-name="issuetrackingfromcustomer" type="String" />
+		<column name="issuetrackingbycorporation" db-name="issuetrackingbycorporation" type="String" />
+		<column name="issuetrackingbyimportedgroup" db-name="issuetrackingbyimportedgroup" type="String" />
+		<column name="issuediscovery" db-name="issuediscovery" type="long" />
+		
+		<column name="issuedescription" db-name="issuedescription" type="String" />
+		<column name="issueVAQ1reason" db-name="issueVAQ1reason" type="String" />
+		<column name="issueVAQ2troubleshooting" db-name="issueVAQ2troubleshooting" type="String" />		
+		<column name="issueVAQ3longtermsolution" db-name="issueVAQ3longtermsolution" type="String" />		
+		<column name="issueVAQ4precaution" db-name="issueVAQ4precaution" type="String" />
+		
+		<column name="creator" db-name="creator" type="String" />
+		<column name="createddate" db-name="createddate" type="Date" />
+		
+		<column name="markupissueVAQ4" db-name="markupissueVAQ4" type="int" />
+		<column name="makerVAQ4" db-name="makerVAQ4" type="String" />
+		<column name="checkerVAQ4" db-name="checkerVAQ4" type="String" />
+		<column name="approverVAQ4" db-name="approverVAQ4" type="String" />
+		<column name="makerVAQ4modified" db-name="makerVAQ4modified" type="Date" />
+		<column name="checkerVAQ4modified" db-name="checkerVAQ4modified" type="Date" />
+		<column name="approverVAQ4modified" db-name="approverVAQ4modified" type="Date" />
+		
+		<column name="markupissueVAQ1" db-name="markupissueVAQ1" type="int" />
+		<column name="makerVAQ1" db-name="makerVAQ1" type="String" />
+		<column name="checkerVAQ1" db-name="checkerVAQ1" type="String" />		
+		<column name="makerVAQ1modified" db-name="makerVAQ1modified" type="Date" />
+		<column name="checkerVAQ1modified" db-name="checkerVAQ1modified" type="Date" />
+		
+		<column name="markupissueVAQ2" db-name="markupissueVAQ2" type="int" />
+		<column name="makerVAQ2" db-name="makerVAQ2" type="String" />
+		<column name="checkerVAQ2" db-name="checkerVAQ2" type="String" />		
+		<column name="makerVAQ2modified" db-name="makerVAQ2modified" type="Date" />
+		<column name="checkerVAQ2modified" db-name="checkerVAQ2modified" type="Date" />
+		
+		<column name="markupissueVAQ3" db-name="markupissueVAQ3" type="int" />
+		<column name="makerVAQ3" db-name="makerVAQ3" type="String" />
+		<column name="checkerVAQ3" db-name="checkerVAQ3" type="String" />
+		<column name="approverVAQ3" db-name="approverVAQ3" type="String" />
+		<column name="makerVAQ3modified" db-name="makerVAQ3modified" type="Date" />
+		<column name="checkerVAQ3modified" db-name="checkerVAQ3modified" type="Date" />
+		<column name="approverVAQ3modified" db-name="approverVAQ3modified" type="Date" />
+		
+		<column name="defectStatus" db-name="defectstatus" type="int" />
+		<column name="synchdate" db-name="synchdate" type="Date" />
+
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="Collection" name="ImporterCode">
+			<finder-column name="importercode" />
+		</finder>
+		
+		<finder return-type="Collection" name="RegisteredNumber">
+			<finder-column name="registerednumber" />
+		</finder>
+		<finder return-type="Collection" name="InspectionRecordno">
+			<finder-column name="inspectionrecordno" />
+			<finder-column name="registerednumber" />
+		</finder>
+		
+		<finder return-type="Collection" name="ImporterName">
+			<finder-column name="importername" />
+		</finder>
+		
+		<finder return-type="Collection" name="ProductCode">
+			<finder-column name="productcode" />
+		</finder>
+		
+		<finder return-type="Collection" name="DefectStatus">
+			<finder-column name="defectStatus" />
+			<finder-column name="inspectionrecordno" />
+			<finder-column name="registerednumber" />
+		</finder>
+	</entity>
+	
+
+		
+	<entity name="AssessmentPeriod" table="vr_assessmentperiod" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="assessmentid" db-name="assessmentid" type="String" />
+		<column name="assessmentyear" db-name="assessmentyear" type="String" />
+		<column name="evaluationperiod" db-name="evaluationperiod" type="String" />
+		<column name="importerchecked" db-name="importerchecked" type="int" />
+		<column name="inspectorchecked" db-name="inspectorchecked" type="int" />
+		<column name="productionchecked" db-name="productionchecked" type="int" />
+		<column name="synchdate" db-name="synchdate" type="Date" />
+		<column name="previousassessmentid" db-name="previousassessmentid" type="String" />
+		<column name="previousassessmentyear" db-name="previousassessmentyear" type="String" />
+		
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="Collection" name="AssessmentidAndAssessmentyear">
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		
+		
+		<finder return-type="Collection" name="AssessmentidAndAssessmentyearWithimporterchecked">
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+			<finder-column name="importerchecked" />
+		</finder>
+		<finder return-type="Collection" name="AssessmentidAndAssessmentyearWithinspectorchecked">
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+			<finder-column name="inspectorchecked" />
+		</finder>
+		
+		<finder return-type="Collection" name="AssessmentidAndAssessmentyearWithproductionchecked">
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+			<finder-column name="productionchecked" />
+		</finder>
+		
+		<finder return-type="Collection" name="PreviousAssessmentidAndAssessmentyear">
+			<finder-column name="previousassessmentid" />
+			<finder-column name="previousassessmentyear" />
+		</finder>
+		
+		
+	</entity>
+
+	
+	<entity name="AssessmentSpecificationConfig" table="vr_assessmentspecificationconfig" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="assessmenttype" db-name="assessmenttype" type="String" />		
+		<column name="specificationcategory" db-name="specificationcategory" type="String" />
+		<column name="specificationgroupcode" db-name="specificationgroupcode" type="String" />
+		<column name="specificationsequence" db-name="specificationsequence" type="int" />
+		<column name="specificationcode" db-name="specificationcode" type="String" />
+		<column name="specificationname" db-name="specificationname" type="String" />
+		<column name="specificationdescription" db-name="specificationdescription" type="String" />
+		<column name="assessmentcoefficient" db-name="assessmentcoefficient" type="double" />
+		<column name="assessmentindexmin" db-name="assessmentindexmin" type="double" />
+		<column name="assessmentmarkmin" db-name="assessmentmarkmin" type="double" />
+		<column name="assessmentindexmax" db-name="assessmentindexmax" type="double" />
+		<column name="assessmentmarkmax" db-name="assessmentmarkmax" type="double" />
+		<column name="assessmentid" db-name="assessmentid" type="String" />
+		<column name="assessmentyear" db-name="assessmentyear" type="String" />
+		<column name="evaluationperiod" db-name="evaluationperiod" type="String" />
+		<column name="latestassessment" db-name="latestassessment" type="Date" />
+		<column name="synchdate" db-name="synchdate" type="Date" />			
+		
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="Collection" name="AssessmentidAndAssessmentyear">
+			<finder-column name="specificationgroupcode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="AssessmentidAndAssessmentyearWithSpecificationcode">
+			<finder-column name="specificationgroupcode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+			<finder-column name="specificationcode" />
+		</finder>
+
+
+	</entity>
+	
+	<entity name="AssessmentSpecification" table="vr_assessmentspecification" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="assessmenttype" db-name="assessmenttype" type="String" />
+		<column name="importercode" db-name="importercode" type="String" />
+		<column name="inspectorcontactcode" db-name="inspectorcontactcode" type="String" />
+		<column name="productioncode" db-name="productioncode" type="String" />		
+		<column name="specificationcategory" db-name="specificationcategory" type="String" />
+		<column name="specificationgroupcode" db-name="specificationgroupcode" type="String" />
+		<column name="specificationsequence" db-name="specificationsequence" type="int" />
+		<column name="specificationcode" db-name="specificationcode" type="String" />
+		<column name="specificationname" db-name="specificationname" type="String" />		
+		<column name="specificationvalue" db-name="specificationvalue" type="String" />
+		<column name="specificationdescription" db-name="specificationdescription" type="String" />
+		<column name="assessmentcoefficient" db-name="assessmentcoefficient" type="double" />
+		<column name="assessmentindex" db-name="assessmentindex" type="double" />
+		<column name="assessmentmark" db-name="assessmentmark" type="double" />
+		<column name="assessmentid" db-name="assessmentid" type="String" />
+		<column name="assessmentyear" db-name="assessmentyear" type="String" />
+		<column name="evaluationperiod" db-name="evaluationperiod" type="String" />
+		<column name="latestassessment" db-name="latestassessment" type="Date" />
+		<column name="synchdate" db-name="synchdate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="Collection" name="ImporterCode">
+			<finder-column name="specificationgroupcode" />
+			<finder-column name="importercode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="InspectorContactcode">
+			<finder-column name="specificationgroupcode" />
+			<finder-column name="inspectorcontactcode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+				
+		<finder return-type="Collection" name="ProductionCode">
+			<finder-column name="specificationgroupcode" />
+			<finder-column name="productioncode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="InspectorContactcodeAndSpecificationCode">
+			<finder-column name="specificationgroupcode" />
+			<finder-column name="inspectorcontactcode" />
+			<finder-column name="specificationcode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+				
+		<finder return-type="Collection" name="ImporterCodeAndSpecificationCode">
+			<finder-column name="specificationgroupcode" />
+			<finder-column name="importercode" />
+			<finder-column name="specificationcode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="ProductionCodeAndSpecificationCode">
+			<finder-column name="specificationgroupcode" />
+			<finder-column name="productioncode" />
+			<finder-column name="specificationcode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+	</entity>
+	
+	
+	<entity name="AssessmentofImporter" table="vr_assessmentofimporter" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="importercode" db-name="importercode" type="String" />
+		<column name="importername" db-name="importername" type="String" />
+		<column name="importeraddress" db-name="importeraddress" type="String" />
+		<column name="representative" db-name="representative" type="String" />
+		<column name="email" db-name="email" type="String" />
+		<column name="phone" db-name="phone" type="String" />
+		<column name="fax" db-name="fax" type="String" />
+		<column name="importercodereference" db-name="importercodereference" type="String" />
+		
+		<column name="F1Code" db-name="F1Code" type="String" />
+		<column name="F1Name" db-name="F1Name" type="String" />
+		<column name="F1Value" db-name="F1Value" type="String" />
+		<column name="F1Mark" db-name="F1Mark" type="double" />
+		<column name="F2Code" db-name="F2Code" type="String" />
+		<column name="F2Name" db-name="F2Name" type="String" />
+		<column name="F2Value" db-name="F2Value" type="String" />
+		<column name="F2Mark" db-name="F2Mark" type="double" />
+		<column name="F3Code" db-name="F3Code" type="String" />
+		<column name="F3Name" db-name="F3Name" type="String" />
+		<column name="F3Value" db-name="F3Value" type="String" />
+		<column name="F3Mark" db-name="F3Mark" type="double" />
+		<column name="F4Code" db-name="F4Code" type="String" />
+		<column name="F4Name" db-name="F4Name" type="String" />
+		<column name="F4Value" db-name="F4Value" type="String" />
+		<column name="F4Mark" db-name="F4Mark" type="double" />
+		<column name="F5Code" db-name="F5Code" type="String" />
+		<column name="F5Name" db-name="F5Name" type="String" />
+		<column name="F5Value" db-name="F5Value" type="String" />
+		<column name="F5Mark" db-name="F5Mark" type="double" />
+		<column name="F6Code" db-name="F6Code" type="String" />
+		<column name="F6Name" db-name="F6Name" type="String" />
+		<column name="F6Value" db-name="F6Value" type="String" />
+		<column name="F6Mark" db-name="F6Mark" type="double" />
+		<column name="F7Code" db-name="F7Code" type="String" />
+		<column name="F7Name" db-name="F7Name" type="String" />
+		<column name="F7Value" db-name="F7Value" type="String" />
+		<column name="F7Mark" db-name="F7Mark" type="double" />
+		<column name="F8Code" db-name="F8Code" type="String" />
+		<column name="F8Name" db-name="F8Name" type="String" />
+		<column name="F8Value" db-name="F8Value" type="String" />
+		<column name="F8Mark" db-name="F8Mark" type="double" />
+		<column name="F9Code" db-name="F9Code" type="String" />
+		<column name="F9Name" db-name="F9Name" type="String" />
+		<column name="F9Value" db-name="F9Value" type="String" />
+		<column name="F9Mark" db-name="F9Mark" type="double" />
+		<column name="F10Code" db-name="F10Code" type="String" />
+		<column name="F10Name" db-name="F10Name" type="String" />
+		<column name="F10Value" db-name="F10Value" type="String" />
+		<column name="F10Mark" db-name="F10Mark" type="double" />
+		<column name="F11Code" db-name="F11Code" type="String" />
+		<column name="F11Name" db-name="F11Name" type="String" />
+		<column name="F11Value" db-name="F11Value" type="String" />
+		<column name="F11Mark" db-name="F11Mark" type="double" />
+		<column name="F12Code" db-name="F12Code" type="String" />
+		<column name="F12Name" db-name="F12Name" type="String" />
+		<column name="F12Value" db-name="F12Value" type="String" />
+		<column name="F12Mark" db-name="F12Mark" type="double" />
+		<column name="F13Code" db-name="F13Code" type="String" />
+		<column name="F13Name" db-name="F13Name" type="String" />
+		<column name="F13Value" db-name="F13Value" type="String" />
+		<column name="F13Mark" db-name="F13Mark" type="double" />
+		<column name="F14Code" db-name="F14Code" type="String" />
+		<column name="F14Name" db-name="F14Name" type="String" />
+		<column name="F14Value" db-name="F14Value" type="String" />
+		<column name="F14Mark" db-name="F14Mark" type="double" />
+		<column name="F15Code" db-name="F15Code" type="String" />
+		<column name="F15Name" db-name="F15Name" type="String" />
+		<column name="F15Value" db-name="F15Value" type="String" />
+		<column name="F15Mark" db-name="F15Mark" type="double" />
+		<column name="F16Code" db-name="F16Code" type="String" />
+		<column name="F16Name" db-name="F16Name" type="String" />
+		<column name="F16Value" db-name="F16Value" type="String" />
+		<column name="F16Mark" db-name="F16Mark" type="double" />
+		<column name="F17Code" db-name="F17Code" type="String" />
+		<column name="F17Name" db-name="F17Name" type="String" />
+		<column name="F17Value" db-name="F17Value" type="String" />
+		<column name="F17Mark" db-name="F17Mark" type="double" />
+		<column name="F18Code" db-name="F18Code" type="String" />
+		<column name="F18Name" db-name="F18Name" type="String" />
+		<column name="F18Value" db-name="F18Value" type="String" />
+		<column name="F18Mark" db-name="F18Mark" type="double" />
+		<column name="F19Name" db-name="F19Name" type="String" />
+		<column name="F19Code" db-name="F19Code" type="String" />
+		<column name="F19Value" db-name="F19Value" type="String" />
+		<column name="F19Mark" db-name="F19Mark" type="double" />
+		<column name="F20Code" db-name="F20Code" type="String" />
+		<column name="F20Name" db-name="F20Name" type="String" />
+		<column name="F20Value" db-name="F20Value" type="String" />
+		<column name="F20Mark" db-name="F20Mark" type="double" />
+		<column name="F21Code" db-name="F21Code" type="String" />
+		<column name="F21Name" db-name="F21Name" type="String" />
+		<column name="F21Value" db-name="F21Value" type="String" />
+		<column name="F21Mark" db-name="F21Mark" type="double" />
+		<column name="F22Code" db-name="F22Code" type="String" />
+		<column name="F22Name" db-name="F22Name" type="String" />
+		<column name="F22Value" db-name="F22Value" type="String" />
+		<column name="F22Mark" db-name="F22Mark" type="double" />
+		<column name="F23Code" db-name="F23Code" type="String" />
+		<column name="F23Name" db-name="F23Name" type="String" />
+		<column name="F23Value" db-name="F23Value" type="String" />
+		<column name="F23Mark" db-name="F23Mark" type="double" />
+		<column name="SumMark" db-name="SumMark" type="double" />
+		<column name="maker" db-name="maker" type="String" />
+		<column name="checker" db-name="checker" type="String" />
+		<column name="approver" db-name="approver" type="String" />
+		<column name="makermodified" db-name="makermodified" type="Date" />
+		<column name="checkermodified" db-name="checkermodified" type="Date" />
+		<column name="approvermodified" db-name="approvermodified" type="Date" />
+		
+		<column name="assessmentid" db-name="assessmentid" type="String" />
+		<column name="assessmentyear" db-name="assessmentyear" type="String" />
+		<column name="evaluationperiod" db-name="evaluationperiod" type="String" />
+		<column name="latestassessment" db-name="latestassessment" type="Date" />
+		<column name="synchdate" db-name="synchdate" type="Date" />
+		<column name="nextassessmentid" db-name="nextassessmentid" type="String" />
+		<column name="nextassessmentyear" db-name="nextassessmentyear" type="String" />
+
+		
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="Collection" name="ImporterCode">
+			<finder-column name="importercode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="ImporterCodeReference">
+			<finder-column name="importercodereference" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="ImporterName">
+			<finder-column name="importername" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		
+		<finder return-type="Collection" name="NextPeriodByImporterCode">
+			<finder-column name="importercode" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="NextPeriodByImporterCodeReference">
+			<finder-column name="importercodereference" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="NextPeriodByImporterName">
+			<finder-column name="importername" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+	</entity>
+	
+	
+	<entity name="AssessmentofImporterControl" table="vr_assessmentofimportercontrol" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="importercode" db-name="importercode" type="String" />
+		<column name="importername" db-name="importername" type="String" />
+		<column name="importeraddress" db-name="importeraddress" type="String" />
+		<column name="representative" db-name="representative" type="String" />
+		<column name="email" db-name="email" type="String" />
+		<column name="phone" db-name="phone" type="String" />
+		<column name="fax" db-name="fax" type="String" />
+		<column name="importercodereference" db-name="importercodereference" type="String" />
+		
+		<column name="F1Code" db-name="F1Code" type="String" />
+		<column name="F1Name" db-name="F1Name" type="String" />
+		<column name="F1Value" db-name="F1Value" type="String" />
+		<column name="F1Mark" db-name="F1Mark" type="double" />
+		<column name="F2Code" db-name="F2Code" type="String" />
+		<column name="F2Name" db-name="F2Name" type="String" />
+		<column name="F2Value" db-name="F2Value" type="String" />
+		<column name="F2Mark" db-name="F2Mark" type="double" />
+		<column name="F3Code" db-name="F3Code" type="String" />
+		<column name="F3Name" db-name="F3Name" type="String" />
+		<column name="F3Value" db-name="F3Value" type="String" />
+		<column name="F3Mark" db-name="F3Mark" type="double" />
+		<column name="F4Code" db-name="F4Code" type="String" />
+		<column name="F4Name" db-name="F4Name" type="String" />
+		<column name="F4Value" db-name="F4Value" type="String" />
+		<column name="F4Mark" db-name="F4Mark" type="double" />
+		<column name="F5Code" db-name="F5Code" type="String" />
+		<column name="F5Name" db-name="F5Name" type="String" />
+		<column name="F5Value" db-name="F5Value" type="String" />
+		<column name="F5Mark" db-name="F5Mark" type="double" />
+		<column name="F6Code" db-name="F6Code" type="String" />
+		<column name="F6Name" db-name="F6Name" type="String" />
+		<column name="F6Value" db-name="F6Value" type="String" />
+		<column name="F6Mark" db-name="F6Mark" type="double" />
+		<column name="F7Code" db-name="F7Code" type="String" />
+		<column name="F7Name" db-name="F7Name" type="String" />
+		<column name="F7Value" db-name="F7Value" type="String" />
+		<column name="F7Mark" db-name="F7Mark" type="double" />
+		<column name="F8Code" db-name="F8Code" type="String" />
+		<column name="F8Name" db-name="F8Name" type="String" />
+		<column name="F8Value" db-name="F8Value" type="String" />
+		<column name="F8Mark" db-name="F8Mark" type="double" />
+		<column name="F9Code" db-name="F9Code" type="String" />
+		<column name="F9Name" db-name="F9Name" type="String" />
+		<column name="F9Value" db-name="F9Value" type="String" />
+		<column name="F9Mark" db-name="F9Mark" type="double" />
+		<column name="F10Code" db-name="F10Code" type="String" />
+		<column name="F10Name" db-name="F10Name" type="String" />
+		<column name="F10Value" db-name="F10Value" type="String" />
+		<column name="F10Mark" db-name="F10Mark" type="double" />
+		<column name="F11Code" db-name="F11Code" type="String" />
+		<column name="F11Name" db-name="F11Name" type="String" />
+		<column name="F11Value" db-name="F11Value" type="String" />
+		<column name="F11Mark" db-name="F11Mark" type="double" />
+		<column name="F12Code" db-name="F12Code" type="String" />
+		<column name="F12Name" db-name="F12Name" type="String" />
+		<column name="F12Value" db-name="F12Value" type="String" />
+		<column name="F12Mark" db-name="F12Mark" type="double" />
+		<column name="F13Code" db-name="F13Code" type="String" />
+		<column name="F13Name" db-name="F13Name" type="String" />
+		<column name="F13Value" db-name="F13Value" type="String" />
+		<column name="F13Mark" db-name="F13Mark" type="double" />
+		<column name="F14Code" db-name="F14Code" type="String" />
+		<column name="F14Name" db-name="F14Name" type="String" />
+		<column name="F14Value" db-name="F14Value" type="String" />
+		<column name="F14Mark" db-name="F14Mark" type="double" />
+		<column name="F15Code" db-name="F15Code" type="String" />
+		<column name="F15Name" db-name="F15Name" type="String" />
+		<column name="F15Value" db-name="F15Value" type="String" />
+		<column name="F15Mark" db-name="F15Mark" type="double" />
+		<column name="F16Code" db-name="F16Code" type="String" />
+		<column name="F16Name" db-name="F16Name" type="String" />
+		<column name="F16Value" db-name="F16Value" type="String" />
+		<column name="F16Mark" db-name="F16Mark" type="double" />
+		<column name="F17Code" db-name="F17Code" type="String" />
+		<column name="F17Name" db-name="F17Name" type="String" />
+		<column name="F17Value" db-name="F17Value" type="String" />
+		<column name="F17Mark" db-name="F17Mark" type="double" />
+		<column name="F18Code" db-name="F18Code" type="String" />
+		<column name="F18Name" db-name="F18Name" type="String" />
+		<column name="F18Value" db-name="F18Value" type="String" />
+		<column name="F18Mark" db-name="F18Mark" type="double" />
+		<column name="F19Name" db-name="F19Name" type="String" />
+		<column name="F19Code" db-name="F19Code" type="String" />
+		<column name="F19Value" db-name="F19Value" type="String" />
+		<column name="F19Mark" db-name="F19Mark" type="double" />
+		<column name="F20Code" db-name="F20Code" type="String" />
+		<column name="F20Name" db-name="F20Name" type="String" />
+		<column name="F20Value" db-name="F20Value" type="String" />
+		<column name="F20Mark" db-name="F20Mark" type="double" />
+		<column name="F21Code" db-name="F21Code" type="String" />
+		<column name="F21Name" db-name="F21Name" type="String" />
+		<column name="F21Value" db-name="F21Value" type="String" />
+		<column name="F21Mark" db-name="F21Mark" type="double" />
+		<column name="F22Code" db-name="F22Code" type="String" />
+		<column name="F22Name" db-name="F22Name" type="String" />
+		<column name="F22Value" db-name="F22Value" type="String" />
+		<column name="F22Mark" db-name="F22Mark" type="double" />
+		<column name="F23Code" db-name="F23Code" type="String" />
+		<column name="F23Name" db-name="F23Name" type="String" />
+		<column name="F23Value" db-name="F23Value" type="String" />
+		<column name="F23Mark" db-name="F23Mark" type="double" />
+		<column name="SumMark" db-name="SumMark" type="double" />
+		
+		<column name="maker" db-name="maker" type="String" />
+		<column name="checker" db-name="checker" type="String" />
+		<column name="approver" db-name="approver" type="String" />
+		<column name="makermodified" db-name="makermodified" type="Date" />
+		<column name="checkermodified" db-name="checkermodified" type="Date" />
+		<column name="approvermodified" db-name="approvermodified" type="Date" />
+		
+		<column name="assessmentid" db-name="assessmentid" type="String" />
+		<column name="assessmentyear" db-name="assessmentyear" type="String" />
+		<column name="evaluationperiod" db-name="evaluationperiod" type="String" />
+		<column name="latestassessment" db-name="latestassessment" type="Date" />
+		<column name="synchdate" db-name="synchdate" type="Date" />
+		<column name="nextassessmentid" db-name="nextassessmentid" type="String" />
+		<column name="nextassessmentyear" db-name="nextassessmentyear" type="String" />
+		
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		
+		<finder return-type="Collection" name="ImporterCode">
+			<finder-column name="importercode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="ImporterCodeReference">
+			<finder-column name="importercodereference" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="ImporterName">
+			<finder-column name="importername" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="NextPeriodByImporterCode">
+			<finder-column name="importercode" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="NextPeriodByImporterCodeReference">
+			<finder-column name="importercodereference" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="NextPeriodByImporterName">
+			<finder-column name="importername" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+	</entity>
+	
+	
+	<entity name="AssessmentofInspector" table="vr_assessmentofinspector" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="inspectorcontactcode" db-name="inspectorcontactcode" type="String" />
+		<column name="inspectorname" db-name="inspectorname" type="String" />
+		<column name="inspectorposition" db-name="inspectorposition" type="String" />
+		
+		<column name="F1Code" db-name="F1Code" type="String" />
+		<column name="F1Name" db-name="F1Name" type="String" />
+		<column name="F1Value" db-name="F1Value" type="String" />
+		<column name="F1Mark" db-name="F1Mark" type="double" />
+		<column name="F2Code" db-name="F2Code" type="String" />
+		<column name="F2Name" db-name="F2Name" type="String" />
+		<column name="F2Value" db-name="F2Value" type="String" />
+		<column name="F2Mark" db-name="F2Mark" type="double" />
+		<column name="F3Code" db-name="F3Code" type="String" />
+		<column name="F3Name" db-name="F3Name" type="String" />
+		<column name="F3Value" db-name="F3Value" type="String" />
+		<column name="F3Mark" db-name="F3Mark" type="double" />
+		<column name="F4Code" db-name="F4Code" type="String" />
+		<column name="F4Name" db-name="F4Name" type="String" />
+		<column name="F4Value" db-name="F4Value" type="String" />
+		<column name="F4Mark" db-name="F4Mark" type="double" />
+		<column name="F5Code" db-name="F5Code" type="String" />
+		<column name="F5Name" db-name="F5Name" type="String" />
+		<column name="F5Value" db-name="F5Value" type="String" />
+		<column name="F5Mark" db-name="F5Mark" type="double" />
+		<column name="F6Code" db-name="F6Code" type="String" />
+		<column name="F6Name" db-name="F6Name" type="String" />
+		<column name="F6Value" db-name="F6Value" type="String" />
+		<column name="F6Mark" db-name="F6Mark" type="double" />
+		<column name="F7Code" db-name="F7Code" type="String" />
+		<column name="F7Name" db-name="F7Name" type="String" />
+		<column name="F7Value" db-name="F7Value" type="String" />
+		<column name="F7Mark" db-name="F7Mark" type="double" />
+		<column name="F8Code" db-name="F8Code" type="String" />
+		<column name="F8Name" db-name="F8Name" type="String" />
+		<column name="F8Value" db-name="F8Value" type="String" />
+		<column name="F8Mark" db-name="F8Mark" type="double" />
+		<column name="F9Code" db-name="F9Code" type="String" />
+		<column name="F9Name" db-name="F9Name" type="String" />
+		<column name="F9Value" db-name="F9Value" type="String" />
+		<column name="F9Mark" db-name="F9Mark" type="double" />
+		<column name="F10Code" db-name="F10Code" type="String" />
+		<column name="F10Name" db-name="F10Name" type="String" />
+		<column name="F10Value" db-name="F10Value" type="String" />
+		<column name="F10Mark" db-name="F10Mark" type="double" />
+		<column name="F11Code" db-name="F11Code" type="String" />
+		<column name="F11Name" db-name="F11Name" type="String" />
+		<column name="F11Value" db-name="F11Value" type="String" />
+		<column name="F11Mark" db-name="F11Mark" type="double" />
+		<column name="F12Code" db-name="F12Code" type="String" />
+		<column name="F12Name" db-name="F12Name" type="String" />
+		<column name="F12Value" db-name="F12Value" type="String" />
+		<column name="F12Mark" db-name="F12Mark" type="double" />
+		<column name="F13Code" db-name="F13Code" type="String" />
+		<column name="F13Name" db-name="F13Name" type="String" />
+		<column name="F13Value" db-name="F13Value" type="String" />
+		<column name="F13Mark" db-name="F13Mark" type="double" />
+		<column name="F14Code" db-name="F14Code" type="String" />
+		<column name="F14Name" db-name="F14Name" type="String" />
+		<column name="F14Value" db-name="F14Value" type="String" />
+		<column name="F14Mark" db-name="F14Mark" type="double" />
+		<column name="F15Code" db-name="F15Code" type="String" />
+		<column name="F15Name" db-name="F15Name" type="String" />
+		<column name="F15Value" db-name="F15Value" type="String" />
+		<column name="F15Mark" db-name="F15Mark" type="double" />
+		<column name="F16Code" db-name="F16Code" type="String" />
+		<column name="F16Name" db-name="F16Name" type="String" />
+		<column name="F16Value" db-name="F16Value" type="String" />
+		<column name="F16Mark" db-name="F16Mark" type="double" />
+		<column name="F17Code" db-name="F17Code" type="String" />
+		<column name="F17Name" db-name="F17Name" type="String" />
+		<column name="F17Value" db-name="F17Value" type="String" />
+		<column name="F17Mark" db-name="F17Mark" type="double" />
+		<column name="F18Code" db-name="F18Code" type="String" />
+		<column name="F18Name" db-name="F18Name" type="String" />
+		<column name="F18Value" db-name="F18Value" type="String" />
+		<column name="F18Mark" db-name="F18Mark" type="double" />
+		<column name="F19Name" db-name="F19Name" type="String" />
+		<column name="F19Code" db-name="F19Code" type="String" />
+		<column name="F19Value" db-name="F19Value" type="String" />
+		<column name="F19Mark" db-name="F19Mark" type="double" />
+		<column name="F20Code" db-name="F20Code" type="String" />
+		<column name="F20Name" db-name="F20Name" type="String" />
+		<column name="F20Value" db-name="F20Value" type="String" />
+		<column name="F20Mark" db-name="F20Mark" type="double" />
+		<column name="F21Code" db-name="F21Code" type="String" />
+		<column name="F21Name" db-name="F21Name" type="String" />
+		<column name="F21Value" db-name="F21Value" type="String" />
+		<column name="F21Mark" db-name="F21Mark" type="double" />
+		<column name="F22Code" db-name="F22Code" type="String" />
+		<column name="F22Name" db-name="F22Name" type="String" />
+		<column name="F22Value" db-name="F22Value" type="String" />
+		<column name="F22Mark" db-name="F22Mark" type="double" />
+		<column name="F23Code" db-name="F23Code" type="String" />
+		<column name="F23Name" db-name="F23Name" type="String" />
+		<column name="F23Value" db-name="F23Value" type="String" />
+		<column name="F23Mark" db-name="F23Mark" type="double" />
+		<column name="SumMark" db-name="SumMark" type="double" />
+		
+		<column name="maker" db-name="maker" type="String" />
+		<column name="checker" db-name="checker" type="String" />
+		<column name="approver" db-name="approver" type="String" />
+		<column name="makermodified" db-name="makermodified" type="Date" />
+		<column name="checkermodified" db-name="checkermodified" type="Date" />
+		<column name="approvermodified" db-name="approvermodified" type="Date" />
+		
+		<column name="assessmentid" db-name="assessmentid" type="String" />
+		<column name="assessmentyear" db-name="assessmentyear" type="String" />
+		<column name="evaluationperiod" db-name="evaluationperiod" type="String" />
+		<column name="latestassessment" db-name="latestassessment" type="Date" />
+		<column name="synchdate" db-name="synchdate" type="Date" />
+		<column name="nextassessmentid" db-name="nextassessmentid" type="String" />
+		<column name="nextassessmentyear" db-name="nextassessmentyear" type="String" />		
+
+		
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="InspectorContactCode">
+			<finder-column name="inspectorcontactcode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="InspectorName">
+			<finder-column name="inspectorname" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="NextPeriodByInspectorContactCode">
+			<finder-column name="inspectorcontactcode" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="NextPeriodByInspectorName">
+			<finder-column name="inspectorname" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+	</entity>
+	
+	<entity name="AssessmentofProduct" table="vr_assessmentofproduct" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="productcode" db-name="productcode" type="String" />
+		<column name="productname" db-name="productname" type="String" />
+		<column name="productsequenceno" db-name="productsequenceno" type="int" />
+		<column name="productdescription" db-name="productdescription" type="String" />
+		<column name="productcodereference" db-name="productcodereference" type="String" />
+		<column name="productnamereference" db-name="productnamereference" type="String" />
+		
+		<column name="F1Code" db-name="F1Code" type="String" />
+		<column name="F1Name" db-name="F1Name" type="String" />
+		<column name="F1Value" db-name="F1Value" type="String" />
+		<column name="F1Mark" db-name="F1Mark" type="double" />
+		<column name="F2Code" db-name="F2Code" type="String" />
+		<column name="F2Name" db-name="F2Name" type="String" />
+		<column name="F2Value" db-name="F2Value" type="String" />
+		<column name="F2Mark" db-name="F2Mark" type="double" />
+		<column name="F3Code" db-name="F3Code" type="String" />
+		<column name="F3Name" db-name="F3Name" type="String" />
+		<column name="F3Value" db-name="F3Value" type="String" />
+		<column name="F3Mark" db-name="F3Mark" type="double" />
+		<column name="F4Code" db-name="F4Code" type="String" />
+		<column name="F4Name" db-name="F4Name" type="String" />
+		<column name="F4Value" db-name="F4Value" type="String" />
+		<column name="F4Mark" db-name="F4Mark" type="double" />
+		<column name="F5Code" db-name="F5Code" type="String" />
+		<column name="F5Name" db-name="F5Name" type="String" />
+		<column name="F5Value" db-name="F5Value" type="String" />
+		<column name="F5Mark" db-name="F5Mark" type="double" />
+		<column name="F6Code" db-name="F6Code" type="String" />
+		<column name="F6Name" db-name="F6Name" type="String" />
+		<column name="F6Value" db-name="F6Value" type="String" />
+		<column name="F6Mark" db-name="F6Mark" type="double" />
+		<column name="F7Code" db-name="F7Code" type="String" />
+		<column name="F7Name" db-name="F7Name" type="String" />
+		<column name="F7Value" db-name="F7Value" type="String" />
+		<column name="F7Mark" db-name="F7Mark" type="double" />
+		<column name="F8Code" db-name="F8Code" type="String" />
+		<column name="F8Name" db-name="F8Name" type="String" />
+		<column name="F8Value" db-name="F8Value" type="String" />
+		<column name="F8Mark" db-name="F8Mark" type="double" />
+		<column name="F9Code" db-name="F9Code" type="String" />
+		<column name="F9Name" db-name="F9Name" type="String" />
+		<column name="F9Value" db-name="F9Value" type="String" />
+		<column name="F9Mark" db-name="F9Mark" type="double" />
+		<column name="F10Code" db-name="F10Code" type="String" />
+		<column name="F10Name" db-name="F10Name" type="String" />
+		<column name="F10Value" db-name="F10Value" type="String" />
+		<column name="F10Mark" db-name="F10Mark" type="double" />
+		<column name="F11Code" db-name="F11Code" type="String" />
+		<column name="F11Name" db-name="F11Name" type="String" />
+		<column name="F11Value" db-name="F11Value" type="String" />
+		<column name="F11Mark" db-name="F11Mark" type="double" />
+		<column name="F12Code" db-name="F12Code" type="String" />
+		<column name="F12Name" db-name="F12Name" type="String" />
+		<column name="F12Value" db-name="F12Value" type="String" />
+		<column name="F12Mark" db-name="F12Mark" type="double" />
+		<column name="F13Code" db-name="F13Code" type="String" />
+		<column name="F13Name" db-name="F13Name" type="String" />
+		<column name="F13Value" db-name="F13Value" type="String" />
+		<column name="F13Mark" db-name="F13Mark" type="double" />
+		<column name="F14Code" db-name="F14Code" type="String" />
+		<column name="F14Name" db-name="F14Name" type="String" />
+		<column name="F14Value" db-name="F14Value" type="String" />
+		<column name="F14Mark" db-name="F14Mark" type="double" />
+		<column name="F15Code" db-name="F15Code" type="String" />
+		<column name="F15Name" db-name="F15Name" type="String" />
+		<column name="F15Value" db-name="F15Value" type="String" />
+		<column name="F15Mark" db-name="F15Mark" type="double" />
+		<column name="F16Code" db-name="F16Code" type="String" />
+		<column name="F16Name" db-name="F16Name" type="String" />
+		<column name="F16Value" db-name="F16Value" type="String" />
+		<column name="F16Mark" db-name="F16Mark" type="double" />
+		<column name="F17Code" db-name="F17Code" type="String" />
+		<column name="F17Name" db-name="F17Name" type="String" />
+		<column name="F17Value" db-name="F17Value" type="String" />
+		<column name="F17Mark" db-name="F17Mark" type="double" />
+		<column name="F18Code" db-name="F18Code" type="String" />
+		<column name="F18Name" db-name="F18Name" type="String" />
+		<column name="F18Value" db-name="F18Value" type="String" />
+		<column name="F18Mark" db-name="F18Mark" type="double" />
+		<column name="F19Name" db-name="F19Name" type="String" />
+		<column name="F19Code" db-name="F19Code" type="String" />
+		<column name="F19Value" db-name="F19Value" type="String" />
+		<column name="F19Mark" db-name="F19Mark" type="double" />
+		<column name="F20Code" db-name="F20Code" type="String" />
+		<column name="F20Name" db-name="F20Name" type="String" />
+		<column name="F20Value" db-name="F20Value" type="String" />
+		<column name="F20Mark" db-name="F20Mark" type="double" />
+		<column name="F21Code" db-name="F21Code" type="String" />
+		<column name="F21Name" db-name="F21Name" type="String" />
+		<column name="F21Value" db-name="F21Value" type="String" />
+		<column name="F21Mark" db-name="F21Mark" type="double" />
+		<column name="F22Code" db-name="F22Code" type="String" />
+		<column name="F22Name" db-name="F22Name" type="String" />
+		<column name="F22Value" db-name="F22Value" type="String" />
+		<column name="F22Mark" db-name="F22Mark" type="double" />
+		<column name="F23Code" db-name="F23Code" type="String" />
+		<column name="F23Name" db-name="F23Name" type="String" />
+		<column name="F23Value" db-name="F23Value" type="String" />
+		<column name="F23Mark" db-name="F23Mark" type="double" />
+		<column name="SumMark" db-name="SumMark" type="double" />
+		
+		<column name="maker" db-name="maker" type="String" />
+		<column name="checker" db-name="checker" type="String" />
+		<column name="approver" db-name="approver" type="String" />
+		<column name="makermodified" db-name="makermodified" type="Date" />
+		<column name="checkermodified" db-name="checkermodified" type="Date" />
+		<column name="approvermodified" db-name="approvermodified" type="Date" />
+		
+		<column name="assessmentid" db-name="assessmentid" type="String" />
+		<column name="assessmentyear" db-name="assessmentyear" type="String" />
+		<column name="evaluationperiod" db-name="evaluationperiod" type="String" />
+		<column name="latestassessment" db-name="latestassessment" type="Date" />
+		<column name="synchdate" db-name="synchdate" type="Date" />
+		<column name="nextassessmentid" db-name="nextassessmentid" type="String" />
+		<column name="nextassessmentyear" db-name="nextassessmentyear" type="String" />				
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="ProductCode">
+			<finder-column name="productcode" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="ProductName">
+			<finder-column name="productname" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="ProductCodeReference">
+			<finder-column name="productcodereference" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="ProductNameReference">
+			<finder-column name="productnamereference" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="ProductDescription">
+			<finder-column name="productdescription" />
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>		
+		
+		
+		<finder return-type="Collection" name="NextPeriodByProductCode">
+			<finder-column name="productcode" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="NextPeriodByProductName">
+			<finder-column name="productname" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="NextPeriodByProductCodeReference">
+			<finder-column name="productcodereference" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="NextPeriodByProductNameReference">
+			<finder-column name="productnamereference" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>
+		
+		<finder return-type="Collection" name="NextPeriodByProductDescription">
+			<finder-column name="productdescription" />
+			<finder-column name="nextassessmentid" />
+			<finder-column name="nextassessmentyear" />
+		</finder>	
+		
+		<finder return-type="Collection" name="AI_AY">
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>	
+		
+	</entity>
+	
+	<entity name="AssessmentofInspectionMethod" table="vr_assessmentofinspectionmethod" local-service="true" remote-service="true" data-source="vrDataSource" 
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="methodcode" db-name="methodcode" type="String" />
+		<column name="methodname" db-name="methodname" type="String" />
+		<column name="methodsequenceno" db-name="methodsequenceno" type="int" />
+		<column name="methoddescription" db-name="methoddescription" type="String" />
+		<column name="methodcodereference" db-name="methodcodereference" type="String" />
+		<column name="methodnamereference" db-name="methodnamereference" type="String" />
+		
+
+		<column name="ImporterRiskDescription" db-name="ImporterRiskDescription" type="String" />
+		<column name="A1MarkFloor" db-name="A1MarkFloor" type="double" />
+		<column name="A1MarkCeil" db-name="A1MarkCeil" type="double" />
+		
+		<column name="ProductRiskDescription" db-name="ProductRiskDescription" type="String" />
+		<column name="A301MarkFloor" db-name="A301MarkFloor" type="double" />
+		<column name="A301MarkCeil" db-name="A301MarkCeil" type="double" />
+
+		<column name="PurposeRiskDescription" db-name="PurposeRiskDescription" type="String" />
+		<column name="A302Mark" db-name="A302Mark" type="double" />
+		<column name="CertifiedRiskDescription" db-name="CertifiedRiskDescription" type="String" />
+		<column name="A304Mark" db-name="A304Mark" type="double" />
+		<column name="UsageRiskDescription" db-name="UsageRiskDescription" type="String" />
+		<column name="A303Mark" db-name="A303Mark" type="double" />
+
+		<column name="TransportRiskDescription" db-name="TransportRiskDescription" type="String" />
+		<column name="A305Mark" db-name="A305Mark" type="double" />		
+		
+		<column name="maker" db-name="maker" type="String" />
+		<column name="checker" db-name="checker" type="String" />
+		<column name="approver" db-name="approver" type="String" />
+		<column name="makermodified" db-name="makermodified" type="Date" />
+		<column name="checkermodified" db-name="checkermodified" type="Date" />
+		<column name="approvermodified" db-name="approvermodified" type="Date" />
+		
+		<column name="assessmentid" db-name="assessmentid" type="String" />
+		<column name="assessmentyear" db-name="assessmentyear" type="String" />
+		<column name="evaluationperiod" db-name="evaluationperiod" type="String" />
+		<column name="latestassessment" db-name="latestassessment" type="Date" />
+		<column name="synchdate" db-name="synchdate" type="Date" />
+		<column name="nextassessmentid" db-name="nextassessmentid" type="String" />
+		<column name="nextassessmentyear" db-name="nextassessmentyear" type="String" />				
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="ProductCode">			
+			<finder-column name="assessmentid" />
+			<finder-column name="assessmentyear" />
+		</finder>
+
+	</entity>
+	
+	
+	<entity name="CustomsDeclaration" table="vr_customsdeclaration" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="importCustomDeclareNo" db-name="importcustomdeclareno" type="String" />
+		<column name="importCustomDeclareDate" db-name="importcustomdeclaredate" type="Date" />
+		<column name="customsResult" db-name="customsresult" type="String" />
+		<column name="productCheck" db-name="productcheck" type="String" />
+		<column name="releaseDate" db-name="releasedate" type="Date" />
+		<column name="hosothutucId" db-name="hosothutucid" type="long" />
+		
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="CustomsDeclaration" name="HoSoThuTucId">
+			<finder-column name="hosothutucId" />
+		</finder>
+		
+	</entity>
+
+	<entity name="DebitNote" table="vr_debitnote" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="debitNoteNumber" db-name="debitnotenumber" type="String" />
+		<column name="transactionId" db-name="transactionid" type="String" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="financialAccountant" db-name="financialaccountant" type="String" />
+		<column name="organization" db-name="organization" type="String" />
+		<column name="division" db-name="division" type="String" />
+		<column name="reportBy" db-name="reportby" type="String" />
+		<column name="reportDate" db-name="reportdate" type="Date" />
+		<column name="fromDate" db-name="fromdate" type="Date" />
+		<column name="toDate" db-name="todate" type="Date" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="totalPayment" db-name="totalpayment" type="double" />
+		<column name="paymentType" db-name="paymenttype" type="long" />
+		<column name="markAsDeleted" db-name="markasdeleted" type="int" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="DebitNote" name="TransactionId">
+			<finder-column name="transactionId" />
+		</finder>
+		<finder return-type="DebitNote" name="DebitNoteNumber">
+			<finder-column name="debitNoteNumber" />
+		</finder>
+		<finder return-type="Collection" name="MarkAsDeleted">
+			<finder-column name="markAsDeleted" />
+		</finder>
+	</entity>
+
+	<entity name="DebitNoteDetails" table="vr_debitnotedetails" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleRecordId" db-name="vehiclerecordid" type="long" />
+		<column name="debitNoteId" db-name="debitnoteid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="unitPrice" db-name="unitprice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="basicCurrency" db-name="basiccurrency" type="String" />
+		<column name="exchangeRate" db-name="exchangerate" type="double" />
+		<column name="inspectionFee" db-name="inspectionfee" type="double" />
+		<column name="otherCosts" db-name="othercosts" type="double" />
+		<column name="totalCostsAndFee" db-name="totalcostsandfee" type="double" />
+		<column name="tax" db-name="tax" type="double" />
+		<column name="charges" db-name="charges" type="double" />
+		<column name="totalRealDebit" db-name="totalrealdebit" type="double" />
+		<column name="totalDebit" db-name="totaldebit" type="double" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="DebitNoteDetails" name="VehicleRecordId">
+			<finder-column name="vehicleRecordId" />
+		</finder>
+
+		<finder return-type="Collection" name="DebitNoteId">
+			<finder-column name="debitNoteId" />
+		</finder>
+	</entity>
+
+	<entity name="EmissionTestReport" table="vr_emissiontestreport" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="inspectionrecordId" db-name="inspectionrecordid" type="long" />		
+		<column name="hosothutucId" db-name="hosothutucid" type="long" />
+		<column name="emissiontestRequirementId" db-name="emissiontestrequirementid" type="long" />
+		<column name="requirementNumber" db-name="requirementnumber" type="String" />
+		<column name="reportNumber" db-name="reportnumber" type="String" />
+		<column name="description" db-name="description" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="phieuxulyphuId" db-name="phieuxulyphuid" type="long" />
+		<column name="confirmedResult" db-name="confirmedresult" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="EmissionTestReport" name="EmissiontestRequirementId">
+			<finder-column name="emissiontestRequirementId" />
+		</finder>
+
+	</entity>
+
+	<entity name="EmissionTestRequirement" table="vr_emissiontestrequirement" local-service="true" remote-service="true" cache-enabled="false"
+		data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="requirementNumber" db-name="requirementnumber" type="String" />
+		<column name="contentOfRequest" db-name="contentofrequest" type="String" />
+		<column name="testingRegisteredPlace" db-name="testingregisteredplace" type="String" />
+		<column name="testingRegistration" db-name="testingregistration" type="String" />
+		<column name="testingPaymentCondition" db-name="testingpaymentcondition" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="phieuXuLyPhuId" db-name="phieuxulyphuid" type="long" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="EmissionTestRequirement" name="InspectionRecordId">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+		<finder return-type="Collection" name="PhieuXuLyPhuId">
+			<finder-column name="phieuXuLyPhuId" />
+		</finder>
+
+	</entity>
+
+	<entity name="ExchangeRate" table="vr_exchangerate" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="originalCurrency" db-name="originalcurrency" type="String" />
+		<column name="basicCurrency" db-name="basiccurrency" type="String" />
+		<column name="exchangeRate" db-name="exchangerate" type="double" />
+		<column name="publishDate" db-name="publishdate" type="Date" />
+		<column name="validFrom" db-name="validfrom" type="Date" />
+		<column name="validUntil" db-name="validuntil" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="OriginalCurrencyBasicCurrency">
+			<finder-column name="originalCurrency" />
+			<finder-column name="basicCurrency" />
+		</finder>
+	</entity>
+
+  <entity name="NewExchangeRate" table="vr_new_exchangerate" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="originalCurrency" db-name="originalcurrency" type="String" />
+		<column name="basicCurrency" db-name="basiccurrency" type="String" />
+		<column name="exchangeRate" db-name="exchangerate" type="double" />
+		<column name="publishDate" db-name="publishdate" type="Date" />
+		<column name="validFrom" db-name="validfrom" type="Date" />
+		<column name="validUntil" db-name="validuntil" type="Date" />
+		
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="OriginalCurrencyBasicCurrency">
+			<finder-column name="originalCurrency" />
+			<finder-column name="basicCurrency" />
+		</finder>
+	</entity>
+
+	<entity name="InspectionRecord" table="vr_inspectionrecord" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="inspectionRecordNo" db-name="inspectionrecordno" type="String" />
+		<column name="inspectionRecordDate" db-name="inspectionrecorddate" type="Date" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="inspectorId" db-name="inspectorid" type="long" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="customsDeclarationid" db-name="customsdeclarationid" type="long" />
+		<column name="inspectionSite" db-name="inspectionsite" type="String" />
+		<column name="inspectionDateFrom" db-name="inspectiondatefrom" type="Date" />
+		<column name="inspectionDateTo" db-name="inspectiondateto" type="Date" />
+		<column name="inspectionMode" db-name="inspectionmode" type="long" />
+		<column name="description" db-name="description" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="confirmedResult" db-name="confirmedresult" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="phieuXuLyPhuId" db-name="phieuxulyphuid" type="long" />
+		<column name="markupSafeTest" db-name="markupsafetest" type="long" />
+		<column name="markupEmissionTest" db-name="markupemissiontest" type="long" />
+		<column name="markupControl" db-name="markupcontrol" type="long" />
+		<column name="registeredInspectionId" type="long" db-name="registeredinspectionid" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long" />
+		<column name="otherCosts" db-name="othercosts" type="double" />
+		<column name="markupPaid" db-name="markuppaid" type="long" />
+		
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="RegisteredInspectionId">
+			<finder-column name="registeredInspectionId" />
+		</finder>
+		<finder return-type="InspectionRecord" name="PhieuXuLyPhuId">
+			<finder-column name="phieuXuLyPhuId" />
+		</finder>
+		<finder return-type="Collection" name="Confirmedinspectionid">
+			<finder-column name="confirmedInspectionId" />
+		</finder>
+		<finder return-type="InspectionRecord" name="InspectionRecordNo">
+			<finder-column name="inspectionRecordNo" />
+		</finder>
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		
+	</entity>
+
+	<entity name="InspectionRecordAttach" table="vr_inspectionrecord_attach" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long"/>
+		<column name="hoSoThuTucId" db-name="hosothutucid" type="long"/>
+		<column name="enTryId" db-name="entryid" type="long"/>
+		<column name="enTryName" db-name="entryname" type="String"/>
+		<column name="inspectorId" db-name="inspectorid" type="long"/>
+		<column name="uploadTime" db-name="uploadtime" type="Date"/>
+		<column name="markUpDelte" db-name="markupdelte" type="int"/>
+		
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="InspectionRecordAttach">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+	</entity>
+		
+	<entity name="PaymentStatus" table="vr_paymentstatus" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleRecordId" db-name="vehiclerecordid" type="long" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="unitPrice" db-name="unitprice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="basicCurrency" db-name="basiccurrency" type="String" />
+		<column name="exchangeRate" db-name="exchangerate" type="double" />
+		<column name="inspectionFee" db-name="inspectionfee" type="double" />
+		<column name="otherCosts" db-name="othercosts" type="double" />
+		<column name="totalCostsAndFee" db-name="totalcostsandfee" type="double" />
+		<column name="tax" db-name="tax" type="double" />
+		<column name="charges" db-name="charges" type="double" />
+		<column name="totalRealDebit" db-name="totalrealdebit" type="double" />
+		<column name="totalDebit" db-name="totaldebit" type="double" />
+		<column name="totalCredit" db-name="totalcredit" type="double" />
+		<column name="currentStatus" db-name="currentstatus" type="long" />
+		<column name="debitNoteNumber" db-name="debitnotenumber" type="String" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="PaymentStatus" name="VehicleRecordId">
+			<finder-column name="vehicleRecordId" />
+		</finder>
+
+		<finder return-type="Collection" name="DebitNoteNumber">
+			<finder-column name="debitNoteNumber" />
+		</finder>
+
+	</entity>
+
+	<entity name="SafetestRequirement" table="vr_safetestrequirement" local-service="true" remote-service="true" cache-enabled="false"
+		data-source="vrDataSource" tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="requirementNumber" db-name="requirementnumber" type="String" />
+		<column name="contentOfRequest" db-name="contentofrequest" type="String" />
+		<column name="testingRegisteredPlace" db-name="testingregisteredplace" type="String" />
+		<column name="testingRegistration" db-name="testingregistration" type="String" />
+		<column name="testingPaymentCondition" db-name="testingpaymentcondition" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+		<column name="phieuXuLyPhuId" db-name="phieuxulyphuid" type="long" />
+		
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="SafetestRequirement" name="InspectionRecordId">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+
+		<finder return-type="Collection" name="PhieuXuLyPhuId">
+			<finder-column name="phieuXuLyPhuId" />
+		</finder>
+
+	</entity>
+
+	<entity name="SafetyTestReport" table="vr_safetytestreport" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="registeredInspectionId" db-name="registeredinspectionid" type="long" />
+		<column name="inspectionrecordId" db-name="inspectionrecordid" type="long" />		
+		<column name="hosothutucId" db-name="hosothutucid" type="long" />
+		<column name="safetestRequirementId" db-name="safetestrequirementid" type="long" />
+		<column name="corporationId" db-name="corporationid" type="long" />
+		<column name="requirementNumber" db-name="requirementnumber" type="String" />
+		<column name="reportNumber" db-name="reportnumber" type="String" />
+		<column name="description" db-name="description" type="String" />
+		<column name="confirmedResult" db-name="confirmedresult" type="long" />
+		<column name="attachedFile" db-name="attachedfile" type="long" />
+		<column name="phieuxulyphuId" db-name="phieuxulyphuid" type="long" />		
+		<column name="signName" db-name="signname" type="String" />
+		<column name="signTitle" db-name="signtitle" type="String" />
+		<column name="signPlace" db-name="signplace" type="String" />
+		<column name="signDate" db-name="signdate" type="Date" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="SafetyTestReport" name="SafetestRequirementId">
+			<finder-column name="safetestRequirementId" />
+		</finder>
+
+	</entity>
+
+	<entity name="CorporationTeam" table="vr_corporation_team" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="teamName" db-name="TEAMNAME" type="String" />
+		<column name="markUpDelete" db-name="markupdelete" type="int" />
+
+
+		<order by="asc">
+			<order-column name="markUpDelete" />
+		</order>
+
+		<finder return-type="Collection" name="CorporationIdAndTrangThai">
+			<finder-column name="corporationId" />
+			<finder-column name="markUpDelete" />
+		</finder>
+		<finder return-type="Collection" name="CorporationId">
+			<finder-column name="corporationId" />
+		</finder>
+
+	</entity>
+
+
+	<entity name="CorporationView" table="vr_corporation_view" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="corporationName" db-name="corporationname" type="String" />
+		<column name="inspectorId" db-name="inspectorid" type="long" />
+		<column name="isLeader" db-name="isleader" type="int" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+
+		<finder return-type="Collection" name="InspectorId">
+			<finder-column name="inspectorId" />
+		</finder>
+		<finder return-type="Collection" name="CorporationId">
+			<finder-column name="corporationId" />
+		</finder>
+		<finder return-type="Collection" name="InspectorIdCorporationId">
+			<finder-column name="corporationId" />
+			<finder-column name="inspectorId" />
+		</finder>
+		<finder return-type="Collection" name="IsLeader">
+			<finder-column name="isLeader" />
+		</finder>
+		<finder return-type="CorporationView" name="InspectorIdCorporationIdIsLeader">
+			<finder-column name="inspectorId" />
+			<finder-column name="corporationId" />
+			<finder-column name="isLeader" />
+		</finder>
+		<finder return-type="CorporationView" name="CorporationIdAndIsLeader">
+			<finder-column name="corporationId" />
+			<finder-column name="isLeader" />
+		</finder>
+
+	</entity>
+
+
+
+	<entity name="CorporationInspector" table="vr_corporation_inspector" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="corporationId" db-name="corporationid" type="String" />
+		<column name="inspectorid" db-name="inspectorid" type="long" />
+		<column name="inspectorName" db-name="inspectorname" type="String" />
+		<column name="inspectorPhone" db-name="inspectorphone" type="String" />
+		<column name="inspectorEmail" db-name="inspectoremail" type="String" />
+		<column name="contactcode" db-name="contactcode" type="String" />
+		<column name="regularTthc" db-name="regulartthc" type="long" />
+		<column name="searchVehicle" db-name="searchvehicle" type="int" />
+		<column name="teamId" db-name="teamid" type="long" />
+		<column name="markupTeamLeader" db-name="markupteamleader" type="int" />
+		<column name="markUpBoss" db-name="markupboss" type="int" />
+		<column name="place" db-name="place" type="String" />
+		<column name="title" db-name="title" type="String" />
+		<column name="filechukyId" db-name="filechukyid" type="long" />
+
+
+		<order by="desc">
+			<order-column name="inspectorName" />
+		</order>
+
+		<finder return-type="CorporationInspector" name="InspectorId">
+			<finder-column name="inspectorid" />
+		</finder>
+		<finder return-type="Collection" name="TeamId">
+			<finder-column name="teamId" />
+		</finder>
+		<finder return-type="Collection" name="CorporationId">
+			<finder-column name="corporationId" />
+		</finder>
+	</entity>
+
+	<entity name="CorporationAttendee" table="vr_corporation_attendee" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="confirmedInspectionId" db-name="ConfirmedInspectionId" type="long" />
+		<column name="sequence" db-name="sequence" type="long" />
+		<column name="inspectorid" db-name="inspectorId" type="long" />
+		<column name="inspectorName" db-name="inspectorName" type="String" />
+		<column name="inspectorRole" db-name="inspectorrole" type="long" />
+
+
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+		<finder name="ConfirmedInspectionId" return-type="Collection">
+			<finder-column name="confirmedInspectionId" />
+		</finder>
+		<finder name="ConfirmedInspectionIdAndInspectorRole" return-type="Collection">
+			<finder-column name="confirmedInspectionId" />
+			<finder-column name="inspectorRole" />
+		</finder>
+	</entity>
+
+
+	<entity name="InspectionCommonStatus" table="vr_inspectionCommonStatus" local-service="true" remote-service="true" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+
+		<column name="vehicleClass" db-name="vehicleClass" type="String" />
+		<column name="sequenceNo" db-name="sequenceNo" type="long" />
+		<column name="type" db-name="type" type="long" />
+		<column name="groupName" db-name="groupName" type="String" />
+		<column name="itemName" db-name="itemName" type="String" />
+		<column name="commonStatus" db-name="commonStatus" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionRecordId" type="long" />
+		<column name="commonCode" db-name="CommonCode" type="String" />
+		<column name="allowEdit" db-name="AllowEdit" type="int" />
+		
+
+		<order by="desc">
+			<order-column name="id" />
+		</order>
+
+		<finder name="InspectionRecordId" return-type="Collection">
+			<finder-column name="inspectionRecordId" />
+		</finder>
+
+		<finder name="VehicleClassAndTypeAndInspectionRecordId" return-type="Collection">
+			<finder-column name="vehicleClass" />
+			<finder-column name="type" />
+			<finder-column name="inspectionRecordId" />
+		</finder>
+		<finder name="VehicleClassAndInspectionRecordId" return-type="Collection">
+			<finder-column name="vehicleClass" />
+			<finder-column name="inspectionRecordId" />
+		</finder>
+	</entity>
+
+	<entity name="ViewTrungSoKhungDongCo" table="view_trungsokhungdongco" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicleGroupId" db-name="vehiclegroupid" type="long" />
+		<column name="debitNoteId" db-name="debitnoteid" type="long" />
+		<column name="sequenceNo" db-name="sequenceno" type="long" />
+		<column name="codeNumber" db-name="codenumber" type="long" />
+		<column name="chassisNumber" db-name="chassisnumber" type="String" />
+		<column name="engineNumber" db-name="enginenumber" type="String" />
+		<column name="productionYear" db-name="productionyear" type="String" />
+		<column name="vehicleEngineStatus" db-name="vehicleenginestatus" type="String" />
+		<column name="vehicleColor" db-name="vehiclecolor" type="String" />
+		<column name="unitPrice" db-name="unitprice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="confirmedInspectionId" db-name="confirmedinspectionid" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionrecordid" type="long" />
+		<column name="draftCertificateId" db-name="draftcertificateid" type="long" />
+		<column name="certificateRecordId" db-name="certificaterecordid" type="long" />
+		<column name="markUpStatus" db-name="markupstatus" type="long" />
+		<column name="safeTestRequirementId" db-name="safetestrequirementid" type="long" />
+		<column name="emissionTestRequirementId" db-name="emissiontestrequirementid" type="long" />
+		<column name="controlRequirementId" db-name="controlrequirementid" type="long" />
+		<column name="markAsSample" db-name="MarkAsSample" type="int" />
+		<column name="registeredNumber" db-name="registerednumber" type="String" />
+		<column name="contactName" db-name="contactname" type="String" />
+		<column name="contactPhone" db-name="contactphone" type="String" />
+		<column name="inspectionDate" db-name="inspectiondate" type="Date" />
+		<column name="importerName" db-name="importername" type="String" />
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+	
+	<entity name="VehicleCertificate" table="vr_vehicle_certificate" local-service="true" remote-service="true" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="mtGateway" db-name="mtGateway" type="long" />
+		<column name="hoSoThuTucId" db-name="hoSoThuTucId" type="long" />
+		<column name="sequenceNo" db-name="sequenceNo" type="long" />
+		<column name="vehicleRecordid" db-name="vehicleRecordid" type="long" />
+		<column name="draftCertificateid" db-name="draftCertificateid" type="long" />
+		<column name="certificateRecordid" db-name="certificateRecordid" type="long" />
+		<column name="debitNoteId" db-name="debitNoteId" type="long" />
+		<column name="vehicleGroupId" db-name="vehicleGroupId" type="long" />
+		<column name="vehicleClass" db-name="vehicleClass" type="String" />		
+		<column name="technicalSpecCode" db-name="technicalSpecCode" type="String" />
+		<column name="referenceCertificateNo" db-name="referenceCertificateNo" type="String" />
+		<column name="safetytestreportNo" db-name="safetytestreportNo" type="String" />
+		<column name="emissiontestreportNo" db-name="emissiontestreportNo" type="String" />
+		<column name="copreportNo" db-name="copreportNo" type="String" />
+		<column name="controlreportNo" db-name="controlreportNo" type="String" />
+		<column name="vehicletypeDescription" db-name="vehicletypeDescription" type="String" />
+		<column name="vehicleType" db-name="vehicleType" type="String" />
+		<column name="enginetypeDescription" db-name="enginetypeDescription" type="String" />
+		<column name="engineType" db-name="engineType" type="String" />
+		<column name="markAsVehicle" db-name="markAsVehicle" type="int" />
+		<column name="trademarkDescription" db-name="trademarkDescription" type="String" />
+		<column name="tradeMark" db-name="tradeMark" type="String" />		
+		<column name="commercialName" db-name="commercialName" type="String" />
+		<column name="modelCode" db-name="modelCode" type="String" />
+		<column name="productionPlant" db-name="productionPlant" type="String" />
+		<column name="addressOfProductionPlant" db-name="addressOfProductionPlant" type="String" />
+		<column name="emissionStandard" db-name="emissionStandard" type="String" />
+						
+		<column name="codeNumber" db-name="codeNumber" type="long" />
+		<column name="chassisNumber" db-name="chassisNumber" type="String" />
+		<column name="engineNumber" db-name="engineNumber" type="String" />
+		<column name="productionYear" db-name="productionYear" type="String" />
+		<column name="countryCode" db-name="countryCode" type="String" />
+		<column name="countryName" db-name="countryName" type="String" />
+		<column name="currentStatus" db-name="currentStatus" type="String" />
+		<column name="vehicleEngineUsage" db-name="vehicleEngineUsage" type="String" />
+		<column name="vehicleColor" db-name="vehicleColor" type="String" />
+		<column name="unitPrice" db-name="unitPrice" type="double" />
+		<column name="currency" db-name="currency" type="String" />
+		<column name="remarks" db-name="remarks" type="String" />
+		<column name="markUpStatus" db-name="markUpStatus" type="long" />
+		<column name="markAsSample" db-name="markAsSample" type="int" />
+		<column name="vehicleengineStatus" db-name="vehicleengineStatus" type="long" />				
+		<column name="vehicleengineFolder" db-name="vehicleengineFolder" type="long" />
+		<column name="vehicleGroupInitialId" db-name="vehicleGroupInitialId" type="long" />		
+		<!-- Inspection -->
+		<column name="registeredInspectionId" db-name="registeredInspectionId" type="long" />
+		<column name="registeredNumber" db-name="registeredNumber" type="String" />
+		<column name="importerCode" db-name="importerCode" type="String" />
+		<column name="importerName" db-name="importerName" type="String" />
+		<column name="importerAddress" db-name="importerAddress" type="String" />
+		<column name="representative" db-name="representative" type="String" />
+		<column name="phone" db-name="phone" type="String" />
+		<column name="fax" db-name="fax" type="String" />
+		<column name="email" db-name="email" type="String" />
+		<column name="inspectionDate" db-name="inspectionDate" type="Date" />
+		<column name="inspectionSite" db-name="inspectionSite" type="String" />
+		<column name="inspectionDistrictCode" db-name="inspectionDistrictCode" type="String" />
+		<column name="inspectionProvinceCode" db-name="inspectionProvinceCode" type="String" />
+		<column name="inspectionDistrict" db-name="inspectionDistrict" type="String" />
+		<column name="inspectionProvince" db-name="inspectionProvince" type="String" />
+
+		<column name="confirmedInspectionId" db-name="confirmedInspectionId" type="long" />
+		<column name="inspectionRecordId" db-name="inspectionRecordId" type="long" />
+		<column name="inspectionRecordNo" db-name="inspectionRecordNo" type="String" />
+		<column name="inspectionDateFrom" db-name="inspectionDateFrom" type="Date" />
+		<column name="inspectionDateTo" db-name="inspectionDateTo" type="Date" />
+		<column name="inspectionMode" db-name="inspectionMode" type="long" />
+		<column name="inspectionModeDescription" db-name="inspectionModeDescription" type="String" />
+		<column name="confirmedResult" db-name="confirmedResult" type="long" />
+		<column name="confirmedResultDescription" db-name="confirmedResultDescription" type="String" />
+		<column name="importCustomDeclareDate" db-name="importCustomDeclareDate" type="Date" />
+		<column name="importCustomDeclareNo" db-name="importCustomDeclareNo" type="String" />
+		<column name="corporationCode" db-name="corporationCode" type="String" />
+		<column name="corporationName" db-name="corporationName" type="String" />
+		<column name="inspectorContactCode" db-name="inspectorContactCode" type="String" />
+		<column name="inspectorName" db-name="inspectorName" type="String" />
+		<column name="certificateType" db-name="certificateType" type="long" />
+		<column name="certificateNumber" db-name="certificateNumber" type="String" />
+		<column name="oldcertificateNumber" db-name="oldcertificateNumber" type="String" />
+		<column name="signDate" db-name="signDate" type="Date" />
+		<column name="stampStatus" db-name="stampStatus" type="long" />
+		<column name="certificateStatus" db-name="certificateStatus" type="String" />
+		<column name="digitalIssued" db-name="digitalIssued" type="long" />
+		<column name="markupSafeTest" db-name="markupSafeTest" type="long" />
+		<column name="markupEmissionTest" db-name="markupEmissionTest" type="long" />
+		<column name="markupControl" db-name="markupControl" type="long" />
+		<column name="attachedFile" db-name="attachedFile" type="long" />
+		
+		<column name="inspectorOrganization" db-name="inspectorOrganization" type="String" />
+		<column name="inspectorDivision" db-name="inspectorDivision" type="String" />
+		<column name="inspectorSignName" db-name="inspectorSignName" type="String" />
+		<column name="inspectorSignTitle" db-name="inspectorSignTitle" type="String" />
+		<column name="inspectorSignPlace" db-name="inspectorSignPlace" type="String" />
+		<column name="inspectorSignDate" db-name="inspectorSignDate" type="Date"/>
+		<column name="dossierDate" db-name="dossierDate" type="Date"/>
+		<column name="filedangkykiemtraId" db-name="filedangkykiemtraId" type="long" />
+		<column name="filebienbankiemtraId" db-name="filebienbankiemtraId" type="long" />
+		<column name="filechungchiId" db-name="filechungchiId" type="long" />
+		<column name="filebaocaotnantoanId" db-name="filebaocaotnantoanId" type="long" />
+		<column name="filebaocaotnkhithaiId" db-name="filebaocaotnkhithaiId" type="long" />
+		<column name="fileketluangiamdinhId" db-name="fileketluangiamdinhId" type="long" />
+		<column name="SynchDate" db-name="SynchDate" type="Date"/>
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+	</entity>
+	
+	<entity name="CfgLimitTechnicalSpec" table="vr_cfg_limit_technicalspec" local-service="true" remote-service="false" data-source="vrDataSource" tx-manager="vrTransactionManager"
+		session-factory="vrSessionFactory" cache-enabled="false">
+		
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="vehicletypecode" db-name="vehicletypecode" type="String" />
+		<column name="vehicletypename" db-name="vehicletypename" type="String" />
+		<column name="reference_code_3" db-name="reference_code_3" type="String" />
+		<column name="reference_name" db-name="reference_name" type="String" />
+		<column name="searching_drive_config" db-name="searching_drive_config" type="int" />
+		<column name="altername" db-name="altername" type="String" />
+		<column name="sequenceno" db-name="sequenceno" type="int" />
+		<column name="specificationcode" db-name="specificationcode" type="String" />
+		<column name="specificationname" db-name="specificationname" type="String" />
+		<column name="spec_description" db-name="spec_description" type="String" />
+		<column name="spec_category" db-name="spec_category" type="String" />
+		<column name="datagroupid" db-name="datagroupid" type="long" />
+		
+		
+		<order by="asc">
+			<order-column name="sequenceno" />
+		</order>
+	</entity>
+	
+	<entity name="THONGSOCHUNGCHIXEMAY" table="thongsochungchi_xemay" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="hoSoThuTucId" db-name="hoSoThuTucId" type="long" />
+		<column name="certificateRecordId" db-name="certificateRecordId" type="long" />
+		<column name="vehicleGroupId" db-name="vehicleGroupId" type="long" />		
+		<column name="SynchDate" db-name="SynchDate" type="Date"/>
+		
+		<column name="XMY0009" db-name="XMY0009" type="String" />
+		<column name="XMY0010" db-name="XMY0010" type="String" />
+		<column name="XMY0011" db-name="XMY0011" type="String" />
+		<column name="XMY0012" db-name="XMY0012" type="String" />
+		<column name="XMY0013" db-name="XMY0013" type="String" />
+		<column name="XMY0014" db-name="XMY0014" type="String" />
+		<column name="XMY0015" db-name="XMY0015" type="String" />
+		<column name="XMY0016" db-name="XMY0016" type="String" />
+		<column name="XMY0017" db-name="XMY0017" type="String" />
+		<column name="XMY0018" db-name="XMY0018" type="String" />
+		<column name="XMY0019" db-name="XMY0019" type="String" />
+		<column name="XMY0020" db-name="XMY0020" type="String" />
+		<column name="XMY0021" db-name="XMY0021" type="String" />
+		<column name="XMY0022" db-name="XMY0022" type="String" />
+		<column name="XMY1022" db-name="XMY1022" type="String" />
+		<column name="XMY0023" db-name="XMY0023" type="String" />
+		<column name="XMY0024" db-name="XMY0024" type="String" />
+		<column name="XMY0025" db-name="XMY0025" type="String" />
+		<column name="XMY0026" db-name="XMY0026" type="String" />
+		<column name="XMY0027" db-name="XMY0027" type="String" />
+		<column name="XMY0028" db-name="XMY0028" type="String" />
+		<column name="XMY0029" db-name="XMY0029" type="String" />
+		<column name="XMY0030" db-name="XMY0030" type="String" />
+		<column name="XMY0031" db-name="XMY0031" type="String" />
+		<column name="XMY0032" db-name="XMY0032" type="String" />
+		<column name="XMY1032" db-name="XMY1032" type="String" />
+		<column name="XMY0033" db-name="XMY0033" type="String" />
+		<column name="XMY1033" db-name="XMY1033" type="String" />
+		<column name="XMY0034" db-name="XMY0034" type="String" />
+		<column name="XMY0035" db-name="XMY0035" type="String" />
+		<column name="XMY1035" db-name="XMY1035" type="String" />
+		<column name="XMY0036" db-name="XMY0036" type="String" />
+		<column name="XMY0037" db-name="XMY0037" type="String" />
+		<column name="XMY0038" db-name="XMY0038" type="String" />
+		<column name="XMY0039" db-name="XMY0039" type="String" />
+		<column name="XMY1039" db-name="XMY1039" type="String" />
+		<column name="XMY0040" db-name="XMY0040" type="String" />
+		<column name="XMY1040" db-name="XMY1040" type="String" />
+		<column name="XMY0041" db-name="XMY0041" type="String" />
+		<column name="XMY0042" db-name="XMY0042" type="String" />
+		<column name="XMY1042" db-name="XMY1042" type="String" />
+		<column name="XMY0043" db-name="XMY0043" type="String" />
+		<column name="XMY0044" db-name="XMY0044" type="String" />
+		<column name="XMY0045" db-name="XMY0045" type="String" />
+		<column name="XMY0046" db-name="XMY0046" type="String" />
+		<column name="XMY0047" db-name="XMY0047" type="String" />
+		<column name="XMY0048" db-name="XMY0048" type="String" />
+		<column name="XMY0049" db-name="XMY0049" type="String" />
+		<column name="XMY0050" db-name="XMY0050" type="String" />
+		<column name="XMY1050" db-name="XMY1050" type="String" />
+		<column name="XMY0051" db-name="XMY0051" type="String" />
+		<column name="XMY0052" db-name="XMY0052" type="String" />
+		<column name="XMY0053" db-name="XMY0053" type="String" />
+		<column name="XMY0054" db-name="XMY0054" type="String" />
+		<column name="XMY0055" db-name="XMY0055" type="String" />
+		<column name="XMY0056" db-name="XMY0056" type="String" />
+		<column name="XMY0057" db-name="XMY0057" type="String" />
+		<column name="XMY0058" db-name="XMY0058" type="String" />
+		<column name="XMY0059" db-name="XMY0059" type="String" />
+		<column name="XMY0060" db-name="XMY0060" type="String" />
+		<column name="XMY0061" db-name="XMY0061" type="String" />
+		<column name="XMY0062" db-name="XMY0062" type="String" />
+		<column name="XMY0063" db-name="XMY0063" type="String" />
+		<column name="XMY0064" db-name="XMY0064" type="String" />
+		<column name="XMY0065" db-name="XMY0065" type="String" />
+		<column name="XMY0066" db-name="XMY0066" type="String" />
+		<column name="XMY0067" db-name="XMY0067" type="String" />
+		<column name="XMY0068" db-name="XMY0068" type="String" />
+		<column name="XMY0069" db-name="XMY0069" type="String" />
+		<column name="XMY0082" db-name="XMY0082" type="String" />
+		<column name="XMY0083" db-name="XMY0083" type="String" />
+		<column name="XMY0084" db-name="XMY0084" type="String" />
+		<column name="XMY0085" db-name="XMY0085" type="String" />
+		<column name="XMY0086" db-name="XMY0086" type="String" />
+		<column name="XMY1086" db-name="XMY1086" type="String" />
+		<column name="XMY0087" db-name="XMY0087" type="String" />
+		<column name="XMY1087" db-name="XMY1087" type="String" />
+		<column name="XMY1187" db-name="XMY1187" type="String" />
+		<column name="XMY0088" db-name="XMY0088" type="String" />
+		<column name="XMY1088" db-name="XMY1088" type="String" />
+		<column name="XMY1188" db-name="XMY1188" type="String" />
+		<column name="XMY0089" db-name="XMY0089" type="String" />
+		<column name="XMY1089" db-name="XMY1089" type="String" />
+		<column name="XMY1189" db-name="XMY1189" type="String" />
+		<column name="XMY0090" db-name="XMY0090" type="String" />
+		<column name="XMY0091" db-name="XMY0091" type="String" />
+		<column name="XMY0092" db-name="XMY0092" type="String" />
+		<column name="XMY0093" db-name="XMY0093" type="String" />
+		<column name="XMY0094" db-name="XMY0094" type="String" />
+		<column name="XMY0095" db-name="XMY0095" type="String" />
+		<column name="XMY0096" db-name="XMY0096" type="String" />
+		<column name="XMY0097" db-name="XMY0097" type="String" />
+		<column name="XMY0098" db-name="XMY0098" type="String" />
+		<column name="XMY0099" db-name="XMY0099" type="String" />
+		<column name="XMY0100" db-name="XMY0100" type="String" />
+		<column name="XMY0101" db-name="XMY0101" type="String" />
+		<column name="XMY0102" db-name="XMY0102" type="String" />
+		<column name="XMY0103" db-name="XMY0103" type="String" />
+		<column name="XMY0104" db-name="XMY0104" type="String" />
+		<column name="XMY0105" db-name="XMY0105" type="String" />
+		<column name="XMY0106" db-name="XMY0106" type="String" />
+		<column name="XMY2106" db-name="XMY2106" type="String" />
+		<column name="XMY0107" db-name="XMY0107" type="String" />
+		<column name="XMY2107" db-name="XMY2107" type="String" />
+		<column name="XMY0108" db-name="XMY0108" type="String" />
+		<column name="XMY2108" db-name="XMY2108" type="String" />
+		<column name="XMY0109" db-name="XMY0109" type="String" />
+		<column name="XMY2109" db-name="XMY2109" type="String" />
+		<column name="XMY0110" db-name="XMY0110" type="String" />
+		<column name="XMY2110" db-name="XMY2110" type="String" />
+		<column name="XMY0111" db-name="XMY0111" type="String" />
+		<column name="XMY2111" db-name="XMY2111" type="String" />
+		<column name="XMY0112" db-name="XMY0112" type="String" />
+		<column name="XMY2112" db-name="XMY2112" type="String" />
+		<column name="XMY0113" db-name="XMY0113" type="String" />
+		<column name="XMY2113" db-name="XMY2113" type="String" />
+		<column name="XMY0114" db-name="XMY0114" type="String" />
+		<column name="XMY2114" db-name="XMY2114" type="String" />
+		<column name="XMY0115" db-name="XMY0115" type="String" />
+		<column name="XMY2115" db-name="XMY2115" type="String" />
+		<column name="XMY0116" db-name="XMY0116" type="String" />
+		<column name="XMY2116" db-name="XMY2116" type="String" />
+		<column name="XMY0117" db-name="XMY0117" type="String" />
+		<column name="XMY2117" db-name="XMY2117" type="String" />
+		<column name="XMY0118" db-name="XMY0118" type="String" />
+		<column name="XMY2118" db-name="XMY2118" type="String" />
+		<column name="XMY0119" db-name="XMY0119" type="String" />
+		<column name="XMY2119" db-name="XMY2119" type="String" />
+		<column name="XMY0120" db-name="XMY0120" type="String" />
+		<column name="XMY0121" db-name="XMY0121" type="String" />
+		<column name="XMY2121" db-name="XMY2121" type="String" />
+		<column name="XMY0122" db-name="XMY0122" type="String" />
+		<column name="XMY0198" db-name="XMY0198" type="String" />
+		<column name="XMY1098" db-name="XMY1098" type="String" />
+
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+	</entity>
+
+
+<entity name="THONGSOCHUNGCHIXECOGIOI" table="thongsochungchi_xecogioi" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="hoSoThuTucId" db-name="hoSoThuTucId" type="long" />
+		<column name="certificateRecordId" db-name="certificateRecordId" type="long" />
+		<column name="vehicleGroupId" db-name="vehicleGroupId" type="long" />		
+		<column name="SynchDate" db-name="SynchDate" type="Date"/>
+		
+		<column name="XCG0009" db-name="XCG0009" type="String" />
+		<column name="XCG0010" db-name="XCG0010" type="String" />
+		<column name="XCG0011" db-name="XCG0011" type="String" />
+		<column name="XCG0012" db-name="XCG0012" type="String" />
+		<column name="XCG0013" db-name="XCG0013" type="String" />
+		<column name="XCG0014" db-name="XCG0014" type="String" />
+		<column name="XCG0015" db-name="XCG0015" type="String" />
+		<column name="XCG0016" db-name="XCG0016" type="String" />
+		<column name="XCG0017" db-name="XCG0017" type="String" />
+		<column name="XCG0018" db-name="XCG0018" type="String" />
+		<column name="XCG0019" db-name="XCG0019" type="String" />
+		<column name="XCG0020" db-name="XCG0020" type="String" />
+		<column name="XCG0021" db-name="XCG0021" type="String" />
+		<column name="XCG1021" db-name="XCG1021" type="String" />
+		<column name="XCG1121" db-name="XCG1121" type="String" />
+		<column name="XCG0022" db-name="XCG0022" type="String" />
+		<column name="XCG1022" db-name="XCG1022" type="String" />
+		<column name="XCG1122" db-name="XCG1122" type="String" />
+		<column name="XCG0023" db-name="XCG0023" type="String" />
+		<column name="XCG1023" db-name="XCG1023" type="String" />
+		<column name="XCG1123" db-name="XCG1123" type="String" />
+		<column name="XCG0024" db-name="XCG0024" type="String" />
+		<column name="XCG1024" db-name="XCG1024" type="String" />
+		<column name="XCG1124" db-name="XCG1124" type="String" />
+		<column name="XCG0025" db-name="XCG0025" type="String" />
+		<column name="XCG1025" db-name="XCG1025" type="String" />
+		<column name="XCG1125" db-name="XCG1125" type="String" />
+		<column name="XCG0026" db-name="XCG0026" type="String" />
+		<column name="XCG1026" db-name="XCG1026" type="String" />
+		<column name="XCG1126" db-name="XCG1126" type="String" />
+		<column name="XCG0027" db-name="XCG0027" type="String" />
+		<column name="XCG1027" db-name="XCG1027" type="String" />
+		<column name="XCG1127" db-name="XCG1127" type="String" />
+		<column name="XCG0028" db-name="XCG0028" type="String" />
+		<column name="XCG1028" db-name="XCG1028" type="String" />
+		<column name="XCG1128" db-name="XCG1128" type="String" />
+		<column name="XCG0029" db-name="XCG0029" type="String" />
+		<column name="XCG1029" db-name="XCG1029" type="String" />
+		<column name="XCG1129" db-name="XCG1129" type="String" />
+		<column name="XCG0030" db-name="XCG0030" type="String" />
+		<column name="XCG1030" db-name="XCG1030" type="String" />
+		<column name="XCG1130" db-name="XCG1130" type="String" />
+		<column name="XCG0031" db-name="XCG0031" type="String" />
+		<column name="XCG1031" db-name="XCG1031" type="String" />
+		<column name="XCG1131" db-name="XCG1131" type="String" />
+		<column name="XCG0032" db-name="XCG0032" type="String" />
+		<column name="XCG1032" db-name="XCG1032" type="String" />
+		<column name="XCG1132" db-name="XCG1132" type="String" />
+		<column name="XCG0033" db-name="XCG0033" type="String" />
+		<column name="XCG1033" db-name="XCG1033" type="String" />
+		<column name="XCG1133" db-name="XCG1133" type="String" />
+		<column name="XCG0034" db-name="XCG0034" type="String" />
+		<column name="XCG1034" db-name="XCG1034" type="String" />
+		<column name="XCG1134" db-name="XCG1134" type="String" />
+		<column name="XCG0035" db-name="XCG0035" type="String" />
+		<column name="XCG1035" db-name="XCG1035" type="String" />
+		<column name="XCG1135" db-name="XCG1135" type="String" />
+		<column name="XCG0036" db-name="XCG0036" type="String" />
+		<column name="XCG1036" db-name="XCG1036" type="String" />
+		<column name="XCG1136" db-name="XCG1136" type="String" />
+		<column name="XCG0037" db-name="XCG0037" type="String" />
+		<column name="XCG1037" db-name="XCG1037" type="String" />
+		<column name="XCG1137" db-name="XCG1137" type="String" />
+		<column name="XCG0038" db-name="XCG0038" type="String" />
+		<column name="XCG1038" db-name="XCG1038" type="String" />
+		<column name="XCG1138" db-name="XCG1138" type="String" />
+		<column name="XCG0039" db-name="XCG0039" type="String" />
+		<column name="XCG1039" db-name="XCG1039" type="String" />
+		<column name="XCG1139" db-name="XCG1139" type="String" />
+		<column name="XCG0040" db-name="XCG0040" type="String" />
+		<column name="XCG1040" db-name="XCG1040" type="String" />
+		<column name="XCG1140" db-name="XCG1140" type="String" />
+		<column name="XCG0041" db-name="XCG0041" type="String" />
+		<column name="XCG1041" db-name="XCG1041" type="String" />
+		<column name="XCG1141" db-name="XCG1141" type="String" />
+		<column name="XCG0042" db-name="XCG0042" type="String" />
+		<column name="XCG1042" db-name="XCG1042" type="String" />
+		<column name="XCG1142" db-name="XCG1142" type="String" />
+		<column name="XCG0043" db-name="XCG0043" type="String" />
+		<column name="XCG1043" db-name="XCG1043" type="String" />
+		<column name="XCG1143" db-name="XCG1143" type="String" />
+		<column name="XCG0044" db-name="XCG0044" type="String" />
+		<column name="XCG1044" db-name="XCG1044" type="String" />
+		<column name="XCG1144" db-name="XCG1144" type="String" />
+		<column name="XCG0045" db-name="XCG0045" type="String" />
+		<column name="XCG0046" db-name="XCG0046" type="String" />
+		<column name="XCG1047" db-name="XCG1047" type="String" />
+		<column name="XCG0047" db-name="XCG0047" type="String" />
+		<column name="XCG0048" db-name="XCG0048" type="String" />
+		<column name="XCG0049" db-name="XCG0049" type="String" />
+		<column name="XCG0050" db-name="XCG0050" type="String" />
+		<column name="XCG0051" db-name="XCG0051" type="String" />
+		<column name="XCG0052" db-name="XCG0052" type="String" />
+		<column name="XCG0053" db-name="XCG0053" type="String" />
+		<column name="XCG0054" db-name="XCG0054" type="String" />
+		<column name="XCG1054" db-name="XCG1054" type="String" />
+		<column name="XCG1154" db-name="XCG1154" type="String" />
+		<column name="XCG1254" db-name="XCG1254" type="String" />
+		<column name="XCG1354" db-name="XCG1354" type="String" />
+		<column name="XCG1454" db-name="XCG1454" type="String" />
+		<column name="XCG1554" db-name="XCG1554" type="String" />
+		<column name="XCG1654" db-name="XCG1654" type="String" />
+		<column name="XCG1754" db-name="XCG1754" type="String" />
+		<column name="XCG0055" db-name="XCG0055" type="String" />
+		<column name="XCG0056" db-name="XCG0056" type="String" />
+		<column name="XCG0057" db-name="XCG0057" type="String" />
+		<column name="XCG0058" db-name="XCG0058" type="String" />
+		<column name="XCG0059" db-name="XCG0059" type="String" />
+		<column name="XCG1059" db-name="XCG1059" type="String" />
+		<column name="XCG0060" db-name="XCG0060" type="String" />
+		<column name="XCG0061" db-name="XCG0061" type="String" />
+		<column name="XCG0062" db-name="XCG0062" type="String" />
+		<column name="XCG0063" db-name="XCG0063" type="String" />
+		<column name="XCG0064" db-name="XCG0064" type="String" />
+		<column name="XCG0065" db-name="XCG0065" type="String" />
+		<column name="XCG0066" db-name="XCG0066" type="String" />
+		<column name="XCG1066" db-name="XCG1066" type="String" />
+		<column name="XCG0067" db-name="XCG0067" type="String" />
+		<column name="XCG0068" db-name="XCG0068" type="String" />
+		<column name="XCG0069" db-name="XCG0069" type="String" />
+		<column name="XCG0070" db-name="XCG0070" type="String" />
+		<column name="XCG0071" db-name="XCG0071" type="String" />
+		<column name="XCG0072" db-name="XCG0072" type="String" />
+		<column name="XCG1072" db-name="XCG1072" type="String" />
+		<column name="XCG0073" db-name="XCG0073" type="String" />
+		<column name="XCG0074" db-name="XCG0074" type="String" />
+		<column name="XCG0075" db-name="XCG0075" type="String" />
+		<column name="XCG0076" db-name="XCG0076" type="String" />
+		<column name="XCG0077" db-name="XCG0077" type="String" />
+		<column name="XCG1077" db-name="XCG1077" type="String" />
+		<column name="XCG0078" db-name="XCG0078" type="String" />
+		<column name="XCG1078" db-name="XCG1078" type="String" />
+		<column name="XCG0079" db-name="XCG0079" type="String" />
+		<column name="XCG0080" db-name="XCG0080" type="String" />
+		<column name="XCG1080" db-name="XCG1080" type="String" />
+		<column name="XCG0081" db-name="XCG0081" type="String" />
+		<column name="XCG0082" db-name="XCG0082" type="String" />
+		<column name="XCG0083" db-name="XCG0083" type="String" />
+		<column name="XCG0084" db-name="XCG0084" type="String" />
+		<column name="XCG0085" db-name="XCG0085" type="String" />
+		<column name="XCG1085" db-name="XCG1085" type="String" />
+		<column name="XCG0086" db-name="XCG0086" type="String" />
+		<column name="XCG1086" db-name="XCG1086" type="String" />
+		<column name="XCG0087" db-name="XCG0087" type="String" />
+		<column name="XCG0088" db-name="XCG0088" type="String" />
+		<column name="XCG1088" db-name="XCG1088" type="String" />
+		<column name="XCG0089" db-name="XCG0089" type="String" />
+		<column name="XCG0090" db-name="XCG0090" type="String" />
+		<column name="XCG0091" db-name="XCG0091" type="String" />
+		<column name="XCG0092" db-name="XCG0092" type="String" />
+		<column name="XCG0093" db-name="XCG0093" type="String" />
+		<column name="XCG0094" db-name="XCG0094" type="String" />
+		<column name="XCG0095" db-name="XCG0095" type="String" />
+		<column name="XCG0096" db-name="XCG0096" type="String" />
+		<column name="XCG0097" db-name="XCG0097" type="String" />
+		<column name="XCG1097" db-name="XCG1097" type="String" />
+		<column name="XCG0098" db-name="XCG0098" type="String" />
+		<column name="XCG0099" db-name="XCG0099" type="String" />
+		<column name="XCG0100" db-name="XCG0100" type="String" />
+		<column name="XCG0101" db-name="XCG0101" type="String" />
+		<column name="XCG0102" db-name="XCG0102" type="String" />
+		<column name="XCG0103" db-name="XCG0103" type="String" />
+		<column name="XCG0104" db-name="XCG0104" type="String" />
+		<column name="XCG0105" db-name="XCG0105" type="String" />
+		<column name="XCG0106" db-name="XCG0106" type="String" />
+		<column name="XCG0107" db-name="XCG0107" type="String" />
+		<column name="XCG0108" db-name="XCG0108" type="String" />
+		<column name="XCG0109" db-name="XCG0109" type="String" />
+		<column name="XCG0110" db-name="XCG0110" type="String" />
+		<column name="XCG0111" db-name="XCG0111" type="String" />
+		<column name="XCG0112" db-name="XCG0112" type="String" />
+		<column name="XCG0113" db-name="XCG0113" type="String" />
+		<column name="XCG0114" db-name="XCG0114" type="String" />
+		<column name="XCG0115" db-name="XCG0115" type="String" />
+		<column name="XCG0116" db-name="XCG0116" type="String" />
+		<column name="XCG0117" db-name="XCG0117" type="String" />
+		<column name="XCG0118" db-name="XCG0118" type="String" />
+		<column name="XCG0119" db-name="XCG0119" type="String" />
+		<column name="XCG0120" db-name="XCG0120" type="String" />
+		<column name="XCG0121" db-name="XCG0121" type="String" />
+		<column name="XCG0122" db-name="XCG0122" type="String" />
+		<column name="XCG0123" db-name="XCG0123" type="String" />
+		<column name="XCG0124" db-name="XCG0124" type="String" />
+		<column name="XCG0125" db-name="XCG0125" type="String" />
+		<column name="XCG0126" db-name="XCG0126" type="String" />
+		<column name="XCG0127" db-name="XCG0127" type="String" />
+		<column name="XCG0128" db-name="XCG0128" type="String" />
+		<column name="XCG0238" db-name="XCG0238" type="String" />
+		<column name="XCG0239" db-name="XCG0239" type="String" />
+		<column name="XCG0240" db-name="XCG0240" type="String" />
+		<column name="XCG0241" db-name="XCG0241" type="String" />
+		
+
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+	</entity>
+	
+	
+<entity name="THONGSOCHUNGCHIXECOGIOIPHAN2" table="thongsochungchi_xecogioi" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="hoSoThuTucId" db-name="hoSoThuTucId" type="long" />
+		<column name="certificateRecordId" db-name="certificateRecordId" type="long" />
+		<column name="vehicleGroupId" db-name="vehicleGroupId" type="long" />		
+		<column name="SynchDate" db-name="SynchDate" type="Date"/>
+		
+		<column name="XCG0129" db-name="XCG0129" type="String" />
+		<column name="XCG0130" db-name="XCG0130" type="String" />
+		<column name="XCG0131" db-name="XCG0131" type="String" />
+		<column name="XCG0132" db-name="XCG0132" type="String" />
+		<column name="XCG0133" db-name="XCG0133" type="String" />
+		<column name="XCG0134" db-name="XCG0134" type="String" />
+		<column name="XCG0135" db-name="XCG0135" type="String" />
+		<column name="XCG2135" db-name="XCG2135" type="String" />
+		<column name="XCG0136" db-name="XCG0136" type="String" />
+		<column name="XCG2136" db-name="XCG2136" type="String" />
+		<column name="XCG0137" db-name="XCG0137" type="String" />
+		<column name="XCG2137" db-name="XCG2137" type="String" />
+		<column name="XCG0138" db-name="XCG0138" type="String" />
+		<column name="XCG2138" db-name="XCG2138" type="String" />
+		<column name="XCG0139" db-name="XCG0139" type="String" />
+		<column name="XCG2139" db-name="XCG2139" type="String" />
+		<column name="XCG0140" db-name="XCG0140" type="String" />
+		<column name="XCG2140" db-name="XCG2140" type="String" />
+		<column name="XCG0141" db-name="XCG0141" type="String" />
+		<column name="XCG2141" db-name="XCG2141" type="String" />
+		<column name="XCG0142" db-name="XCG0142" type="String" />
+		<column name="XCG2142" db-name="XCG2142" type="String" />
+		<column name="XCG0143" db-name="XCG0143" type="String" />
+		<column name="XCG2143" db-name="XCG2143" type="String" />
+		<column name="XCG0144" db-name="XCG0144" type="String" />
+		<column name="XCG2144" db-name="XCG2144" type="String" />
+		<column name="XCG0145" db-name="XCG0145" type="String" />
+		<column name="XCG2145" db-name="XCG2145" type="String" />
+		<column name="XCG2245" db-name="XCG2245" type="String" />
+		<column name="XCG0146" db-name="XCG0146" type="String" />
+		<column name="XCG2146" db-name="XCG2146" type="String" />
+		<column name="XCG2246" db-name="XCG2246" type="String" />
+		<column name="XCG0147" db-name="XCG0147" type="String" />
+		<column name="XCG2147" db-name="XCG2147" type="String" />
+		<column name="XCG2247" db-name="XCG2247" type="String" />
+		<column name="XCG0148" db-name="XCG0148" type="String" />
+		<column name="XCG2148" db-name="XCG2148" type="String" />
+		<column name="XCG2248" db-name="XCG2248" type="String" />
+		<column name="XCG0149" db-name="XCG0149" type="String" />
+		<column name="XCG2149" db-name="XCG2149" type="String" />
+		<column name="XCG2249" db-name="XCG2249" type="String" />
+		<column name="XCG0150" db-name="XCG0150" type="String" />
+		<column name="XCG2150" db-name="XCG2150" type="String" />
+		<column name="XCG2250" db-name="XCG2250" type="String" />
+		<column name="XCG0151" db-name="XCG0151" type="String" />
+		<column name="XCG2151" db-name="XCG2151" type="String" />
+		<column name="XCG2251" db-name="XCG2251" type="String" />
+		<column name="XCG0152" db-name="XCG0152" type="String" />
+		<column name="XCG2152" db-name="XCG2152" type="String" />
+		<column name="XCG2252" db-name="XCG2252" type="String" />
+		<column name="XCG0153" db-name="XCG0153" type="String" />
+		<column name="XCG2153" db-name="XCG2153" type="String" />
+		<column name="XCG2253" db-name="XCG2253" type="String" />
+		<column name="XCG0154" db-name="XCG0154" type="String" />
+		<column name="XCG2154" db-name="XCG2154" type="String" />
+		<column name="XCG2254" db-name="XCG2254" type="String" />
+		<column name="XCG0155" db-name="XCG0155" type="String" />
+		<column name="XCG0156" db-name="XCG0156" type="String" />
+		<column name="XCG0242" db-name="XCG0242" type="String" />
+		<column name="XCG0157" db-name="XCG0157" type="String" />
+		<column name="XCG0158" db-name="XCG0158" type="String" />
+		<column name="XCG0159" db-name="XCG0159" type="String" />
+		<column name="XCG0160" db-name="XCG0160" type="String" />
+		<column name="XCG0243" db-name="XCG0243" type="String" />
+		<column name="XCG0161" db-name="XCG0161" type="String" />
+		<column name="XCG0162" db-name="XCG0162" type="String" />
+		<column name="XCG0163" db-name="XCG0163" type="String" />
+		<column name="XCG0164" db-name="XCG0164" type="String" />
+		<column name="XCG0244" db-name="XCG0244" type="String" />
+		<column name="XCG0165" db-name="XCG0165" type="String" />
+		<column name="XCG0166" db-name="XCG0166" type="String" />
+		<column name="XCG0167" db-name="XCG0167" type="String" />
+		<column name="XCG0168" db-name="XCG0168" type="String" />
+		<column name="XCG0245" db-name="XCG0245" type="String" />
+		<column name="XCG0169" db-name="XCG0169" type="String" />
+		<column name="XCG0170" db-name="XCG0170" type="String" />
+		<column name="XCG0171" db-name="XCG0171" type="String" />
+		<column name="XCG0172" db-name="XCG0172" type="String" />
+		<column name="XCG0246" db-name="XCG0246" type="String" />
+		<column name="XCG0173" db-name="XCG0173" type="String" />
+		<column name="XCG0174" db-name="XCG0174" type="String" />
+		<column name="XCG0175" db-name="XCG0175" type="String" />
+		<column name="XCG0176" db-name="XCG0176" type="String" />
+		<column name="XCG0247" db-name="XCG0247" type="String" />
+		<column name="XCG0177" db-name="XCG0177" type="String" />
+		<column name="XCG0178" db-name="XCG0178" type="String" />
+		<column name="XCG0179" db-name="XCG0179" type="String" />
+		<column name="XCG0180" db-name="XCG0180" type="String" />
+		<column name="XCG0248" db-name="XCG0248" type="String" />
+		<column name="XCG0181" db-name="XCG0181" type="String" />
+		<column name="XCG0182" db-name="XCG0182" type="String" />
+		<column name="XCG0183" db-name="XCG0183" type="String" />
+		<column name="XCG0184" db-name="XCG0184" type="String" />
+		<column name="XCG0249" db-name="XCG0249" type="String" />
+		<column name="XCG0185" db-name="XCG0185" type="String" />
+		<column name="XCG0186" db-name="XCG0186" type="String" />
+		<column name="XCG0187" db-name="XCG0187" type="String" />
+		<column name="XCG0188" db-name="XCG0188" type="String" />
+		<column name="XCG0250" db-name="XCG0250" type="String" />
+		<column name="XCG0189" db-name="XCG0189" type="String" />
+		<column name="XCG0190" db-name="XCG0190" type="String" />
+		<column name="XCG0191" db-name="XCG0191" type="String" />
+		<column name="XCG0192" db-name="XCG0192" type="String" />
+		<column name="XCG0251" db-name="XCG0251" type="String" />
+		<column name="XCG0193" db-name="XCG0193" type="String" />
+		<column name="XCG0194" db-name="XCG0194" type="String" />
+		<column name="XCG0195" db-name="XCG0195" type="String" />
+		<column name="XCG0196" db-name="XCG0196" type="String" />
+		<column name="XCG0197" db-name="XCG0197" type="String" />
+		<column name="XCG0198" db-name="XCG0198" type="String" />
+		<column name="XCG0199" db-name="XCG0199" type="String" />
+		<column name="XCG0200" db-name="XCG0200" type="String" />
+		<column name="XCG0201" db-name="XCG0201" type="String" />
+		<column name="XCG0202" db-name="XCG0202" type="String" />
+		<column name="XCG0203" db-name="XCG0203" type="String" />
+		<column name="XCG0204" db-name="XCG0204" type="String" />
+		<column name="XCG0205" db-name="XCG0205" type="String" />
+		<column name="XCG0206" db-name="XCG0206" type="String" />
+		<column name="XCG0207" db-name="XCG0207" type="String" />
+		<column name="XCG0208" db-name="XCG0208" type="String" />
+		<column name="XCG0209" db-name="XCG0209" type="String" />
+		<column name="XCG0210" db-name="XCG0210" type="String" />
+		<column name="XCG0211" db-name="XCG0211" type="String" />
+		<column name="XCG0212" db-name="XCG0212" type="String" />
+		<column name="XCG0213" db-name="XCG0213" type="String" />
+		<column name="XCG0214" db-name="XCG0214" type="String" />
+		<column name="XCG0215" db-name="XCG0215" type="String" />
+		<column name="XCG0216" db-name="XCG0216" type="String" />
+		<column name="XCG0217" db-name="XCG0217" type="String" />
+		<column name="XCG0218" db-name="XCG0218" type="String" />
+		<column name="XCG0219" db-name="XCG0219" type="String" />
+		<column name="XCG2218" db-name="XCG2218" type="String" />
+		<column name="XCG2219" db-name="XCG2219" type="String" />
+		<column name="XCG0220" db-name="XCG0220" type="String" />
+		<column name="XCG2220" db-name="XCG2220" type="String" />
+		<column name="XCG0221" db-name="XCG0221" type="String" />
+		<column name="XCG2221" db-name="XCG2221" type="String" />
+		<column name="XCG0222" db-name="XCG0222" type="String" />
+		<column name="XCG2222" db-name="XCG2222" type="String" />
+		<column name="XCG0223" db-name="XCG0223" type="String" />
+		<column name="XCG2223" db-name="XCG2223" type="String" />
+		<column name="XCG0224" db-name="XCG0224" type="String" />
+		<column name="XCG2224" db-name="XCG2224" type="String" />
+		<column name="XCG0225" db-name="XCG0225" type="String" />
+		<column name="XCG2225" db-name="XCG2225" type="String" />
+		<column name="XCG0226" db-name="XCG0226" type="String" />
+		<column name="XCG2226" db-name="XCG2226" type="String" />
+		<column name="XCG0227" db-name="XCG0227" type="String" />
+		<column name="XCG2227" db-name="XCG2227" type="String" />
+		<column name="XCG0228" db-name="XCG0228" type="String" />
+		<column name="XCG2228" db-name="XCG2228" type="String" />
+		<column name="XCG0229" db-name="XCG0229" type="String" />
+		<column name="XCG2229" db-name="XCG2229" type="String" />
+		<column name="XCG0230" db-name="XCG0230" type="String" />
+		<column name="XCG2230" db-name="XCG2230" type="String" />
+		<column name="XCG0231" db-name="XCG0231" type="String" />
+		<column name="XCG2231" db-name="XCG2231" type="String" />
+		<column name="XCG0232" db-name="XCG0232" type="String" />
+		<column name="XCG2232" db-name="XCG2232" type="String" />
+		<column name="XCG0233" db-name="XCG0233" type="String" />
+		<column name="XCG2233" db-name="XCG2233" type="String" />
+		<column name="XCG0234" db-name="XCG0234" type="String" />
+		<column name="XCG0235" db-name="XCG0235" type="String" />
+		<column name="XCG2235" db-name="XCG2235" type="String" />
+		<column name="XCG0236" db-name="XCG0236" type="String" />
+		<column name="XCG0237" db-name="XCG0237" type="String" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+	</entity>
+
+
+<entity name="THONGSOCHUNGCHIXEBONBANH" table="thongsochungchi_xebonbanh" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="hoSoThuTucId" db-name="hoSoThuTucId" type="long" />
+		<column name="certificateRecordId" db-name="certificateRecordId" type="long" />
+		<column name="vehicleGroupId" db-name="vehicleGroupId" type="long" />		
+		<column name="SynchDate" db-name="SynchDate" type="Date"/>
+		
+		<column name="XBB0009" db-name="XBB0009" type="String" />
+		<column name="XBB0010" db-name="XBB0010" type="String" />
+		<column name="XBB0011" db-name="XBB0011" type="String" />
+		<column name="XBB0012" db-name="XBB0012" type="String" />
+		<column name="XBB0013" db-name="XBB0013" type="String" />
+		<column name="XBB0014" db-name="XBB0014" type="String" />
+		<column name="XBB1014" db-name="XBB1014" type="String" />
+		<column name="XBB1114" db-name="XBB1114" type="String" />
+		<column name="XBB0015" db-name="XBB0015" type="String" />
+		<column name="XBB1015" db-name="XBB1015" type="String" />
+		<column name="XBB1115" db-name="XBB1115" type="String" />
+		<column name="XBB0016" db-name="XBB0016" type="String" />
+		<column name="XBB1016" db-name="XBB1016" type="String" />
+		<column name="XBB1116" db-name="XBB1116" type="String" />
+		<column name="XBB0017" db-name="XBB0017" type="String" />
+		<column name="XBB1017" db-name="XBB1017" type="String" />
+		<column name="XBB1117" db-name="XBB1117" type="String" />
+		<column name="XBB0018" db-name="XBB0018" type="String" />
+		<column name="XBB0019" db-name="XBB0019" type="String" />
+		<column name="XBB0020" db-name="XBB0020" type="String" />
+		<column name="XBB0021" db-name="XBB0021" type="String" />
+		<column name="XBB0022" db-name="XBB0022" type="String" />
+		<column name="XBB1022" db-name="XBB1022" type="String" />
+		<column name="XBB0023" db-name="XBB0023" type="String" />
+		<column name="XBB0024" db-name="XBB0024" type="String" />
+		<column name="XBB0025" db-name="XBB0025" type="String" />
+		<column name="XBB0026" db-name="XBB0026" type="String" />
+		<column name="XBB1026" db-name="XBB1026" type="String" />
+		<column name="XBB0027" db-name="XBB0027" type="String" />
+		<column name="XBB1027" db-name="XBB1027" type="String" />
+		<column name="XBB0028" db-name="XBB0028" type="String" />
+		<column name="XBB0029" db-name="XBB0029" type="String" />
+		<column name="XBB1029" db-name="XBB1029" type="String" />
+		<column name="XBB0030" db-name="XBB0030" type="String" />
+		<column name="XBB0031" db-name="XBB0031" type="String" />
+		<column name="XBB0032" db-name="XBB0032" type="String" />
+		<column name="XBB0033" db-name="XBB0033" type="String" />
+		<column name="XBB1033" db-name="XBB1033" type="String" />
+		<column name="XBB0034" db-name="XBB0034" type="String" />
+		<column name="XBB1034" db-name="XBB1034" type="String" />
+		<column name="XBB0035" db-name="XBB0035" type="String" />
+		<column name="XBB0036" db-name="XBB0036" type="String" />
+		<column name="XBB1036" db-name="XBB1036" type="String" />
+		<column name="XBB0037" db-name="XBB0037" type="String" />
+		<column name="XBB0038" db-name="XBB0038" type="String" />
+		<column name="XBB0039" db-name="XBB0039" type="String" />
+		<column name="XBB0040" db-name="XBB0040" type="String" />
+		<column name="XBB0041" db-name="XBB0041" type="String" />
+		<column name="XBB0042" db-name="XBB0042" type="String" />
+		<column name="XBB0043" db-name="XBB0043" type="String" />
+		<column name="XBB0044" db-name="XBB0044" type="String" />
+		<column name="XBB1044" db-name="XBB1044" type="String" />
+		<column name="XBB0045" db-name="XBB0045" type="String" />
+		<column name="XBB0046" db-name="XBB0046" type="String" />
+		<column name="XBB0047" db-name="XBB0047" type="String" />
+		<column name="XBB0048" db-name="XBB0048" type="String" />
+		<column name="XBB0049" db-name="XBB0049" type="String" />
+		<column name="XBB0050" db-name="XBB0050" type="String" />
+		<column name="XBB0051" db-name="XBB0051" type="String" />
+		<column name="XBB0052" db-name="XBB0052" type="String" />
+		<column name="XBB0053" db-name="XBB0053" type="String" />
+		<column name="XBB0054" db-name="XBB0054" type="String" />
+		<column name="XBB0055" db-name="XBB0055" type="String" />
+		<column name="XBB0056" db-name="XBB0056" type="String" />
+		<column name="XBB0057" db-name="XBB0057" type="String" />
+		<column name="XBB0058" db-name="XBB0058" type="String" />
+		<column name="XBB0059" db-name="XBB0059" type="String" />
+		<column name="XBB0060" db-name="XBB0060" type="String" />
+		<column name="XBB0061" db-name="XBB0061" type="String" />
+		<column name="XBB0062" db-name="XBB0062" type="String" />
+		<column name="XBB0063" db-name="XBB0063" type="String" />
+		<column name="XBB0076" db-name="XBB0076" type="String" />
+		<column name="XBB0077" db-name="XBB0077" type="String" />
+		<column name="XBB0078" db-name="XBB0078" type="String" />
+		<column name="XBB0079" db-name="XBB0079" type="String" />
+		<column name="XBB0080" db-name="XBB0080" type="String" />
+		<column name="XBB1080" db-name="XBB1080" type="String" />
+		<column name="XBB0081" db-name="XBB0081" type="String" />
+		<column name="XBB1081" db-name="XBB1081" type="String" />
+		<column name="XBB1181" db-name="XBB1181" type="String" />
+		<column name="XBB0082" db-name="XBB0082" type="String" />
+		<column name="XBB1082" db-name="XBB1082" type="String" />
+		<column name="XBB1182" db-name="XBB1182" type="String" />
+		<column name="XBB0083" db-name="XBB0083" type="String" />
+		<column name="XBB1083" db-name="XBB1083" type="String" />
+		<column name="XBB1183" db-name="XBB1183" type="String" />
+		<column name="XBB0084" db-name="XBB0084" type="String" />
+		<column name="XBB0085" db-name="XBB0085" type="String" />
+		<column name="XBB0086" db-name="XBB0086" type="String" />
+		<column name="XBB0087" db-name="XBB0087" type="String" />
+		<column name="XBB0088" db-name="XBB0088" type="String" />
+		<column name="XBB0089" db-name="XBB0089" type="String" />
+		<column name="XBB0090" db-name="XBB0090" type="String" />
+		<column name="XBB0091" db-name="XBB0091" type="String" />
+		<column name="XBB0092" db-name="XBB0092" type="String" />
+		<column name="XBB0093" db-name="XBB0093" type="String" />
+		<column name="XBB0094" db-name="XBB0094" type="String" />
+		<column name="XBB0095" db-name="XBB0095" type="String" />
+		<column name="XBB0096" db-name="XBB0096" type="String" />
+		<column name="XBB0097" db-name="XBB0097" type="String" />
+		<column name="XBB0098" db-name="XBB0098" type="String" />
+		<column name="XBB0099" db-name="XBB0099" type="String" />
+		<column name="XBB0100" db-name="XBB0100" type="String" />
+		<column name="XBB0101" db-name="XBB0101" type="String" />
+		<column name="XBB0102" db-name="XBB0102" type="String" />
+		<column name="XBB0103" db-name="XBB0103" type="String" />
+		<column name="XBB0104" db-name="XBB0104" type="String" />
+		<column name="XBB2104" db-name="XBB2104" type="String" />
+		<column name="XBB0105" db-name="XBB0105" type="String" />
+		<column name="XBB2105" db-name="XBB2105" type="String" />
+		<column name="XBB0106" db-name="XBB0106" type="String" />
+		<column name="XBB2106" db-name="XBB2106" type="String" />
+		<column name="XBB0107" db-name="XBB0107" type="String" />
+		<column name="XBB2107" db-name="XBB2107" type="String" />
+		<column name="XBB0108" db-name="XBB0108" type="String" />
+		<column name="XBB2108" db-name="XBB2108" type="String" />
+		<column name="XBB0109" db-name="XBB0109" type="String" />
+		<column name="XBB2109" db-name="XBB2109" type="String" />
+		<column name="XBB0110" db-name="XBB0110" type="String" />
+		<column name="XBB2110" db-name="XBB2110" type="String" />
+		<column name="XBB0111" db-name="XBB0111" type="String" />
+		<column name="XBB2111" db-name="XBB2111" type="String" />
+		<column name="XBB0112" db-name="XBB0112" type="String" />
+		<column name="XBB2112" db-name="XBB2112" type="String" />
+		<column name="XBB0113" db-name="XBB0113" type="String" />
+		<column name="XBB2113" db-name="XBB2113" type="String" />
+		<column name="XBB0114" db-name="XBB0114" type="String" />
+		<column name="XBB2114" db-name="XBB2114" type="String" />
+		<column name="XBB0115" db-name="XBB0115" type="String" />
+		<column name="XBB2115" db-name="XBB2115" type="String" />
+		<column name="XBB0116" db-name="XBB0116" type="String" />
+		<column name="XBB2116" db-name="XBB2116" type="String" />
+		<column name="XBB0117" db-name="XBB0117" type="String" />
+		<column name="XBB2117" db-name="XBB2117" type="String" />
+		<column name="XBB0118" db-name="XBB0118" type="String" />
+		<column name="XBB0119" db-name="XBB0119" type="String" />
+		<column name="XBB2119" db-name="XBB2119" type="String" />
+		<column name="XBB0120" db-name="XBB0120" type="String" />
+		<column name="XBB0121" db-name="XBB0121" type="String" />
+		<column name="XBB0122" db-name="XBB0122" type="String" />
+		<column name="XBB0123" db-name="XBB0123" type="String" />
+		<column name="XBB0124" db-name="XBB0124" type="String" />
+		<column name="XBB0125" db-name="XBB0125" type="String" />
+		<column name="XBB0126" db-name="XBB0126" type="String" />
+		<column name="XBB1084" db-name="XBB1084" type="String" />
+		<column name="XBB1086" db-name="XBB1086" type="String" />
+
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+	</entity>
+
+
+<entity name="THONGSOCHUNGCHIXEDAPDIEN" table="thongsochungchi_xedapdien" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="hoSoThuTucId" db-name="hoSoThuTucId" type="long" />
+		<column name="certificateRecordId" db-name="certificateRecordId" type="long" />
+		<column name="vehicleGroupId" db-name="vehicleGroupId" type="long" />		
+		<column name="SynchDate" db-name="SynchDate" type="Date"/>
+		
+		<column name="XDD0008" db-name="XDD0008" type="String" />
+		<column name="XDD0009" db-name="XDD0009" type="String" />
+		<column name="XDD0010" db-name="XDD0010" type="String" />
+		<column name="XDD0011" db-name="XDD0011" type="String" />
+		<column name="XDD0012" db-name="XDD0012" type="String" />
+		<column name="XDD0013" db-name="XDD0013" type="String" />
+		<column name="XDD0014" db-name="XDD0014" type="String" />
+		<column name="XDD0015" db-name="XDD0015" type="String" />
+		<column name="XDD0016" db-name="XDD0016" type="String" />
+		<column name="XDD0017" db-name="XDD0017" type="String" />
+		<column name="XDD0018" db-name="XDD0018" type="String" />
+		<column name="XDD0019" db-name="XDD0019" type="String" />
+		<column name="XDD0020" db-name="XDD0020" type="String" />
+		<column name="XDD0021" db-name="XDD0021" type="String" />
+		<column name="XDD0022" db-name="XDD0022" type="String" />
+		<column name="XDD0023" db-name="XDD0023" type="String" />
+		<column name="XDD0024" db-name="XDD0024" type="String" />
+		<column name="XDD0025" db-name="XDD0025" type="String" />
+		<column name="XDD0026" db-name="XDD0026" type="String" />
+		<column name="XDD0027" db-name="XDD0027" type="String" />
+		<column name="XDD1027" db-name="XDD1027" type="String" />
+		<column name="XDD0028" db-name="XDD0028" type="String" />
+		<column name="XDD1028" db-name="XDD1028" type="String" />
+		<column name="XDD1128" db-name="XDD1128" type="String" />
+		<column name="XDD0029" db-name="XDD0029" type="String" />
+		<column name="XDD1029" db-name="XDD1029" type="String" />
+		<column name="XDD1129" db-name="XDD1129" type="String" />
+		<column name="XDD0030" db-name="XDD0030" type="String" />
+		<column name="XDD0031" db-name="XDD0031" type="String" />
+		<column name="XDD0032" db-name="XDD0032" type="String" />
+		<column name="XDD0033" db-name="XDD0033" type="String" />
+		<column name="XDD0034" db-name="XDD0034" type="String" />
+		<column name="XDD1034" db-name="XDD1034" type="String" />
+		<column name="XDD0035" db-name="XDD0035" type="String" />
+		<column name="XDD1035" db-name="XDD1035" type="String" />
+		<column name="XDD0036" db-name="XDD0036" type="String" />
+		<column name="XDD0037" db-name="XDD0037" type="String" />
+		<column name="XDD0038" db-name="XDD0038" type="String" />
+
+		
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+	</entity>
+
+
+<entity name="THONGSOCHUNGCHIDONGCO" table="thongsochungchi_dongco" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="hoSoThuTucId" db-name="hoSoThuTucId" type="long" />
+		<column name="certificateRecordId" db-name="certificateRecordId" type="long" />
+		<column name="vehicleGroupId" db-name="vehicleGroupId" type="long" />		
+		<column name="SynchDate" db-name="SynchDate" type="Date"/>
+		
+		<column name="DCX0007" db-name="DCX0007" type="String" />
+		<column name="DCX0008" db-name="DCX0008" type="String" />
+		<column name="DCX0010" db-name="DCX0010" type="String" />
+		<column name="DCX0011" db-name="DCX0011" type="String" />
+		<column name="DCX0012" db-name="DCX0012" type="String" />
+		<column name="DCX1012" db-name="DCX1012" type="String" />
+		<column name="DCX0013" db-name="DCX0013" type="String" />
+		<column name="DCX1013" db-name="DCX1013" type="String" />
+		<column name="DCX0014" db-name="DCX0014" type="String" />
+		<column name="DCX0015" db-name="DCX0015" type="String" />
+		<column name="DCX0016" db-name="DCX0016" type="String" />
+		<column name="DCX0017" db-name="DCX0017" type="String" />
+		<column name="DCX0018" db-name="DCX0018" type="String" />
+		<column name="DCX0019" db-name="DCX0019" type="String" />
+		<column name="DCX0021" db-name="DCX0021" type="String" />
+		<column name="DCX0022" db-name="DCX0022" type="String" />
+		<column name="DCX0023" db-name="DCX0023" type="String" />
+		<column name="DCX0024" db-name="DCX0024" type="String" />
+		<column name="DCX0006" db-name="DCX0006" type="String" />
+		<column name="DCX0025" db-name="DCX0025" type="String" />
+		<column name="DCX0026" db-name="DCX0026" type="String" />
+		<column name="DCX0027" db-name="DCX0027" type="String" />
+		<column name="DCX0028" db-name="DCX0028" type="String" />
+		<column name="DCX0029" db-name="DCX0029" type="String" />
+		<column name="DCX0030" db-name="DCX0030" type="String" />
+		<column name="DCX0031" db-name="DCX0031" type="String" />
+
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+
+	</entity>
+
+
+<entity name="THONGSOCHUNGCHIXECHUYENDUNG" table="thongsochungchi_xechuyendung" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="hoSoThuTucId" db-name="hoSoThuTucId" type="long" />
+		<column name="certificateRecordId" db-name="certificateRecordId" type="long" />
+		<column name="vehicleGroupId" db-name="vehicleGroupId" type="long" />		
+		<column name="SynchDate" db-name="SynchDate" type="Date"/>
+		
+		<column name="XCD0009" db-name="XCD0009" type="String" />
+		<column name="XCD0010" db-name="XCD0010" type="String" />
+		<column name="XCD0011" db-name="XCD0011" type="String" />
+		<column name="XCD0012" db-name="XCD0012" type="String" />
+		<column name="XCD0013" db-name="XCD0013" type="String" />
+		<column name="XCD0014" db-name="XCD0014" type="String" />
+		<column name="XCD0015" db-name="XCD0015" type="String" />
+		<column name="XCD0016" db-name="XCD0016" type="String" />
+		<column name="XCD0017" db-name="XCD0017" type="String" />
+		<column name="XCD1017" db-name="XCD1017" type="String" />
+		<column name="XCD0018" db-name="XCD0018" type="String" />
+		<column name="XCD0019" db-name="XCD0019" type="String" />
+		<column name="XCD0020" db-name="XCD0020" type="String" />
+		<column name="XCD0021" db-name="XCD0021" type="String" />
+		<column name="XCD0022" db-name="XCD0022" type="String" />
+		<column name="XCD0023" db-name="XCD0023" type="String" />
+		<column name="XCD1023" db-name="XCD1023" type="String" />
+		<column name="XCD0024" db-name="XCD0024" type="String" />
+								
+		<column name="XCDCODE001" db-name="XCDCODE001" type="String" />
+		<column name="XCDNAME001" db-name="XCDNAME001" type="String" />
+		<column name="XCDVALU001" db-name="XCDVALU001" type="String" />
+		<column name="XCDCODE002" db-name="XCDCODE002" type="String" />
+		<column name="XCDNAME002" db-name="XCDNAME002" type="String" />
+		<column name="XCDVALU002" db-name="XCDVALU002" type="String" />
+		<column name="XCDCODE003" db-name="XCDCODE003" type="String" />
+		<column name="XCDNAME003" db-name="XCDNAME003" type="String" />
+		<column name="XCDVALU003" db-name="XCDVALU003" type="String" />
+		<column name="XCDCODE004" db-name="XCDCODE004" type="String" />
+		<column name="XCDNAME004" db-name="XCDNAME004" type="String" />
+		<column name="XCDVALU004" db-name="XCDVALU004" type="String" />
+		<column name="XCDCODE005" db-name="XCDCODE005" type="String" />
+		<column name="XCDNAME005" db-name="XCDNAME005" type="String" />
+		<column name="XCDVALU005" db-name="XCDVALU005" type="String" />
+		<column name="XCDCODE006" db-name="XCDCODE006" type="String" />
+		<column name="XCDNAME006" db-name="XCDNAME006" type="String" />
+		<column name="XCDVALU006" db-name="XCDVALU006" type="String" />
+		<column name="XCDCODE007" db-name="XCDCODE007" type="String" />
+		<column name="XCDNAME007" db-name="XCDNAME007" type="String" />
+		<column name="XCDVALU007" db-name="XCDVALU007" type="String" />
+		<column name="XCDCODE008" db-name="XCDCODE008" type="String" />
+		<column name="XCDNAME008" db-name="XCDNAME008" type="String" />
+		<column name="XCDVALU008" db-name="XCDVALU008" type="String" />
+		<column name="XCDCODE009" db-name="XCDCODE009" type="String" />
+		<column name="XCDNAME009" db-name="XCDNAME009" type="String" />
+		<column name="XCDVALU009" db-name="XCDVALU009" type="String" />
+		
+		<column name="XCDCODE010" db-name="XCDCODE010" type="String" />
+		<column name="XCDNAME010" db-name="XCDNAME010" type="String" />
+		<column name="XCDVALU010" db-name="XCDVALU010" type="String" />
+		<column name="XCDCODE011" db-name="XCDCODE011" type="String" />
+		<column name="XCDNAME011" db-name="XCDNAME011" type="String" />
+		<column name="XCDVALU011" db-name="XCDVALU011" type="String" />
+		<column name="XCDCODE012" db-name="XCDCODE012" type="String" />
+		<column name="XCDNAME012" db-name="XCDNAME012" type="String" />
+		<column name="XCDVALU012" db-name="XCDVALU012" type="String" />
+
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="HoSoThuTucId">
+			<finder-column name="hoSoThuTucId" />
+		</finder>
+		<finder return-type="Collection" name="CertificateRecordId">
+			<finder-column name="certificateRecordId" />
+		</finder>
+		<finder return-type="Collection" name="VehicleGroupId">
+			<finder-column name="vehicleGroupId" />
+		</finder>
+		<finder return-type="Collection" name="XCD0009">
+			<finder-column name="XCD0009" />
+		</finder>
+
+	</entity>
+	
+	<entity name="ImportedXCD" table="vr_importedxcd" local-service="true" remote-service="true" cache-enabled="false" data-source="vrDataSource"
+		tx-manager="vrTransactionManager" session-factory="vrSessionFactory">
+		<column name="id" db-name="id" type="long" primary="true" />
+		<column name="trangthai" db-name="trangthai" type="long" />
+		<column name="IDGCN" db-name="IDGCN" type="String" />
+		<column name="SoToKhai" db-name="SoToKhai" type="String" />
+		<column name="SoDangKy" db-name="SoDangKy" type="String" />
+		<column name="SoBienBan" db-name="SoBienBan" type="String" />
+		<column name="NguoiKT" db-name="NguoiKT" type="String" />
+		<column name="NgayKiemTra" db-name="NgayKiemTra" type="String" />
+		<column name="NoiKiemTra" db-name="NoiKiemTra" type="String" />
+		<column name="MaChu" db-name="MaChu" type="String" />
+		<column name="TenChu" db-name="TenChu" type="String" />
+		<column name="DiaChi" db-name="DiaChi" type="String" />
+		<column name="DienThoai" db-name="DienThoai" type="String" />
+		<column name="SoFAX" db-name="SoFAX" type="String" />
+		<column name="MaChungLoai" db-name="MaChungLoai" type="String" />
+		<column name="MaTenXe" db-name="MaTenXe" type="String" />
+		<column name="NhanHieu" db-name="NhanHieu" type="String" />
+		<column name="SoLoai" db-name="SoLoai" type="String" />
+		<column name="TenThuongMai" db-name="TenThuongMai" type="String" />
+		<column name="SoDongCo" db-name="SoDongCo" type="String" />
+		<column name="SoKhung" db-name="SoKhung" type="String" />
+		<column name="NamSx" db-name="NamSx" type="String" />
+		<column name="NoiSx" db-name="NoiSx" type="String" />
+		<column name="NgayDenHan" db-name="NgayDenHan" type="String" />
+		<column name="NgayCapGCN" db-name="NgayCapGCN" type="String" />
+		<column name="NgayNhap" db-name="NgayNhap" type="String" />
+		<column name="Note" db-name="Note" type="String" />
+		<column name="LoginName" db-name="LoginName" type="String" />
+		<column name="MADV" db-name="MADV" type="String" />
+		<column name="TinhTrang" db-name="TinhTrang" type="String" />
+		<column name="GhiChu" db-name="GhiChu" type="String" />
+		<column name="NguoiSoat" db-name="NguoiSoat" type="String" />
+		<column name="NgaySoat" db-name="NgaySoat" type="String" />
+		<column name="KetQua" db-name="KetQua" type="String" />
+		<column name="STT" db-name="STT" type="long" />
+		<column name="TenXe" db-name="TenXe" type="String" />
+		<column name="TenChungLoai" db-name="TenChungLoai" type="String" />
+		<column name="MaTSKT" db-name="MaTSKT" type="String" />
+		<column name="TenDacTinhV" db-name="TenDacTinhV" type="String" />
+		<column name="TenDacTinhA" db-name="TenDacTinhA" type="String" />
+		<column name="MaNhomDacTinh" db-name="MaNhomDacTinh" type="String" />
+		<column name="ThuNguyen" db-name="ThuNguyen" type="String" />
+		<column name="GiaTri" db-name="GiaTri" type="String" />
+
+		
+		<order by="asc">
+			<order-column name="id" />
+		</order>
+		<finder return-type="Collection" name="IDGCN">
+			<finder-column name="IDGCN" />
+			<finder-column name="trangthai" />
+		</finder>
+		<finder return-type="Collection" name="SoDangKy">
+			<finder-column name="SoDangKy" />
+		</finder>
+		<finder return-type="Collection" name="SoBienBan">
+			<finder-column name="SoBienBan" />
+		</finder>
+		<finder return-type="Collection" name="SoToKhai">
+			<finder-column name="SoToKhai" />
+		</finder>
+	</entity>
+</service-builder>

@@ -1,0 +1,1026 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="vn.dtt.gt.dk.dao.common.model.DmDataGroup" />
+	<import class="vn.dtt.gt.dk.dao.common.model.DmDataItem" />
+	<import class="vn.dtt.gt.dk.dao.common.model.DmDataVersion" />
+	<import class="vn.dtt.gt.dk.dao.common.model.DmMetaData" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TimKiemHoSo" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TthcBieuMauHoSo" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TthcCoQuanQltt" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TthcDonViThucHien" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TthcHoSoThuTuc" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TthcKeHoachChuyenDich" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TthcLinhVucThuTuc" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TthcNoidungHoSo" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TthcPhanNhomHoSo" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TthcPhanNhomHoSoVaiTro" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TthcThanhPhanHoSo" />
+	<import class="vn.dtt.gt.dk.dao.common.model.TthcThuTucHanhChinh" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.CertificateRecord" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.CertificateRecordSpec" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.CfgTechnicalspec" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.ControlReport" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequest" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequirement" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.CopReport" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.CorporationAttendee" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.CorporationInspector" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.CorporationTeam" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.CorporationView" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.CustomsDeclaration" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.DebitNote" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.DebitNoteDetails" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.DraftCertificate" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.DraftCertificateSpec" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestReport" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestRequest" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestRequirement" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.ExchangeRate" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.InspectionCommonStatus" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecord" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecordAttach" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecordSpec" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.PaymentStatus" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.ProductionCountry" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.RegisteredInspection" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.SafetestRequirement" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.SafetyTestReport" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.SafetyTestRequest" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.SatetyTestReportSpec" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleGroup" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleGroupInitial" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleGroupSpec" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleRecord" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.VehiclerecordInitial" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleSpecification" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.VehicleStatistics" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.ViewDangKiemTimKiem" />
+	<import class="vn.dtt.gt.dk.dao.nghiepvu.model.ViewTrungSoKhungDongCo" />
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.DmDataGroupImpl" table="dm_datagroup">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="Code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code" />
+		<property name="Name" type="com.liferay.portal.dao.orm.hibernate.StringType" column="name" />
+		<property name="Description" type="com.liferay.portal.dao.orm.hibernate.StringType" column="description" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.DmDataItemImpl" table="dm_dataitem">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="DataGroupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="datagroupid" />
+		<property name="Code0" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_0" />
+		<property name="Code1" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_1" />
+		<property name="Code2" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_2" />
+		<property name="Code3" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_3" />
+		<property name="Level" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="level" />
+		<property name="Name" type="com.liferay.portal.dao.orm.hibernate.StringType" column="name" />
+		<property name="AlterName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="altername" />
+		<property name="Description" type="com.liferay.portal.dao.orm.hibernate.StringType" column="description" />
+		<property name="ValidatedFrom" type="com.liferay.portal.dao.orm.hibernate.StringType" column="validatedfrom" />
+		<property name="ValidatedTo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="validatedto" />
+		<property name="Status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="status" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.DmDataVersionImpl" table="dm_dataversion">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="DataGroupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="datagroupid" />
+		<property name="Version" type="com.liferay.portal.dao.orm.hibernate.StringType" column="version" />
+		<property name="IssuedTime" type="org.hibernate.type.TimestampType" column="issuedtime" />
+		<property name="ValidateDFrom" type="org.hibernate.type.TimestampType" column="validatedfrom" />
+		<property name="ValidatedTo" type="org.hibernate.type.TimestampType" column="validatedto" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.DmMetaDataImpl" table="dm_metadata">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="Entity" type="com.liferay.portal.dao.orm.hibernate.StringType" column="entity" />
+		<property name="FieldCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="fieldcode" />
+		<property name="FieldName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="fieldname" />
+		<property name="FieldAlterName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="fieldaltername" />
+		<property name="FieldDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" column="fielddescription" />
+		<property name="FieldDataSet" type="com.liferay.portal.dao.orm.hibernate.StringType" column="fielddataset" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TimKiemHoSoImpl" table="view_timkiemhoso">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="maSoHoSo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="masohoso" />
+		<property name="maBienNhan" type="com.liferay.portal.dao.orm.hibernate.StringType" column="mabiennhan" />
+		<property name="thuTucHanhChinhId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="thutuchanhchinhid" />
+		<property name="loaiChuHoSo" type="com.liferay.portal.dao.orm.hibernate.LongType" column="loaichuhoso" />
+		<property name="maSoChuHoSo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="masochuhoso" />
+		<property name="tenChuHoSo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tenchuhoso" />
+		<property name="diaChiChuHoSo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="diachichuhoso" />
+		<property name="trichYeuNoiDung" type="com.liferay.portal.dao.orm.hibernate.StringType" column="trichyeunoidung" />
+		<property name="ngayGuiHoSo" type="org.hibernate.type.TimestampType" column="ngayguihoso" />
+		<property name="ngayTiepNhan" type="org.hibernate.type.TimestampType" column="ngaytiepnhan" />
+		<property name="ngayBoSung" type="org.hibernate.type.TimestampType" column="ngaybosung" />
+		<property name="ngayHenTra" type="org.hibernate.type.TimestampType" column="ngayhentra" />
+		<property name="ngayTraKetQua" type="org.hibernate.type.TimestampType" column="ngaytraketqua" />
+		<property name="ngayDongHoSo" type="org.hibernate.type.TimestampType" column="ngaydonghoso" />
+		<property name="trangThaiHoSo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="trangthaihoso" />
+		<property name="phanNhomHoSoId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="phannhomhosoid" />
+		<property name="maDonViTiepNhan" type="com.liferay.portal.dao.orm.hibernate.StringType" column="madonvitiepnhan" />
+		<property name="tenDonViTiepNhan" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tendonvitiepnhan" />
+		<property name="toChucQuanLy" type="com.liferay.portal.dao.orm.hibernate.LongType" column="tochucquanly" />
+		<property name="ngayTao" type="org.hibernate.type.TimestampType" column="ngaytao" />
+		<property name="nguoiTao" type="com.liferay.portal.dao.orm.hibernate.LongType" column="nguoitao" />
+		<property name="ghiChu" type="com.liferay.portal.dao.orm.hibernate.StringType" column="GHICHU" />
+		<property name="lanGuiCuoi" type="com.liferay.portal.dao.orm.hibernate.LongType" column="languicuoi" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TthcBieuMauHoSoImpl" table="tthc_bieumauhoso">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="MaBieuMau" type="com.liferay.portal.dao.orm.hibernate.StringType" column="mabieumau" />
+		<property name="TenBieuMau" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tenbieumau" />
+		<property name="TenTiengAnh" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tentienganh" />
+		<property name="TaiLieuMau" type="com.liferay.portal.dao.orm.hibernate.LongType" column="tailieumau" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TthcCoQuanQlttImpl" table="tthc_coquanqltt">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="TenCoQuanQltt" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tencoquanqltt" />
+		<property name="TenTiengAnh" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tentienganh" />
+		<property name="IdCha" type="com.liferay.portal.dao.orm.hibernate.LongType" column="idcha" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TthcDonViThucHienImpl" table="tthc_donvithuchien">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="ThuTucHanhChinhId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="thutuchanhchinhid" />
+		<property name="MaDvth" type="com.liferay.portal.dao.orm.hibernate.StringType" column="madvth" />
+		<property name="TenDvth" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tendvth" />
+		<property name="TenTiengAnh" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tentienganh" />
+		<property name="ToChuc" type="com.liferay.portal.dao.orm.hibernate.LongType" column="tochuc" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TthcHoSoThuTucImpl" table="tthc_hosothutuc">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="MaSoHoSo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="masohoso" />
+		<property name="MaBienNhan" type="com.liferay.portal.dao.orm.hibernate.StringType" column="mabiennhan" />
+		<property name="ThuTucHanhChinhId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="thutuchanhchinhid" />
+		<property name="LoaiChuHoSo" type="com.liferay.portal.dao.orm.hibernate.LongType" column="loaichuhoso" />
+		<property name="MaSoChuHoSo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="masochuhoso" />
+		<property name="TenChuHoSo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tenchuhoso" />
+		<property name="DiaChiChuHoSo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="diachichuhoso" />
+		<property name="TrichYeuNoiDung" type="com.liferay.portal.dao.orm.hibernate.StringType" column="trichyeunoidung" />
+		<property name="NgayGuiHoSo" type="org.hibernate.type.TimestampType" column="ngayguihoso" />
+		<property name="NgayTiepNhan" type="org.hibernate.type.TimestampType" column="ngaytiepnhan" />
+		<property name="NgayBoSung" type="org.hibernate.type.TimestampType" column="ngaybosung" />
+		<property name="NgayHenTra" type="org.hibernate.type.TimestampType" column="ngayhentra" />
+		<property name="NgayTraKetQua" type="org.hibernate.type.TimestampType" column="ngaytraketqua" />
+		<property name="NgayDongHoSo" type="org.hibernate.type.TimestampType" column="ngaydonghoso" />
+		<property name="TrangThaiHoSo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="trangthaihoso" />
+		<property name="PhanNhomHoSoId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="phannhomhosoid" />
+		<property name="MaDonViTiepNhan" type="com.liferay.portal.dao.orm.hibernate.StringType" column="madonvitiepnhan" />
+		<property name="TenDonViTiepNhan" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tendonvitiepnhan" />
+		<property name="ToChucQuanLy" type="com.liferay.portal.dao.orm.hibernate.LongType" column="tochucquanly" />
+		<property name="NgayTao" type="org.hibernate.type.TimestampType" column="ngaytao" />
+		<property name="NguoiTao" type="com.liferay.portal.dao.orm.hibernate.LongType" column="nguoitao" />
+		<property name="ghiChu" type="com.liferay.portal.dao.orm.hibernate.StringType" column="GHICHU" />
+		<property name="lanGuiCuoi" type="com.liferay.portal.dao.orm.hibernate.LongType" column="languicuoi" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TthcKeHoachChuyenDichImpl" table="tthc_kehoachchuyendich">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="phieuXuLyChinhId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="phieuxulychinhid" />
+		<property name="phieuXuLyPhuId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="phieuxulyphuid" />
+		<property name="messageId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="messageid" />
+		<property name="messageStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" column="messagestatus" />
+		<property name="trangThaiNguonId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="trangthainguonid" />
+		<property name="dieuKienChuyenDich" type="com.liferay.portal.dao.orm.hibernate.StringType" column="dieukienchuyendich" />
+		<property name="trangThaiDichId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="trangthaidichid" />
+		<property name="phanNhomHoSoId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="phannhomhosoid" />
+		<property name="nhomPhieuXuLy" type="com.liferay.portal.dao.orm.hibernate.LongType" column="nhomphieuxuly" />
+		<property name="hoanTat" type="com.liferay.portal.dao.orm.hibernate.StringType" column="hoantat" />
+		<property name="ghiChu" type="com.liferay.portal.dao.orm.hibernate.StringType" column="ghichu" />
+		<property name="thoiDiemCapNhat" type="org.hibernate.type.TimestampType" column="thoidiemcapnhat" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TthcLinhVucThuTucImpl" table="tthc_linhvucthutuc">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="TenLinhVuc" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tenlinhvuc" />
+		<property name="TenTiengAnh" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tentienganh" />
+		<property name="IdCha" type="com.liferay.portal.dao.orm.hibernate.LongType" column="idcha" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TthcNoidungHoSoImpl" table="tthc_noidunghoso">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="MaTuSinh" type="com.liferay.portal.dao.orm.hibernate.StringType" column="matusinh" />
+		<property name="HoSoThuTucId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="hosothutucid" />
+		<property name="TenTaiLieu" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tentailieu" />
+		<property name="TaiLieuDinhKem" type="com.liferay.portal.dao.orm.hibernate.LongType" column="tailieudinhkem" />
+		<property name="NoiDungXml" type="com.liferay.portal.dao.orm.hibernate.StringType" column="noidungxml" />
+		<property name="noiDungFile" type="com.liferay.portal.dao.orm.hibernate.StringType" column="noidungfile" />
+		<property name="BieuMauHoSoId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="bieumauhosoid" />
+		<property name="NgayGuiNhan" type="org.hibernate.type.TimestampType" column="ngayguinhan" />
+		<property name="LoaiTaiLieu" type="com.liferay.portal.dao.orm.hibernate.LongType" column="loaitailieu" />
+		<property name="NgayTao" type="org.hibernate.type.TimestampType" column="ngaytao" />
+		<property name="NguoiTao" type="com.liferay.portal.dao.orm.hibernate.LongType" column="nguoitao" />
+		<property name="daCapNhat" type="com.liferay.portal.dao.orm.hibernate.LongType" column="dacapnhat" />
+		<property name="lanGuiCuoi" type="com.liferay.portal.dao.orm.hibernate.LongType" column="languicuoi" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TthcPhanNhomHoSoImpl" table="tthc_phannhomhoso">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="MaPhanNhom" type="com.liferay.portal.dao.orm.hibernate.StringType" column="maphannhom" />
+		<property name="TenPhanNhom" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tenphannhom" />
+		<property name="TenTiengAnh" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tentienganh" />
+		<property name="loaiPhieuXuLy" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="LOAIPHIEUXULY" />
+		<property name="SoThuTu" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="sothutu" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TthcPhanNhomHoSoVaiTroImpl" table="tthc_phannhomhoso_vaitro">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="PhanNhomHoSoId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="phannhomhosoid" />
+		<property name="VaiTroXuLy" type="com.liferay.portal.dao.orm.hibernate.LongType" column="vaitroxuly" />
+		<property name="nhomPhieuXuLy" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NHOMPHIEUXULY" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TthcThanhPhanHoSoImpl" table="tthc_thanhphanhoso">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="ThuTucHanhChinhId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="thutuchanhchinhid" />
+		<property name="BieuMauHoSoId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="bieumauhosoid" />
+		<property name="ThuTuHienThi" type="com.liferay.portal.dao.orm.hibernate.LongType" column="thutuhienthi" />
+		<property name="LoaiThanhPhan" type="com.liferay.portal.dao.orm.hibernate.LongType" column="loaithanhphan" />
+		<property name="MauTrucTuyen" type="com.liferay.portal.dao.orm.hibernate.StringType" column="mautructuyen" />
+		<property name="SoTaiLieuDinhKem" type="com.liferay.portal.dao.orm.hibernate.LongType" column="sotailieudinhkem" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.common.model.impl.TthcThuTucHanhChinhImpl" table="tthc_thutuchanhchinh">
+		<id name="Id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="maThuTuc" type="com.liferay.portal.dao.orm.hibernate.StringType" column="mathutuc" />
+		<property name="tenThuTuc" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tenthutuc" />
+		<property name="trinhTuThucHien" type="com.liferay.portal.dao.orm.hibernate.StringType" column="trinhtuthuchien" />
+		<property name="cachThucThucHien" type="com.liferay.portal.dao.orm.hibernate.StringType" column="cachthucthuchien" />
+		<property name="thanhPhanHoSo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="thanhphanhoso" />
+		<property name="dieuKienThucHien" type="com.liferay.portal.dao.orm.hibernate.StringType" column="dieukienthuchien" />
+		<property name="thoiHanGiaiQuyet" type="com.liferay.portal.dao.orm.hibernate.StringType" column="thoihangiaiquyet" />
+		<property name="doiTuongThucHien" type="com.liferay.portal.dao.orm.hibernate.StringType" column="doituongthuchien" />
+		<property name="ketQuaXuLy" type="com.liferay.portal.dao.orm.hibernate.StringType" column="ketquaxuly" />
+		<property name="canCuPhapLy" type="com.liferay.portal.dao.orm.hibernate.StringType" column="cancuphaply" />
+		<property name="lePhi" type="com.liferay.portal.dao.orm.hibernate.StringType" column="lephi" />
+		<property name="coQuanQlttId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="coquanqlttid" />
+		<property name="linhVucThuTucId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="linhvucthutucid" />
+		<property name="ngayCoHieuLuc" type="org.hibernate.type.TimestampType" column="ngaycohieuluc" />
+		<property name="ngayHetHieuLuc" type="org.hibernate.type.TimestampType" column="ngayhethieuluc" />
+		<property name="huongDanThucHien" type="com.liferay.portal.dao.orm.hibernate.StringType" column="huongdanthuchien" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CertificateCircularImpl" table="vr_certificatecircular">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="certificateRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="certificaterecordid" />
+		<property name="sequenceNo" type="com.liferay.portal.dao.orm.hibernate.LongType" column="sequenceno" />
+		<property name="circularNo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="circularno" />
+		<property name="circularDate" type="org.hibernate.type.TimestampType" column="circulardate" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CertificateRecordImpl" table="vr_certificaterecord">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="certificateType" type="com.liferay.portal.dao.orm.hibernate.LongType" column="certificatetype" />
+		<property name="certificateNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="certificatenumber" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" column="createddate" />
+		<property name="editorName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="editorname" />
+		<property name="inspectionReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionreportid" />
+		<property name="safetyTestReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="safetytestreportid" />
+		<property name="emissionTestReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="emissiontestreportid" />
+		<property name="copReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="copreportid" />
+		<property name="dossierId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="dossierid" />
+		<property name="reason" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="organization" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="division" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+		<property name="digitalIssued" type="com.liferay.portal.dao.orm.hibernate.LongType" column="digitalissued" />
+		<property name="stampStatus" type="com.liferay.portal.dao.orm.hibernate.LongType" column="stampstatus" />
+		<property name="commentInWrongCase" type="com.liferay.portal.dao.orm.hibernate.LongType" column="commentinwrongcase" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CertificateRecordSpecImpl" table="vr_certificaterecordspec">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="certificateRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="certificaterecordid" />
+		<property name="specificationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationcode" />
+		<property name="specificationName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationname" />
+		<property name="specificationValue" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationvalue" />
+		<property name="version" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CfgTechnicalspecImpl" table="vr_cfg_technicalspec">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleTypeCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehicletypecode" />
+		<property name="vehicleTypeName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehicletypename" />
+		<property name="sequenceno" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="specificationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationcode" />
+		<property name="specificationName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationname" />
+		<property name="specDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" column="spec_description" />
+		<property name="specCategory" type="com.liferay.portal.dao.orm.hibernate.StringType" column="spec_category" />
+		<property name="specificationGroup" type="com.liferay.portal.dao.orm.hibernate.LongType" column="specificationgroup" />
+		<property name="searchingIncluded" type="com.liferay.portal.dao.orm.hibernate.LongType" column="searching_included" />
+		<property name="referenceIncluded" type="com.liferay.portal.dao.orm.hibernate.LongType" column="reference_included" />
+		<property name="certificateIncluded" type="com.liferay.portal.dao.orm.hibernate.LongType" column="certificate_included" />
+		<property name="datagroupid" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ConfirmedInspectionImpl" table="vr_confirmedinspection">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="registeredInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="registeredinspectionid" />
+		<property name="customsDeclarationId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="customsdeclarationid" />
+		<property name="confirmationCode" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmationcode" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="inspectionDate" type="org.hibernate.type.TimestampType" column="inspectiondate" />
+		<property name="inspectionSite" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectionsite" />
+		<property name="inspectionDistrictCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectiondistrictcode" />
+		<property name="inspectionProvincecode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectionprovincecode" />
+		<property name="customsRegion" type="com.liferay.portal.dao.orm.hibernate.LongType" column="customsregion" />
+		<property name="markasChangedSite" type="com.liferay.portal.dao.orm.hibernate.LongType" column="markaschangedsite" />
+		<property name="contactName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="contactname" />
+		<property name="contactPhone" type="com.liferay.portal.dao.orm.hibernate.StringType" column="contactphone" />
+		<property name="contactEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" column="contactemail" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="corporationId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationid" />
+		<property name="inspectorId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectorid" />
+		<property name="phieuXuLyPhuId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="phieuxulyphuid" />
+		<property name="hoSoThuTucId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="hosothutucid" />
+		<property name="dateFrom" type="org.hibernate.type.TimestampType" column="datefrom" />
+		<property name="dateTo" type="org.hibernate.type.TimestampType" column="dateto" />
+		<property name="leader" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ControlReportImpl" table="vr_controlreport">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="registeredInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="registeredinspectionid" />
+		<property name="inspectionrecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="hosothutucId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="hosothutucid" />
+		<property name="controlRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="controlrequirementid" />
+		<property name="requirementNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="requirementnumber" />
+		<property name="reportNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="reportnumber" />
+		<property name="reportDate" type="org.hibernate.type.TimestampType" column="reportdate" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ControlRequestImpl" table="vr_controlrequest">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="confirmedInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmedinspectionid" />
+		<property name="requestNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="requestnumber" />
+		<property name="corporationName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationname" />
+		<property name="controlContent" type="com.liferay.portal.dao.orm.hibernate.StringType" column="controlcontent" />
+		<property name="controlDeadLine" type="org.hibernate.type.TimestampType" column="controldeadline" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ControlRequirementImpl" table="vr_controlrequirement">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="registeredInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="registeredinspectionid" />
+		<property name="requirementNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="requirementnumber" />
+		<property name="requirementDate" type="org.hibernate.type.TimestampType" column="requirementdate" />
+		<property name="corporationId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationid" />
+		<property name="controlContent" type="com.liferay.portal.dao.orm.hibernate.StringType" column="controlcontent" />
+		<property name="controlDeadline" type="org.hibernate.type.TimestampType" column="controldeadline" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="attachedfile" />
+		<property name="requirementContent" type="com.liferay.portal.dao.orm.hibernate.StringType" column="requirementcontent" />
+		<property name="controlReportDeadline" type="org.hibernate.type.TimestampType" column="controlreportdeadline" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+		<property name="inspectionrecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="phieuxulyphuId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="phieuxulyphuid" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CopReportImpl" table="vr_copreport">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="registeredInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="registeredinspectionid" />
+		<property name="reportNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="reportnumber" />
+		<property name="corporationId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationid" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationAttendeeImpl" table="vr_corporation_attendee">
+		<cache usage="read-write" />
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="confirmedInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="ConfirmedInspectionId" />
+		<property name="sequence" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="inspectorid" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectorId" />
+		<property name="inspectorName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="inspectorRole" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectorrole" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationInspectorImpl" table="vr_corporation_inspector">
+		<cache usage="read-write" />
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="corporationId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationid" />
+		<property name="inspectorid" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="inspectorName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectorname" />
+		<property name="inspectorPhone" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectorphone" />
+		<property name="inspectorEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectoremail" />
+		<property name="contactcode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="teamId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="teamid" />
+		<property name="markupTeamLeader" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="markupteamleader" />
+		<property name="markUpBoss" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="markupboss" />
+		<property name="place" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="filechukyId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="filechukyid" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationTeamImpl" table="vr_corporation_team">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="corporationId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationid" />
+		<property name="teamName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="TEAMNAME" />
+		<property name="markUpDelete" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="markupdelete" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CorporationViewImpl" table="vr_corporation_view">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="corporationId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationid" />
+		<property name="corporationName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationname" />
+		<property name="inspectorId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectorid" />
+		<property name="isLeader" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="isleader" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.CustomsDeclarationImpl" table="vr_customsdeclaration">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="importCustomDeclareNo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="importcustomdeclareno" />
+		<property name="importCustomDeclareDate" type="org.hibernate.type.TimestampType" column="importcustomdeclaredate" />
+		<property name="customsResult" type="com.liferay.portal.dao.orm.hibernate.StringType" column="customsresult" />
+		<property name="productCheck" type="com.liferay.portal.dao.orm.hibernate.StringType" column="productcheck" />
+		<property name="releaseDate" type="org.hibernate.type.TimestampType" column="releasedate" />
+		<property name="hosothutucId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="hosothutucid" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DebitNoteImpl" table="vr_debitnote">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="debitNoteNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="debitnotenumber" />
+		<property name="transactionId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="transactionid" />
+		<property name="organization" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="division" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="reportBy" type="com.liferay.portal.dao.orm.hibernate.StringType" column="reportby" />
+		<property name="reportDate" type="org.hibernate.type.TimestampType" column="reportdate" />
+		<property name="fromDate" type="org.hibernate.type.TimestampType" column="fromdate" />
+		<property name="toDate" type="org.hibernate.type.TimestampType" column="todate" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="totalPayment" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalpayment" />
+		<property name="paymentType" type="com.liferay.portal.dao.orm.hibernate.LongType" column="paymenttype" />
+		<property name="markAsDeleted" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="markasdeleted" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DebitNoteDetailsImpl" table="vr_debitnotedetails">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="vehiclerecordid" />
+		<property name="debitNoteId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="debitnoteid" />
+		<property name="inspectionRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="unitPrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="unitprice" />
+		<property name="currency" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="basicCurrency" type="com.liferay.portal.dao.orm.hibernate.StringType" column="basiccurrency" />
+		<property name="exchangeRate" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="exchangerate" />
+		<property name="inspectionFee" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="inspectionfee" />
+		<property name="otherCosts" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="othercosts" />
+		<property name="totalCostsAndFee" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="totalcostsandfee" />
+		<property name="tax" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="charges" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="totalRealDebit" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="totalrealdebit" />
+		<property name="totalDebit" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="totaldebit" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DraftCertificateImpl" table="vr_draftcertificate">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="certificateType" type="com.liferay.portal.dao.orm.hibernate.LongType" column="certificatetype" />
+		<property name="inspectionReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionreportid" />
+		<property name="safetytestReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="safetytestreportid" />
+		<property name="emissionTestReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="emissiontestreportid" />
+		<property name="copReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="copreportid" />
+		<property name="reason" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createdDate" type="org.hibernate.type.TimestampType" column="createddate" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.DraftCertificateSpecImpl" table="vr_draftcertificatespec">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="draftCertificateId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="draftcertificateid" />
+		<property name="specificationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationcode" />
+		<property name="specificationName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationname" />
+		<property name="specificationValue" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationvalue" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.EmissionTestReportImpl" table="vr_emissiontestreport">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="emissiontestRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="emissiontestrequirementid" />
+		<property name="reportNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="reportnumber" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="confirmedResult" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmedresult" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.EmissionTestRequestImpl" table="vr_emissiontestrequest">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="confirmedInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmedinspectionid" />
+		<property name="requestNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="requestnumber" />
+		<property name="testTimeAndPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="testtimeandplace" />
+		<property name="testPayment" type="com.liferay.portal.dao.orm.hibernate.StringType" column="testpayment" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="corporationName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationname" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.EmissionTestRequirementImpl" table="vr_emissiontestrequirement">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="registeredInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="registeredinspectionid" />
+		<property name="inspectionRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="requirementNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="requirementnumber" />
+		<property name="contentOfRequest" type="com.liferay.portal.dao.orm.hibernate.StringType" column="contentofrequest" />
+		<property name="testingRegisteredPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="testingregisteredplace" />
+		<property name="testingRegistration" type="com.liferay.portal.dao.orm.hibernate.StringType" column="testingregistration" />
+		<property name="testingPaymentCondition" type="com.liferay.portal.dao.orm.hibernate.StringType" column="testingpaymentcondition" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="corporationId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationid" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+		<property name="phieuXuLyPhuId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="phieuxulyphuid" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ExchangeRateImpl" table="vr_exchangerate">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="originalCurrency" type="com.liferay.portal.dao.orm.hibernate.StringType" column="originalcurrency" />
+		<property name="basicCurrency" type="com.liferay.portal.dao.orm.hibernate.StringType" column="basiccurrency" />
+		<property name="exchangeRate" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="exchangerate" />
+		<property name="publishDate" type="org.hibernate.type.TimestampType" column="publishdate" />
+		<property name="validFrom" type="org.hibernate.type.TimestampType" column="validfrom" />
+		<property name="validUntil" type="org.hibernate.type.TimestampType" column="validuntil" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionCommonStatusImpl" table="vr_inspectionCommonStatus">
+		<cache usage="read-write" />
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleClass" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sequenceNo" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="itemName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="commonStatus" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="inspectionRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="commonCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="CommonCode" />
+		<property name="allowEdit" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="AllowEdit" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionRecordImpl" table="vr_inspectionrecord">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="inspectionRecordNo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectionrecordno" />
+		<property name="inspectionRecordDate" type="org.hibernate.type.TimestampType" column="inspectionrecorddate" />
+		<property name="corporationId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationid" />
+		<property name="inspectorId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectorid" />
+		<property name="confirmedInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmedinspectionid" />
+		<property name="inspectionSite" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectionsite" />
+		<property name="inspectionDateFrom" type="org.hibernate.type.TimestampType" column="inspectiondatefrom" />
+		<property name="inspectionDateTo" type="org.hibernate.type.TimestampType" column="inspectiondateto" />
+		<property name="inspectionMode" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionmode" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="confirmedResult" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmedresult" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+		<property name="phieuXuLyPhuId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="phieuxulyphuid" />
+		<property name="markupSafeTest" type="com.liferay.portal.dao.orm.hibernate.LongType" column="markupsafetest" />
+		<property name="markupEmissionTest" type="com.liferay.portal.dao.orm.hibernate.LongType" column="markupemissiontest" />
+		<property name="markupControl" type="com.liferay.portal.dao.orm.hibernate.LongType" column="markupcontrol" />
+		<property name="registeredInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="registeredinspectionid" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="hoSoThuTucId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="hosothutucid" />
+		<property name="otherCosts" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="othercosts" />
+		<property name="markupPaid" type="com.liferay.portal.dao.orm.hibernate.LongType" column="markuppaid" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionRecordAttachImpl" table="vr_inspectionrecord_attach">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="inspectionRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="hoSoThuTucId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="hosothutucid" />
+		<property name="enTryId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="entryid" />
+		<property name="enTryName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="entryname" />
+		<property name="inspectorId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectorid" />
+		<property name="uploadTime" type="org.hibernate.type.TimestampType" column="uploadtime" />
+		<property name="markUpDelte" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="markupdelte" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.InspectionRecordSpecImpl" table="vr_inspectionrecordspec">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="inspectionRecordid" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="specificationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationcode" />
+		<property name="specificationName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationname" />
+		<property name="specificationValue" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationvalue" />
+		<property name="evaluationResult" type="com.liferay.portal.dao.orm.hibernate.LongType" column="evaluationresult" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.PaymentStatusImpl" table="vr_paymentstatus">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="vehiclerecordid" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="unitPrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="unitprice" />
+		<property name="currency" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="basicCurrency" type="com.liferay.portal.dao.orm.hibernate.StringType" column="basiccurrency" />
+		<property name="exchangeRate" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="exchangerate" />
+		<property name="inspectionFee" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="inspectionfee" />
+		<property name="otherCosts" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="othercosts" />
+		<property name="totalCostsAndFee" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="totalcostsandfee" />
+		<property name="tax" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="charges" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="totalRealDebit" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="totalrealdebit" />
+		<property name="totalDebit" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="totaldebit" />
+		<property name="totalCredit" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="totalcredit" />
+		<property name="currentStatus" type="com.liferay.portal.dao.orm.hibernate.LongType" column="currentstatus" />
+		<property name="debitNoteNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="debitnotenumber" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ProductionCountryImpl" table="vr_productioncountry">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleGroupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="vehiclegroupid" />
+		<property name="countryCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="countrycode" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.RegisteredInspectionImpl" table="vr_registeredinspection">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="registeredNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="registerednumber" />
+		<property name="dossierId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="dossierid" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="importerCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="importercode" />
+		<property name="importerName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="importername" />
+		<property name="importerAddress" type="com.liferay.portal.dao.orm.hibernate.StringType" column="importeraddress" />
+		<property name="representative" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fax" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="inspectionDate" type="org.hibernate.type.TimestampType" column="inspectiondate" />
+		<property name="inspectionSite" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectionsite" />
+		<property name="inspectionDistrictCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectiondistrictcode" />
+		<property name="inspectionProvinceCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectionprovincecode" />
+		<property name="contactName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="contactname" />
+		<property name="contactPhone" type="com.liferay.portal.dao.orm.hibernate.StringType" column="contactphone" />
+		<property name="contactEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" column="contactemail" />
+		<property name="importerSignName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="importersignname" />
+		<property name="importerSignTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="importersigntitle" />
+		<property name="importerSignPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="importersignplace" />
+		<property name="importerSignDate" type="org.hibernate.type.TimestampType" column="importersigndate" />
+		<property name="inspectorOrganization" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectororganization" />
+		<property name="inspectorDivision" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectordivision" />
+		<property name="inspectorSigNname" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectorsignname" />
+		<property name="inspectorSignTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectorsigntitle" />
+		<property name="inspectorSignPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="inspectorsignplace" />
+		<property name="inspectorSignDate" type="org.hibernate.type.TimestampType" column="inspectorsigndate" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SafetestRequirementImpl" table="vr_safetestrequirement">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="registeredInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="registeredinspectionid" />
+		<property name="inspectionRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="requirementNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="requirementnumber" />
+		<property name="contentOfRequest" type="com.liferay.portal.dao.orm.hibernate.StringType" column="contentofrequest" />
+		<property name="testingRegisteredPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="testingregisteredplace" />
+		<property name="testingRegistration" type="com.liferay.portal.dao.orm.hibernate.StringType" column="testingregistration" />
+		<property name="testingPaymentCondition" type="com.liferay.portal.dao.orm.hibernate.StringType" column="testingpaymentcondition" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="corporationId" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationid" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+		<property name="phieuXuLyPhuId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="phieuxulyphuid" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SafetyTestReportImpl" table="vr_safetytestreport">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="safetestRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="safetestrequirementid" />
+		<property name="reportNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="reportnumber" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="confirmedResult" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmedresult" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SafetyTestRequestImpl" table="vr_safetytestrequest">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="confirmedInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmedinspectionid" />
+		<property name="requestNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="requestnumber" />
+		<property name="testContent" type="com.liferay.portal.dao.orm.hibernate.StringType" column="testcontent" />
+		<property name="testTimeAndPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="testtimeandplace" />
+		<property name="testPayment" type="com.liferay.portal.dao.orm.hibernate.StringType" column="testpayment" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="corporationName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="corporationname" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="signName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signname" />
+		<property name="signTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signtitle" />
+		<property name="signPlace" type="com.liferay.portal.dao.orm.hibernate.StringType" column="signplace" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.SatetyTestReportSpecImpl" table="vr_satetytestreportspec">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="saftyTestReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="saftytestreportid" />
+		<property name="specificationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationcode" />
+		<property name="specificationName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationname" />
+		<property name="specificationValue" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationvalue" />
+		<property name="evaluationResult" type="com.liferay.portal.dao.orm.hibernate.LongType" column="evaluationresult" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleGroupImpl" table="vr_vehiclegroup">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleClass" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehicleclass" />
+		<property name="registeredInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="registeredinspectionid" />
+		<property name="technicalSpecCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="technicalspeccode" />
+		<property name="referenceCertificateNo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="referencecertificateno" />
+		<property name="safetytestreportNo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="safetytestreportno" />
+		<property name="emissiontestreportNo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="emissiontestreportno" />
+		<property name="copreportNo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="copreportno" />
+		<property name="vehicleType" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehicletype" />
+		<property name="engineType" type="com.liferay.portal.dao.orm.hibernate.StringType" column="enginetype" />
+		<property name="tradeMark" type="com.liferay.portal.dao.orm.hibernate.StringType" column="trademark" />
+		<property name="markAsVehicle" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="markasvehicle" />
+		<property name="commercialName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="commercialname" />
+		<property name="modelCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="modelcode" />
+		<property name="productionPlant" type="com.liferay.portal.dao.orm.hibernate.StringType" column="productionplant" />
+		<property name="addressOfProductionPlant" type="com.liferay.portal.dao.orm.hibernate.StringType" column="addressofproductionplant" />
+		<property name="emissionStandard" type="com.liferay.portal.dao.orm.hibernate.StringType" column="emissionstandard" />
+		<property name="safetyTestReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="safetytestreportid" />
+		<property name="emissionTestReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="emissiontestreportid" />
+		<property name="copReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="copreportid" />
+		<property name="specificationVersion" type="com.liferay.portal.dao.orm.hibernate.LongType" column="specificationversion" />
+		<property name="hoSoThuTucId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="hosothutucid" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="ATTACHEDFILE" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleGroupInitialImpl" table="vr_vehiclegroup_initial">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleClass" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehicleclass" />
+		<property name="registeredInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="registeredinspectionid" />
+		<property name="technicalSpecCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="technicalspeccode" />
+		<property name="referenceCertificateNo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="referencecertificateno" />
+		<property name="safetytestreportNo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="safetytestreportno" />
+		<property name="emissiontestreportNo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="emissiontestreportno" />
+		<property name="copreportNo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="copreportno" />
+		<property name="vehicleType" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehicletype" />
+		<property name="engineType" type="com.liferay.portal.dao.orm.hibernate.StringType" column="enginetype" />
+		<property name="tradeMark" type="com.liferay.portal.dao.orm.hibernate.StringType" column="trademark" />
+		<property name="markAsVehicle" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="markasvehicle" />
+		<property name="commercialName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="commercialname" />
+		<property name="modelCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="modelcode" />
+		<property name="productionPlant" type="com.liferay.portal.dao.orm.hibernate.StringType" column="productionplant" />
+		<property name="addressOfProductionPlant" type="com.liferay.portal.dao.orm.hibernate.StringType" column="addressofproductionplant" />
+		<property name="emissionStandard" type="com.liferay.portal.dao.orm.hibernate.StringType" column="emissionstandard" />
+		<property name="safetyTestReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="safetytestreportid" />
+		<property name="emissionTestReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="emissiontestreportid" />
+		<property name="copReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="copreportid" />
+		<property name="specificationVersion" type="com.liferay.portal.dao.orm.hibernate.LongType" column="specificationversion" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="ATTACHEDFILE" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleGroupSpecImpl" table="vr_vehiclegroupspec">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleGroupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="vehiclegroupid" />
+		<property name="specificationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationcode" />
+		<property name="specificationName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationname" />
+		<property name="specificationValue" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationvalue" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleRecordImpl" table="vr_vehiclerecord">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleGroupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="vehiclegroupid" />
+		<property name="debitNoteId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="debitnoteid" />
+		<property name="sequenceNo" type="com.liferay.portal.dao.orm.hibernate.LongType" column="sequenceno" />
+		<property name="codeNumber" type="com.liferay.portal.dao.orm.hibernate.LongType" column="codenumber" />
+		<property name="chassisNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="chassisnumber" />
+		<property name="engineNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="enginenumber" />
+		<property name="productionYear" type="com.liferay.portal.dao.orm.hibernate.LongType" column="productionyear" />
+		<property name="vehicleEngineStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehicleenginestatus" />
+		<property name="vehicleColor" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehiclecolor" />
+		<property name="unitPrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="unitprice" />
+		<property name="currency" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="confirmedInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmedinspectionid" />
+		<property name="inspectionRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="draftCertificateId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="draftcertificateid" />
+		<property name="certificateRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="certificaterecordid" />
+		<property name="markUpStatus" type="com.liferay.portal.dao.orm.hibernate.LongType" column="markupstatus" />
+		<property name="safeTestRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="safetestrequirementid" />
+		<property name="emissionTestRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="emissiontestrequirementid" />
+		<property name="controlRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="controlrequirementid" />
+		<property name="markAsSample" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="MarkAsSample" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehiclerecordInitialImpl" table="vr_vehiclerecord_initial">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleGroupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="vehiclegroupid" />
+		<property name="sequenceNo" type="com.liferay.portal.dao.orm.hibernate.LongType" column="sequenceno" />
+		<property name="codeNumber" type="com.liferay.portal.dao.orm.hibernate.LongType" column="codenumber" />
+		<property name="chassisNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="chassisnumber" />
+		<property name="engineNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="enginenumber" />
+		<property name="productionYear" type="com.liferay.portal.dao.orm.hibernate.LongType" column="productionyear" />
+		<property name="vehicleEngineStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehicleenginestatus" />
+		<property name="vehicleColor" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehiclecolor" />
+		<property name="unitPrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="unitprice" />
+		<property name="currency" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="confirmedInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmedinspectionid" />
+		<property name="inspectionRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="draftCertificateId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="draftcertificateid" />
+		<property name="certificateRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="certificaterecordid" />
+		<property name="markUpStatus" type="com.liferay.portal.dao.orm.hibernate.LongType" column="markupstatus" />
+		<property name="safeTestRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="safetestrequirementid" />
+		<property name="emissionTestRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="emissiontestrequirementid" />
+		<property name="controlRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="controlrequirementid" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleSpecificationImpl" table="vr_vehiclespecification">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleGroupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="vehiclegroupid" />
+		<property name="specificationVersion" type="com.liferay.portal.dao.orm.hibernate.LongType" column="specificationversion" />
+		<property name="specificationSourceCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationsourcecode" />
+		<property name="specificationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationcode" />
+		<property name="specificationName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationname" />
+		<property name="specificationValue" type="com.liferay.portal.dao.orm.hibernate.StringType" column="specificationvalue" />
+		<property name="safetyTestReportId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="safetytestreportid" />
+		<property name="inspectionRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="specificResult" type="com.liferay.portal.dao.orm.hibernate.LongType" column="specificresult" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.VehicleStatisticsImpl" table="vr_vehiclestatistics">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="registeredInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="registeredinspectionid" />
+		<property name="totalRegisteredVehicle" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalregisteredvehicle" />
+		<property name="totalRequestedVehicle" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalrequestedvehicle" />
+		<property name="totalNotYetRequestedVehicle" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalnotyetrequestedvehicle" />
+		<property name="totalCancelledVehicle" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalcancelledvehicle" />
+		<property name="totalInspectedVehicle" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalinspectedvehicle" />
+		<property name="totalResolvedVehicle" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalresolvedvehicle" />
+		<property name="totalReexportedVehicle" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalreexportedvehicle" />
+		<property name="totalWrongStatusVehicle" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalwrongstatusvehicle" />
+		<property name="totalSafeTestSample" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalsafetestsample" />
+		<property name="totalEmissionTestSample" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalemissiontestsample" />
+		<property name="totalControlRequiredVehicle" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalcontrolrequiredvehicle" />
+		<property name="totalCertificate" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalcertificate" />
+		<property name="totalViolatedVehicle" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totalviolatedvehicle" />
+		<property name="totalTechnicalSpec" type="com.liferay.portal.dao.orm.hibernate.LongType" column="totaltechnicalspec" />
+		<property name="processingState" type="com.liferay.portal.dao.orm.hibernate.LongType" column="processingstate" />
+		<property name="processingTiming" type="com.liferay.portal.dao.orm.hibernate.LongType" column="processingtiming" />
+		<property name="daysUptoDeadline" type="com.liferay.portal.dao.orm.hibernate.LongType" column="daysuptodeadline" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ViewDangKiemTimKiemImpl" table="view_dangkiemtimkiem">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleGroupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="vehiclegroupid" />
+		<property name="debitNoteId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="debitnoteid" />
+		<property name="sequenceNo" type="com.liferay.portal.dao.orm.hibernate.LongType" column="sequenceno" />
+		<property name="codeNumber" type="com.liferay.portal.dao.orm.hibernate.LongType" column="codenumber" />
+		<property name="chassisNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="chassisnumber" />
+		<property name="engineNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="enginenumber" />
+		<property name="productionYear" type="com.liferay.portal.dao.orm.hibernate.LongType" column="productionyear" />
+		<property name="vehicleEngineStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehicleenginestatus" />
+		<property name="vehicleColor" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehiclecolor" />
+		<property name="unitPrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="unitprice" />
+		<property name="currency" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="confirmedInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmedinspectionid" />
+		<property name="inspectionRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="draftCertificateId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="draftcertificateid" />
+		<property name="certificateRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="certificaterecordid" />
+		<property name="markUpStatus" type="com.liferay.portal.dao.orm.hibernate.LongType" column="markupstatus" />
+		<property name="safeTestRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="safetestrequirementid" />
+		<property name="emissionTestRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="emissiontestrequirementid" />
+		<property name="controlRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="controlrequirementid" />
+		<property name="markAsSample" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="MarkAsSample" />
+		<property name="inspectionrecordno" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="inspectionRecordDate" type="org.hibernate.type.TimestampType" column="inspectionrecorddate" />
+		<property name="attachedFileBbkt" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfilebbkt" />
+		<property name="certificateNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="certificatenumber" />
+		<property name="signDate" type="org.hibernate.type.TimestampType" column="signdate" />
+		<property name="attachedFile" type="com.liferay.portal.dao.orm.hibernate.LongType" column="attachedfile" />
+		<property name="registeredNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="registerednumber" />
+		<property name="inspectorSignDate" type="org.hibernate.type.TimestampType" column="inspectorsigndate" />
+		<property name="vehicleClass" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehicleclass" />
+	</class>
+	<class name="vn.dtt.gt.dk.dao.nghiepvu.model.impl.ViewTrungSoKhungDongCoImpl" table="view_trungsokhungdongco">
+		<id name="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vehicleGroupId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="vehiclegroupid" />
+		<property name="debitNoteId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="debitnoteid" />
+		<property name="sequenceNo" type="com.liferay.portal.dao.orm.hibernate.LongType" column="sequenceno" />
+		<property name="codeNumber" type="com.liferay.portal.dao.orm.hibernate.LongType" column="codenumber" />
+		<property name="chassisNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="chassisnumber" />
+		<property name="engineNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="enginenumber" />
+		<property name="productionYear" type="com.liferay.portal.dao.orm.hibernate.LongType" column="productionyear" />
+		<property name="vehicleEngineStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehicleenginestatus" />
+		<property name="vehicleColor" type="com.liferay.portal.dao.orm.hibernate.StringType" column="vehiclecolor" />
+		<property name="unitPrice" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="unitprice" />
+		<property name="currency" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="remarks" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="confirmedInspectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="confirmedinspectionid" />
+		<property name="inspectionRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="inspectionrecordid" />
+		<property name="draftCertificateId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="draftcertificateid" />
+		<property name="certificateRecordId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="certificaterecordid" />
+		<property name="markUpStatus" type="com.liferay.portal.dao.orm.hibernate.LongType" column="markupstatus" />
+		<property name="safeTestRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="safetestrequirementid" />
+		<property name="emissionTestRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="emissiontestrequirementid" />
+		<property name="controlRequirementId" type="com.liferay.portal.dao.orm.hibernate.LongType" column="controlrequirementid" />
+		<property name="markAsSample" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="MarkAsSample" />
+		<property name="registeredNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" column="registerednumber" />
+		<property name="contactName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="contactname" />
+		<property name="contactPhone" type="com.liferay.portal.dao.orm.hibernate.StringType" column="contactphone" />
+		<property name="inspectionDate" type="org.hibernate.type.TimestampType" column="inspectiondate" />
+		<property name="importerName" type="com.liferay.portal.dao.orm.hibernate.StringType" column="importername" />
+	</class>
+</hibernate-mapping>

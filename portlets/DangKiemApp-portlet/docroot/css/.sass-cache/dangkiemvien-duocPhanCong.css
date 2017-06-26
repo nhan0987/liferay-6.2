@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+.TabbedPanelsContent {
+  padding: 10px 0px 0px 0px !important; }
+
+.tab-content {
+  background: none !important; }
+
+.tab-content-report {
+  background: none !important; }
+
+.borderTd {
+  border: 1px solid #ddd; }
+
+.button-holder {
+  float: left; }
+
+/* ----START---- css chuc nang hien thi tab */
+.reportContainer {
+  width: 800px;
+  margin: 0 auto; }
+
+ul.reportTabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none; }
+
+ul.reportTabs li {
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer; }
+
+ul.reportTabs li.current {
+  background: #ededed;
+  color: #222; }
+
+.tab-content-report {
+  display: none;
+  background: #ededed; }
+
+.tab-content-report.current {
+  display: inherit; }
+
+.width100 {
+  width: 100%; }
+
+.text-left {
+  text-align: left; }
+
+.paddingLeft05 {
+  padding-left: 0.5%; }
+
+/* ----end---- css chuc nang hien thi tab */
+/**chuc nang loading khi su dung ajax*/
+.waiting {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /**background-color: rgba(255, 255, 255, .5);*/
+  background: rgba(255, 255, 255, 0.5) url("/DangKiemApp-portlet/img/loading.gif") 50% 50% no-repeat; }
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+  overflow: hidden; }
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .waiting {
+  display: block; }
+
