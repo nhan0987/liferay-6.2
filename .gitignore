@@ -28,3 +28,5 @@ portlets/DangKiemService-portlet/docroot/WEB-INF/classes/
 portlets/DangKiemTimKiem-portlet/docroot/WEB-INF/classes/
 
 build.*.properties
+
+portlets/DangKiemApp-portlet/docroot/WEB-INF/src/service\.properties
