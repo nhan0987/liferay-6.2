@@ -356,6 +356,10 @@ public class CertificateCircularClp extends BaseModelImpl<CertificateCircular>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -420,4 +424,5 @@ public class CertificateCircularClp extends BaseModelImpl<CertificateCircular>
 	private String _circularNo;
 	private Date _circularDate;
 	private BaseModel<?> _certificateCircularRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

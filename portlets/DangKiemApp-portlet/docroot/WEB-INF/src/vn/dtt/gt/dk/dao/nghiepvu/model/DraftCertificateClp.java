@@ -512,6 +512,10 @@ public class DraftCertificateClp extends BaseModelImpl<DraftCertificate>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -611,4 +615,5 @@ public class DraftCertificateClp extends BaseModelImpl<DraftCertificate>
 	private String _remarks;
 	private Date _createdDate;
 	private BaseModel<?> _draftCertificateRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

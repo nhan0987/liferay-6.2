@@ -354,6 +354,10 @@ public class AswmsgValidationLogClp extends BaseModelImpl<AswmsgValidationLog>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -418,4 +422,5 @@ public class AswmsgValidationLogClp extends BaseModelImpl<AswmsgValidationLog>
 	private String _ValidationCode;
 	private String _Description;
 	private BaseModel<?> _aswmsgValidationLogRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.aswmsg.service.ClpSerializer.class;
 }

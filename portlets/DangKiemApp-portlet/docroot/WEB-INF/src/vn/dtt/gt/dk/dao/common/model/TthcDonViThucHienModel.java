@@ -181,19 +181,20 @@ public interface TthcDonViThucHienModel extends BaseModel<TthcDonViThucHien> {
 	public Object clone();
 
 	@Override
-	public int compareTo(TthcDonViThucHien tthcDonViThucHien);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.common.model.TthcDonViThucHien tthcDonViThucHien);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<TthcDonViThucHien> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.common.model.TthcDonViThucHien> toCacheModel();
 
 	@Override
-	public TthcDonViThucHien toEscapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TthcDonViThucHien toEscapedModel();
 
 	@Override
-	public TthcDonViThucHien toUnescapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TthcDonViThucHien toUnescapedModel();
 
 	@Override
 	public String toString();

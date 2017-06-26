@@ -1529,6 +1529,10 @@ public class ImportedXCDClp extends BaseModelImpl<ImportedXCD>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1859,4 +1863,5 @@ public class ImportedXCDClp extends BaseModelImpl<ImportedXCD>
 	private String _ThuNguyen;
 	private String _GiaTri;
 	private BaseModel<?> _importedXCDRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

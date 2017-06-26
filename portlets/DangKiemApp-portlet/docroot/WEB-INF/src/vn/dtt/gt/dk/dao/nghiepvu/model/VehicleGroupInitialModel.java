@@ -476,19 +476,20 @@ public interface VehicleGroupInitialModel extends BaseModel<VehicleGroupInitial>
 	public Object clone();
 
 	@Override
-	public int compareTo(VehicleGroupInitial vehicleGroupInitial);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.VehicleGroupInitial vehicleGroupInitial);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<VehicleGroupInitial> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.VehicleGroupInitial> toCacheModel();
 
 	@Override
-	public VehicleGroupInitial toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.VehicleGroupInitial toEscapedModel();
 
 	@Override
-	public VehicleGroupInitial toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.VehicleGroupInitial toUnescapedModel();
 
 	@Override
 	public String toString();

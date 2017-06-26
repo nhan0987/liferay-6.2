@@ -196,19 +196,20 @@ public interface NewExchangeRateModel extends BaseModel<NewExchangeRate> {
 	public Object clone();
 
 	@Override
-	public int compareTo(NewExchangeRate newExchangeRate);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.NewExchangeRate newExchangeRate);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<NewExchangeRate> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.NewExchangeRate> toCacheModel();
 
 	@Override
-	public NewExchangeRate toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.NewExchangeRate toEscapedModel();
 
 	@Override
-	public NewExchangeRate toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.NewExchangeRate toUnescapedModel();
 
 	@Override
 	public String toString();

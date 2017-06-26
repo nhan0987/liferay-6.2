@@ -341,19 +341,20 @@ public interface PhieuXuLyPhuHoSoThuTucModel extends BaseModel<PhieuXuLyPhuHoSoT
 	public Object clone();
 
 	@Override
-	public int compareTo(PhieuXuLyPhuHoSoThuTuc phieuXuLyPhuHoSoThuTuc);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.motcua.model.PhieuXuLyPhuHoSoThuTuc phieuXuLyPhuHoSoThuTuc);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<PhieuXuLyPhuHoSoThuTuc> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.motcua.model.PhieuXuLyPhuHoSoThuTuc> toCacheModel();
 
 	@Override
-	public PhieuXuLyPhuHoSoThuTuc toEscapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.PhieuXuLyPhuHoSoThuTuc toEscapedModel();
 
 	@Override
-	public PhieuXuLyPhuHoSoThuTuc toUnescapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.PhieuXuLyPhuHoSoThuTuc toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -565,19 +565,20 @@ public interface AswmsgMessageLogModel extends BaseModel<AswmsgMessageLog> {
 	public Object clone();
 
 	@Override
-	public int compareTo(AswmsgMessageLog aswmsgMessageLog);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.aswmsg.model.AswmsgMessageLog aswmsgMessageLog);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AswmsgMessageLog> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.aswmsg.model.AswmsgMessageLog> toCacheModel();
 
 	@Override
-	public AswmsgMessageLog toEscapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.AswmsgMessageLog toEscapedModel();
 
 	@Override
-	public AswmsgMessageLog toUnescapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.AswmsgMessageLog toUnescapedModel();
 
 	@Override
 	public String toString();

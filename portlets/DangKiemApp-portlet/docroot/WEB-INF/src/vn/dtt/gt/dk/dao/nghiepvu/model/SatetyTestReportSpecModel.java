@@ -181,19 +181,20 @@ public interface SatetyTestReportSpecModel extends BaseModel<SatetyTestReportSpe
 	public Object clone();
 
 	@Override
-	public int compareTo(SatetyTestReportSpec satetyTestReportSpec);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.SatetyTestReportSpec satetyTestReportSpec);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<SatetyTestReportSpec> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.SatetyTestReportSpec> toCacheModel();
 
 	@Override
-	public SatetyTestReportSpec toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.SatetyTestReportSpec toEscapedModel();
 
 	@Override
-	public SatetyTestReportSpec toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.SatetyTestReportSpec toUnescapedModel();
 
 	@Override
 	public String toString();

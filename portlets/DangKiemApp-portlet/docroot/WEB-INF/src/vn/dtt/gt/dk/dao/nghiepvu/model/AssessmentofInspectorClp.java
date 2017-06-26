@@ -3625,6 +3625,10 @@ public class AssessmentofInspectorClp extends BaseModelImpl<AssessmentofInspecto
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -4424,4 +4428,5 @@ public class AssessmentofInspectorClp extends BaseModelImpl<AssessmentofInspecto
 	private String _nextassessmentid;
 	private String _nextassessmentyear;
 	private BaseModel<?> _assessmentofInspectorRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

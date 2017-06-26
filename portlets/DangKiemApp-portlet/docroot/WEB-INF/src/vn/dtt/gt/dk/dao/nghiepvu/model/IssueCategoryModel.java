@@ -195,19 +195,20 @@ public interface IssueCategoryModel extends BaseModel<IssueCategory> {
 	public Object clone();
 
 	@Override
-	public int compareTo(IssueCategory issueCategory);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.IssueCategory issueCategory);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<IssueCategory> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.IssueCategory> toCacheModel();
 
 	@Override
-	public IssueCategory toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.IssueCategory toEscapedModel();
 
 	@Override
-	public IssueCategory toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.IssueCategory toUnescapedModel();
 
 	@Override
 	public String toString();

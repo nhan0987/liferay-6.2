@@ -422,6 +422,10 @@ public class CustomsDeclarationClp extends BaseModelImpl<CustomsDeclaration>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -500,4 +504,5 @@ public class CustomsDeclarationClp extends BaseModelImpl<CustomsDeclaration>
 	private Date _releaseDate;
 	private long _hosothutucId;
 	private BaseModel<?> _customsDeclarationRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

@@ -198,19 +198,20 @@ public interface AswmsgWebserviceModel extends BaseModel<AswmsgWebservice> {
 	public Object clone();
 
 	@Override
-	public int compareTo(AswmsgWebservice aswmsgWebservice);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.aswmsg.model.AswmsgWebservice aswmsgWebservice);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AswmsgWebservice> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.aswmsg.model.AswmsgWebservice> toCacheModel();
 
 	@Override
-	public AswmsgWebservice toEscapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.AswmsgWebservice toEscapedModel();
 
 	@Override
-	public AswmsgWebservice toUnescapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.AswmsgWebservice toUnescapedModel();
 
 	@Override
 	public String toString();

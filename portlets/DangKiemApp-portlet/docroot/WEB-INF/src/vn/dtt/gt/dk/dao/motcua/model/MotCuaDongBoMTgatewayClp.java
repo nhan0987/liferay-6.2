@@ -356,6 +356,10 @@ public class MotCuaDongBoMTgatewayClp extends BaseModelImpl<MotCuaDongBoMTgatewa
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -420,4 +424,5 @@ public class MotCuaDongBoMTgatewayClp extends BaseModelImpl<MotCuaDongBoMTgatewa
 	private Date _modifyDate;
 	private String _trangThai;
 	private BaseModel<?> _motCuaDongBoMTgatewayRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.motcua.service.ClpSerializer.class;
 }

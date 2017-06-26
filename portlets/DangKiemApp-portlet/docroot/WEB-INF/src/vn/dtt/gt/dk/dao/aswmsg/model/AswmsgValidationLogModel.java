@@ -167,19 +167,20 @@ public interface AswmsgValidationLogModel extends BaseModel<AswmsgValidationLog>
 	public Object clone();
 
 	@Override
-	public int compareTo(AswmsgValidationLog aswmsgValidationLog);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.aswmsg.model.AswmsgValidationLog aswmsgValidationLog);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AswmsgValidationLog> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.aswmsg.model.AswmsgValidationLog> toCacheModel();
 
 	@Override
-	public AswmsgValidationLog toEscapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.AswmsgValidationLog toEscapedModel();
 
 	@Override
-	public AswmsgValidationLog toUnescapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.AswmsgValidationLog toUnescapedModel();
 
 	@Override
 	public String toString();

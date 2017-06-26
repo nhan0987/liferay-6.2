@@ -329,19 +329,20 @@ public interface TthcKeHoachChuyenDichModel extends BaseModel<TthcKeHoachChuyenD
 	public Object clone();
 
 	@Override
-	public int compareTo(TthcKeHoachChuyenDich tthcKeHoachChuyenDich);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.common.model.TthcKeHoachChuyenDich tthcKeHoachChuyenDich);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<TthcKeHoachChuyenDich> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.common.model.TthcKeHoachChuyenDich> toCacheModel();
 
 	@Override
-	public TthcKeHoachChuyenDich toEscapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TthcKeHoachChuyenDich toEscapedModel();
 
 	@Override
-	public TthcKeHoachChuyenDich toUnescapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TthcKeHoachChuyenDich toUnescapedModel();
 
 	@Override
 	public String toString();

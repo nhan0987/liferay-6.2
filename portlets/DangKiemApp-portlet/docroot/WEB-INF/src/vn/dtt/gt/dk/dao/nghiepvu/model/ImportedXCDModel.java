@@ -736,19 +736,20 @@ public interface ImportedXCDModel extends BaseModel<ImportedXCD> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ImportedXCD importedXCD);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.ImportedXCD importedXCD);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ImportedXCD> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.ImportedXCD> toCacheModel();
 
 	@Override
-	public ImportedXCD toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ImportedXCD toEscapedModel();
 
 	@Override
-	public ImportedXCD toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ImportedXCD toUnescapedModel();
 
 	@Override
 	public String toString();

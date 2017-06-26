@@ -945,6 +945,10 @@ public class TimKiemHoSoClp extends BaseModelImpl<TimKiemHoSo>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1142,4 +1146,5 @@ public class TimKiemHoSoClp extends BaseModelImpl<TimKiemHoSo>
 	private String _ghiChu;
 	private long _lanGuiCuoi;
 	private BaseModel<?> _timKiemHoSoRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.common.service.ClpSerializer.class;
 }

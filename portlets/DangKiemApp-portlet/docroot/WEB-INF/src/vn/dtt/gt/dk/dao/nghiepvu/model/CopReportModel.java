@@ -213,19 +213,19 @@ public interface CopReportModel extends BaseModel<CopReport> {
 	public Object clone();
 
 	@Override
-	public int compareTo(CopReport copReport);
+	public int compareTo(vn.dtt.gt.dk.dao.nghiepvu.model.CopReport copReport);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<CopReport> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.CopReport> toCacheModel();
 
 	@Override
-	public CopReport toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CopReport toEscapedModel();
 
 	@Override
-	public CopReport toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CopReport toUnescapedModel();
 
 	@Override
 	public String toString();

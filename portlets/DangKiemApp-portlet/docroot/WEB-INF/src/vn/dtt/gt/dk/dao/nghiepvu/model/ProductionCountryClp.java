@@ -323,6 +323,10 @@ public class ProductionCountryClp extends BaseModelImpl<ProductionCountry>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -380,4 +384,5 @@ public class ProductionCountryClp extends BaseModelImpl<ProductionCountry>
 	private String _countryCode;
 	private Date _SynchDate;
 	private BaseModel<?> _productionCountryRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

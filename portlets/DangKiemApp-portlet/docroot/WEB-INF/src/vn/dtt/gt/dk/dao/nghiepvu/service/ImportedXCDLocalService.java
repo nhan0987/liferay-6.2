@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.nghiepvu.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface ImportedXCDLocalService extends BaseLocalService,
 	* @return the imported x c d that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.ImportedXCD addImportedXCD(
 		vn.dtt.gt.dk.dao.nghiepvu.model.ImportedXCD importedXCD)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface ImportedXCDLocalService extends BaseLocalService,
 	* @throws PortalException if a imported x c d with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.ImportedXCD deleteImportedXCD(
 		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface ImportedXCDLocalService extends BaseLocalService,
 	* @return the imported x c d that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.ImportedXCD deleteImportedXCD(
 		vn.dtt.gt.dk.dao.nghiepvu.model.ImportedXCD importedXCD)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -224,6 +228,7 @@ public interface ImportedXCDLocalService extends BaseLocalService,
 	* @return the imported x c d that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.ImportedXCD updateImportedXCD(
 		vn.dtt.gt.dk.dao.nghiepvu.model.ImportedXCD importedXCD)
 		throws com.liferay.portal.kernel.exception.SystemException;

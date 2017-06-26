@@ -1209,6 +1209,10 @@ public class AswmsgMessageLogClp extends BaseModelImpl<AswmsgMessageLog>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1462,4 +1466,5 @@ public class AswmsgMessageLogClp extends BaseModelImpl<AswmsgMessageLog>
 	private int _soLanGui;
 	private long _fileLogId;
 	private BaseModel<?> _aswmsgMessageLogRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.aswmsg.service.ClpSerializer.class;
 }

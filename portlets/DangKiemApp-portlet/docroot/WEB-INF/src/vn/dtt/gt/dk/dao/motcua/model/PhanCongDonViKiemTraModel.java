@@ -399,19 +399,20 @@ public interface PhanCongDonViKiemTraModel extends BaseModel<PhanCongDonViKiemTr
 	public Object clone();
 
 	@Override
-	public int compareTo(PhanCongDonViKiemTra phanCongDonViKiemTra);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra phanCongDonViKiemTra);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<PhanCongDonViKiemTra> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra> toCacheModel();
 
 	@Override
-	public PhanCongDonViKiemTra toEscapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra toEscapedModel();
 
 	@Override
-	public PhanCongDonViKiemTra toUnescapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra toUnescapedModel();
 
 	@Override
 	public String toString();

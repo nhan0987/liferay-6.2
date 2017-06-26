@@ -575,6 +575,10 @@ public class ControlRequestClp extends BaseModelImpl<ControlRequest>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -688,4 +692,5 @@ public class ControlRequestClp extends BaseModelImpl<ControlRequest>
 	private String _signPlace;
 	private Date _signDate;
 	private BaseModel<?> _controlRequestRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

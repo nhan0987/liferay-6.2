@@ -167,19 +167,20 @@ public interface MotCuaDongBoMTgatewayModel extends BaseModel<MotCuaDongBoMTgate
 	public Object clone();
 
 	@Override
-	public int compareTo(MotCuaDongBoMTgateway motCuaDongBoMTgateway);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.motcua.model.MotCuaDongBoMTgateway motCuaDongBoMTgateway);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<MotCuaDongBoMTgateway> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.motcua.model.MotCuaDongBoMTgateway> toCacheModel();
 
 	@Override
-	public MotCuaDongBoMTgateway toEscapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.MotCuaDongBoMTgateway toEscapedModel();
 
 	@Override
-	public MotCuaDongBoMTgateway toUnescapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.MotCuaDongBoMTgateway toUnescapedModel();
 
 	@Override
 	public String toString();

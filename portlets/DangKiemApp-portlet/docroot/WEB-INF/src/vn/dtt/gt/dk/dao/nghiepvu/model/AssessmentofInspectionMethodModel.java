@@ -592,19 +592,19 @@ public interface AssessmentofInspectionMethodModel extends BaseModel<Assessmento
 
 	@Override
 	public int compareTo(
-		AssessmentofInspectionMethod assessmentofInspectionMethod);
+		vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofInspectionMethod assessmentofInspectionMethod);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AssessmentofInspectionMethod> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofInspectionMethod> toCacheModel();
 
 	@Override
-	public AssessmentofInspectionMethod toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofInspectionMethod toEscapedModel();
 
 	@Override
-	public AssessmentofInspectionMethod toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofInspectionMethod toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -385,6 +385,10 @@ public class TthcDonViThucHienClp extends BaseModelImpl<TthcDonViThucHien>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -456,4 +460,5 @@ public class TthcDonViThucHienClp extends BaseModelImpl<TthcDonViThucHien>
 	private String _TenTiengAnh;
 	private long _ToChuc;
 	private BaseModel<?> _tthcDonViThucHienRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.common.service.ClpSerializer.class;
 }

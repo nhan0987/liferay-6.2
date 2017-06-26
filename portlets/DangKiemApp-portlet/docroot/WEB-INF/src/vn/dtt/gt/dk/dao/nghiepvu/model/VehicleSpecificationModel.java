@@ -238,19 +238,20 @@ public interface VehicleSpecificationModel extends BaseModel<VehicleSpecificatio
 	public Object clone();
 
 	@Override
-	public int compareTo(VehicleSpecification vehicleSpecification);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.VehicleSpecification vehicleSpecification);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<VehicleSpecification> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.VehicleSpecification> toCacheModel();
 
 	@Override
-	public VehicleSpecification toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.VehicleSpecification toEscapedModel();
 
 	@Override
-	public VehicleSpecification toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.VehicleSpecification toUnescapedModel();
 
 	@Override
 	public String toString();

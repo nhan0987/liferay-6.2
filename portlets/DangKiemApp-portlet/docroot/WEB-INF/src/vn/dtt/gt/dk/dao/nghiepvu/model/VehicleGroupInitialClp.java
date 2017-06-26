@@ -1030,6 +1030,10 @@ public class VehicleGroupInitialClp extends BaseModelImpl<VehicleGroupInitial>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1241,4 +1245,5 @@ public class VehicleGroupInitialClp extends BaseModelImpl<VehicleGroupInitial>
 	private long _attachedFile;
 	private Date _SynchDate;
 	private BaseModel<?> _vehicleGroupInitialRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

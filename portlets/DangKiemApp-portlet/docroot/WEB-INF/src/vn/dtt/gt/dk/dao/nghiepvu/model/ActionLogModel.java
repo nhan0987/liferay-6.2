@@ -302,19 +302,19 @@ public interface ActionLogModel extends BaseModel<ActionLog> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ActionLog actionLog);
+	public int compareTo(vn.dtt.gt.dk.dao.nghiepvu.model.ActionLog actionLog);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ActionLog> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.ActionLog> toCacheModel();
 
 	@Override
-	public ActionLog toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ActionLog toEscapedModel();
 
 	@Override
-	public ActionLog toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ActionLog toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -415,6 +415,10 @@ public class AswmsgWebserviceClp extends BaseModelImpl<AswmsgWebservice>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -493,4 +497,5 @@ public class AswmsgWebserviceClp extends BaseModelImpl<AswmsgWebservice>
 	private String _Password;
 	private String _Domain;
 	private BaseModel<?> _aswmsgWebserviceRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.aswmsg.service.ClpSerializer.class;
 }

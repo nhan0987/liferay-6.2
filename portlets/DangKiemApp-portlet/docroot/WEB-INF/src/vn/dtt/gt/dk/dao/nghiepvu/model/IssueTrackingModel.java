@@ -869,19 +869,20 @@ public interface IssueTrackingModel extends BaseModel<IssueTracking> {
 	public Object clone();
 
 	@Override
-	public int compareTo(IssueTracking issueTracking);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.IssueTracking issueTracking);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<IssueTracking> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.IssueTracking> toCacheModel();
 
 	@Override
-	public IssueTracking toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.IssueTracking toEscapedModel();
 
 	@Override
-	public IssueTracking toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.IssueTracking toUnescapedModel();
 
 	@Override
 	public String toString();

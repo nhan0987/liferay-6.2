@@ -1760,19 +1760,20 @@ public interface AssessmentofProductModel extends BaseModel<AssessmentofProduct>
 	public Object clone();
 
 	@Override
-	public int compareTo(AssessmentofProduct assessmentofProduct);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofProduct assessmentofProduct);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AssessmentofProduct> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofProduct> toCacheModel();
 
 	@Override
-	public AssessmentofProduct toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofProduct toEscapedModel();
 
 	@Override
-	public AssessmentofProduct toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofProduct toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -2657,19 +2657,19 @@ public interface THONGSOCHUNGCHIXECOGIOIPHAN2Model extends BaseModel<THONGSOCHUN
 
 	@Override
 	public int compareTo(
-		THONGSOCHUNGCHIXECOGIOIPHAN2 thongsochungchixecogioiphan2);
+		vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIXECOGIOIPHAN2 thongsochungchixecogioiphan2);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<THONGSOCHUNGCHIXECOGIOIPHAN2> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIXECOGIOIPHAN2> toCacheModel();
 
 	@Override
-	public THONGSOCHUNGCHIXECOGIOIPHAN2 toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIXECOGIOIPHAN2 toEscapedModel();
 
 	@Override
-	public THONGSOCHUNGCHIXECOGIOIPHAN2 toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIXECOGIOIPHAN2 toUnescapedModel();
 
 	@Override
 	public String toString();

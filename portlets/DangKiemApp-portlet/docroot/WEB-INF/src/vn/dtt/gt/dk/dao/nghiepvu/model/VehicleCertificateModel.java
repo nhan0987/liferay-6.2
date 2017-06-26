@@ -1553,19 +1553,20 @@ public interface VehicleCertificateModel extends BaseModel<VehicleCertificate> {
 	public Object clone();
 
 	@Override
-	public int compareTo(VehicleCertificate vehicleCertificate);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.VehicleCertificate vehicleCertificate);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<VehicleCertificate> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.VehicleCertificate> toCacheModel();
 
 	@Override
-	public VehicleCertificate toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.VehicleCertificate toEscapedModel();
 
 	@Override
-	public VehicleCertificate toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.VehicleCertificate toUnescapedModel();
 
 	@Override
 	public String toString();

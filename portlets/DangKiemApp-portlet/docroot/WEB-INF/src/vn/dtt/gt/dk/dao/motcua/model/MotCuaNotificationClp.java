@@ -634,6 +634,10 @@ public class MotCuaNotificationClp extends BaseModelImpl<MotCuaNotification>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -761,4 +765,5 @@ public class MotCuaNotificationClp extends BaseModelImpl<MotCuaNotification>
 	private String _requestSender;
 	private long _isReply;
 	private BaseModel<?> _motCuaNotificationRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.motcua.service.ClpSerializer.class;
 }

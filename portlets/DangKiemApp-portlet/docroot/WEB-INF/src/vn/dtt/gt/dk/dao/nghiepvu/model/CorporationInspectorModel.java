@@ -311,19 +311,20 @@ public interface CorporationInspectorModel extends BaseModel<CorporationInspecto
 	public Object clone();
 
 	@Override
-	public int compareTo(CorporationInspector corporationInspector);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.CorporationInspector corporationInspector);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<CorporationInspector> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.CorporationInspector> toCacheModel();
 
 	@Override
-	public CorporationInspector toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CorporationInspector toEscapedModel();
 
 	@Override
-	public CorporationInspector toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CorporationInspector toUnescapedModel();
 
 	@Override
 	public String toString();

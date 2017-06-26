@@ -152,19 +152,20 @@ public interface CorporationTeamModel extends BaseModel<CorporationTeam> {
 	public Object clone();
 
 	@Override
-	public int compareTo(CorporationTeam corporationTeam);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.CorporationTeam corporationTeam);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<CorporationTeam> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.CorporationTeam> toCacheModel();
 
 	@Override
-	public CorporationTeam toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CorporationTeam toEscapedModel();
 
 	@Override
-	public CorporationTeam toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CorporationTeam toUnescapedModel();
 
 	@Override
 	public String toString();

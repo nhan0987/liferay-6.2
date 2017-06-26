@@ -153,19 +153,20 @@ public interface ThamSoHeThongModel extends BaseModel<ThamSoHeThong> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ThamSoHeThong thamSoHeThong);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.motcua.model.ThamSoHeThong thamSoHeThong);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ThamSoHeThong> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.motcua.model.ThamSoHeThong> toCacheModel();
 
 	@Override
-	public ThamSoHeThong toEscapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.ThamSoHeThong toEscapedModel();
 
 	@Override
-	public ThamSoHeThong toUnescapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.ThamSoHeThong toUnescapedModel();
 
 	@Override
 	public String toString();

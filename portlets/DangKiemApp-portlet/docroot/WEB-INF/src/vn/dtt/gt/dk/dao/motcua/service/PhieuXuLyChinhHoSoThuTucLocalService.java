@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.motcua.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface PhieuXuLyChinhHoSoThuTucLocalService extends BaseLocalService,
 	* @return the phieu xu ly chinh ho so thu tuc that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.motcua.model.PhieuXuLyChinhHoSoThuTuc addPhieuXuLyChinhHoSoThuTuc(
 		vn.dtt.gt.dk.dao.motcua.model.PhieuXuLyChinhHoSoThuTuc phieuXuLyChinhHoSoThuTuc)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface PhieuXuLyChinhHoSoThuTucLocalService extends BaseLocalService,
 	* @throws PortalException if a phieu xu ly chinh ho so thu tuc with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.motcua.model.PhieuXuLyChinhHoSoThuTuc deletePhieuXuLyChinhHoSoThuTuc(
 		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface PhieuXuLyChinhHoSoThuTucLocalService extends BaseLocalService,
 	* @return the phieu xu ly chinh ho so thu tuc that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.motcua.model.PhieuXuLyChinhHoSoThuTuc deletePhieuXuLyChinhHoSoThuTuc(
 		vn.dtt.gt.dk.dao.motcua.model.PhieuXuLyChinhHoSoThuTuc phieuXuLyChinhHoSoThuTuc)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface PhieuXuLyChinhHoSoThuTucLocalService extends BaseLocalService,
 	* @return the phieu xu ly chinh ho so thu tuc that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.motcua.model.PhieuXuLyChinhHoSoThuTuc updatePhieuXuLyChinhHoSoThuTuc(
 		vn.dtt.gt.dk.dao.motcua.model.PhieuXuLyChinhHoSoThuTuc phieuXuLyChinhHoSoThuTuc)
 		throws com.liferay.portal.kernel.exception.SystemException;

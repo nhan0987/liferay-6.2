@@ -1049,6 +1049,10 @@ public class InspectionRecordClp extends BaseModelImpl<InspectionRecord>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1267,4 +1271,5 @@ public class InspectionRecordClp extends BaseModelImpl<InspectionRecord>
 	private double _otherCosts;
 	private long _markupPaid;
 	private BaseModel<?> _inspectionRecordRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

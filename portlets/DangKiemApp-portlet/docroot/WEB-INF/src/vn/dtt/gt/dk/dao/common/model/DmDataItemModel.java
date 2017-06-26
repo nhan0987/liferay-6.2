@@ -299,19 +299,19 @@ public interface DmDataItemModel extends BaseModel<DmDataItem> {
 	public Object clone();
 
 	@Override
-	public int compareTo(DmDataItem dmDataItem);
+	public int compareTo(vn.dtt.gt.dk.dao.common.model.DmDataItem dmDataItem);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<DmDataItem> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.common.model.DmDataItem> toCacheModel();
 
 	@Override
-	public DmDataItem toEscapedModel();
+	public vn.dtt.gt.dk.dao.common.model.DmDataItem toEscapedModel();
 
 	@Override
-	public DmDataItem toUnescapedModel();
+	public vn.dtt.gt.dk.dao.common.model.DmDataItem toUnescapedModel();
 
 	@Override
 	public String toString();

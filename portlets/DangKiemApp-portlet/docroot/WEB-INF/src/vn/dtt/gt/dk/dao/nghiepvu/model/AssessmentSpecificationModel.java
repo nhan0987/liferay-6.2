@@ -389,19 +389,20 @@ public interface AssessmentSpecificationModel extends BaseModel<AssessmentSpecif
 	public Object clone();
 
 	@Override
-	public int compareTo(AssessmentSpecification assessmentSpecification);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentSpecification assessmentSpecification);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AssessmentSpecification> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentSpecification> toCacheModel();
 
 	@Override
-	public AssessmentSpecification toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentSpecification toEscapedModel();
 
 	@Override
-	public AssessmentSpecification toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentSpecification toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -593,19 +593,20 @@ public interface AswmsgMessageQueueModel extends BaseModel<AswmsgMessageQueue> {
 	public Object clone();
 
 	@Override
-	public int compareTo(AswmsgMessageQueue aswmsgMessageQueue);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.aswmsg.model.AswmsgMessageQueue aswmsgMessageQueue);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AswmsgMessageQueue> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.aswmsg.model.AswmsgMessageQueue> toCacheModel();
 
 	@Override
-	public AswmsgMessageQueue toEscapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.AswmsgMessageQueue toEscapedModel();
 
 	@Override
-	public AswmsgMessageQueue toUnescapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.AswmsgMessageQueue toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -519,6 +519,10 @@ public class AssessmentPeriodClp extends BaseModelImpl<AssessmentPeriod>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -618,4 +622,5 @@ public class AssessmentPeriodClp extends BaseModelImpl<AssessmentPeriod>
 	private String _previousassessmentid;
 	private String _previousassessmentyear;
 	private BaseModel<?> _assessmentPeriodRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

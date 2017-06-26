@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.common.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface DmDataItemLocalService extends BaseLocalService,
 	* @return the dm data item that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.common.model.DmDataItem addDmDataItem(
 		vn.dtt.gt.dk.dao.common.model.DmDataItem dmDataItem)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -72,6 +74,7 @@ public interface DmDataItemLocalService extends BaseLocalService,
 	* @throws PortalException if a dm data item with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.common.model.DmDataItem deleteDmDataItem(long Id)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -83,6 +86,7 @@ public interface DmDataItemLocalService extends BaseLocalService,
 	* @return the dm data item that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.common.model.DmDataItem deleteDmDataItem(
 		vn.dtt.gt.dk.dao.common.model.DmDataItem dmDataItem)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -222,6 +226,7 @@ public interface DmDataItemLocalService extends BaseLocalService,
 	* @return the dm data item that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.common.model.DmDataItem updateDmDataItem(
 		vn.dtt.gt.dk.dao.common.model.DmDataItem dmDataItem)
 		throws com.liferay.portal.kernel.exception.SystemException;

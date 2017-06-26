@@ -631,6 +631,10 @@ public class DmDataItemClp extends BaseModelImpl<DmDataItem>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -758,4 +762,5 @@ public class DmDataItemClp extends BaseModelImpl<DmDataItem>
 	private int _Status;
 	private Date _SynchDate;
 	private BaseModel<?> _dmDataItemRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.common.service.ClpSerializer.class;
 }

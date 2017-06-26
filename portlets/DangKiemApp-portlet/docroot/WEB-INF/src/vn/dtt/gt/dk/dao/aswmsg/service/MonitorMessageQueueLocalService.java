@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.aswmsg.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface MonitorMessageQueueLocalService extends BaseLocalService,
 	* @return the monitor message queue that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.aswmsg.model.MonitorMessageQueue addMonitorMessageQueue(
 		vn.dtt.gt.dk.dao.aswmsg.model.MonitorMessageQueue monitorMessageQueue)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface MonitorMessageQueueLocalService extends BaseLocalService,
 	* @throws PortalException if a monitor message queue with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.aswmsg.model.MonitorMessageQueue deleteMonitorMessageQueue(
 		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface MonitorMessageQueueLocalService extends BaseLocalService,
 	* @return the monitor message queue that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.aswmsg.model.MonitorMessageQueue deleteMonitorMessageQueue(
 		vn.dtt.gt.dk.dao.aswmsg.model.MonitorMessageQueue monitorMessageQueue)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface MonitorMessageQueueLocalService extends BaseLocalService,
 	* @return the monitor message queue that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.aswmsg.model.MonitorMessageQueue updateMonitorMessageQueue(
 		vn.dtt.gt.dk.dao.aswmsg.model.MonitorMessageQueue monitorMessageQueue)
 		throws com.liferay.portal.kernel.exception.SystemException;

@@ -312,19 +312,20 @@ public interface EmissionTestReportModel extends BaseModel<EmissionTestReport> {
 	public Object clone();
 
 	@Override
-	public int compareTo(EmissionTestReport emissionTestReport);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestReport emissionTestReport);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<EmissionTestReport> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestReport> toCacheModel();
 
 	@Override
-	public EmissionTestReport toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestReport toEscapedModel();
 
 	@Override
-	public EmissionTestReport toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestReport toUnescapedModel();
 
 	@Override
 	public String toString();

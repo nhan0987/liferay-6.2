@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.motcua.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface LichKiemTraHienTruongLocalService extends BaseLocalService,
 	* @return the lich kiem tra hien truong that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.motcua.model.LichKiemTraHienTruong addLichKiemTraHienTruong(
 		vn.dtt.gt.dk.dao.motcua.model.LichKiemTraHienTruong lichKiemTraHienTruong)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface LichKiemTraHienTruongLocalService extends BaseLocalService,
 	* @throws PortalException if a lich kiem tra hien truong with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.motcua.model.LichKiemTraHienTruong deleteLichKiemTraHienTruong(
 		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface LichKiemTraHienTruongLocalService extends BaseLocalService,
 	* @return the lich kiem tra hien truong that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.motcua.model.LichKiemTraHienTruong deleteLichKiemTraHienTruong(
 		vn.dtt.gt.dk.dao.motcua.model.LichKiemTraHienTruong lichKiemTraHienTruong)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface LichKiemTraHienTruongLocalService extends BaseLocalService,
 	* @return the lich kiem tra hien truong that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.motcua.model.LichKiemTraHienTruong updateLichKiemTraHienTruong(
 		vn.dtt.gt.dk.dao.motcua.model.LichKiemTraHienTruong lichKiemTraHienTruong)
 		throws com.liferay.portal.kernel.exception.SystemException;

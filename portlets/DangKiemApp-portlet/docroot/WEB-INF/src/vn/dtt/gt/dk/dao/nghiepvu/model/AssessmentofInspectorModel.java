@@ -1716,19 +1716,20 @@ public interface AssessmentofInspectorModel extends BaseModel<AssessmentofInspec
 	public Object clone();
 
 	@Override
-	public int compareTo(AssessmentofInspector assessmentofInspector);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofInspector assessmentofInspector);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AssessmentofInspector> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofInspector> toCacheModel();
 
 	@Override
-	public AssessmentofInspector toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofInspector toEscapedModel();
 
 	@Override
-	public AssessmentofInspector toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofInspector toUnescapedModel();
 
 	@Override
 	public String toString();

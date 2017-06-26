@@ -635,6 +635,10 @@ public class ActionLogClp extends BaseModelImpl<ActionLog> implements ActionLog 
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -762,4 +766,5 @@ public class ActionLogClp extends BaseModelImpl<ActionLog> implements ActionLog 
 	private String _title;
 	private String _contactcode;
 	private BaseModel<?> _actionLogRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

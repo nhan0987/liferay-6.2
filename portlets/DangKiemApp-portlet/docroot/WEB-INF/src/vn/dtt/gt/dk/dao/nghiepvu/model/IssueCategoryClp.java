@@ -420,6 +420,10 @@ public class IssueCategoryClp extends BaseModelImpl<IssueCategory>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -498,4 +502,5 @@ public class IssueCategoryClp extends BaseModelImpl<IssueCategory>
 	private int _defectdetection;
 	private int _defectdatagroupid;
 	private BaseModel<?> _issueCategoryRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

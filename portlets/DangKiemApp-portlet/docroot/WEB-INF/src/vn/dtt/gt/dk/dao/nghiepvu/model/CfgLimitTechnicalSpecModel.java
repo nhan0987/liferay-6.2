@@ -285,19 +285,20 @@ public interface CfgLimitTechnicalSpecModel extends BaseModel<CfgLimitTechnicalS
 	public Object clone();
 
 	@Override
-	public int compareTo(CfgLimitTechnicalSpec cfgLimitTechnicalSpec);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.CfgLimitTechnicalSpec cfgLimitTechnicalSpec);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<CfgLimitTechnicalSpec> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.CfgLimitTechnicalSpec> toCacheModel();
 
 	@Override
-	public CfgLimitTechnicalSpec toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CfgLimitTechnicalSpec toEscapedModel();
 
 	@Override
-	public CfgLimitTechnicalSpec toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CfgLimitTechnicalSpec toUnescapedModel();
 
 	@Override
 	public String toString();

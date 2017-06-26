@@ -615,6 +615,10 @@ public class CfgLimitTechnicalSpecClp extends BaseModelImpl<CfgLimitTechnicalSpe
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -735,4 +739,5 @@ public class CfgLimitTechnicalSpecClp extends BaseModelImpl<CfgLimitTechnicalSpe
 	private String _spec_category;
 	private long _datagroupid;
 	private BaseModel<?> _cfgLimitTechnicalSpecRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

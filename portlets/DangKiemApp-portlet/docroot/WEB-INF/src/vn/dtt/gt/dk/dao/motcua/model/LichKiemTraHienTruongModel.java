@@ -399,19 +399,20 @@ public interface LichKiemTraHienTruongModel extends BaseModel<LichKiemTraHienTru
 	public Object clone();
 
 	@Override
-	public int compareTo(LichKiemTraHienTruong lichKiemTraHienTruong);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.motcua.model.LichKiemTraHienTruong lichKiemTraHienTruong);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<LichKiemTraHienTruong> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.motcua.model.LichKiemTraHienTruong> toCacheModel();
 
 	@Override
-	public LichKiemTraHienTruong toEscapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.LichKiemTraHienTruong toEscapedModel();
 
 	@Override
-	public LichKiemTraHienTruong toUnescapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.LichKiemTraHienTruong toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -2356,19 +2356,20 @@ public interface THONGSOCHUNGCHIXEBONBANHModel extends BaseModel<THONGSOCHUNGCHI
 	public Object clone();
 
 	@Override
-	public int compareTo(THONGSOCHUNGCHIXEBONBANH thongsochungchixebonbanh);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIXEBONBANH thongsochungchixebonbanh);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<THONGSOCHUNGCHIXEBONBANH> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIXEBONBANH> toCacheModel();
 
 	@Override
-	public THONGSOCHUNGCHIXEBONBANH toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIXEBONBANH toEscapedModel();
 
 	@Override
-	public THONGSOCHUNGCHIXEBONBANH toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIXEBONBANH toUnescapedModel();
 
 	@Override
 	public String toString();

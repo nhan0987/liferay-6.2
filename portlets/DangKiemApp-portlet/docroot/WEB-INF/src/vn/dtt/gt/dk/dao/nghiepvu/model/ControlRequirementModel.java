@@ -342,19 +342,20 @@ public interface ControlRequirementModel extends BaseModel<ControlRequirement> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ControlRequirement controlRequirement);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequirement controlRequirement);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ControlRequirement> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequirement> toCacheModel();
 
 	@Override
-	public ControlRequirement toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequirement toEscapedModel();
 
 	@Override
-	public ControlRequirement toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequirement toUnescapedModel();
 
 	@Override
 	public String toString();

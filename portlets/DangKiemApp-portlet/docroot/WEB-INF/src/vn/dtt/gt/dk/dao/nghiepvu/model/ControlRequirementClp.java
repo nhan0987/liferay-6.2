@@ -738,6 +738,10 @@ public class ControlRequirementClp extends BaseModelImpl<ControlRequirement>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -886,4 +890,5 @@ public class ControlRequirementClp extends BaseModelImpl<ControlRequirement>
 	private long _inspectionrecordId;
 	private long _phieuxulyphuId;
 	private BaseModel<?> _controlRequirementRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

@@ -857,6 +857,10 @@ public class AssessmentSpecificationClp extends BaseModelImpl<AssessmentSpecific
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1026,4 +1030,5 @@ public class AssessmentSpecificationClp extends BaseModelImpl<AssessmentSpecific
 	private Date _latestassessment;
 	private Date _synchdate;
 	private BaseModel<?> _assessmentSpecificationRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

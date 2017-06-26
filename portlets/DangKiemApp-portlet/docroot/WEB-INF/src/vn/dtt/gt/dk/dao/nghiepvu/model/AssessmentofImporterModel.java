@@ -1791,19 +1791,20 @@ public interface AssessmentofImporterModel extends BaseModel<AssessmentofImporte
 	public Object clone();
 
 	@Override
-	public int compareTo(AssessmentofImporter assessmentofImporter);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofImporter assessmentofImporter);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AssessmentofImporter> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofImporter> toCacheModel();
 
 	@Override
-	public AssessmentofImporter toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofImporter toEscapedModel();
 
 	@Override
-	public AssessmentofImporter toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofImporter toUnescapedModel();
 
 	@Override
 	public String toString();

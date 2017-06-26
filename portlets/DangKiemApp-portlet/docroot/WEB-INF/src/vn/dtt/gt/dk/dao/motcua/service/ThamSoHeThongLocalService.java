@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.motcua.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface ThamSoHeThongLocalService extends BaseLocalService,
 	* @return the tham so he thong that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.motcua.model.ThamSoHeThong addThamSoHeThong(
 		vn.dtt.gt.dk.dao.motcua.model.ThamSoHeThong thamSoHeThong)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface ThamSoHeThongLocalService extends BaseLocalService,
 	* @throws PortalException if a tham so he thong with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.motcua.model.ThamSoHeThong deleteThamSoHeThong(
 		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface ThamSoHeThongLocalService extends BaseLocalService,
 	* @return the tham so he thong that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.motcua.model.ThamSoHeThong deleteThamSoHeThong(
 		vn.dtt.gt.dk.dao.motcua.model.ThamSoHeThong thamSoHeThong)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -224,6 +228,7 @@ public interface ThamSoHeThongLocalService extends BaseLocalService,
 	* @return the tham so he thong that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.motcua.model.ThamSoHeThong updateThamSoHeThong(
 		vn.dtt.gt.dk.dao.motcua.model.ThamSoHeThong thamSoHeThong)
 		throws com.liferay.portal.kernel.exception.SystemException;

@@ -384,6 +384,10 @@ public class DmDataVersionClp extends BaseModelImpl<DmDataVersion>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -455,4 +459,5 @@ public class DmDataVersionClp extends BaseModelImpl<DmDataVersion>
 	private Date _ValidateDFrom;
 	private Date _ValidatedTo;
 	private BaseModel<?> _dmDataVersionRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.common.service.ClpSerializer.class;
 }

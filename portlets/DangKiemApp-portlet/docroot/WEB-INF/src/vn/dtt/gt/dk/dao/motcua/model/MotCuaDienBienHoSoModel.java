@@ -237,19 +237,20 @@ public interface MotCuaDienBienHoSoModel extends BaseModel<MotCuaDienBienHoSo> {
 	public Object clone();
 
 	@Override
-	public int compareTo(MotCuaDienBienHoSo motCuaDienBienHoSo);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.motcua.model.MotCuaDienBienHoSo motCuaDienBienHoSo);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<MotCuaDienBienHoSo> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.motcua.model.MotCuaDienBienHoSo> toCacheModel();
 
 	@Override
-	public MotCuaDienBienHoSo toEscapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.MotCuaDienBienHoSo toEscapedModel();
 
 	@Override
-	public MotCuaDienBienHoSo toUnescapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.MotCuaDienBienHoSo toUnescapedModel();
 
 	@Override
 	public String toString();

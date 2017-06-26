@@ -978,6 +978,10 @@ public class TthcHoSoThuTucClp extends BaseModelImpl<TthcHoSoThuTuc>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1182,4 +1186,5 @@ public class TthcHoSoThuTucClp extends BaseModelImpl<TthcHoSoThuTuc>
 	private long _lanGuiCuoi;
 	private Date _SynchDate;
 	private BaseModel<?> _tthcHoSoThuTucRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.common.service.ClpSerializer.class;
 }

@@ -153,19 +153,20 @@ public interface ProductionCountryModel extends BaseModel<ProductionCountry> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ProductionCountry productionCountry);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.ProductionCountry productionCountry);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ProductionCountry> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.ProductionCountry> toCacheModel();
 
 	@Override
-	public ProductionCountry toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ProductionCountry toEscapedModel();
 
 	@Override
-	public ProductionCountry toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ProductionCountry toUnescapedModel();
 
 	@Override
 	public String toString();

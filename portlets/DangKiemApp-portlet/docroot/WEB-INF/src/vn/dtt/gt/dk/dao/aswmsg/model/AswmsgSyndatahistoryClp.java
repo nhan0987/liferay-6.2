@@ -1215,6 +1215,10 @@ public class AswmsgSyndatahistoryClp extends BaseModelImpl<AswmsgSyndatahistory>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1468,4 +1472,5 @@ public class AswmsgSyndatahistoryClp extends BaseModelImpl<AswmsgSyndatahistory>
 	private String _validationCode;
 	private int _soLanGui;
 	private BaseModel<?> _aswmsgSyndatahistoryRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.aswmsg.service.ClpSerializer.class;
 }

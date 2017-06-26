@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.motcua.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface PhanCongDonViKiemTraLocalService extends BaseLocalService,
 	* @return the phan cong don vi kiem tra that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra addPhanCongDonViKiemTra(
 		vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra phanCongDonViKiemTra)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface PhanCongDonViKiemTraLocalService extends BaseLocalService,
 	* @throws PortalException if a phan cong don vi kiem tra with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra deletePhanCongDonViKiemTra(
 		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface PhanCongDonViKiemTraLocalService extends BaseLocalService,
 	* @return the phan cong don vi kiem tra that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra deletePhanCongDonViKiemTra(
 		vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra phanCongDonViKiemTra)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface PhanCongDonViKiemTraLocalService extends BaseLocalService,
 	* @return the phan cong don vi kiem tra that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra updatePhanCongDonViKiemTra(
 		vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra phanCongDonViKiemTra)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -294,6 +299,7 @@ public interface PhanCongDonViKiemTraLocalService extends BaseLocalService,
 		java.lang.String quanHuyen, java.lang.String tinhThanh,
 		java.lang.String quocGia, long userId, int start, int end);
 
+	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra> searchPhanCongDonViKiemTraByHoSoThuTucId(
 		java.lang.String nhomPhieuXuLy, long organizationId,
@@ -303,6 +309,7 @@ public interface PhanCongDonViKiemTraLocalService extends BaseLocalService,
 		java.lang.String quanHuyen, java.lang.String tinhThanh,
 		java.lang.String quocGia, int start, int end);
 
+	@java.lang.Deprecated
 	public long countPhanCongDonViKiemTraByHoSoThuTucId(
 		java.lang.String nhomPhieuXuLy, long organizationId,
 		long phanNhomHoSoId, java.lang.String thuTucHanhChinhId,
@@ -311,6 +318,7 @@ public interface PhanCongDonViKiemTraLocalService extends BaseLocalService,
 		java.lang.String quanHuyen, java.lang.String tinhThanh,
 		java.lang.String quocGia);
 
+	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra> searchPhanCongKiemTraKiemTraHienTruong(
 		java.lang.String nhomPhieuXuLy, long organizationId,
@@ -320,6 +328,7 @@ public interface PhanCongDonViKiemTraLocalService extends BaseLocalService,
 		java.lang.String quanHuyen, java.lang.String tinhThanh,
 		java.lang.String quocGia, long userId, int start, int end);
 
+	@java.lang.Deprecated
 	public long countPhanCongKiemTraHienTruong(java.lang.String nhomPhieuXuLy,
 		long organizationId, long phanNhomHoSoId,
 		java.lang.String thuTucHanhChinhId, java.lang.String maSoHoSo,
@@ -327,6 +336,7 @@ public interface PhanCongDonViKiemTraLocalService extends BaseLocalService,
 		java.lang.String ngayNopTo, int year, java.lang.String quanHuyen,
 		java.lang.String tinhThanh, java.lang.String quocGia, long userId);
 
+	@java.lang.Deprecated
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<vn.dtt.gt.dk.dao.motcua.model.PhanCongDonViKiemTra> searchLichKiemTraHienTruong(
 		java.lang.String nhomPhieuXuLy, long organizationId,
@@ -336,6 +346,7 @@ public interface PhanCongDonViKiemTraLocalService extends BaseLocalService,
 		java.lang.String quanHuyen, java.lang.String tinhThanh,
 		java.lang.String quocGia, long userId, int start, int end);
 
+	@java.lang.Deprecated
 	public long countLichKiemTraHienTruong1(java.lang.String nhomPhieuXuLy,
 		long organizationId, long phanNhomHoSoId,
 		java.lang.String thuTucHanhChinhId, java.lang.String maSoHoSo,

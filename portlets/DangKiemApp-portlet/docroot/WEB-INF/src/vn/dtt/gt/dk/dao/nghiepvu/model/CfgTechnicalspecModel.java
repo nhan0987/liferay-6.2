@@ -282,19 +282,20 @@ public interface CfgTechnicalspecModel extends BaseModel<CfgTechnicalspec> {
 	public Object clone();
 
 	@Override
-	public int compareTo(CfgTechnicalspec cfgTechnicalspec);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.CfgTechnicalspec cfgTechnicalspec);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<CfgTechnicalspec> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.CfgTechnicalspec> toCacheModel();
 
 	@Override
-	public CfgTechnicalspec toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CfgTechnicalspec toEscapedModel();
 
 	@Override
-	public CfgTechnicalspec toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CfgTechnicalspec toUnescapedModel();
 
 	@Override
 	public String toString();

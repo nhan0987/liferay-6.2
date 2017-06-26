@@ -728,6 +728,10 @@ public class DaKiemTraClp extends BaseModelImpl<DaKiemTra> implements DaKiemTra 
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -876,4 +880,5 @@ public class DaKiemTraClp extends BaseModelImpl<DaKiemTra> implements DaKiemTra 
 	private Date _ngayGuiHoSo;
 	private String _tenDonViTiepNhan;
 	private BaseModel<?> _daKiemTraRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.motcua.service.ClpSerializer.class;
 }

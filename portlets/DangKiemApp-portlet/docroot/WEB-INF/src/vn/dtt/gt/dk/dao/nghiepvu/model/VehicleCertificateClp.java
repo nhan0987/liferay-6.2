@@ -3402,6 +3402,10 @@ public class VehicleCertificateClp extends BaseModelImpl<VehicleCertificate>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -4131,4 +4135,5 @@ public class VehicleCertificateClp extends BaseModelImpl<VehicleCertificate>
 	private long _fileketluangiamdinhId;
 	private Date _SynchDate;
 	private BaseModel<?> _vehicleCertificateRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

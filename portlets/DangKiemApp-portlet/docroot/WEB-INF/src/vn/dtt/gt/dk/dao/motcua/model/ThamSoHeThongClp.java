@@ -321,6 +321,10 @@ public class ThamSoHeThongClp extends BaseModelImpl<ThamSoHeThong>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -378,4 +382,5 @@ public class ThamSoHeThongClp extends BaseModelImpl<ThamSoHeThong>
 	private String _keyData;
 	private String _description;
 	private BaseModel<?> _thamSoHeThongRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.motcua.service.ClpSerializer.class;
 }

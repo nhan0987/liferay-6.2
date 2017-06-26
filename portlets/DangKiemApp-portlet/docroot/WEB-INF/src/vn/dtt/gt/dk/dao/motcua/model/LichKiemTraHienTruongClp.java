@@ -868,6 +868,10 @@ public class LichKiemTraHienTruongClp extends BaseModelImpl<LichKiemTraHienTruon
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1044,4 +1048,5 @@ public class LichKiemTraHienTruongClp extends BaseModelImpl<LichKiemTraHienTruon
 	private String _inspectionDistrictCode;
 	private String _inspectionProvincecode;
 	private BaseModel<?> _lichKiemTraHienTruongRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.motcua.service.ClpSerializer.class;
 }

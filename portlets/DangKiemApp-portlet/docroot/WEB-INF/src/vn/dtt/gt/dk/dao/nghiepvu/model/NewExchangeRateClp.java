@@ -417,6 +417,10 @@ public class NewExchangeRateClp extends BaseModelImpl<NewExchangeRate>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -495,4 +499,5 @@ public class NewExchangeRateClp extends BaseModelImpl<NewExchangeRate>
 	private Date _validFrom;
 	private Date _validUntil;
 	private BaseModel<?> _newExchangeRateRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

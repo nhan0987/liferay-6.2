@@ -291,6 +291,10 @@ public class MotCuaKetQuaDienBienClp extends BaseModelImpl<MotCuaKetQuaDienBien>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -341,4 +345,5 @@ public class MotCuaKetQuaDienBienClp extends BaseModelImpl<MotCuaKetQuaDienBien>
 	private long _dienBienHoSoId;
 	private long _noiDungHoSoId;
 	private BaseModel<?> _motCuaKetQuaDienBienRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.motcua.service.ClpSerializer.class;
 }

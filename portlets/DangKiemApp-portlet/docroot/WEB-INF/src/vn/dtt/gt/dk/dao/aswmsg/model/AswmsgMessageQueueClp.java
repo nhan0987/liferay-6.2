@@ -1275,6 +1275,10 @@ public class AswmsgMessageQueueClp extends BaseModelImpl<AswmsgMessageQueue>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1542,4 +1546,5 @@ public class AswmsgMessageQueueClp extends BaseModelImpl<AswmsgMessageQueue>
 	private long _hoSoThuTucId;
 	private long _phieuXuLyPhuId;
 	private BaseModel<?> _aswmsgMessageQueueRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.aswmsg.service.ClpSerializer.class;
 }

@@ -1880,6 +1880,10 @@ public class IssueTrackingClp extends BaseModelImpl<IssueTracking>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -2280,4 +2284,5 @@ public class IssueTrackingClp extends BaseModelImpl<IssueTracking>
 	private int _defectStatus;
 	private Date _synchdate;
 	private BaseModel<?> _issueTrackingRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

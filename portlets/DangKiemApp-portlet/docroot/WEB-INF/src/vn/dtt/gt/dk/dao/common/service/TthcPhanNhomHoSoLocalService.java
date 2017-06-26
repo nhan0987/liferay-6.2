@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.common.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface TthcPhanNhomHoSoLocalService extends BaseLocalService,
 	* @return the tthc phan nhom ho so that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.common.model.TthcPhanNhomHoSo addTthcPhanNhomHoSo(
 		vn.dtt.gt.dk.dao.common.model.TthcPhanNhomHoSo tthcPhanNhomHoSo)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface TthcPhanNhomHoSoLocalService extends BaseLocalService,
 	* @throws PortalException if a tthc phan nhom ho so with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.common.model.TthcPhanNhomHoSo deleteTthcPhanNhomHoSo(
 		long Id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface TthcPhanNhomHoSoLocalService extends BaseLocalService,
 	* @return the tthc phan nhom ho so that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.common.model.TthcPhanNhomHoSo deleteTthcPhanNhomHoSo(
 		vn.dtt.gt.dk.dao.common.model.TthcPhanNhomHoSo tthcPhanNhomHoSo)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface TthcPhanNhomHoSoLocalService extends BaseLocalService,
 	* @return the tthc phan nhom ho so that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.common.model.TthcPhanNhomHoSo updateTthcPhanNhomHoSo(
 		vn.dtt.gt.dk.dao.common.model.TthcPhanNhomHoSo tthcPhanNhomHoSo)
 		throws com.liferay.portal.kernel.exception.SystemException;

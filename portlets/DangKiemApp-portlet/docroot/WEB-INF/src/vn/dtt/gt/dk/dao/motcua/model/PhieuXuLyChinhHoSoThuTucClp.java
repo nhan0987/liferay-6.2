@@ -867,6 +867,10 @@ public class PhieuXuLyChinhHoSoThuTucClp extends BaseModelImpl<PhieuXuLyChinhHoS
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1043,4 +1047,5 @@ public class PhieuXuLyChinhHoSoThuTucClp extends BaseModelImpl<PhieuXuLyChinhHoS
 	private Date _ngayGuiHoSo;
 	private String _tenDonViTiepNhan;
 	private BaseModel<?> _phieuXuLyChinhHoSoThuTucRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.motcua.service.ClpSerializer.class;
 }

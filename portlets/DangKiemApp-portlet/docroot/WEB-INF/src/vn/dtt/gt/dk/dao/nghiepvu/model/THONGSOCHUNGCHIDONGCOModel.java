@@ -556,19 +556,20 @@ public interface THONGSOCHUNGCHIDONGCOModel extends BaseModel<THONGSOCHUNGCHIDON
 	public Object clone();
 
 	@Override
-	public int compareTo(THONGSOCHUNGCHIDONGCO thongsochungchidongco);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIDONGCO thongsochungchidongco);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<THONGSOCHUNGCHIDONGCO> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIDONGCO> toCacheModel();
 
 	@Override
-	public THONGSOCHUNGCHIDONGCO toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIDONGCO toEscapedModel();
 
 	@Override
-	public THONGSOCHUNGCHIDONGCO toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.THONGSOCHUNGCHIDONGCO toUnescapedModel();
 
 	@Override
 	public String toString();

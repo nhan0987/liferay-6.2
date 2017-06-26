@@ -313,19 +313,19 @@ public interface DebitNoteModel extends BaseModel<DebitNote> {
 	public Object clone();
 
 	@Override
-	public int compareTo(DebitNote debitNote);
+	public int compareTo(vn.dtt.gt.dk.dao.nghiepvu.model.DebitNote debitNote);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<DebitNote> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.DebitNote> toCacheModel();
 
 	@Override
-	public DebitNote toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.DebitNote toEscapedModel();
 
 	@Override
-	public DebitNote toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.DebitNote toUnescapedModel();
 
 	@Override
 	public String toString();

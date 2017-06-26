@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.motcua.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface DaKiemTraLocalService extends BaseLocalService,
 	* @return the da kiem tra that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.motcua.model.DaKiemTra addDaKiemTra(
 		vn.dtt.gt.dk.dao.motcua.model.DaKiemTra daKiemTra)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -72,6 +74,7 @@ public interface DaKiemTraLocalService extends BaseLocalService,
 	* @throws PortalException if a da kiem tra with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.motcua.model.DaKiemTra deleteDaKiemTra(long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
@@ -83,6 +86,7 @@ public interface DaKiemTraLocalService extends BaseLocalService,
 	* @return the da kiem tra that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.motcua.model.DaKiemTra deleteDaKiemTra(
 		vn.dtt.gt.dk.dao.motcua.model.DaKiemTra daKiemTra)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -222,6 +226,7 @@ public interface DaKiemTraLocalService extends BaseLocalService,
 	* @return the da kiem tra that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.motcua.model.DaKiemTra updateDaKiemTra(
 		vn.dtt.gt.dk.dao.motcua.model.DaKiemTra daKiemTra)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -260,6 +265,7 @@ public interface DaKiemTraLocalService extends BaseLocalService,
 		java.lang.String ngayNopTo, java.lang.String tenDoanhNghiep, int year,
 		int start, int end);
 
+	@java.lang.Deprecated
 	public java.util.List<vn.dtt.gt.dk.dao.motcua.model.DaKiemTra> findMotCuaPhieuXuLyPhuByHoSoThuTucIdAndDoiTuongAndMaSoBienNhanBienBanKiemTra(
 		java.lang.String doiTuong, java.lang.String maSoBienNhan, long userid,
 		java.lang.String nhomPhieuXuLy, long organizationId,
@@ -268,6 +274,7 @@ public interface DaKiemTraLocalService extends BaseLocalService,
 		java.lang.String ngayNopTo, java.lang.String tenDoanhNghiep, int year,
 		int start, int end);
 
+	@java.lang.Deprecated
 	public int countMotCuaPhieuXuLyPhuByHoSoThuTucIdAndDoiTuongAndMaSoBienNhanBienBanKiemTra(
 		java.lang.String doiTuong, java.lang.String maSoBienNhan, long userid,
 		java.lang.String nhomPhieuXuLy, long organizationId,

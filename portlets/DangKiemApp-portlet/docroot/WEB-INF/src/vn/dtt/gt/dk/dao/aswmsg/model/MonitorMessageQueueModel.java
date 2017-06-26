@@ -548,19 +548,20 @@ public interface MonitorMessageQueueModel extends BaseModel<MonitorMessageQueue>
 	public Object clone();
 
 	@Override
-	public int compareTo(MonitorMessageQueue monitorMessageQueue);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.aswmsg.model.MonitorMessageQueue monitorMessageQueue);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<MonitorMessageQueue> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.aswmsg.model.MonitorMessageQueue> toCacheModel();
 
 	@Override
-	public MonitorMessageQueue toEscapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.MonitorMessageQueue toEscapedModel();
 
 	@Override
-	public MonitorMessageQueue toUnescapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.MonitorMessageQueue toUnescapedModel();
 
 	@Override
 	public String toString();

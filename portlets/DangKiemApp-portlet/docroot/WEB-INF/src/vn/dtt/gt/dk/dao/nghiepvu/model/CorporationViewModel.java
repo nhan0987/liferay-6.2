@@ -166,19 +166,20 @@ public interface CorporationViewModel extends BaseModel<CorporationView> {
 	public Object clone();
 
 	@Override
-	public int compareTo(CorporationView corporationView);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.CorporationView corporationView);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<CorporationView> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.CorporationView> toCacheModel();
 
 	@Override
-	public CorporationView toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CorporationView toEscapedModel();
 
 	@Override
-	public CorporationView toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CorporationView toUnescapedModel();
 
 	@Override
 	public String toString();

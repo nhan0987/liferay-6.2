@@ -272,19 +272,20 @@ public interface EmissionTestRequestModel extends BaseModel<EmissionTestRequest>
 	public Object clone();
 
 	@Override
-	public int compareTo(EmissionTestRequest emissionTestRequest);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestRequest emissionTestRequest);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<EmissionTestRequest> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestRequest> toCacheModel();
 
 	@Override
-	public EmissionTestRequest toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestRequest toEscapedModel();
 
 	@Override
-	public EmissionTestRequest toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.EmissionTestRequest toUnescapedModel();
 
 	@Override
 	public String toString();

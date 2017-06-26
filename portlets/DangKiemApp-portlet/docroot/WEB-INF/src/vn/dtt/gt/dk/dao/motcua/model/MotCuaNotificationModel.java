@@ -299,19 +299,20 @@ public interface MotCuaNotificationModel extends BaseModel<MotCuaNotification> {
 	public Object clone();
 
 	@Override
-	public int compareTo(MotCuaNotification motCuaNotification);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.motcua.model.MotCuaNotification motCuaNotification);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<MotCuaNotification> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.motcua.model.MotCuaNotification> toCacheModel();
 
 	@Override
-	public MotCuaNotification toEscapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.MotCuaNotification toEscapedModel();
 
 	@Override
-	public MotCuaNotification toUnescapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.MotCuaNotification toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -341,19 +341,19 @@ public interface DaKiemTraModel extends BaseModel<DaKiemTra> {
 	public Object clone();
 
 	@Override
-	public int compareTo(DaKiemTra daKiemTra);
+	public int compareTo(vn.dtt.gt.dk.dao.motcua.model.DaKiemTra daKiemTra);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<DaKiemTra> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.motcua.model.DaKiemTra> toCacheModel();
 
 	@Override
-	public DaKiemTra toEscapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.DaKiemTra toEscapedModel();
 
 	@Override
-	public DaKiemTra toUnescapedModel();
+	public vn.dtt.gt.dk.dao.motcua.model.DaKiemTra toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -179,19 +179,20 @@ public interface CorporationAttendeeModel extends BaseModel<CorporationAttendee>
 	public Object clone();
 
 	@Override
-	public int compareTo(CorporationAttendee corporationAttendee);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.CorporationAttendee corporationAttendee);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<CorporationAttendee> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.CorporationAttendee> toCacheModel();
 
 	@Override
-	public CorporationAttendee toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CorporationAttendee toEscapedModel();
 
 	@Override
-	public CorporationAttendee toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CorporationAttendee toUnescapedModel();
 
 	@Override
 	public String toString();

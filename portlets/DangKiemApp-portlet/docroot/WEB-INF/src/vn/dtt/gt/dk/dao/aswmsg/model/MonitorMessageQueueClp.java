@@ -1182,6 +1182,10 @@ public class MonitorMessageQueueClp extends BaseModelImpl<MonitorMessageQueue>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1428,4 +1432,5 @@ public class MonitorMessageQueueClp extends BaseModelImpl<MonitorMessageQueue>
 	private long _hoSoThuTucId;
 	private long _phieuXuLyPhuId;
 	private BaseModel<?> _monitorMessageQueueRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.aswmsg.service.ClpSerializer.class;
 }

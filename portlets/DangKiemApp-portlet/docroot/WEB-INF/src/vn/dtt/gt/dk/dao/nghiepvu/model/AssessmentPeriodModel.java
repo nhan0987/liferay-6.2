@@ -241,19 +241,20 @@ public interface AssessmentPeriodModel extends BaseModel<AssessmentPeriod> {
 	public Object clone();
 
 	@Override
-	public int compareTo(AssessmentPeriod assessmentPeriod);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentPeriod assessmentPeriod);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AssessmentPeriod> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentPeriod> toCacheModel();
 
 	@Override
-	public AssessmentPeriod toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentPeriod toEscapedModel();
 
 	@Override
-	public AssessmentPeriod toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentPeriod toUnescapedModel();
 
 	@Override
 	public String toString();

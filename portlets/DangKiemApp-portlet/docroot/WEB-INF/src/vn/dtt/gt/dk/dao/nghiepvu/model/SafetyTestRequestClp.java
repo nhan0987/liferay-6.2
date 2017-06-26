@@ -607,6 +607,10 @@ public class SafetyTestRequestClp extends BaseModelImpl<SafetyTestRequest>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -727,4 +731,5 @@ public class SafetyTestRequestClp extends BaseModelImpl<SafetyTestRequest>
 	private String _signPlace;
 	private Date _signDate;
 	private BaseModel<?> _safetyTestRequestRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

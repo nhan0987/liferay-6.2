@@ -565,19 +565,20 @@ public interface AswmsgSyndatahistoryModel extends BaseModel<AswmsgSyndatahistor
 	public Object clone();
 
 	@Override
-	public int compareTo(AswmsgSyndatahistory aswmsgSyndatahistory);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.aswmsg.model.AswmsgSyndatahistory aswmsgSyndatahistory);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AswmsgSyndatahistory> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.aswmsg.model.AswmsgSyndatahistory> toCacheModel();
 
 	@Override
-	public AswmsgSyndatahistory toEscapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.AswmsgSyndatahistory toEscapedModel();
 
 	@Override
-	public AswmsgSyndatahistory toUnescapedModel();
+	public vn.dtt.gt.dk.dao.aswmsg.model.AswmsgSyndatahistory toUnescapedModel();
 
 	@Override
 	public String toString();

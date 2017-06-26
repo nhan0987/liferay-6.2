@@ -352,6 +352,10 @@ public class DmDataGroupClp extends BaseModelImpl<DmDataGroup>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -416,4 +420,5 @@ public class DmDataGroupClp extends BaseModelImpl<DmDataGroup>
 	private String _Description;
 	private Date _SynchDate;
 	private BaseModel<?> _dmDataGroupRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.common.service.ClpSerializer.class;
 }

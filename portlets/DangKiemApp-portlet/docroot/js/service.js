@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.dk", "vn.dtt.gt.dk.dao.nghiepvu.service", "DangKiemApp-portlet");

@@ -866,6 +866,10 @@ public class PhanCongDonViKiemTraClp extends BaseModelImpl<PhanCongDonViKiemTra>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1042,4 +1046,5 @@ public class PhanCongDonViKiemTraClp extends BaseModelImpl<PhanCongDonViKiemTra>
 	private String _inspectionDistrictCode;
 	private String _inspectionProvincecode;
 	private BaseModel<?> _phanCongDonViKiemTraRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.motcua.service.ClpSerializer.class;
 }

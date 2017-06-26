@@ -5506,6 +5506,10 @@ public class THONGSOCHUNGCHIXECOGIOIPHAN2Clp extends BaseModelImpl<THONGSOCHUNGC
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -6733,4 +6737,5 @@ public class THONGSOCHUNGCHIXECOGIOIPHAN2Clp extends BaseModelImpl<THONGSOCHUNGC
 	private String _XCG0236;
 	private String _XCG0237;
 	private BaseModel<?> _thongsochungchixecogioiphan2RemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

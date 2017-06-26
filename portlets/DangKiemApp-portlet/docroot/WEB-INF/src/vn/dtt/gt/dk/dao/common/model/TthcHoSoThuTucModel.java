@@ -456,19 +456,20 @@ public interface TthcHoSoThuTucModel extends BaseModel<TthcHoSoThuTuc> {
 	public Object clone();
 
 	@Override
-	public int compareTo(TthcHoSoThuTuc tthcHoSoThuTuc);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.common.model.TthcHoSoThuTuc tthcHoSoThuTuc);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<TthcHoSoThuTuc> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.common.model.TthcHoSoThuTuc> toCacheModel();
 
 	@Override
-	public TthcHoSoThuTuc toEscapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TthcHoSoThuTuc toEscapedModel();
 
 	@Override
-	public TthcHoSoThuTuc toUnescapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TthcHoSoThuTuc toUnescapedModel();
 
 	@Override
 	public String toString();

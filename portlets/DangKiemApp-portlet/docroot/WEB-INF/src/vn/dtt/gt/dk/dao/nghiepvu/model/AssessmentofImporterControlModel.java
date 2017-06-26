@@ -1792,19 +1792,19 @@ public interface AssessmentofImporterControlModel extends BaseModel<Assessmentof
 
 	@Override
 	public int compareTo(
-		AssessmentofImporterControl assessmentofImporterControl);
+		vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofImporterControl assessmentofImporterControl);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<AssessmentofImporterControl> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofImporterControl> toCacheModel();
 
 	@Override
-	public AssessmentofImporterControl toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofImporterControl toEscapedModel();
 
 	@Override
-	public AssessmentofImporterControl toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.AssessmentofImporterControl toUnescapedModel();
 
 	@Override
 	public String toString();
