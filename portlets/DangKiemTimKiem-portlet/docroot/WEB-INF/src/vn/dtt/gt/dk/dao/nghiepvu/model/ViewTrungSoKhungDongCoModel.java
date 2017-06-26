@@ -484,19 +484,20 @@ public interface ViewTrungSoKhungDongCoModel extends BaseModel<ViewTrungSoKhungD
 	public Object clone();
 
 	@Override
-	public int compareTo(ViewTrungSoKhungDongCo viewTrungSoKhungDongCo);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.ViewTrungSoKhungDongCo viewTrungSoKhungDongCo);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ViewTrungSoKhungDongCo> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.ViewTrungSoKhungDongCo> toCacheModel();
 
 	@Override
-	public ViewTrungSoKhungDongCo toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ViewTrungSoKhungDongCo toEscapedModel();
 
 	@Override
-	public ViewTrungSoKhungDongCo toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ViewTrungSoKhungDongCo toUnescapedModel();
 
 	@Override
 	public String toString();

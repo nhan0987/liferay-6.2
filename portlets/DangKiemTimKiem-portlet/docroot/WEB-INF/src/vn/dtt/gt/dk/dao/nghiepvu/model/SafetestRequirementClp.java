@@ -711,6 +711,10 @@ public class SafetestRequirementClp extends BaseModelImpl<SafetestRequirement>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -852,4 +856,5 @@ public class SafetestRequirementClp extends BaseModelImpl<SafetestRequirement>
 	private Date _signDate;
 	private long _phieuXuLyPhuId;
 	private BaseModel<?> _safetestRequirementRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

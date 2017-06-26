@@ -392,6 +392,10 @@ public class CertificateRecordSpecClp extends BaseModelImpl<CertificateRecordSpe
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -463,4 +467,5 @@ public class CertificateRecordSpecClp extends BaseModelImpl<CertificateRecordSpe
 	private String _specificationValue;
 	private long _version;
 	private BaseModel<?> _certificateRecordSpecRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

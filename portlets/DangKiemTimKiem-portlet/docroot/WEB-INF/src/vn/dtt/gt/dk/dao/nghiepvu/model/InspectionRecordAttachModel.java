@@ -209,19 +209,20 @@ public interface InspectionRecordAttachModel extends BaseModel<InspectionRecordA
 	public Object clone();
 
 	@Override
-	public int compareTo(InspectionRecordAttach inspectionRecordAttach);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecordAttach inspectionRecordAttach);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<InspectionRecordAttach> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecordAttach> toCacheModel();
 
 	@Override
-	public InspectionRecordAttach toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecordAttach toEscapedModel();
 
 	@Override
-	public InspectionRecordAttach toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.InspectionRecordAttach toUnescapedModel();
 
 	@Override
 	public String toString();

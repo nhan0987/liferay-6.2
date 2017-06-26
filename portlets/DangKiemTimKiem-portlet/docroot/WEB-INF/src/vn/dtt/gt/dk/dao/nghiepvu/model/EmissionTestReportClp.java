@@ -513,6 +513,10 @@ public class EmissionTestReportClp extends BaseModelImpl<EmissionTestReport>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -612,4 +616,5 @@ public class EmissionTestReportClp extends BaseModelImpl<EmissionTestReport>
 	private String _signPlace;
 	private Date _signDate;
 	private BaseModel<?> _emissionTestReportRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

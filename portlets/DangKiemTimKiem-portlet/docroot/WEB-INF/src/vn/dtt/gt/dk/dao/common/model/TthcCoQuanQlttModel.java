@@ -152,19 +152,20 @@ public interface TthcCoQuanQlttModel extends BaseModel<TthcCoQuanQltt> {
 	public Object clone();
 
 	@Override
-	public int compareTo(TthcCoQuanQltt tthcCoQuanQltt);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.common.model.TthcCoQuanQltt tthcCoQuanQltt);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<TthcCoQuanQltt> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.common.model.TthcCoQuanQltt> toCacheModel();
 
 	@Override
-	public TthcCoQuanQltt toEscapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TthcCoQuanQltt toEscapedModel();
 
 	@Override
-	public TthcCoQuanQltt toUnescapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TthcCoQuanQltt toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -322,6 +322,10 @@ public class CorporationTeamClp extends BaseModelImpl<CorporationTeam>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -379,4 +383,5 @@ public class CorporationTeamClp extends BaseModelImpl<CorporationTeam>
 	private String _teamName;
 	private int _markUpDelete;
 	private BaseModel<?> _corporationTeamRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

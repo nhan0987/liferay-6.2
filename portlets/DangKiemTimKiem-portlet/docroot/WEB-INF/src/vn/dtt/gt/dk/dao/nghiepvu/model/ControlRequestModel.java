@@ -271,19 +271,20 @@ public interface ControlRequestModel extends BaseModel<ControlRequest> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ControlRequest controlRequest);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequest controlRequest);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ControlRequest> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequest> toCacheModel();
 
 	@Override
-	public ControlRequest toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequest toEscapedModel();
 
 	@Override
-	public ControlRequest toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ControlRequest toUnescapedModel();
 
 	@Override
 	public String toString();

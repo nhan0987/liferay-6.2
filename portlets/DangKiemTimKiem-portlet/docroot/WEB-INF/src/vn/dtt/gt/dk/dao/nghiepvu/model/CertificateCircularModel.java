@@ -167,19 +167,20 @@ public interface CertificateCircularModel extends BaseModel<CertificateCircular>
 	public Object clone();
 
 	@Override
-	public int compareTo(CertificateCircular certificateCircular);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular certificateCircular);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<CertificateCircular> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular> toCacheModel();
 
 	@Override
-	public CertificateCircular toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular toEscapedModel();
 
 	@Override
-	public CertificateCircular toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular toUnescapedModel();
 
 	@Override
 	public String toString();

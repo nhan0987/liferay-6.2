@@ -296,19 +296,20 @@ public interface TthcNoidungHoSoModel extends BaseModel<TthcNoidungHoSo> {
 	public Object clone();
 
 	@Override
-	public int compareTo(TthcNoidungHoSo tthcNoidungHoSo);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.common.model.TthcNoidungHoSo tthcNoidungHoSo);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<TthcNoidungHoSo> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.common.model.TthcNoidungHoSo> toCacheModel();
 
 	@Override
-	public TthcNoidungHoSo toEscapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TthcNoidungHoSo toEscapedModel();
 
 	@Override
-	public TthcNoidungHoSo toUnescapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TthcNoidungHoSo toUnescapedModel();
 
 	@Override
 	public String toString();

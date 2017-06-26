@@ -523,6 +523,10 @@ public class VehicleSpecificationClp extends BaseModelImpl<VehicleSpecification>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -622,4 +626,5 @@ public class VehicleSpecificationClp extends BaseModelImpl<VehicleSpecification>
 	private long _inspectionRecordId;
 	private long _specificResult;
 	private BaseModel<?> _vehicleSpecificationRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

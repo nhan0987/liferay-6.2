@@ -540,19 +540,20 @@ public interface ViewDangKiemTimKiemModel extends BaseModel<ViewDangKiemTimKiem>
 	public Object clone();
 
 	@Override
-	public int compareTo(ViewDangKiemTimKiem viewDangKiemTimKiem);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.ViewDangKiemTimKiem viewDangKiemTimKiem);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ViewDangKiemTimKiem> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.ViewDangKiemTimKiem> toCacheModel();
 
 	@Override
-	public ViewDangKiemTimKiem toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ViewDangKiemTimKiem toEscapedModel();
 
 	@Override
-	public ViewDangKiemTimKiem toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ViewDangKiemTimKiem toUnescapedModel();
 
 	@Override
 	public String toString();

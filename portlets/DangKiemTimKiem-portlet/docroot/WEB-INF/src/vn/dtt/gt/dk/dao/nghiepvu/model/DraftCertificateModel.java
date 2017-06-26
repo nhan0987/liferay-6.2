@@ -238,19 +238,20 @@ public interface DraftCertificateModel extends BaseModel<DraftCertificate> {
 	public Object clone();
 
 	@Override
-	public int compareTo(DraftCertificate draftCertificate);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.DraftCertificate draftCertificate);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<DraftCertificate> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.DraftCertificate> toCacheModel();
 
 	@Override
-	public DraftCertificate toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.DraftCertificate toEscapedModel();
 
 	@Override
-	public DraftCertificate toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.DraftCertificate toUnescapedModel();
 
 	@Override
 	public String toString();

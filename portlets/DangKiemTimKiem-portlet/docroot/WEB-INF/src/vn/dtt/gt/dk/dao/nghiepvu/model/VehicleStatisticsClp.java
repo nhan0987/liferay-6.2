@@ -828,6 +828,10 @@ public class VehicleStatisticsClp extends BaseModelImpl<VehicleStatistics>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -990,4 +994,5 @@ public class VehicleStatisticsClp extends BaseModelImpl<VehicleStatistics>
 	private long _processingTiming;
 	private long _daysUptoDeadline;
 	private BaseModel<?> _vehicleStatisticsRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

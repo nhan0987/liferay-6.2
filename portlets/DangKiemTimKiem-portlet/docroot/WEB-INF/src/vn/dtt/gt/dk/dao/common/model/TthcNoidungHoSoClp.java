@@ -635,6 +635,10 @@ public class TthcNoidungHoSoClp extends BaseModelImpl<TthcNoidungHoSo>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -762,4 +766,5 @@ public class TthcNoidungHoSoClp extends BaseModelImpl<TthcNoidungHoSo>
 	private long _daCapNhat;
 	private long _lanGuiCuoi;
 	private BaseModel<?> _tthcNoidungHoSoRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.common.service.ClpSerializer.class;
 }

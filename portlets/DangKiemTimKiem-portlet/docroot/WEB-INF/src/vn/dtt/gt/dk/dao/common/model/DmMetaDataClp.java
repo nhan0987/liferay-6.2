@@ -415,6 +415,10 @@ public class DmMetaDataClp extends BaseModelImpl<DmMetaData>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -493,4 +497,5 @@ public class DmMetaDataClp extends BaseModelImpl<DmMetaData>
 	private String _FieldDescription;
 	private String _FieldDataSet;
 	private BaseModel<?> _dmMetaDataRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.common.service.ClpSerializer.class;
 }

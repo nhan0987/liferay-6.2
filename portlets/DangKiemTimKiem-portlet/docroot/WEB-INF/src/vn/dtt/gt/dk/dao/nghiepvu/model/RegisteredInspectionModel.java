@@ -510,19 +510,20 @@ public interface RegisteredInspectionModel extends BaseModel<RegisteredInspectio
 	public Object clone();
 
 	@Override
-	public int compareTo(RegisteredInspection registeredInspection);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.RegisteredInspection registeredInspection);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<RegisteredInspection> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.RegisteredInspection> toCacheModel();
 
 	@Override
-	public RegisteredInspection toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.RegisteredInspection toEscapedModel();
 
 	@Override
-	public RegisteredInspection toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.RegisteredInspection toUnescapedModel();
 
 	@Override
 	public String toString();

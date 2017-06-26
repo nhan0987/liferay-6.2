@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.nghiepvu.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface CertificateCircularLocalService extends BaseLocalService,
 	* @return the certificate circular that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular addCertificateCircular(
 		vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular certificateCircular)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface CertificateCircularLocalService extends BaseLocalService,
 	* @throws PortalException if a certificate circular with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular deleteCertificateCircular(
 		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface CertificateCircularLocalService extends BaseLocalService,
 	* @return the certificate circular that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular deleteCertificateCircular(
 		vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular certificateCircular)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface CertificateCircularLocalService extends BaseLocalService,
 	* @return the certificate circular that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular updateCertificateCircular(
 		vn.dtt.gt.dk.dao.nghiepvu.model.CertificateCircular certificateCircular)
 		throws com.liferay.portal.kernel.exception.SystemException;

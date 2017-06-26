@@ -11,7 +11,7 @@
 		<constructor-arg value="com.liferay.portal.spring.hibernate.PortletHibernateConfiguration" />
 		<constructor-arg>
 			<map>
-				<entry key="dataSource" value-ref="tthcDataSource" />
+				<entry key="dataSource" value-ref="liferayDataSource" />
 			</map>
 		</constructor-arg>
 	</bean>
@@ -19,38 +19,11 @@
 		<constructor-arg value="com.liferay.portal.dao.orm.hibernate.PortletSessionFactoryImpl" />
 		<constructor-arg>
 			<map>
-				<entry key="dataSource" value-ref="tthcDataSource" />
+				<entry key="dataSource" value-ref="liferayDataSource" />
 				<entry key="sessionFactoryClassLoader" value-ref="portletClassLoader" />
 				<entry key="sessionFactoryImplementor" value-ref="liferayHibernateSessionFactory" />
 			</map>
 		</constructor-arg>
 	</bean>
 	<bean id="liferayTransactionManager" class="com.liferay.portal.kernel.util.InfrastructureUtil" factory-method="getTransactionManager" />
-	
-	
-	
-	
-		
-	<!-- 	other datasource vr -->
-	<bean id="vrHibernateSessionFactory" class="com.liferay.portal.kernel.spring.util.SpringFactoryUtil" factory-method="newBean">
-		<constructor-arg value="com.liferay.portal.spring.hibernate.PortletHibernateConfiguration" />
-		<constructor-arg>
-			<map>
-				<entry key="dataSource" value-ref="vrDataSource" />
-			</map>
-		</constructor-arg>
-	</bean>
-	<bean id="vrSessionFactory" class="com.liferay.portal.kernel.spring.util.SpringFactoryUtil" factory-method="newBean">
-		<constructor-arg value="com.liferay.portal.dao.orm.hibernate.PortletSessionFactoryImpl" />
-		<constructor-arg>
-			<map>
-				<entry key="dataSource" value-ref="vrDataSource" />
-				<entry key="sessionFactoryClassLoader" value-ref="portletClassLoader" />
-				<entry key="sessionFactoryImplementor" value-ref="vrHibernateSessionFactory" />
-			</map>
-		</constructor-arg>
-	</bean>
-	<bean id="vrTransactionManager" class="com.liferay.portal.kernel.util.InfrastructureUtil" factory-method="getTransactionManager" />
-	
-	
 </beans>

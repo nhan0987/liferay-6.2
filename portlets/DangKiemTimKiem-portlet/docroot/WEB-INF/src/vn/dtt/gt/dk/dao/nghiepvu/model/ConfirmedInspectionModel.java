@@ -471,19 +471,20 @@ public interface ConfirmedInspectionModel extends BaseModel<ConfirmedInspection>
 	public Object clone();
 
 	@Override
-	public int compareTo(ConfirmedInspection confirmedInspection);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection confirmedInspection);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ConfirmedInspection> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection> toCacheModel();
 
 	@Override
-	public ConfirmedInspection toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection toEscapedModel();
 
 	@Override
-	public ConfirmedInspection toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection toUnescapedModel();
 
 	@Override
 	public String toString();

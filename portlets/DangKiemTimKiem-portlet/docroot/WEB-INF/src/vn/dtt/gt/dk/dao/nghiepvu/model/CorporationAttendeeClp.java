@@ -389,6 +389,10 @@ public class CorporationAttendeeClp extends BaseModelImpl<CorporationAttendee>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -460,4 +464,5 @@ public class CorporationAttendeeClp extends BaseModelImpl<CorporationAttendee>
 	private String _inspectorName;
 	private long _inspectorRole;
 	private BaseModel<?> _corporationAttendeeRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

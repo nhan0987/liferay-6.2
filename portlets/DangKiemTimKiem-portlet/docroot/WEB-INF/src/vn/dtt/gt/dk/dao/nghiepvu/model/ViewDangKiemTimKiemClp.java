@@ -1191,6 +1191,10 @@ public class ViewDangKiemTimKiemClp extends BaseModelImpl<ViewDangKiemTimKiem>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1437,4 +1441,5 @@ public class ViewDangKiemTimKiemClp extends BaseModelImpl<ViewDangKiemTimKiem>
 	private Date _inspectorSignDate;
 	private String _vehicleClass;
 	private BaseModel<?> _viewDangKiemTimKiemRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

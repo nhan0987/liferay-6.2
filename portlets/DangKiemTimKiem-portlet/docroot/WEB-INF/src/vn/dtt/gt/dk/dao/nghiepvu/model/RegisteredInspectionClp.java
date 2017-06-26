@@ -1096,6 +1096,10 @@ public class RegisteredInspectionClp extends BaseModelImpl<RegisteredInspection>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1321,4 +1325,5 @@ public class RegisteredInspectionClp extends BaseModelImpl<RegisteredInspection>
 	private String _inspectorSignPlace;
 	private Date _inspectorSignDate;
 	private BaseModel<?> _registeredInspectionRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

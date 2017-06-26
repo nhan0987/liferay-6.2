@@ -330,19 +330,20 @@ public interface SafetestRequirementModel extends BaseModel<SafetestRequirement>
 	public Object clone();
 
 	@Override
-	public int compareTo(SafetestRequirement safetestRequirement);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.SafetestRequirement safetestRequirement);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<SafetestRequirement> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.SafetestRequirement> toCacheModel();
 
 	@Override
-	public SafetestRequirement toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.SafetestRequirement toEscapedModel();
 
 	@Override
-	public SafetestRequirement toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.SafetestRequirement toUnescapedModel();
 
 	@Override
 	public String toString();

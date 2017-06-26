@@ -238,19 +238,20 @@ public interface InspectionCommonStatusModel extends BaseModel<InspectionCommonS
 	public Object clone();
 
 	@Override
-	public int compareTo(InspectionCommonStatus inspectionCommonStatus);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.InspectionCommonStatus inspectionCommonStatus);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<InspectionCommonStatus> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.InspectionCommonStatus> toCacheModel();
 
 	@Override
-	public InspectionCommonStatus toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.InspectionCommonStatus toEscapedModel();
 
 	@Override
-	public InspectionCommonStatus toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.InspectionCommonStatus toUnescapedModel();
 
 	@Override
 	public String toString();

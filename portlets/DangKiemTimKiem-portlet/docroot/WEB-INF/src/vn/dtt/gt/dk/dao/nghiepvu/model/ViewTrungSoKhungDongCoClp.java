@@ -1059,6 +1059,10 @@ public class ViewTrungSoKhungDongCoClp extends BaseModelImpl<ViewTrungSoKhungDon
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -1277,4 +1281,5 @@ public class ViewTrungSoKhungDongCoClp extends BaseModelImpl<ViewTrungSoKhungDon
 	private Date _inspectionDate;
 	private String _importerName;
 	private BaseModel<?> _viewTrungSoKhungDongCoRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

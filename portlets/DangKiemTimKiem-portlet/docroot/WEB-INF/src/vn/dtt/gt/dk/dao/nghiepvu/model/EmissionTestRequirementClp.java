@@ -714,6 +714,10 @@ public class EmissionTestRequirementClp extends BaseModelImpl<EmissionTestRequir
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -855,4 +859,5 @@ public class EmissionTestRequirementClp extends BaseModelImpl<EmissionTestRequir
 	private long _phieuXuLyPhuId;
 	private long _attachedFile;
 	private BaseModel<?> _emissionTestRequirementRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

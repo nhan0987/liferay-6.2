@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.nghiepvu.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface ConfirmedInspectionLocalService extends BaseLocalService,
 	* @return the confirmed inspection that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection addConfirmedInspection(
 		vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection confirmedInspection)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface ConfirmedInspectionLocalService extends BaseLocalService,
 	* @throws PortalException if a confirmed inspection with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection deleteConfirmedInspection(
 		long id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface ConfirmedInspectionLocalService extends BaseLocalService,
 	* @return the confirmed inspection that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection deleteConfirmedInspection(
 		vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection confirmedInspection)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -225,6 +229,7 @@ public interface ConfirmedInspectionLocalService extends BaseLocalService,
 	* @return the confirmed inspection that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection updateConfirmedInspection(
 		vn.dtt.gt.dk.dao.nghiepvu.model.ConfirmedInspection confirmedInspection)
 		throws com.liferay.portal.kernel.exception.SystemException;

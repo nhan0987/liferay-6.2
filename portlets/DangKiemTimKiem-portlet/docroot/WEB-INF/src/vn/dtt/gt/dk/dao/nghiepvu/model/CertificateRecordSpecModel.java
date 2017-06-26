@@ -181,19 +181,20 @@ public interface CertificateRecordSpecModel extends BaseModel<CertificateRecordS
 	public Object clone();
 
 	@Override
-	public int compareTo(CertificateRecordSpec certificateRecordSpec);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.CertificateRecordSpec certificateRecordSpec);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<CertificateRecordSpec> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.CertificateRecordSpec> toCacheModel();
 
 	@Override
-	public CertificateRecordSpec toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CertificateRecordSpec toEscapedModel();
 
 	@Override
-	public CertificateRecordSpec toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CertificateRecordSpec toUnescapedModel();
 
 	@Override
 	public String toString();

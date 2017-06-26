@@ -198,19 +198,19 @@ public interface DmMetaDataModel extends BaseModel<DmMetaData> {
 	public Object clone();
 
 	@Override
-	public int compareTo(DmMetaData dmMetaData);
+	public int compareTo(vn.dtt.gt.dk.dao.common.model.DmMetaData dmMetaData);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<DmMetaData> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.common.model.DmMetaData> toCacheModel();
 
 	@Override
-	public DmMetaData toEscapedModel();
+	public vn.dtt.gt.dk.dao.common.model.DmMetaData toEscapedModel();
 
 	@Override
-	public DmMetaData toUnescapedModel();
+	public vn.dtt.gt.dk.dao.common.model.DmMetaData toUnescapedModel();
 
 	@Override
 	public String toString();

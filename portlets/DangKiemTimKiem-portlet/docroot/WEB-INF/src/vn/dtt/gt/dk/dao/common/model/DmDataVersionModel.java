@@ -181,19 +181,20 @@ public interface DmDataVersionModel extends BaseModel<DmDataVersion> {
 	public Object clone();
 
 	@Override
-	public int compareTo(DmDataVersion dmDataVersion);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.common.model.DmDataVersion dmDataVersion);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<DmDataVersion> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.common.model.DmDataVersion> toCacheModel();
 
 	@Override
-	public DmDataVersion toEscapedModel();
+	public vn.dtt.gt.dk.dao.common.model.DmDataVersion toEscapedModel();
 
 	@Override
-	public DmDataVersion toUnescapedModel();
+	public vn.dtt.gt.dk.dao.common.model.DmDataVersion toUnescapedModel();
 
 	@Override
 	public String toString();

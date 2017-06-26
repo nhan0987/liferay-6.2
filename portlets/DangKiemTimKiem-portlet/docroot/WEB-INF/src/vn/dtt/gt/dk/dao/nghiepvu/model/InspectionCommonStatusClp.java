@@ -512,6 +512,10 @@ public class InspectionCommonStatusClp extends BaseModelImpl<InspectionCommonSta
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -611,4 +615,5 @@ public class InspectionCommonStatusClp extends BaseModelImpl<InspectionCommonSta
 	private String _commonCode;
 	private int _allowEdit;
 	private BaseModel<?> _inspectionCommonStatusRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

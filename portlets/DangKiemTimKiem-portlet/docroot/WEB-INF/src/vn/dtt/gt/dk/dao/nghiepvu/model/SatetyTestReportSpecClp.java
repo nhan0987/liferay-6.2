@@ -393,6 +393,10 @@ public class SatetyTestReportSpecClp extends BaseModelImpl<SatetyTestReportSpec>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -464,4 +468,5 @@ public class SatetyTestReportSpecClp extends BaseModelImpl<SatetyTestReportSpec>
 	private String _specificationValue;
 	private long _evaluationResult;
 	private BaseModel<?> _satetyTestReportSpecRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

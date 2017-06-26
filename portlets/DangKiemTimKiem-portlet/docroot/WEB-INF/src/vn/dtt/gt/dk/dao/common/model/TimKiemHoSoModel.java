@@ -442,19 +442,19 @@ public interface TimKiemHoSoModel extends BaseModel<TimKiemHoSo> {
 	public Object clone();
 
 	@Override
-	public int compareTo(TimKiemHoSo timKiemHoSo);
+	public int compareTo(vn.dtt.gt.dk.dao.common.model.TimKiemHoSo timKiemHoSo);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<TimKiemHoSo> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.common.model.TimKiemHoSo> toCacheModel();
 
 	@Override
-	public TimKiemHoSo toEscapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TimKiemHoSo toEscapedModel();
 
 	@Override
-	public TimKiemHoSo toUnescapedModel();
+	public vn.dtt.gt.dk.dao.common.model.TimKiemHoSo toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -16,6 +16,7 @@ package vn.dtt.gt.dk.dao.common.service;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.IndexableType;
 import com.liferay.portal.kernel.transaction.Isolation;
 import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
@@ -52,6 +53,7 @@ public interface DmDataVersionLocalService extends BaseLocalService,
 	* @return the dm data version that was added
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.common.model.DmDataVersion addDmDataVersion(
 		vn.dtt.gt.dk.dao.common.model.DmDataVersion dmDataVersion)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -73,6 +75,7 @@ public interface DmDataVersionLocalService extends BaseLocalService,
 	* @throws PortalException if a dm data version with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.common.model.DmDataVersion deleteDmDataVersion(
 		long Id)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -85,6 +88,7 @@ public interface DmDataVersionLocalService extends BaseLocalService,
 	* @return the dm data version that was removed
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
 	public vn.dtt.gt.dk.dao.common.model.DmDataVersion deleteDmDataVersion(
 		vn.dtt.gt.dk.dao.common.model.DmDataVersion dmDataVersion)
 		throws com.liferay.portal.kernel.exception.SystemException;
@@ -224,6 +228,7 @@ public interface DmDataVersionLocalService extends BaseLocalService,
 	* @return the dm data version that was updated
 	* @throws SystemException if a system exception occurred
 	*/
+	@com.liferay.portal.kernel.search.Indexable(type = IndexableType.REINDEX)
 	public vn.dtt.gt.dk.dao.common.model.DmDataVersion updateDmDataVersion(
 		vn.dtt.gt.dk.dao.common.model.DmDataVersion dmDataVersion)
 		throws com.liferay.portal.kernel.exception.SystemException;

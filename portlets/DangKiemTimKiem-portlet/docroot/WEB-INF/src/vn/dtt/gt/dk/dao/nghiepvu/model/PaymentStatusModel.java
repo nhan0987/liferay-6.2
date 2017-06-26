@@ -335,19 +335,20 @@ public interface PaymentStatusModel extends BaseModel<PaymentStatus> {
 	public Object clone();
 
 	@Override
-	public int compareTo(PaymentStatus paymentStatus);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.PaymentStatus paymentStatus);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<PaymentStatus> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.PaymentStatus> toCacheModel();
 
 	@Override
-	public PaymentStatus toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.PaymentStatus toEscapedModel();
 
 	@Override
-	public PaymentStatus toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.PaymentStatus toUnescapedModel();
 
 	@Override
 	public String toString();

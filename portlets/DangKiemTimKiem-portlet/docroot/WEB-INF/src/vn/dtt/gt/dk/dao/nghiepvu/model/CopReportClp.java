@@ -446,6 +446,10 @@ public class CopReportClp extends BaseModelImpl<CopReport> implements CopReport 
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -531,4 +535,5 @@ public class CopReportClp extends BaseModelImpl<CopReport> implements CopReport 
 	private String _signPlace;
 	private Date _signDate;
 	private BaseModel<?> _copReportRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

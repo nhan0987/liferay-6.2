@@ -197,19 +197,20 @@ public interface CustomsDeclarationModel extends BaseModel<CustomsDeclaration> {
 	public Object clone();
 
 	@Override
-	public int compareTo(CustomsDeclaration customsDeclaration);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.CustomsDeclaration customsDeclaration);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<CustomsDeclaration> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.CustomsDeclaration> toCacheModel();
 
 	@Override
-	public CustomsDeclaration toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CustomsDeclaration toEscapedModel();
 
 	@Override
-	public CustomsDeclaration toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.CustomsDeclaration toUnescapedModel();
 
 	@Override
 	public String toString();

@@ -666,6 +666,10 @@ public class DebitNoteDetailsClp extends BaseModelImpl<DebitNoteDetails>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -800,4 +804,5 @@ public class DebitNoteDetailsClp extends BaseModelImpl<DebitNoteDetails>
 	private double _totalRealDebit;
 	private double _totalDebit;
 	private BaseModel<?> _debitNoteDetailsRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }

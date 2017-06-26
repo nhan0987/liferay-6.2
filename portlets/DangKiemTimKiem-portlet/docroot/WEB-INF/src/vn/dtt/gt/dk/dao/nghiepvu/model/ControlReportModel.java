@@ -298,19 +298,20 @@ public interface ControlReportModel extends BaseModel<ControlReport> {
 	public Object clone();
 
 	@Override
-	public int compareTo(ControlReport controlReport);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.ControlReport controlReport);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<ControlReport> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.ControlReport> toCacheModel();
 
 	@Override
-	public ControlReport toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ControlReport toEscapedModel();
 
 	@Override
-	public ControlReport toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.ControlReport toUnescapedModel();
 
 	@Override
 	public String toString();

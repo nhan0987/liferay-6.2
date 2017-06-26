@@ -322,6 +322,10 @@ public class TthcPhanNhomHoSoVaiTroClp extends BaseModelImpl<TthcPhanNhomHoSoVai
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -379,4 +383,5 @@ public class TthcPhanNhomHoSoVaiTroClp extends BaseModelImpl<TthcPhanNhomHoSoVai
 	private long _VaiTroXuLy;
 	private String _nhomPhieuXuLy;
 	private BaseModel<?> _tthcPhanNhomHoSoVaiTroRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.common.service.ClpSerializer.class;
 }

@@ -287,19 +287,20 @@ public interface SafetyTestRequestModel extends BaseModel<SafetyTestRequest> {
 	public Object clone();
 
 	@Override
-	public int compareTo(SafetyTestRequest safetyTestRequest);
+	public int compareTo(
+		vn.dtt.gt.dk.dao.nghiepvu.model.SafetyTestRequest safetyTestRequest);
 
 	@Override
 	public int hashCode();
 
 	@Override
-	public CacheModel<SafetyTestRequest> toCacheModel();
+	public CacheModel<vn.dtt.gt.dk.dao.nghiepvu.model.SafetyTestRequest> toCacheModel();
 
 	@Override
-	public SafetyTestRequest toEscapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.SafetyTestRequest toEscapedModel();
 
 	@Override
-	public SafetyTestRequest toUnescapedModel();
+	public vn.dtt.gt.dk.dao.nghiepvu.model.SafetyTestRequest toUnescapedModel();
 
 	@Override
 	public String toString();

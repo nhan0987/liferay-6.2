@@ -727,6 +727,10 @@ public class PaymentStatusClp extends BaseModelImpl<PaymentStatus>
 		}
 	}
 
+	public Class<?> getClpSerializerClass() {
+		return _clpSerializerClass;
+	}
+
 	@Override
 	public int hashCode() {
 		return (int)getPrimaryKey();
@@ -875,4 +879,5 @@ public class PaymentStatusClp extends BaseModelImpl<PaymentStatus>
 	private long _currentStatus;
 	private String _debitNoteNumber;
 	private BaseModel<?> _paymentStatusRemoteModel;
+	private Class<?> _clpSerializerClass = vn.dtt.gt.dk.dao.nghiepvu.service.ClpSerializer.class;
 }
