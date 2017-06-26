@@ -32,3 +32,9 @@ build.*.properties
 portlets/DangKiemApp-portlet/docroot/WEB-INF/src/service\.properties
 
 portlets/DangKiemTimKiem-portlet/docroot/WEB-INF/src/service\.properties
+
+portlets/DangKiemApp-portlet/docroot/pdf\.js/web/\.sass-cache/
+
+portlets/DangKiemApp-portlet/docroot/css/\.sass-cache/
+
+dist/
